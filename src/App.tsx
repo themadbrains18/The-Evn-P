@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     display: 'flex',
     minHeight: "100vh",
   },
-  
+
 });
 
 const theme = createTheme({
@@ -17,7 +17,7 @@ const theme = createTheme({
       main: "#0F75BC"
     }
   },
-  typography : {
+  typography: {
     fontFamily: "'Spartan',sans-serif"
   },
 });
