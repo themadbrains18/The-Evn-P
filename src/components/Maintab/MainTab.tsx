@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 import DashboardTab from './dashboard-tab/DashboardTab';
 import MapTab from './map-tab/MapTab';
-import ReportsTab from './ReportsTab';
+import ReportsTab from './report-tab/ReportsTab';
 
 
 const MainTab = () => {
