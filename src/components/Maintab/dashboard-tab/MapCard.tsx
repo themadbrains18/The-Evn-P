@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import { Card, CardActions, CardMedia, Button, Typography, Box, Grid } from '@mui/material';
-import mapCardApi from '../../api/mapCards-api.json';
+import mapCardApi from '../../../api/mapCards-api.json';
 
 
 const useStyles = makeStyles({
@@ -27,10 +27,10 @@ const MapCard = () => {
     return (
         <Box mt={2.75}>
             {/* // Common Grid Cards */}
-            <Grid container spacing={4}>
+            <Grid container spacing={3.75} columnSpacing={4.25}>
                 {mapCardApi.map_card.map((elem) => {
                     return (
-                        <Grid item xs={4} >
+                        <Grid item xs={4} key={elem.id}>
                             <Card className={classes.map_card} sx={{
                                 background: "#FDFDFD",
                                 boxShadow: "0px 0px 10px #F3F4F6"
@@ -39,7 +39,7 @@ const MapCard = () => {
                                     {/* Card Image */}
                                     <CardMedia
                                         component="img"
-                                        image={require(`../../assets/img/${elem.map_card_img}.jpg`)}
+                                        image={require(`../../../assets/img/${elem.map_card_img}.jpg`)}
                                         alt="green iguana"
                                     />
                                     {/* Card Image Title */}
@@ -62,7 +62,7 @@ const MapCard = () => {
                                                 <Button key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
                                                     <CardMedia
                                                         component="img"
-                                                        image={require(`../../assets/svg/${cardElem.link_svg}.svg`)}
+                                                        image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
                                                         alt={cardElem.link_txt}
                                                     />
                                                     <Typography sx={{

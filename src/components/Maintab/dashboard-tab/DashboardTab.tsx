@@ -1,4 +1,4 @@
-import TabHeader from "./TabHeader";
+import TabHeader from "../snippets/TabHeader";
 import MapCard from "./MapCard";
 import { Box } from "@mui/material";
 

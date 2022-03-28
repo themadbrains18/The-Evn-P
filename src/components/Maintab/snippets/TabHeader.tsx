@@ -10,8 +10,6 @@ type headerData = {
 
 }
 
-
-
 const TabHeader = (props: headerData) => {
     return (
         <>
@@ -26,7 +24,7 @@ const TabHeader = (props: headerData) => {
                     {/* Search Option */}
                     {props.headerOption === "Search" &&
                         <Button variant="text" sx={{ alignItems: "center" }}>
-                            <img src={require("../../assets/svg/search.svg").default} alt="Search" />
+                            <img src={require("../../../assets/svg/search.svg").default} alt="Search" />
                             <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize',ml: 1.38 }}>
                                 Search
                             </Typography>
@@ -36,7 +34,7 @@ const TabHeader = (props: headerData) => {
                     {props.headerOption === "MapView" &&
 
                         <Button variant="text" sx={{ alignItems: "center" }}>
-                            <img src={require("../../assets/svg/globe.svg").default} alt="Globe" />
+                            <img src={require("../../../assets/svg/globe.svg").default} alt="Globe" />
                             <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize',ml: 1 }}>
                                 Map View
                             </Typography>
@@ -46,16 +44,17 @@ const TabHeader = (props: headerData) => {
             </Box>
 
             {props.blockInfo ?
-                <div className="main_content_summary">
-                    <h4 className="main_content_summary_heading">
+                <Box sx={{backgroundColor:"#FDFDFD",padding:"14px 33px 30px 13px",boxShadow: "0px 0px 10px #F3F4F6"}}>
+                    <Typography component="h4" sx={{fontSize: "16px",lineHeight: "18px",fontWeight: "400"}}>
                         {props.blockInfoheading}
-                    </h4>
-                    <hr className="main_content_summary_divider" />
-                    <p className="main_content_info">
+                    </Typography>
+                    <Divider sx={{borderBottomWidth:"2px",my: "16px",borderColor:"#F5F5F5",ml: "-13px", width: "340px"}}/>
+
+                    <Typography component="p"  sx={{  fontSize: "14px",textAlign: "justify",color: "#121212",lineHeight:"23px"}}>
                         {/* Tab Info */}
                         {props.tabInfo}
-                    </p>
-                </div>
+                    </Typography>
+                </Box>
                 :
                 <Typography component="p"  sx={{  fontSize: "14px",textAlign: "justify",color: "#121212",lineHeight:"23px"}}>
                     {/* Tab Info */}
@@ -64,7 +63,7 @@ const TabHeader = (props: headerData) => {
             }
 
             {/* Divider */}
-            {props.divider && <Divider sx={{height:"2px",mt: "18px"}} /> }
+            {props.divider && <Divider sx={{borderBottomWidth:"2px",mt: "18px",borderColor:"#DEDEDE"}}/> }
 
         </>
     );

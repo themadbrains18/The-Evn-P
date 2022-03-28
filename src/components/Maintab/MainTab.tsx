@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
-import DashboardTab from './DashboardTab';
-import MapTab from './MapTab';
+import DashboardTab from './dashboard-tab/DashboardTab';
+import MapTab from './map-tab/MapTab';
 import ReportsTab from './ReportsTab';
 
 

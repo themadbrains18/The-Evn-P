@@ -7,10 +7,6 @@ import Typography from '@mui/material/Typography';
 import SideNavSingleItem from './SideNavSingleItem';
 
 
-
-
-
-
 const useStyles = makeStyles({
     divider: {
         border: "none!important",
@@ -18,14 +14,15 @@ const useStyles = makeStyles({
         background: "#F2F6FE",
         width: "160px",
     },
-  
+
     filter_acc: {
         fontSize: "14px",
         fontWeight: "500",
         color: "#8794C4",
+
     },
     nav_accordian: {
-        
+
         color: "#8794C4",
         
         "& p": {
@@ -37,8 +34,8 @@ const useStyles = makeStyles({
         },
         "&:hover,&.active,&.Mui-expanded": {
             backgroundColor: "#F2F6FE!important",
-
             "& p": {
+                fontWeight: "600",
                 color: "#0F75BC",
             },
             "& .filtor_icon path": {
@@ -46,10 +43,6 @@ const useStyles = makeStyles({
             },
             "& .nav_list_item_arrow path": {
                 stroke: "#0F75BC"
-            },
-            "& span": {
-                fontWeight: "600",
-                color: "#0F75BC",
             },
         }
     },
@@ -67,9 +60,8 @@ const SideNavItem = () => {
         <>
             <Divider className={classes.divider} sx={{ my: 3 }} />
 
-
             <List sx={{ p: 0 }}>
-                <SideNavSingleItem/>
+                <SideNavSingleItem />
             </List>
 
 
@@ -84,25 +76,23 @@ const SideNavItem = () => {
                         </svg>}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
-                    >
-                        <Box sx={{ display: "flex",gap:2, alignItems: "center" }}>
+                    >                                   
+
+                        <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
                             <svg width={34} height={34} className="filtor_icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.1795 19.457H22.8205L25.6395 14.543H8.36056L11.1795 19.457ZM29.2221 5.11328H4.77794C3.96446 5.11328 3.45646 5.9998 3.86485 6.70703L7.13868 12.418H26.8613L30.1385 6.70703C30.5436 5.9998 30.0356 5.11328 29.2221 5.11328V5.11328ZM11.5879 27.8242C11.5879 28.4119 12.0594 28.8867 12.6438 28.8867H21.3563C21.9406 28.8867 22.4121 28.4119 22.4121 27.8242V21.582H11.5879V27.8242Z" fill="#8794C4" />
                             </svg>
-                            <Typography className={classes.filter_acc} sx={{ fontSize: 14, fontWeight: "500", lineHeight: "15.68px" }}>Filters</Typography>
+                            <Typography className={classes.filter_acc} >Filters</Typography>
                         </Box>
 
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
-                            <Box>
-                                <label htmlFor="start">From</label>
-                            </Box>
-                            <input type="date" id="start" name="trip-start" defaultValue="2018-07-22" min="2018-01-01" max="2018-12-31" />
-                        </Typography>
+                        <Box>
+                            <label htmlFor="start">From</label>
+                        </Box>
+                        <input type="date" id="start" name="trip-start" defaultValue="2018-07-22" min="2018-01-01" max="2018-12-31" />
                     </AccordionDetails>
                 </Accordion>
-
             </Box>
         </>
     )
