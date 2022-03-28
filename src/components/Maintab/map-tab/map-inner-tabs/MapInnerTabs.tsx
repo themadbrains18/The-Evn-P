@@ -8,6 +8,7 @@ import AreaMapTab from './AreaMapTab';
 
 
 
+
 const Tab = styled(TabUnstyled)`
   color: white;
   cursor: pointer;
@@ -68,6 +69,7 @@ const MapInnerTabs = () => {
         <>
             <Box sx={{pt: 3.375,px: 3,height:"100%"}}>
                 <TabsUnstyled defaultValue={0} >
+
                     <TabsList>
                         <Tab>
                             <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +102,7 @@ const MapInnerTabs = () => {
 
 
                     <TabPanel value={0}>
-                        First content
+                        <AreaMapTab/>
                     </TabPanel>
                     <TabPanel value={1}>Second content</TabPanel>
                     <TabPanel value={2}>Third content</TabPanel>

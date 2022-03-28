@@ -8,7 +8,7 @@ import ReportsTab from './report-tab/ReportsTab';
 const MainTab = () => {
     return (
         <>
-            <Box sx={{ bgcolor: '#F9FAFC', width: "100%" }}>
+            <Box sx={{ bgcolor: '#F9FAFC'}}>
                 <Routes>
                     <Route  path="/" element={<DashboardTab />} />
                     <Route path="/maps" element={<MapTab />} />

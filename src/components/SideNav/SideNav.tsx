@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Box,Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
@@ -9,44 +10,57 @@ const useStyles = makeStyles({
         lineHeight: "0"
     },
     side_nav: {
+        transition: "0.3s",
         padding: "22px 30px 40px",
         background: "#fff",
         overflow: "hidden",
         whiteSpace: "nowrap",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        "& img" : {
+            maxWidth:"unset"
+        }
     }
 });
 
 const SideNav = () => {
     const classes = useStyles();
+    const [toggleNav,setToggleNav] = useState(false);
+    const [navBarWidth,setNavBarWidth] = useState(null);
+    
+    useEffect(()=>{
+        const navBar  = document.querySelector("#navBar") as any;
+        setNavBarWidth(navBar.offsetWidth);
+    },[]);
+
     return (
         <>
-            
-            <Box className={classes.side_nav} >
+            <Box className={classes.side_nav} id="navBar" style={{maxWidth: toggleNav === true?'114px': `${navBarWidth}px`}}>
                 <Box sx={{mb: 3 }}>
                     {/* Toggle   */}
-                    <Box component="button" className={classes.NavToggle} >
+                    <Box component="button" className={classes.NavToggle}  onClick={()=>{setToggleNav(!toggleNav)}}>
                         <img src={require(`../../assets/svg/nav-toggle.svg`).default} alt="nav Toggle" />
                     </Box>
                     {/* Logo  */}
                     <Box component={Link} to="/"  sx={{ display: 'block' }} className="line-height-0">
-                        <img src={require(`../../assets/img/logo.png`)} alt="logo" />
+                        <img src={require(`../../assets/img/${toggleNav ? "short-logo" : 'logo'}.png`)} alt="logo" />
                     </Box>
                     {/*  Navigation */}
-                    <Box component="nav">
+                    <Box component="nav" sx={{overflow:"hidden"}}>
                         <SideNavItem />
                     </Box>
                 </Box>
 
                 {/* Developed Logo  */}
                 <Box className="line-height-0">
-                    <Typography component="span" sx={{mb:1.5 ,display:"block",color: "#979797",fontSize: 12,lineHeight: "13px"}}>
+                    {!toggleNav &&
+                     <Typography component="span" sx={{mb:1.5 ,display:"block",color: "#979797",fontSize: 12,lineHeight: "13px"}}>
                         Developed by
-                    </Typography>
+                    </Typography>}
+                    
                     <Box>
-                        <img src={require(`../../assets/img/devby.png`)} alt="logo" />
+                        <img src={require(`../../assets/img/${toggleNav ? "short-dev-logo" : 'devby'}.png`)} alt="logo" />
                     </Box>
                 </Box>
             </Box>

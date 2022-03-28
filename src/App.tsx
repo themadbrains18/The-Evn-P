@@ -5,7 +5,8 @@ import MainTab from './components/Maintab/MainTab';
 
 const useStyles = makeStyles({
   mainGrid: {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: "auto 1fr",
     minHeight: "100vh",
   },
 

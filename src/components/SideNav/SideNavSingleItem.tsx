@@ -61,7 +61,8 @@ const useStyles = makeStyles({
         }
     },
     nav_list__icon: {
-        minWidth: "53px!important",
+        minWidth: "auto!important",
+        marginRight: "16px",
         "& svg,path": {
             fill: "#8794C3"
         }
