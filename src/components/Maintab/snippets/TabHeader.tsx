@@ -74,7 +74,7 @@ const TabHeader = (props: headerData) => {
                                 )}
                                 {InputToggle && (
                                     <>
-                                        <Input className={classes.headerinput} placeholder="Search" />
+                                        <Input className={classes.headerinput} placeholder="Search" autoFocus />
                                         <Typography className={classes.bglayer} component={"span"} onClick={InputButton}>
                                         </Typography  >
                                     </>
@@ -119,7 +119,6 @@ const TabHeader = (props: headerData) => {
 
             {/* Divider */}
             {props.divider && <Divider sx={{ borderBottomWidth: "2px", mt: "18px", borderColor: "#DEDEDE" }} />}
-
         </>
     );
 }

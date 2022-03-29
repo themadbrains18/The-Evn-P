@@ -67,7 +67,7 @@ const TabsList = styled(TabsListUnstyled)`
 const MapInnerTabs = () => {
     return (
         <>
-            <Box sx={{pt: 3.375,px: 3,height:"100%"}}>
+            <Box sx={{ pt: 3.375, px: 3, height: "100%" }}>
                 <TabsUnstyled defaultValue={0} >
 
                     <TabsList>
@@ -98,11 +98,8 @@ const MapInnerTabs = () => {
                             </svg>
                         </Tab>
                     </TabsList>
-
-
-
                     <TabPanel value={0}>
-                        <AreaMapTab/>
+                        <AreaMapTab />
                     </TabPanel>
                     <TabPanel value={1}>Second content</TabPanel>
                     <TabPanel value={2}>Third content</TabPanel>
