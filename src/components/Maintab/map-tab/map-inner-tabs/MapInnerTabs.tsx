@@ -1,12 +1,9 @@
 import { Box, styled } from '@mui/material';
-import TabsUnstyled from '@mui/base/TabsUnstyled';
-import TabsListUnstyled from '@mui/base/TabsListUnstyled';
-import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
-import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
-import AreaMapTab from './AreaMapTab';
-
-
+import  {TabsUnstyled,TabsListUnstyled,TabPanelUnstyled,TabUnstyled,buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
+import AreaMapTab from './area-map-tab/AreaMapTab';
+import MapLayerTab from './map-layer-tab/MapLayerTab';
+import LocationFinderTab from './LocationFinderTab';
+import BasicStasticsTab from './basin-stastics-tab/BasicStasticsTab';
 
 
 const Tab = styled(TabUnstyled)`
@@ -21,11 +18,9 @@ const Tab = styled(TabUnstyled)`
   border-radius: 4px;
   transition: 0.3s;
   &:hover {
-    background-color: #0F75BC;
-    fill:#fff;
     & svg,
     & path{
-        fill:#fff!important;
+        fill:#339AF0!important;
     }
   }
   &:focus {
@@ -67,9 +62,9 @@ const TabsList = styled(TabsListUnstyled)`
 const MapInnerTabs = () => {
     return (
         <>
-            <Box sx={{pt: 3.375,px: 3,height:"100%"}}>
+            <Box sx={{ pt: 3.375, px: 3, height: "100%" }}>
                 <TabsUnstyled defaultValue={0} >
-
+                    {/* ===  Tab List === */}
                     <TabsList>
                         <Tab>
                             <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,13 +95,22 @@ const MapInnerTabs = () => {
                     </TabsList>
 
 
-
+                    {/* ===  Tab Panels === */}
+                    {/* Area Map Tab */}
                     <TabPanel value={0}>
-                        <AreaMapTab/>
+                        <AreaMapTab />
                     </TabPanel>
-                    <TabPanel value={1}>Second content</TabPanel>
-                    <TabPanel value={2}>Third content</TabPanel>
-                    <TabPanel value={3}>fourth content</TabPanel>
+                    {/* Location Finder Tab */}
+                    <TabPanel value={1}>
+                        <LocationFinderTab />
+                    </TabPanel>
+                    {/* Map Layer Tab */}
+                    <TabPanel value={2}>
+                        <MapLayerTab />
+                    </TabPanel>
+                    <TabPanel value={3}>
+                        <BasicStasticsTab/>
+                    </TabPanel>
                 </TabsUnstyled>
             </Box>
         </>
