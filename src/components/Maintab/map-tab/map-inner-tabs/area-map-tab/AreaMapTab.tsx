@@ -9,9 +9,9 @@ const useStyles = makeStyles({
         "&:last-child": {
             marginRight: "0px!important",
         },
-        "&:hover":{
+        "&:hover": {
             backgroundColor: "#0F75BC!important",
-            "& svg,& path" : {
+            "& svg,& path": {
                 fill: "#fff"
             }
         }

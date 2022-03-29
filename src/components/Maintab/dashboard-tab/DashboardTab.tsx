@@ -7,7 +7,7 @@ const DashboardTab = () => {
 
     return (
         <>
-            <Box sx={{ p: 4.75  ,height:"100%"}}>
+            <Box sx={{ p: 4.75, height: "100%" }}>
                 <Box >
                     <TabHeader
                         tabheading="Dashboard"
