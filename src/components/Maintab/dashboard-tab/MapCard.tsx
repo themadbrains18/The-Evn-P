@@ -4,17 +4,17 @@ import mapCardApi from '../../../api/mapCards-api.json';
 
 
 const useStyles = makeStyles({
-    card_info : {
-        "&:nth-child(2)" : {
+    card_info: {
+        "&:nth-child(2)": {
             textAlign: "center",
         },
-        "&:last-child" : {
+        "&:last-child": {
             textAlign: "right",
             border: "none"
         }
     },
-    map_card :{
-        "&:hover" :{
+    map_card: {
+        "&:hover": {
             boxShadow: "0px 0px 15px #b6b8bd"
         }
     }
@@ -78,16 +78,16 @@ const MapCard = () => {
                                             )
                                         })}
                                     </CardActions>
-                                    <Box component="div" sx={{ display: "flex",alignItems: "center",   mt: 3, mx:-0.5}}>
+                                    <Box component="div" sx={{ display: "flex", alignItems: "center", mt: 3, mx: -0.5 }}>
                                         {elem.map_card_info.map((card) => {
                                             return (
-                                                <Box key={card.id} className={classes.card_info} component="div" sx={{ display: "block", borderRight: 1, borderColor: "#D4D4D4", px: 0.5, lineHeight: 1 ,width: "33.333%"}}>
+                                                <Box key={card.id} className={classes.card_info} component="div" sx={{ display: "block", borderRight: 1, borderColor: "#D4D4D4", px: 0.5, lineHeight: 1, width: "33.333%" }}>
                                                     <Typography component="h4" sx={{
                                                         display: "inline-block", fontSize: 16,
                                                         fontWeight: 500,
                                                         color: "#000",
                                                         lineHeight: 1.1,
-                                                        width:"100%"
+                                                        width: "100%"
                                                     }}>
                                                         {card.info_heading}
                                                     </Typography>

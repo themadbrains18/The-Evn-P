@@ -1,5 +1,5 @@
 import { Box, styled } from '@mui/material';
-import  {TabsUnstyled,TabsListUnstyled,TabPanelUnstyled,TabUnstyled,buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
+import { TabsUnstyled, TabsListUnstyled, TabPanelUnstyled, TabUnstyled, buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
 import AreaMapTab from './area-map-tab/AreaMapTab';
 import MapLayerTab from './map-layer-tab/MapLayerTab';
 import LocationFinderTab from './LocationFinderTab';
@@ -109,7 +109,7 @@ const MapInnerTabs = () => {
                         <MapLayerTab />
                     </TabPanel>
                     <TabPanel value={3}>
-                        <BasicStasticsTab/>
+                        <BasicStasticsTab />
                     </TabPanel>
                 </TabsUnstyled>
             </Box>

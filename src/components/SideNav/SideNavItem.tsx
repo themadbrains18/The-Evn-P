@@ -3,6 +3,9 @@ import { makeStyles } from '@mui/styles';
 import SideNavSingleItem from './SideNavSingleItem';
 import NavItemAccordian from './NavItemAccordian';
 
+type NavToggle = {
+    toggleNav: Boolean
+}
 
 const useStyles = makeStyles({
     divider: {
@@ -13,7 +16,7 @@ const useStyles = makeStyles({
     },
 });
 
-const SideNavItem = () => {
+const SideNavItem = (props: NavToggle) => {
     const classes = useStyles();
     return (
         <>
@@ -30,7 +33,7 @@ const SideNavItem = () => {
             <Divider className={classes.divider} sx={{ my: 3, p: 0 }} />
 
             {/* Nav Drop Down */}
-            <NavItemAccordian/>
+            <NavItemAccordian checkToggle={props.toggleNav} />
         </>
     )
 }
