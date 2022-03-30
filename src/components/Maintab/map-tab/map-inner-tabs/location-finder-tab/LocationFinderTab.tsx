@@ -1,4 +1,4 @@
-import MapInnerTabHeading from "./MapInnerTabHeading";
+import MapInnerTabHeading from "../MapInnerTabHeading";
 const LocationFinderTab = () => {
     return (
         <>
