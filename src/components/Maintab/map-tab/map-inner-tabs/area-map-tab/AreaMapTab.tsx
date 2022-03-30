@@ -1,5 +1,7 @@
 import { Box, Typography, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import MapInnerTabHeading from '../MapInnerTabHeading';
+
 
 const useStyles = makeStyles({
     area_btn: {
@@ -23,9 +25,7 @@ const AreaMapTab = () => {
     return (
         <>
             <Box>
-                <Typography component="h3" sx={{ fontWeight: 700, fontSize: "19px", lineHeight: "21px", mb: 2.125 }}>
-                    Area Map
-                </Typography>
+                <MapInnerTabHeading heading={"Area Map"}/>
 
                 <Typography component="p" sx={{ fontSize: "14px", lineHeight: "22px", color: "#454560" }}>
                     Leverage the tools below to create a <Typography component='span' sx={{ fontWeight: 600, fontSize: "14px", lineHeight: "22px", color: "#454560" }}>closed area</Typography>. By this definition we mean have your last point touch your first point. Any locations inside of this area will be highlighted while eveything else will disappear.
