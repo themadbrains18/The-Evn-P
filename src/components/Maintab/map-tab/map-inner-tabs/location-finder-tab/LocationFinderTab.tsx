@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import { Typography, Box, Divider } from '@mui/material';
 import MapInnerTabHeading from "../MapInnerTabHeading";
 import { makeStyles } from '@mui/styles';
-import { padding } from '@mui/system';
 
 const useStyles = makeStyles({
     map_location_heading: {
