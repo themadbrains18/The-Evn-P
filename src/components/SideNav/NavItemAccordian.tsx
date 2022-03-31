@@ -93,11 +93,11 @@ const useStyles = makeStyles({
 const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
 ))(({ theme }) => ({
-    [`& .${tooltipClasses.arrow}`]: { 
+    [`& .${tooltipClasses.arrow}`]: {
         color: "#fff",
     },
     [`& .${tooltipClasses.tooltip}`]: {
-        marginLeft:"35px!important",
+        marginLeft: "35px!important",
         padding: 0,
     },
 }));
@@ -112,7 +112,7 @@ const NavItemAccordian = (props: toogleCheck) => {
     const handleTooltipOpen = () => {
         setOpen(true);
     };
- 
+
     if (!props.checkToggle) {
         if (open) {
             handleTooltipClose();
@@ -155,7 +155,7 @@ const NavItemAccordian = (props: toogleCheck) => {
                                         }} >Apply Filter</Button>
                                     </form>
                                 </Box>}>
-                                <Button onClick={handleTooltipOpen} sx={{ mr: 2, display: "grid", placeItems: "center", minWidth: "auto" }} className={classes.nav_accordian} >
+                                <Button onClick={handleTooltipOpen} sx={{ mr: 0, display: "grid", placeItems: "center", minWidth: "auto", padding: "8px 10px" }} className={classes.nav_accordian} >
                                     <svg width={34} height={34} className="filtor_icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.1795 19.457H22.8205L25.6395 14.543H8.36056L11.1795 19.457ZM29.2221 5.11328H4.77794C3.96446 5.11328 3.45646 5.9998 3.86485 6.70703L7.13868 12.418H26.8613L30.1385 6.70703C30.5436 5.9998 30.0356 5.11328 29.2221 5.11328V5.11328ZM11.5879 27.8242C11.5879 28.4119 12.0594 28.8867 12.6438 28.8867H21.3563C21.9406 28.8867 22.4121 28.4119 22.4121 27.8242V21.582H11.5879V27.8242Z" fill="#8794C4" />
                                     </svg>
@@ -181,7 +181,7 @@ const NavItemAccordian = (props: toogleCheck) => {
                             </Box>
                         </AccordionSummary>
 
-                        <AccordionDetails sx={{padding:"5px 15px 17px 14px"}}>
+                        <AccordionDetails sx={{ padding: "5px 15px 17px 14px" }}>
                             <Box component="form">
                                 <Box>
                                     <Box className={classes.filter_input} >

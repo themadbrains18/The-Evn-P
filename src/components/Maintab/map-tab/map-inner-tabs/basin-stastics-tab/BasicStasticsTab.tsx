@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 // import { makeStyles } from '@mui/styles';
-import MapInnerTabHeading from "../MapInnerTabHeading";
-import LineChart from "./LineChart";
-import DonutChart from "./DonutChart";
-import MapDataList from "./MapDataList";
+import MapInnerTabHeading from "../mapInnerTabHeading";
+import LineChart from "./lineChart";
+import DonutChart from "./donutChart";
+import MapDataList from "./mapDataList";
 // import DashboardTab from "../../../dashboard-tab/DashboardTab";
 import { Link } from "react-router-dom";
 

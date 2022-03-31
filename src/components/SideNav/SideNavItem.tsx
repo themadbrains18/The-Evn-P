@@ -1,7 +1,7 @@
 import { List, Divider } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import SideNavSingleItem from './SideNavSingleItem';
-import NavItemAccordian from './NavItemAccordian';
+import SideNavSingleItem from './sideNavSingleItem';
+import NavItemAccordian from './navItemAccordian';
 
 type NavToggle = {
     toggleNav: Boolean

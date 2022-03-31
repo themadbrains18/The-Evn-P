@@ -1,5 +1,5 @@
-import TabHeader from "../snippets/TabHeader";
-import MapCard from "./MapCard";
+import TabHeader from "../snippets/tabHeader";
+import MapCard from "./mapCard";
 import { Box } from "@mui/material";
 
 

@@ -1,6 +1,6 @@
 import { Box, InputBase, Paper, Typography, Grid, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import LocationCard from "./LocationCard";
+import LocationCard from "./locationCard";
 const cardDtat = [
     {
         cardHeading: "Select Persian Locations",

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
-import SideNavItem from './SideNavItem';
+import SideNavItem from './sideNavItem';
 
 const useStyles = makeStyles({
     NavToggle: {

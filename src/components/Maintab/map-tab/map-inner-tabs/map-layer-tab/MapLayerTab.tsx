@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
-import MapInnerTabHeading from "../MapInnerTabHeading";
-import MapLayerListItem from "./MapLayerListItem";
+import MapInnerTabHeading from "../mapInnerTabHeading";
+import MapLayerListItem from "./mapLayerListItem";
 
 const MapLayerTab = () => {
     return (

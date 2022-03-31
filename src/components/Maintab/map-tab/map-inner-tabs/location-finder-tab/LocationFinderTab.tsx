@@ -3,7 +3,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import { Typography, Box, Divider } from '@mui/material';
-import MapInnerTabHeading from "../MapInnerTabHeading";
+import MapInnerTabHeading from "../mapInnerTabHeading";
 // import LocationSearch from "./LocationSearch";
 import { makeStyles } from '@mui/styles';
 

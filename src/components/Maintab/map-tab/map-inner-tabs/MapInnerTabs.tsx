@@ -1,9 +1,9 @@
 import { Box, styled } from '@mui/material';
 import { TabsUnstyled, TabsListUnstyled, TabPanelUnstyled, TabUnstyled, buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
-import AreaMapTab from './area-map-tab/AreaMapTab';
-import MapLayerTab from './map-layer-tab/MapLayerTab';
-import LocationFinderTab from './location-finder-tab/LocationFinderTab';
-import BasicStasticsTab from './basin-stastics-tab/BasicStasticsTab';
+import AreaMapTab from './area-map-tab/areaMapTab';
+import MapLayerTab from './map-layer-tab/mapLayerTab';
+import LocationFinderTab from './location-finder-tab/locationFinderTab';
+import BasicStasticsTab from './basin-stastics-tab/basicStasticsTab';
 
 
 const Tab = styled(TabUnstyled)`
