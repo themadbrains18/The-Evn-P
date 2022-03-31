@@ -46,7 +46,7 @@ const BasicStasticsTab = () => {
                     {/* Donut Chart  */}
                     <DonutChart />
 
-
+                    {/* Map Data List */}
                     <MapDataList />
 
                 </Box>
