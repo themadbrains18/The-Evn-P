@@ -4,6 +4,8 @@ import MapInnerTabHeading from "../MapInnerTabHeading";
 import LineChart from "./LineChart";
 import DonutChart from "./DonutChart";
 import MapDataList from "./MapDataList";
+// import DashboardTab from "../../../dashboard-tab/DashboardTab";
+import { Link } from "react-router-dom";
 
 
 // const useStyles = makeStyles({
@@ -39,22 +41,21 @@ const BasicStasticsTab = () => {
 
                         </Box>
                     </Box>
-
-
                     {/* Line Chart  */}
-                    <LineChart/>
+                    <LineChart />
                     {/* Donut Chart  */}
                     <DonutChart />
 
                     {/* Map Data List */}
                     <MapDataList />
-
                 </Box>
-
-                <Box >
-                    <Typography >
+                <Box to="/dashboard" component={Link} sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "25px", padding: "18px 0", borderTop: " 1px solid #0000001f", position: "fixed", right: 0, bottom: "0", width: "369px", background: "#fff" }}>
+                    <Typography component={"span"} sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", textDecoration: "underline" }}>
                         See report for this selection
                     </Typography>
+                    <svg width={9} height={16} viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 15L8 8L1 1" stroke="#0F75BC" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                 </Box>
             </Box>
         </>
