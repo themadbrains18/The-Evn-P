@@ -1,4 +1,4 @@
-import { Box} from '@mui/material';
+import { Box } from '@mui/material';
 import MapInnerTabHeading from "../MapInnerTabHeading";
 import MapLayerListItem from "./MapLayerListItem";
 
@@ -7,7 +7,7 @@ const MapLayerTab = () => {
         <>
             <MapInnerTabHeading heading={"Map Layers"} />
             <Box component="form">
-                <MapLayerListItem/>
+                <MapLayerListItem />
             </Box>
         </>
     );

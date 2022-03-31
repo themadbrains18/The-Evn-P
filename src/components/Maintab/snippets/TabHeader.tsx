@@ -8,7 +8,7 @@ type headerData = {
     tabInfo: String,
     blockInfoheading: String,
     divider: Boolean
-    headerOption: "Search" | "MapView"
+    headerOption: "Search" | "MapView" | ""
 
 }
 const useStyles = makeStyles({
@@ -86,7 +86,6 @@ const TabHeader = (props: headerData) => {
 
                     {/* Map View */}
                     {props.headerOption === "MapView" &&
-
                         <Button variant="text" sx={{ alignItems: "center" }}>
                             <img src={require("../../../assets/svg/globe.svg").default} alt="Globe" />
                             <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
@@ -99,7 +98,7 @@ const TabHeader = (props: headerData) => {
 
             {
                 props.blockInfo ?
-                    <Box sx={{ backgroundColor: "#FDFDFD", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6" }}>
+                    <Box sx={{ backgroundColor: "#FDFDFD", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6" ,mt: 3.75}}>
                         <Typography component="h4" sx={{ fontSize: "16px", lineHeight: "18px", fontWeight: "400" }}>
                             {props.blockInfoheading}
                         </Typography>

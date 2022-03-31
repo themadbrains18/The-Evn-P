@@ -225,7 +225,7 @@ const mpaLayerDate = [
                 "guideLabelText": "Persistent - No"
             },
         ]
-    },  
+    },
     {
         "id": 13,
         "checkboxName": "Draft-2020-Flyover-Areas",
@@ -291,7 +291,7 @@ const MapLayerListItem = () => {
                             <Box sx={{ pl: 4, height: 0, overflow: "hidden", transition: "0.3s linear" }} className="layer_guide">
                                 {item.guide.map((guideItem) => {
                                     return (
-                                        <Box  key={guideItem.id}  sx={{ display: "flex", alignItems: "center" ,mt: 2.75 }}>
+                                        <Box key={guideItem.id} sx={{ display: "flex", alignItems: "center", mt: 2.75 }}>
                                             <Typography component="span" sx={{ height: "18px", width: "18px", borderRadius: "50%", backgroundColor: guideItem.guideLabelColorCode, display: "inline-block", marginRight: "12px" }}>
                                             </Typography>
                                             <Typography component="span" sx={{ fontWeight: "500", fontSize: "14px", lineHeight: "16px", color: "#333333", display: "inline-block" }}>
