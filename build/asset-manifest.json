@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.d07665a4.css",
-    "main.js": "./static/js/main.557e29aa.js",
+    "main.js": "./static/js/main.c5686c41.js",
     "static/js/787.94c7c0a2.chunk.js": "./static/js/787.94c7c0a2.chunk.js",
     "static/media/piechart.jpg": "./static/media/piechart.45fb716726662b00a8c7.jpg",
     "static/media/denver-julesburg.jpg": "./static/media/denver-julesburg.3b38b715ec311899407d.jpg",
@@ -18,11 +18,11 @@
     "static/media/dashboard-hover.svg": "./static/media/dashboard-hover.963fb2d7c65d2b2f5e94.svg",
     "static/media/download-icon.svg": "./static/media/download-icon.0a7406e3c2618dce8085d5121c21f100.svg",
     "main.d07665a4.css.map": "./static/css/main.d07665a4.css.map",
-    "main.557e29aa.js.map": "./static/js/main.557e29aa.js.map",
+    "main.c5686c41.js.map": "./static/js/main.c5686c41.js.map",
     "787.94c7c0a2.chunk.js.map": "./static/js/787.94c7c0a2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d07665a4.css",
-    "static/js/main.557e29aa.js"
+    "static/js/main.c5686c41.js"
   ]
 }
