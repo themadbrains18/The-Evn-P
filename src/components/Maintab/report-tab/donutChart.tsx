@@ -11,7 +11,6 @@ const donutData: any = [
     { name: "2%", value: 22 },
     { name: "3%", value: 29 },
     { name: "10%", value: 22 },
-
 ];;
 
 const DonutChartComp = () => {
@@ -34,7 +33,7 @@ const DonutChartComp = () => {
             .attr("width", '530px')
             .attr("height", '398px')
             .attr('viewBox', '0 0 ' + width + ' ' + height)
-            .attr('preserveAspectRatio','xMinYMin')
+            .attr('preserveAspectRatio', 'xMinYMin')
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -54,7 +53,7 @@ const DonutChartComp = () => {
             )
             .attr('fill', (d: any) => colors[d.index])
             .attr("stroke", "#fff")
-            .style("stroke-width", "2")
+            .style("stroke-width", "1")
             .style("opacity", "1")
 
 

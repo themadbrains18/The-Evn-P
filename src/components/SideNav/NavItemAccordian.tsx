@@ -181,14 +181,14 @@ const NavItemAccordian = (props: toogleCheck) => {
                             </Box>
                         </AccordionSummary>
 
-                        <AccordionDetails sx={{ padding: "5px 15px 17px 14px" }}>
+                        <AccordionDetails sx={{ padding: "5px 15px 17px 14px", marginTop: "5px" }}>
                             <Box component="form">
                                 <Box>
                                     <Box className={classes.filter_input} >
                                         <label className={classes.filter_label} htmlFor="from" >From</label>
                                         <input className={classes.input} type="date" id="from" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
                                     </Box>
-                                    <Box className={classes.filter_input} sx={{ marginTop: "8px" }} >
+                                    <Box className={classes.filter_input} sx={{ marginTop: "10px" }} >
                                         <label className={classes.filter_label} htmlFor="to">To</label>
                                         <input className={classes.input} type="date" id="to" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
                                     </Box>
