@@ -59,7 +59,7 @@ const DonutChartComp = () => {
             .attr("width", '530px')
             .attr("height", '398px')
             .attr('viewBox', '0 0 ' + width + ' ' + height)
-            .attr('preserveAspectRatio','xMinYMin')
+            .attr('preserveAspectRatio', 'xMinYMin')
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
             

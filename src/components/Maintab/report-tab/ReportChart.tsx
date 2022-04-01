@@ -1,12 +1,12 @@
-import { Box,Grid} from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 import DonutChartComp from './donutChart';
 
 const useStyles = makeStyles({
-    chartItem : {
-        boxShadow: "0px 4px 10px #F3F4F6", 
+    chartItem: {
+        boxShadow: "0px 4px 10px #F3F4F6",
         backgroundColor: "#fff",
-        textAlign:"center",
+        textAlign: "center",
         height: "100%",
     }
 });

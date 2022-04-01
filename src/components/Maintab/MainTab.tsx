@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
-import DashboardTab from './dashboard-tab/DashboardTab';
-import MapTab from './map-tab/MapTab';
-import ReportsTab from './report-tab/ReportsTab';
-import SettingTab from './settings-tab/SettingTab';
+import DashboardTab from './dashboard-tab/dashboardTab';
+import MapTab from './map-tab/mapTab';
+import ReportsTab from './report-tab/reportsTab';
+import SettingTab from './settings-tab/settingTab';
 
 
 const MainTab = () => {

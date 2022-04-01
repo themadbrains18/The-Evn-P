@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider, Box, } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import SideNav from './components/SideNav/SideNav';
-import MainTab from './components/Maintab/MainTab';
+import SideNav from './components/SideNav/sideNav';
+import MainTab from './components/Maintab/mainTab';
 
 const useStyles = makeStyles({
   mainGrid: {

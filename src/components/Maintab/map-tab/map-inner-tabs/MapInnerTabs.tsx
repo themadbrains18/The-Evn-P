@@ -1,9 +1,9 @@
 import { Box, styled } from '@mui/material';
 import { TabsUnstyled, TabsListUnstyled, TabPanelUnstyled, TabUnstyled, buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
-import AreaMapTab from './area-map-tab/AreaMapTab';
-import MapLayerTab from './map-layer-tab/MapLayerTab';
-import LocationFinderTab from './location-finder-tab/LocationFinderTab';
-import BasicStasticsTab from './basin-stastics-tab/BasicStasticsTab';
+import AreaMapTab from './area-map-tab/areaMapTab';
+import MapLayerTab from './map-layer-tab/mapLayerTab';
+import LocationFinderTab from './location-finder-tab/locationFinderTab';
+import BasicStasticsTab from './basin-stastics-tab/basicStasticsTab';
 
 
 const Tab = styled(TabUnstyled)`
@@ -43,8 +43,6 @@ const Tab = styled(TabUnstyled)`
 
 const TabPanel = styled(TabPanelUnstyled)`
   width: 100%;
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.875rem;
 `;
 
 const TabsList = styled(TabsListUnstyled)`
@@ -62,7 +60,7 @@ const TabsList = styled(TabsListUnstyled)`
 const MapInnerTabs = () => {
     return (
         <>
-            <Box sx={{ pt: 3.375, px: 3, height: "100%" }}>
+            <Box sx={{ pt: 3.375, px: 3, height: "100%", background: "#fff" }}>
                 <TabsUnstyled defaultValue={0} >
                     {/* ===  Tab List === */}
                     <TabsList>

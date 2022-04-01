@@ -1,11 +1,11 @@
-import TabHeader from "../snippets/TabHeader";
+import TabHeader from "../snippets/tabHeader";
 import { Box } from "@mui/material";
-import ReportChart from "./ReportChart";
+import ReportChart from "./reportChart";
 
-const ReportsTab = ()=>{
-    return(
+const ReportsTab = () => {
+    return (
         <>
-            <Box sx={{ p: 4.75  ,height:"100%"}}>
+            <Box sx={{ p: 4.75, height: "100%" }}>
                 <Box >
                     <TabHeader
                         tabheading="Permian Basin Report"

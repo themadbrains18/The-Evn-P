@@ -2,7 +2,6 @@ import { makeStyles } from '@mui/styles';
 import { Card, CardActions, CardMedia, Button, Typography, Box, Grid } from '@mui/material';
 import mapCardApi from '../../../api/mapCards-api.json';
 
-
 const useStyles = makeStyles({
     card_info: {
         "&:nth-child(2)": {
