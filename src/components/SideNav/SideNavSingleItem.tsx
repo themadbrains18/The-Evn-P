@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { makeStyles } from '@mui/styles';
-import { ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 
 const SideNavItems = [
@@ -34,13 +34,8 @@ const SideNavItems = [
         "NavItemTxt": "Logout",
         "NavItemLink": "/Logout",
     },
-
 ];
-
-
-
 const useStyles = makeStyles({
-  
     nav_list_item: {
         padding: "0",
         '&:last-child': {
