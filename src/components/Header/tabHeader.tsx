@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     },
 })
 
-const TabHeader = (props: headerData) => {
+const Header = (props: headerData) => {
     const classes = useStyles();
 
     const [InputToggle, SetInputToggle] = useState(false)
@@ -65,7 +65,7 @@ const TabHeader = (props: headerData) => {
                                 {!InputToggle && (
                                     <>
                                         <Button variant="text" sx={{ alignItems: "center" }} onClick={InputButton}>
-                                            <img src={require("../../../assets/svg/search.svg").default} alt="Search" />
+                                            <img src={require("../../assets/svg/search.svg").default} alt="Search" />
                                             <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1.38 }}>
                                                 Search
                                             </Typography>
@@ -87,7 +87,7 @@ const TabHeader = (props: headerData) => {
                     {/* Map View */}
                     {props.headerOption === "MapView" &&
                         <Button variant="text" sx={{ alignItems: "center" }}>
-                            <img src={require("../../../assets/svg/globe.svg").default} alt="Globe" />
+                            <img src={require("../../assets/svg/globe.svg").default} alt="Globe" />
                             <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
                                 Map View
                             </Typography>
@@ -120,4 +120,4 @@ const TabHeader = (props: headerData) => {
         </>
     );
 }
-export default TabHeader;
+export default Header;

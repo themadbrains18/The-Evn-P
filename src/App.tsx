@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider, Box, } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import SideNav from './components/SideNav/sideNav';
-import MainTab from './components/Maintab/mainTab';
+import Route from './routes/index'
 
 const useStyles = makeStyles({
   mainGrid: {
@@ -31,7 +31,7 @@ const App = () => {
         {/* Left Side Navigation */}
         <SideNav />
         {/* Right Side Main Content */}
-        <MainTab />
+        <Route />
       </Box>
     </ThemeProvider>
   );

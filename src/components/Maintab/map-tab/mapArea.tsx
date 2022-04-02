@@ -1,5 +1,5 @@
 import BingMapsReact from "bingmaps-react";
-const Map = () => {
+const MapArea = () => {
     return (
         <>
             <BingMapsReact
@@ -19,4 +19,4 @@ const Map = () => {
     );
 }
 
-export default Map;
+export default MapArea;

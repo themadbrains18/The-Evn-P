@@ -1,14 +1,14 @@
 
-import Map from "./map";
-import MapInnerTabs from "./map-inner-tabs/mapInnerTabs";
+import MapArea from "../components/Maintab/map-tab/mapArea";
+import MapInnerTabs from "../components/Maintab/map-tab/map-inner-tabs/mapInnerTabs";
 import { Box } from "@mui/material";
 
-const MainTab = () => {
+const Map = () => {
     return (
         <>
             <Box sx={{ display: "grid", gridTemplateColumns: "1fr 369px", height: "100%", width: "100%" }}>
                 <Box>
-                    <Map />
+                    <MapArea />
                 </Box>
                 <Box>
                     <MapInnerTabs />
@@ -19,7 +19,7 @@ const MainTab = () => {
     )
 }
 
-export default MainTab;
+export default Map;
 
 
 

@@ -25,9 +25,7 @@ const Tab = styled(TabUnstyled)`
   }
   &:focus {
     fill:#fff;
-    
   }
-
   &.${tabUnstyledClasses.selected} {
     background-color: #0F75BC;
     & svg,

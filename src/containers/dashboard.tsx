@@ -1,9 +1,9 @@
-import TabHeader from "../snippets/tabHeader";
-import MapCard from "./mapCard";
+import TabHeader from "../components/Header/tabHeader";
+import MapCard from "../components/Maintab/dashboard-tab/mapCard";
 import { Box } from "@mui/material";
 
 
-const DashboardTab = () => {
+const Dashboard = () => {
 
     return (
         <>
@@ -27,4 +27,4 @@ const DashboardTab = () => {
     )
 }
 
-export default DashboardTab;
+export default Dashboard;
