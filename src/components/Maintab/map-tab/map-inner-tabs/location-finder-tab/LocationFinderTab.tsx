@@ -47,6 +47,17 @@ const useStyles = makeStyles({
         boxShadow: "0 0 10px #ccc",
         borderRadius: "4px",
         padding: "10px",
+
+
+    },
+    option_items: {
+        "&::-webkit-scrollbar": {
+            width: "5px",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            width: "10px",
+            background: "#ccc"
+        }
     },
     browse_heading: {
     },
@@ -66,6 +77,7 @@ const LocationFinderTab = () => {
         })
         SetsearchValue("")
     }
+
     const classes = useStyles();
 
     const clearData = (id: any) => {
@@ -79,6 +91,7 @@ const LocationFinderTab = () => {
         }
         else {
             setitemvalue([]);
+            SetremoveDropdown(false);
         }
     }
     // Add Remove Dropdown
@@ -157,7 +170,9 @@ const LocationFinderTab = () => {
                             {/* Search Options */}
                             <LocationSearch itemsNumber={itemoutput.length} clearData={clearData}
                             />
-                            <List component="ul">
+                            <List className={classes.option_items} sx={{
+                                maxHeight: "400px", overflowY: "scroll"
+                            }} component="ul">
                                 {itemoutput.map((itemvalue, index) => {
                                     return (
                                         <SearchItems

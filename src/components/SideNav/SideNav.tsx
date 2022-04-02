@@ -20,7 +20,15 @@ const useStyles = makeStyles({
         justifyContent: "space-between",
         "& img": {
             maxWidth: "unset"
+        },
+        "&::-webkit-scrollbar": {
+            width: "5px",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            width: "10px",
+            background: "#ccc"
         }
+
     }
 });
 
@@ -33,10 +41,10 @@ const SideNav = () => {
         const navBar = document.querySelector("#navBar") as any;
         setNavBarWidth(navBar.offsetWidth);
     }, []);
-
+    const windowHeight = window.innerHeight
     return (
         <>
-            <Box className={classes.side_nav} id="navBar" style={{ maxWidth: toggleNav === true ? '114px' : `${navBarWidth}px` }}>
+            <Box sx={{ height: `${windowHeight}px`, overflowY: "scroll", overflowX: "hidden" }} className={classes.side_nav} id="navBar" style={{ maxWidth: toggleNav === true ? '114px' : `${navBarWidth}px` }}>
                 <Box sx={{ mb: 3 }}>
                     {/* Toggle   */}
                     <Box component="button" className={classes.NavToggle} onClick={() => { setToggleNav(!toggleNav) }}>

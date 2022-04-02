@@ -1,23 +1,28 @@
 import { Box, Button, Typography } from "@mui/material";
-// import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import MapInnerTabHeading from "../mapInnerTabHeading";
 import LineChart from "./lineChart";
 import DonutChart from "./donutChart";
 import MapDataList from "./mapDataList";
 // import DashboardTab from "../../../dashboard-tab/DashboardTab";
 import { Link } from "react-router-dom";
-
-
-// const useStyles = makeStyles({
-
-// });
-
+const useStyles = makeStyles({
+    basic_stastic_main: {
+        "&::-webkit-scrollbar": {
+            width: "5px",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            width: "10px",
+            background: "#ccc"
+        }
+    }
+});
+const windowHeight = window.innerHeight
 const BasicStasticsTab = () => {
-    // const classes = useStyles();
-
+    const classes = useStyles();
     return (
         <>
-            <Box>
+            <Box className={classes.basic_stastic_main} sx={{ height: `${windowHeight - 150}px`, overflowY: "scroll", overflowX: "hidden" }}>
                 <Box>
                     <MapInnerTabHeading heading={"Basic Stastics"} />
                     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
