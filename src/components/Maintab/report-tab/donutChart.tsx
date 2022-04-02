@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect } from 'react';
 
-const colors = ['#1f78b4', '#66b2e6', '#2ba02d ', '#70d670', '#17bed0', '#ff800f', '#ffb26e','#17bed0', '#ff800f', '#ffb26e'];
+const colors = ['#1f78b4', '#66b2e6', '#2ba02d ', '#70d670', '#17bed0', '#ff800f', '#ffb26e', '#17bed0', '#ff800f', '#ffb26e'];
 
 const donutData: any = [
     { name: "20%", value: 20, label: 'Persistent Compressor' },
@@ -25,11 +25,10 @@ const DonutChartComp = () => {
 
     const drawChart = () => {
         d3.select("#chart").html("");
-        const width: any = 530;
-        const height: any = 398;
+        const width: any = 430;
+        const height: any = 358;
         const margin: any = 15;
         let radius: any = Math.min(width, height) / 2 - margin;
-        // legend Position
         let legendPosition: any = d3.arc().innerRadius(radius / 1.75).outerRadius(radius);
 
         let durations = {
@@ -45,21 +44,26 @@ const DonutChartComp = () => {
         let angleInterpolation = d3.interpolate(pie.startAngle()(), pie.endAngle()());
 
         // Arc generator
-        var arc:any = d3.arc()
+        var arc: any = d3.arc()
             .innerRadius(radius / 1.75)  // This is the size of the donut hole
             .outerRadius(radius);
-            
+
+        // Another arc that won't be drawn. Just for labels positioning
+        var outerArc = d3.arc()
+            .innerRadius(radius * 0.9)
+            .outerRadius(radius * 0.9)
+
         // Create SVG
         const svg: any = d3.select("#chart")
             .append('svg')
             .attr("class", "tooltip-donut")
-            .attr("width", '530px')
-            .attr("height", '398px')
+            .attr("width", '430px')
+            .attr("height", '358px')
             .attr('viewBox', '0 0 ' + width + ' ' + height)
             .attr('preserveAspectRatio', 'xMinYMin')
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-            
+
 
         // svg annimation
         svg
@@ -69,6 +73,7 @@ const DonutChartComp = () => {
             .append('path')
             .attr('d', arc)
             .attr('fill', (d: any) => colors[d.index])
+            .attr('id', (d: any) => d.index)
             .attr("stroke", "#fff")
             .style("stroke-width", "2")
             .style("opacity", "1")
@@ -104,30 +109,39 @@ const DonutChartComp = () => {
             .transition()
             .duration(durations.entryAnimation);
 
-        var tooltip = d3.select("#chart")
-            .append('div')
-            .attr('class', 'tooltip')
-            .style('position','absolute')
-            .style('visibility','hidden')
-            .style('background-color', 'white');
-        
+        // Add chart labels:
         svg
-        .on('mouseover', function(d:any) {
-			tooltip.text(d.path[0].__data__.data.label).style('color','black');
-			tooltip.style('display', 'block');
-			tooltip.style('opacity',2);
-            tooltip.style('visibility','visible');
-            tooltip.style('top',d.screenX - d.offsetX+'px');
-            tooltip.style('left',d.screenY - d.offsetY+'px');
-		})
-        .on('mouseout',function(d:any){
-            tooltip.text('').style('color','black');
-			tooltip.style('display', 'block');
-			tooltip.style('opacity',2);
-            tooltip.style('visibility','hidden');
-        });
+            .selectAll('allLabels')
+            .data(data_ready)
+            .enter()
+            .append('text')
+            .attr("class", (d: any) => `label-${d.index}`)
+            .text(function (d: any) { return d.data.label })
+            .attr('transform', function (d: any) {
+                var pos = outerArc.centroid(d);
+                var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
+                pos[0] = radius * 0.99 * (midangle < Math.PI ? 1 : -1);
+                return 'translate(' + pos + ')';
+            })
+            // .attr("transform", "translate(" + width / 5 + "," + height / 2 + ")")
+            .style('text-anchor', function (d: any) {
+                var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
+                return (midangle < Math.PI ? 'start' : 'end')
+            })
+            .style('visibility', 'hidden')
+            .style("font-weight", 700)
+            .style("font-size", 10)
 
-        
+        var labelText = '';
+        svg
+            .on('mouseover', function (d: any) {
+                var label: any = document.getElementsByClassName(`label-${d.path[0].id}`);
+                labelText = label[0];
+                d3.select(labelText).style('visibility', 'visible');
+            })
+            .on('mouseout', function (d: any) {
+                d3.select(labelText).style('visibility', 'hidden');
+            })
     }
 
     return (

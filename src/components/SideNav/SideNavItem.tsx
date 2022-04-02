@@ -1,6 +1,6 @@
 import { List, Divider } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import SideNavSingleItem from './sideNavSingleItem';
+import SideNavSingleItem from './SideNavSingleItem';
 import NavItemAccordian from './navItemAccordian';
 
 type NavToggle = {
