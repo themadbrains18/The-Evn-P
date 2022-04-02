@@ -25,9 +25,9 @@ const DonutChartComp = () => {
 
     const drawChart = () => {
         d3.select("#chart").html("");
-        const width: any = 430;
-        const height: any = 358;
-        const margin: any = 15;
+        const width: any = 520;
+        const height: any = 450;
+        const margin: any = 90;
         let radius: any = Math.min(width, height) / 2 - margin;
         let legendPosition: any = d3.arc().innerRadius(radius / 1.75).outerRadius(radius);
 
@@ -57,8 +57,8 @@ const DonutChartComp = () => {
         const svg: any = d3.select("#chart")
             .append('svg')
             .attr("class", "tooltip-donut")
-            .attr("width", '430px')
-            .attr("height", '358px')
+            .attr("width", '520px')
+            .attr("height", '428px')
             .attr('viewBox', '0 0 ' + width + ' ' + height)
             .attr('preserveAspectRatio', 'xMinYMin')
             .append("g")
@@ -128,6 +128,7 @@ const DonutChartComp = () => {
                 var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
                 return (midangle < Math.PI ? 'start' : 'end')
             })
+            // .style('alignment-baseline', 'middle')
             .style('visibility', 'hidden')
             .style("font-weight", 700)
             .style("font-size", 10)
