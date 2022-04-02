@@ -57,3 +57,33 @@ rect.disabled {                                                 /* NEW */
 	transition: all 0.5s;
 }
 
+.label-0{
+	transform: translate(94.65px,-97.84033629002363px) !important;
+}
+.label-1{
+	transform: translate(137.65px,-1.927714605929156px) !important;
+}
+.label-2{
+	transform: translate(112.65px,90.54963063560419px) !important;
+}
+.label-3{
+	transform: translate(-91.65px,107.99350701157323px) !important;
+}
+.label-4{
+	transform: translate(-126.65px,56.940933px) !important;
+}
+.label-5{
+	transform: translate(-133.65px,35.644711px) !important;
+}
+.label-6{
+	transform: translate(-135.65px,1.9277146059291168px) !important;
+}
+.label-7{
+	transform: translate(-130.65px,-36.07582560238541px) !important;
+}
+.label-8{
+	transform: translate(-103.65px,-87.9336856297661px) !important;
+}
+.label-9{
+	transform: translate(-49.65px,-128.514719px) !important;
+}
