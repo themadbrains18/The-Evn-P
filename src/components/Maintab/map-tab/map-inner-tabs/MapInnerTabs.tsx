@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material';
 import { TabsUnstyled, TabsListUnstyled, TabPanelUnstyled, TabUnstyled, buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
 import AreaMapTab from './area-map-tab/areaMapTab';
 import MapLayerTab from './map-layer-tab/mapLayerTab';
-import LocationFinderTab from './location-finder-tab/locationFinderTab';
+import LocationFinderTab from './location-finder-tab/LocationFinderTab';
 import BasicStasticsTab from './basin-stastics-tab/basicStasticsTab';
 
 

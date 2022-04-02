@@ -30,3 +30,30 @@ button{
 .line-height-0{
     line-height: 0;
 }
+
+.tooltip {
+	color: #333;
+	font-size: 12px;
+	padding: 10px;
+	position: absolute;
+	text-align: center;
+	z-index: 999;
+	display: block;
+	opacity: 0;
+}
+.legend {
+	font-size: 12px;
+}
+rect {
+	cursor: pointer;                                              /* NEW */
+	stroke-width: 2;
+}
+rect.disabled {                                                 /* NEW */
+	fill: transparent !important;                                 /* NEW */
+}
+
+.tooltip-donut path:hover{
+	transform: translate(3px,3px);
+	transition: all 0.5s;
+}
+
