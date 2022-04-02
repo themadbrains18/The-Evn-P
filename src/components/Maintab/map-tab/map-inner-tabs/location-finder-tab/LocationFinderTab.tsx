@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { Typography, Box, Divider, List } from '@mui/material';
 import MapInnerTabHeading from "../mapInnerTabHeading";
 import LocationSearch from "./locationSearch";
-import SearchItems from "./SearchItems";
+import SearchItems from "./searchItems";
 import { makeStyles } from '@mui/styles';
 import { useState } from 'react';
 
