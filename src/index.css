@@ -1,34 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Spartan', sans-serif;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Spartan', sans-serif;
 }
 
 
-body{
-    color: #000000;
+body {
+	color: #000000;
 }
 
-a{
-    text-decoration: none;
+a {
+	text-decoration: none;
 }
 
-li{
-    list-style: none;
+li {
+	list-style: none;
 }
-img{
-    max-width: 100%;
+
+img {
+	max-width: 100%;
 }
-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
-.line-height-0{
-    line-height: 0;
+
+.line-height-0 {
+	line-height: 0;
 }
 
 .tooltip {
@@ -41,49 +44,75 @@ button{
 	display: block;
 	opacity: 0;
 }
+
 .legend {
 	font-size: 12px;
 }
+
 rect {
-	cursor: pointer;                                              /* NEW */
+	cursor: pointer;
+	/* NEW */
 	stroke-width: 2;
 }
-rect.disabled {                                                 /* NEW */
-	fill: transparent !important;                                 /* NEW */
+
+rect.disabled {
+	/* NEW */
+	fill: transparent !important;
+	/* NEW */
 }
 
-.tooltip-donut path:hover{
-	transform: translate(3px,3px);
+.tooltip-donut path:hover {
+	transform: translate(3px, 3px);
 	transition: all 0.5s;
 }
 
-.label-0{
-	transform: translate(94.65px,-97.84033629002363px) !important;
+.label-0 {
+	transform: translate(94.65px, -97.84033629002363px) !important;
 }
-.label-1{
-	transform: translate(137.65px,-1.927714605929156px) !important;
+
+.label-1 {
+	transform: translate(137.65px, -1.927714605929156px) !important;
 }
-.label-2{
-	transform: translate(112.65px,90.54963063560419px) !important;
+
+.label-2 {
+	transform: translate(112.65px, 90.54963063560419px) !important;
 }
-.label-3{
-	transform: translate(-91.65px,107.99350701157323px) !important;
+
+.label-3 {
+	transform: translate(-91.65px, 107.99350701157323px) !important;
 }
-.label-4{
-	transform: translate(-126.65px,56.940933px) !important;
+
+.label-4 {
+	transform: translate(-126.65px, 56.940933px) !important;
 }
-.label-5{
-	transform: translate(-133.65px,35.644711px) !important;
+
+.label-5 {
+	transform: translate(-133.65px, 35.644711px) !important;
 }
-.label-6{
-	transform: translate(-135.65px,1.9277146059291168px) !important;
+
+.label-6 {
+	transform: translate(-135.65px, 1.9277146059291168px) !important;
 }
-.label-7{
-	transform: translate(-130.65px,-36.07582560238541px) !important;
+
+.label-7 {
+	transform: translate(-130.65px, -36.07582560238541px) !important;
 }
-.label-8{
-	transform: translate(-103.65px,-87.9336856297661px) !important;
+
+.label-8 {
+	transform: translate(-103.65px, -87.9336856297661px) !important;
 }
-.label-9{
-	transform: translate(-49.65px,-128.514719px) !important;
+
+.label-9 {
+	transform: translate(-49.65px, -128.514719px) !important;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	/*   stroke: tomato; */
+	shape-rendering: crispEdges;
+}
+
+.bar {
+	fill: #339af0;
 }
