@@ -1,6 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 import DonutChartComp from './donutChart';
+import BarChart from './barChart';
 
 const useStyles = makeStyles({
     chartItem: {
@@ -24,7 +25,7 @@ const ReportChart = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <Box className={classes.chartItem}>
-                            <img src={require("../../../assets/img/piechart.jpg")} alt="" />
+                            <BarChart />
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
