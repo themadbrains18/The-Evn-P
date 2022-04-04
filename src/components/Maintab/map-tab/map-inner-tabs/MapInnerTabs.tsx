@@ -58,7 +58,7 @@ const TabsList = styled(TabsListUnstyled)`
 const MapInnerTabs = () => {
     return (
         <>
-            <Box sx={{ pt: 3.375, px: 3, height: "100%", background: "#fff" }}>
+            <Box sx={{ pt: 3.375, px: 3 }}>
                 <TabsUnstyled defaultValue={0} >
                     {/* ===  Tab List === */}
                     <TabsList>

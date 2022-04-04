@@ -9,7 +9,7 @@ const LineChart = () => {
                 </Typography>
 
                 <Box sx={{ textAlign: "center", mt: 2.5 }} >
-                    <img src={require("../../../../../assets/svg/inner-dout.svg").default} alt="" />
+                    <img src={require("../../../../../assets/img/LineChart.png")} alt="" />
                 </Box>
             </Box>
         </>

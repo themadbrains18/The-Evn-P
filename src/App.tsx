@@ -7,9 +7,9 @@ const useStyles = makeStyles({
   mainGrid: {
     display: 'grid',
     gridTemplateColumns: "auto 1fr",
-    minHeight: "100vh",
-  },
-
+    height: "100vh",
+    overflow: "hidden"
+  }
 });
 
 const theme = createTheme({

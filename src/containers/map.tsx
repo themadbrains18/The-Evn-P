@@ -6,11 +6,12 @@ import { Box } from "@mui/material";
 const Map = () => {
     return (
         <>
-            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 369px", height: "100%", width: "100%" }}>
+            <Box sx={{ display: "grid", gridTemplateColumns: "1fr 369px", height: "100%"  }}>
+                {/* margin user for hide scroll bar */}
                 <Box>
                     <MapArea />
                 </Box>
-                <Box>
+                <Box sx={{overflowY:"scroll",overflowX:"hidden", background: "#fff"}}>
                     <MapInnerTabs />
                 </Box>
             </Box>
@@ -20,7 +21,3 @@ const Map = () => {
 }
 
 export default Map;
-
-
-
-

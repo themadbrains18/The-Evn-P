@@ -5,7 +5,7 @@ import LocationCardList from "../components/Maintab/settings-tab/locationCardLis
 const Setting = () => {
     return (
         <>
-            <Box sx={{ p: 4.75, height: "100%" }}>
+            <Box sx={{ p: 4.75 }}>
                 <Box >
                     <TabHeader
                         tabheading="Permian Basin Report"

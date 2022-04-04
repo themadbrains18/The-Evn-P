@@ -5,7 +5,7 @@ import ReportChart from "../components/Maintab/report-tab/reportChart";
 const Reports = () => {
     return (
         <>
-            <Box sx={{ p: 4.75, height: "100%" }}>
+            <Box sx={{ p: 4.75}}>
                 <Box >
                     <TabHeader
                         tabheading="Permian Basin Report"

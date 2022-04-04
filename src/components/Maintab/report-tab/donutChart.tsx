@@ -18,7 +18,6 @@ const donutData: any = [
 ];
 
 const DonutChartComp = () => {
-
     useEffect(() => {
         drawChart()
     }, []);
@@ -117,12 +116,12 @@ const DonutChartComp = () => {
             .append('text')
             .attr("class", (d: any) => `label label-${d.index}`)
             .text(function (d: any) { return d.data.label })
-            // .attr('transform', function (d: any) {
-            //     var pos = outerArc.centroid(d);
-            //     var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
-            //     pos[0] = radius * 0.99 * (midangle < Math.PI ? 1 : -1);
-            //     return 'translate(' + pos + ')';
-            // })
+            .attr('transform', function (d: any) {
+                var pos = outerArc.centroid(d);
+                var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
+                pos[0] = radius * 0.99 * (midangle < Math.PI ? 1 : -1);
+                return 'translate(' + pos + ')';
+            })
             .style('text-anchor', function (d: any) {
                 var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
                 return (midangle < Math.PI ? 'start' : 'end')
