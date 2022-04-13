@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { makeStyles } from '@mui/styles';
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 
@@ -35,56 +34,44 @@ const SideNavItems = [
         "NavItemLink": "/Logout",
     },
 ];
-const useStyles = makeStyles({
-    nav_list_item: {
-        padding: "0",
-        '&:last-child': {
-            marginBottom: 0
-        },
-    },
-    nav_list__btn: {
-        padding: "8px 10px!important",
-        "&:hover,&.active": {
-            backgroundColor: "#F2F6FE!important",
-            "& svg,path": {
-                fill: "#0F75BC"
-            },
-            "& span": {
-                fontWeight: "600",
-                color: "#0F75BC",
-            },
-        }
-    },
-    nav_list__icon: {
-        minWidth: "auto!important",
-        marginRight: "16px",
-        "& svg,path": {
-            fill: "#8794C3"
-        }
-    },
-    nav_list__txt: {
-        "& span": {
-            fontSize: "14px",
-            fontWeight: "500",
-            color: "#8794C4",
-            lineHeight: "15.68px",
-        },
 
-    },
-});
 
 const SideNavSingleItem = () => {
-    const classes = useStyles();
     return (
         <>
             {SideNavItems.map((elem, index) => {
                 return (
-                    <ListItem key={index} sx={{ p: 0, mb: 3 }} className={classes.nav_list_item}>
-                        <ListItemButton component={NavLink} to={elem.NavItemLink} className={classes.nav_list__btn}>
-                            <ListItemIcon className={classes.nav_list__icon}>
+                    <ListItem key={index} sx={{ p: 0, mb: 3, padding: "0", '&:last-child': { marginBottom: 0 } }}>
+                        <ListItemButton component={NavLink} to={elem.NavItemLink} sx={{
+                            padding: "8px 10px!important",
+                            "&:hover,&.active": {
+                                backgroundColor: "#F2F6FE!important",
+                                "& svg,path": {
+                                    fill: "#0F75BC"
+                                },
+                                "& span": {
+                                    fontWeight: "600",
+                                    color: "#0F75BC",
+                                },
+                            }
+                        }}>
+                            <ListItemIcon sx={{
+                                minWidth: "auto!important",
+                                marginRight: "16px",
+                                "& svg,path": {
+                                    fill: "#8794C3"
+                                }
+                            }}>
                                 {elem.NavItemIcon}
                             </ListItemIcon>
-                            <ListItemText primary={elem.NavItemTxt} className={classes.nav_list__txt} sx={{ m: 0 }} />
+                            <ListItemText primary={elem.NavItemTxt} sx={{
+                                m: 0, "& span": {
+                                    fontSize: "14px",
+                                    fontWeight: "500",
+                                    color: "#8794C4",
+                                    lineHeight: "1",
+                                }
+                            }} />
                         </ListItemButton>
                     </ListItem>
                 )

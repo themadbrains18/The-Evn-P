@@ -1,5 +1,4 @@
 import { List, Divider } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 import SideNavSingleItem from './sideNavSingleItem';
 import NavItemAccordian from './navItemAccordian';
 
@@ -7,21 +6,12 @@ type NavToggle = {
     toggleNav: Boolean
 }
 
-const useStyles = makeStyles({
-    divider: {
-        border: "none!important",
-        height: "2px",
-        background: "#F2F6FE",
-        width: "160px",
-    },
-});
 
 const SideNavItem = (props: NavToggle) => {
-    const classes = useStyles();
     return (
         <>
             {/* Divider */}
-            <Divider className={classes.divider} sx={{ my: 3 }} />
+            <Divider sx={{ my: 3, border: "none!important", height: "2px", background: "#F2F6FE", width: "160px" }} />
 
             {/* Nav List */}
             <List sx={{ p: 0 }}>
@@ -30,7 +20,7 @@ const SideNavItem = (props: NavToggle) => {
             </List>
 
             {/* Divider */}
-            <Divider className={classes.divider} sx={{ my: 3, p: 0 }} />
+            <Divider sx={{ my: 3, p: 0, border: "none!important", height: "2px", background: "#F2F6FE", width: "160px" }} />
 
             {/* Nav Drop Down */}
             <NavItemAccordian checkToggle={props.toggleNav} />

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const BasicStasticsTab = () => {
     return (
         <>
-            <Box sx={{ overflowY: "scroll", overflowX: "hidden" }}>
+            <Box sx={{ paddingBottom: "80px", overflow: "hidden" }}>
                 <Box>
                     <MapInnerTabHeading heading={"Basic Stastics"} />
                     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -40,7 +40,7 @@ const BasicStasticsTab = () => {
                     {/* Map Data List */}
                     <MapDataList />
                 </Box>
-                <Box to="/dashboard" component={Link} sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "25px", padding: "18px 0", borderTop: " 1px solid #0000001f", position: "fixed", right: 0, bottom: "0", width: "369px", background: "#fff" }}>
+                <Box to="/dashboard" component={Link} sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "25px", padding: "18px 0", borderTop: " 1px solid #0000001f", position: "fixed", right: "4px", bottom: "0", width: "369px", background: "#fff" }}>
                     <Typography component={"span"} sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", textDecoration: "underline" }}>
                         See report for this selection
                     </Typography>

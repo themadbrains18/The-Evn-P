@@ -1,6 +1,4 @@
-
 import { List, ListItem, FormControlLabel, Checkbox, Box, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 
 
 
@@ -246,27 +244,6 @@ const mpaLayerDate = [
 ]
 
 
-const useStyles = makeStyles({
-    maplayer_formcontrol: {
-        "& svg": {
-            color: "rgba(0, 0, 0, 0.2)",
-            height: "24px",
-            width: "24px",
-        },
-        "& path": {
-            boxShadow: "0px 0px 25px rgba(0, 0, 0, 0.25)",
-        },
-        "& .Mui-checked svg path": {
-            color: "#5D5FEF",
-        },
-        "& span": {
-            fontWeight: "500",
-            fontSize: "14px",
-            lineHeight: "16px",
-            color: "#333333",
-        }
-    },
-});
 
 const checkInput = (e: any) => {
     console.log(e.target.closest(".maplayer_item").querySelector(".layer_guide").scrollHeight)
@@ -279,7 +256,6 @@ const checkInput = (e: any) => {
 }
 
 const MapLayerListItem = () => {
-    const classes = useStyles();
     return (
         <>
             <List sx={{ padding: 0 }} className="list">
@@ -287,7 +263,25 @@ const MapLayerListItem = () => {
                     return (
                         <ListItem key={item.id} disablePadding sx={{ mb: 2.75, display: 'block' }} className="maplayer_item">
                             {/* Check Box */}
-                            <FormControlLabel sx={{ mr: 0, my: -1.875 }} className={classes.maplayer_formcontrol} control={<Checkbox name={item.checkboxName} onClick={checkInput} />} label={item.labelText} />
+                            <FormControlLabel sx={{
+                                mr: 0, my: -1.875, "& svg": {
+                                    color: "rgba(0, 0, 0, 0.2)",
+                                    height: "24px",
+                                    width: "24px",
+                                },
+                                "& path": {
+                                    boxShadow: "0px 0px 25px rgba(0, 0, 0, 0.25)",
+                                },
+                                "& .Mui-checked svg path": {
+                                    color: "#5D5FEF",
+                                },
+                                "& span": {
+                                    fontWeight: "500",
+                                    fontSize: "14px",
+                                    lineHeight: "16px",
+                                    color: "#333333",
+                                }
+                            }} control={<Checkbox name={item.checkboxName} onClick={checkInput} />} label={item.labelText} />
                             <Box sx={{ pl: 4, height: 0, overflow: "hidden", transition: "0.3s linear" }} className="layer_guide">
                                 {item.guide.map((guideItem) => {
                                     return (

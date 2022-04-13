@@ -1,5 +1,4 @@
 import { Box, Button, Typography, Divider, Input } from "@mui/material";
-import { makeStyles } from '@mui/styles';
 import { useState } from "react";
 
 type headerData = {
@@ -11,39 +10,9 @@ type headerData = {
     headerOption: "Search" | "MapView" | ""
 
 }
-const useStyles = makeStyles({
-    bglayer: {
-        position: "fixed",
-        top: "0",
-        left: "0",
-        background: "transparent",
-        height: "100%",
-        width: "100%",
-        zIndex: "8"
-    },
-    headerinput: {
-        position: "relative",
-        zIndex: "9",
-        width: "250px",
-        transition: "0.5s",
-        fontWeight: "400",
-        fontSize: 16,
-        lineHeight: "18px",
-        color: "#1D8CD4",
-        textTransform: 'capitalize',
-        "& input::placeholder": {
-            transition: "0.5s",
-            fontWeight: "400",
-            fontSize: 16,
-            lineHeight: "18px",
-            color: "#1D8CD4"
-        },
-    },
-})
+
 
 const TabHeader = (props: headerData) => {
-    const classes = useStyles();
-
     const [InputToggle, SetInputToggle] = useState(false)
     const InputButton = () => {
         SetInputToggle(!InputToggle)
@@ -59,30 +28,45 @@ const TabHeader = (props: headerData) => {
                 </Box>
                 <Box>
                     {/* Search Option */}
-                    {props.headerOption === "Search" &&
-                        (
-                            <>
-                                {!InputToggle && (
-                                    <>
-                                        <Button variant="text" sx={{ alignItems: "center" }} onClick={InputButton}>
-                                            <img src={require("../../../assets/svg/search.svg").default} alt="Search" />
-                                            <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1.38 }}>
-                                                Search
-                                            </Typography>
-                                        </Button>
-                                    </>
-                                )}
-                                {InputToggle && (
-                                    <>
-                                        <Input className={classes.headerinput} placeholder="Search" autoFocus />
-                                        <Typography className={classes.bglayer} component={"span"} onClick={InputButton}>
-                                        </Typography  >
-                                    </>
-                                )
-                                }
-                            </>
-                        )
-                    }
+                    {props.headerOption === "Search" && (
+                        <>
+                            {!InputToggle && (
+                                <>
+                                    <Button variant="text" sx={{ alignItems: "center" }} onClick={InputButton}>
+                                        <img src={require("../../../assets/svg/search.svg").default} alt="Search" />
+                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1.38 }}>
+                                            Search
+                                        </Typography>
+                                    </Button>
+                                </>
+                            )}
+                            {InputToggle && (
+                                <>
+                                    <Input sx={{
+                                        position: "relative",
+                                        zIndex: "9",
+                                        width: "250px",
+                                        transition: "0.5s",
+                                        fontWeight: "400",
+                                        fontSize: 16,
+                                        lineHeight: "18px",
+                                        color: "#1D8CD4",
+                                        textTransform: 'capitalize',
+                                        "& input::placeholder": {
+                                            transition: "0.5s",
+                                            fontWeight: "400",
+                                            fontSize: 16,
+                                            lineHeight: "18px",
+                                            color: "#1D8CD4"
+                                        }
+                                    }} placeholder="Search" autoFocus />
+                                    <Typography sx={{ position: "fixed", top: "0", left: "0", background: "transparent", height: "100%", width: "100%", zIndex: "8" }} component={"span"} onClick={InputButton}>
+                                    </Typography  >
+                                </>
+                            )
+                            }
+                        </>
+                    )}
 
                     {/* Map View */}
                     {props.headerOption === "MapView" &&

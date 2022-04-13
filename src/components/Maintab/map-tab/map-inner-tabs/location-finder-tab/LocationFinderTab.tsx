@@ -2,62 +2,7 @@ import { Typography, Box, Divider, List, Paper, InputBase, IconButton, Button } 
 import MapInnerTabHeading from "../mapInnerTabHeading";
 import LocationSearch from "./locationSearch";
 import SearchItems from "./searchItems";
-import { makeStyles } from '@mui/styles';
 import { useState } from 'react';
-
-// Search Dropdown Option Data
-const useStyles = makeStyles({
-
-    map_location_btn: {
-        "&:hover": {
-            backgroundColor: '#0F75BC!important',
-            color: "#fff"
-        }
-    },
-    choose_file: {
-        background: "#8794C4",
-        borderRadius: " 6px",
-        color: "#fff",
-        padding: "6px 8px",
-        textAlign: "center",
-        cursor: "pointer",
-        display: "inline-block"
-    },
-    empty_line: {
-        height: "1px",
-        width: "100%",
-        background: "#000",
-        display: "block"
-    },
-    dropdown_items: {
-        position: "absolute",
-        top: "150px",
-        background: "#fff",
-        width: "100%",
-        left: "50%",
-        transform: "translateX(-50%)",
-        boxShadow: "0 0 10px #ccc",
-        borderRadius: "4px",
-        padding: "10px",
-    },
-    option_items: {
-        "&::-webkit-scrollbar": {
-            width: "5px",
-        },
-        "&::-webkit-scrollbar-thumb": {
-            width: "10px",
-            background: "#ccc"
-        }
-    },
-
-    input_browse: {
-        display: "none"
-    },
-});
-
-
-
-
 
 const LocationFinderTab = () => {
     const [fileUploadName, SetFileUploadName] = useState('');
@@ -87,7 +32,7 @@ const LocationFinderTab = () => {
         // Empty file Field  
         removeFile();
     }
-    
+
     const submitBtn = () => {
         setitemvalue((olditems: any) => {
             return [...olditems, searchValue]
@@ -95,7 +40,6 @@ const LocationFinderTab = () => {
         SetsearchValue("");
     }
 
-    const classes = useStyles();
 
     const clearData = (id: any) => {
         if (id !== 'undefined') {
@@ -126,7 +70,7 @@ const LocationFinderTab = () => {
                     {/* Location Search */}
                     <Typography component={"h4"} sx={{ fontSize: "14px", marginTop: "22px", lineHeight: "16px", fontWeight: "500", color: "#000000", marginBottom: "10px", }} >Location Search</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
-                        
+
                         <InputBase onClick={opendropdownBtn} onChange={searchBtn} value={searchValue} sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }} placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
                         <IconButton onClick={submitBtn} type="submit" sx={{ p: '11px' }} aria-label="search">
                             <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,8 +92,16 @@ const LocationFinderTab = () => {
                                 textAlign: "center"
                             }} component={"h5"}>Drop CSV file or browse</Typography>
                             <Box sx={{ marginTop: "10px", textAlign: "center" }}>
-                                <label className={classes.choose_file} htmlFor="ChooseFile"> Browse</label>
-                                <input className={classes.input_browse} type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
+                                <Box component="label" sx={{
+                                    background: "#8794C4",
+                                    borderRadius: " 6px",
+                                    color: "#fff",
+                                    padding: "6px 8px",
+                                    textAlign: "center",
+                                    cursor: "pointer",
+                                    display: "inline-block"
+                                }} htmlFor="ChooseFile"> Browse</Box>
+                                <Box component="input" sx={{ display: "none" }} type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
                             </Box>
                         </Box>
 
@@ -187,27 +139,45 @@ const LocationFinderTab = () => {
 
                     {/* Buttons  */}
                     <Box sx={{ marginTop: "27px", textAlign: "end" }}>
-                        <Button className={classes.map_location_btn} sx={{
+                        <Button sx={{
                             border: "1px solid #0F75BC", borderRadius: "6px", padding: "16px 29px", color: "#0F75BC",
                             fontWeight: "600",
                             fontSize: "14px",
                             lineHeight: "1",
+                            "&:hover": {
+                                backgroundColor: '#0F75BC',
+                                color: "#fff"
+                            }
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
-                        <Button className={classes.map_location_btn} sx={{
+                        <Button sx={{
                             border: "1px solid #0F75BC", borderRadius: "6px", padding: "16px 29px", color: "#0F75BC", marginLeft: "14px",
                             fontWeight: "600",
                             fontSize: "14px",
                             lineHeight: "1",
+                            "&:hover": {
+                                backgroundColor: '#0F75BC',
+                                color: "#fff"
+                            }
                         }} variant="outlined">Go</Button>
                     </Box>
 
                     {/* Search dropdown */}
                     {removeDropdown && (
-                        <Box className={classes.dropdown_items}>
+                        <Box sx={{
+                            position: "absolute",
+                            top: "150px",
+                            background: "#fff",
+                            width: "100%",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            boxShadow: "0 0 10px #ccc",
+                            borderRadius: "4px",
+                            padding: "10px",
+                        }}>
                             {/* Search Options */}
                             <LocationSearch itemsNumber={itemoutput.length} clearData={clearData} />
-                            <List className={classes.option_items} sx={{ maxHeight: "400px", overflowY: "scroll" }} component="ul">
+                            <List sx={{ maxHeight: "400px", overflowY: "scroll" }} component="ul">
                                 {itemoutput.map((itemvalue, index) => {
                                     return (
                                         <SearchItems

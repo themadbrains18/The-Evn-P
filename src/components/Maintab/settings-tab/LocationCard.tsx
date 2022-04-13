@@ -1,37 +1,6 @@
 import { Box, Typography, Checkbox, Grid } from "@mui/material";
-import { makeStyles } from '@mui/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-
-const useStyles = makeStyles({
-    location_card: {
-        padding: "30px",
-        borderRadius: "5px",
-        background: "#F9FAFC"
-    },
-
-    card_heading: {
-        borderBottom: "1px solid rgba(135, 148, 195, 0.3)",
-        paddingBottom: "20px",
-        textAlign: "center"
-    },
-    checkbox_txt: {
-        "& svg": {
-            color: "rgba(0, 0, 0, 0.2)",
-            height: "24px",
-            width: "24px",
-        },
-        "& span": {
-            fontWeight: "400",
-            fontSize: "14px",
-            lineHeight: "16px",
-            color: "#8794C3",
-        },
-        "& .Mui-checked svg path": {
-            color: "#5D5FEF",
-        },
-    },
-});
 
 
 const checckBoxList = [
@@ -83,20 +52,34 @@ const checckBoxList = [
 
 // Checkbox
 const LocationCard = (props: any) => {
-    const classes = useStyles();
     return (
         <>
             <Grid sx={{ mt: "24px" }} item xs={4}>
-                <Box className={classes.location_card}>
-                    <Typography className={classes.card_heading} sx={{ color: "#000", fontWeight: 600, fontSize: "20px", lineHeight: "22px" }} component={"h3"}>
+                <Box sx={{ padding: "30px", borderRadius: "5px", background: "#F9FAFC" }}>
+                    <Typography sx={{ color: "#000", fontWeight: 600, fontSize: "20px", lineHeight: "22px", borderBottom: "1px solid rgba(135, 148, 195, 0.3)", paddingBottom: "20px", textAlign: "center" }} component={"h3"}>
                         {props.cardHeading}
                     </Typography>
                     <FormGroup>
                         <Grid sx={{ mt: "16px" }} container spacing={2}>
-                            {checckBoxList.map((item) => {
+                            {checckBoxList.map((item, index) => {
                                 return (
-                                    <Grid item xs={6}>
-                                        <FormControlLabel className={classes.checkbox_txt} sx={{ color: "#8794C3", fontWeight: "500", fontSize: "14px", lineHeight: "16px" }}
+                                    <Grid key={index} item xs={6}>
+                                        <FormControlLabel sx={{
+                                            color: "#8794C3", fontWeight: "500", fontSize: "14px", lineHeight: "16px", "& svg": {
+                                                color: "rgba(0, 0, 0, 0.2)",
+                                                height: "24px",
+                                                width: "24px",
+                                            },
+                                            "& span": {
+                                                fontWeight: "400",
+                                                fontSize: "14px",
+                                                lineHeight: "16px",
+                                                color: "#8794C3",
+                                            },
+                                            "& .Mui-checked svg path": {
+                                                color: "#5D5FEF",
+                                            },
+                                        }}
                                             control={<Checkbox name={item.CheckboxLabelName} />} label={item.CheckboxLabel} />
                                     </Grid>
                                 )

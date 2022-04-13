@@ -5,12 +5,14 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Spartan', sans-serif;
+	scrollbar-width: none;
 }
 
 
 body {
 	color: #000000;
 }
+
 
 a {
 	text-decoration: none;
@@ -34,46 +36,20 @@ button {
 	line-height: 0;
 }
 
+/* custom Scroll bar */
 /* width */
 ::-webkit-scrollbar {
 	width: 4px;
 }
+
 /* Track */
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 1px #F2F6FE;
 	border-radius: 10px;
+	background: transparent;
 }
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #0F75BC;
 	border-radius: 10px;
 }
-
-/* .tooltip {
-	color: #333;
-	font-size: 12px;
-	padding: 10px;
-	position: absolute;
-	text-align: center;
-	z-index: 999;
-	display: block;
-	opacity: 0;
-}
-
-.legend {
-	font-size: 12px;
-}
-
-rect {
-	cursor: pointer;
-	stroke-width: 2;
-}
-
-rect.disabled {
-	fill: transparent !important;
-}
-
-.tooltip-donut path:hover {
-	transform: translate(3px, 3px);
-	transition: all 0.5s;
-} */

@@ -1,28 +1,7 @@
-import { makeStyles } from '@mui/styles';
 import { Card, CardActions, CardMedia, Button, Typography, Box, Grid } from '@mui/material';
 import mapCardApi from '../../../api/mapCards-api.json';
 
-const useStyles = makeStyles({
-    card_info: {
-        "&:nth-child(2)": {
-            textAlign: "center",
-        },
-        "&:last-child": {
-            textAlign: "right",
-            border: "none"
-        }
-    },
-    map_card: {
-        "&:hover": {
-            boxShadow: "0px 0px 15px #b6b8bd"
-        }
-    }
-});
-
-
 const MapCard = () => {
-    const classes = useStyles();
-
     return (
         <Box mt={2.75}>
             {/* // Common Grid Cards */}
@@ -30,9 +9,12 @@ const MapCard = () => {
                 {mapCardApi.map_card.map((elem) => {
                     return (
                         <Grid item xs={4} key={elem.id}>
-                            <Card className={classes.map_card} sx={{
+                            <Card sx={{
                                 background: "#FDFDFD",
-                                boxShadow: "0px 0px 10px #F3F4F6"
+                                boxShadow: "0px 0px 10px #F3F4F6",
+                                "&:hover": {
+                                    boxShadow: "0px 0px 15px #b6b8bd"
+                                }
                             }}>
                                 <Box component="div" sx={{ position: "relative" }}>
                                     {/* Card Image */}
@@ -80,7 +62,16 @@ const MapCard = () => {
                                     <Box component="div" sx={{ display: "flex", alignItems: "center", mt: 3, mx: -0.5 }}>
                                         {elem.map_card_info.map((card) => {
                                             return (
-                                                <Box key={card.id} className={classes.card_info} component="div" sx={{ display: "block", borderRight: 1, borderColor: "#D4D4D4", px: 0.5, lineHeight: 1, width: "33.333%" }}>
+                                                <Box key={card.id} component="div" sx={{
+                                                    display: "block", borderRight: 1, borderColor: "#D4D4D4", px: 0.5, lineHeight: 1, width: "33.333%", textAlign: "center",
+                                                    "&:first-of-type": {
+                                                        textAlign: "left",
+                                                    },
+                                                    "&:last-child": {
+                                                        textAlign: "right",
+                                                        border: "none"
+                                                    }
+                                                }}>
                                                     <Typography component="h4" sx={{
                                                         display: "inline-block", fontSize: 16,
                                                         fontWeight: 500,
