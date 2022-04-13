@@ -1,6 +1,6 @@
-import TabHeader from "../components/Header/tabHeader";
+import TabHeader from "../components/header/tabHeader";
 import { Box } from "@mui/material";
-import LocationCardList from "../components/Maintab/settingsTab/locationCardList";
+import LocationCardList from "../components/mainTab/settingsTab/locationCardList";
 
 const Setting = () => {
     return (

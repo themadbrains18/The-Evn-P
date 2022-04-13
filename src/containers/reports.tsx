@@ -1,6 +1,6 @@
-import TabHeader from "../components/Header/tabHeader";
+import TabHeader from "../components/header/tabHeader";
 import { Box } from "@mui/material";
-import ReportChart from "../components/Maintab/reportTab/reportChart";
+import ReportChart from "../components/mainTab/reportTab/reportChart";
 
 const Reports = () => {
     return (

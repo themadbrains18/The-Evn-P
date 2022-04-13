@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider, Box, } from '@mui/material';
-import SideNav from './components/SideNav/sideNav';
+import SideNav from './components/leftSideNav/sideNav';
 import Route from './routes/index'
 
 
