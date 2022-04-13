@@ -1,5 +1,5 @@
 import TabHeader from "../components/Header/tabHeader";
-import MapCard from "../components/Maintab/dashboard-tab/mapCard";
+import MapCard from "../components/Maintab/dashboardTab/mapCard";
 import { Box } from "@mui/material";
 
 

@@ -1,12 +1,53 @@
 import { Box, styled } from '@mui/material';
 import { TabsUnstyled, TabsListUnstyled, TabPanelUnstyled, TabUnstyled, buttonUnstyledClasses, tabUnstyledClasses } from '@mui/base';
-import AreaMapTab from './area-map-tab/areaMapTab';
-import MapLayerTab from './map-layer-tab/mapLayerTab';
-import LocationFinderTab from './location-finder-tab/locationFinderTab';
-import BasicStasticsTab from './basin-stastics-tab/basicStasticsTab';
+import AreaMapTab from './areaMapTab/areaMapTab';
+import MapLayerTab from './mapLayerTab/mapLayerTab';
+import LocationFinderTab from './locationFinderTab/locationFinderTab';
+import BasicStasticsTab from './basinStasticsTab/basicStasticsTab';
+// import { makeStyles } from '@mui/styles';
 
+
+
+
+// const useStyles = makeStyles({
+//     map_inner_tabs_btn: {
+//         position: "relative",
+//         "&:first-child": {
+//             "&::before": {
+//                 display: "none"
+//             }
+//         },
+
+//         "&.Mui-selected": {
+//             "&::before": {
+//                 display: "none"
+//             },
+//             "& + *": {
+//                 "&::before": {
+//                     display: "none"
+//                 }
+//             },
+//         },
+
+//         "&::before": {
+//             content: "''!important",
+//             position: "absolute",
+//             top: "50%",
+//             transform: "translateY(-50%)",
+//             left: "0",
+//             height: "calc(100% - 10px)",
+//             width: "1px",
+//             background: "#0000001a",
+//         }
+
+//     },
+// });
 
 const Tab = styled(TabUnstyled)`
+position: relative;
+
+
+ 
   color: white;
   cursor: pointer;
   width: 100%;
@@ -26,17 +67,37 @@ const Tab = styled(TabUnstyled)`
   &:focus {
     fill:#fff;
   }
+  &::before {
+    content: ''!important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: calc(100% - 10px);
+    width: 1px;
+    background: #0000001a;
+   };
+   &:first-of-type::before {
+      display: none
+   };
   &.${tabUnstyledClasses.selected} {
     background-color: #0F75BC;
     & svg,
     & path{
-        fill:#fff!important;
-    }
+      fill:#fff!important;
+    };
+    &::before {
+      display: none;
+    };
+    & + button::before  {
+      display: none
+    };
   }
   &.${buttonUnstyledClasses.disabled} {
     opacity: 0.5;
     cursor: not-allowed;
   }
+
 `;
 
 const TabPanel = styled(TabPanelUnstyled)`
@@ -56,6 +117,8 @@ const TabsList = styled(TabsListUnstyled)`
 `;
 
 const MapInnerTabs = () => {
+    // const classes = useStyles();
+
     return (
         <>
             <Box sx={{ pt: 3.375, px: 3 }}>

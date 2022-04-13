@@ -246,7 +246,6 @@ const mpaLayerDate = [
 
 
 const checkInput = (e: any) => {
-    console.log(e.target.closest(".maplayer_item").querySelector(".layer_guide").scrollHeight)
     let layerGuideHeight = e.target.closest(".maplayer_item").querySelector(".layer_guide").scrollHeight;
     if (e.target.checked) {
         e.target.closest(".maplayer_item").querySelector(".layer_guide").setAttribute("style", `height:${layerGuideHeight}px`);

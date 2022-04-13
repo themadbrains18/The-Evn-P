@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.62f64a43.css",
-    "main.js": "./static/js/main.c1eafa75.js",
+    "main.css": "./static/css/main.b103d9d2.css",
+    "main.js": "./static/js/main.eb908111.js",
     "static/js/787.94c7c0a2.chunk.js": "./static/js/787.94c7c0a2.chunk.js",
     "static/media/piechart.jpg": "./static/media/piechart.45fb716726662b00a8c7.jpg",
     "static/media/denver-julesburg.jpg": "./static/media/denver-julesburg.3b38b715ec311899407d.jpg",
@@ -19,12 +19,12 @@
     "index.html": "./index.html",
     "static/media/dashboard-hover.svg": "./static/media/dashboard-hover.f1d31b5e51bf22a9f1e4.svg",
     "static/media/download-icon.svg": "./static/media/download-icon.eb37770b434f161fad8c78a67eb5e54f.svg",
-    "main.62f64a43.css.map": "./static/css/main.62f64a43.css.map",
-    "main.c1eafa75.js.map": "./static/js/main.c1eafa75.js.map",
+    "main.b103d9d2.css.map": "./static/css/main.b103d9d2.css.map",
+    "main.eb908111.js.map": "./static/js/main.eb908111.js.map",
     "787.94c7c0a2.chunk.js.map": "./static/js/787.94c7c0a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62f64a43.css",
-    "static/js/main.c1eafa75.js"
+    "static/css/main.b103d9d2.css",
+    "static/js/main.eb908111.js"
   ]
 }

@@ -1,6 +1,6 @@
 
-import MapArea from "../components/Maintab/map-tab/mapArea";
-import MapInnerTabs from "../components/Maintab/map-tab/map-inner-tabs/mapInnerTabs";
+import MapArea from "../components/Maintab/mapTab/mapArea";
+import MapInnerTabs from "../components/Maintab/mapTab/mapRightInnerTabs/mapInnerTabs";
 import { Box } from "@mui/material";
 
 const Map = () => {
