@@ -10,5 +10,5 @@ const MapInnerTabHeading = (props: heading) => {
         </Typography>
     )
 }
-
+ 
 export default MapInnerTabHeading;
