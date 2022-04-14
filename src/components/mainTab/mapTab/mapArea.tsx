@@ -14,7 +14,6 @@ const MapArea = () => {
                     mapTypeId: "grayscale",
                 }}
             />
-
         </>
     );
 }

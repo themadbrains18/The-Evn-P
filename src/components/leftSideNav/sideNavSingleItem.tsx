@@ -35,15 +35,14 @@ const SideNavItems = [
     },
 ];
 
-
 const SideNavSingleItem = () => {
     return (
         <>
             {SideNavItems.map((elem, index) => {
                 return (
-                    <ListItem key={index} sx={{ p: 0, mb: 3, padding: "0", '&:last-child': { marginBottom: 0 } }}>
+                    <ListItem key={index} sx={{ p: 0, mb: { lg: 3, xs: 2 }, padding: "0", '&:last-child': { marginBottom: 0 } }}>
                         <ListItemButton component={NavLink} to={elem.NavItemLink} sx={{
-                            padding: "8px 10px!important",
+                            padding: { lg: "6px 10px!important", xs: "5px 10px!important" },
                             "&:hover,&.active": {
                                 backgroundColor: "#F2F6FE!important",
                                 "& svg,path": {
@@ -57,7 +56,10 @@ const SideNavSingleItem = () => {
                         }}>
                             <ListItemIcon sx={{
                                 minWidth: "auto!important",
-                                marginRight: "16px",
+                                marginRight: { lg: "16px", xs: "12px" },
+                                "& svg": {
+                                    width: { lg: "initial", xs: "26px" }
+                                },
                                 "& svg,path": {
                                     fill: "#8794C3"
                                 }
@@ -66,7 +68,7 @@ const SideNavSingleItem = () => {
                             </ListItemIcon>
                             <ListItemText primary={elem.NavItemTxt} sx={{
                                 m: 0, "& span": {
-                                    fontSize: "14px",
+                                    fontSize: { lg: "14px ", xs: "12px " },
                                     fontWeight: "500",
                                     color: "#8794C4",
                                     lineHeight: "1",

@@ -1,209 +1,208 @@
 {
-    "map_card" : [
+    "map_card": [
         {
-            "id" : 0,
-            "map_card_name" : "Appalachian",
-            "map_card_img" : "appalachian",
-            "map_card_links" : [
+            "id": 0,
+            "map_card_name": "Appalachian",
+            "map_card_img": "appalachian",
+            "map_card_links": [
                 {
-                    "id" : 0,
-                    "link_svg" : "map-icon",
-                    "link_txt" : "Map"
+                    "id": 0,
+                    "link_svg": "map-icon",
+                    "link_txt": "Map"
                 },
                 {
-                    "id" : 1,
-                    "link_svg" : "report-icon",
-                    "link_txt" : "Report"
+                    "id": 1,
+                    "link_svg": "report-icon",
+                    "link_txt": "Report"
                 }
             ],
-            "map_card_info" : [
+            "map_card_info": [
                 {
-                    "id" : 0,
-                    "info_heading" : "5,400",
-                    "info_txt" : "Locations Surveyed"
+                    "id": 0,
+                    "info_heading": "5,400",
+                    "info_txt": "Locations Surveyed"
                 },
                 {
-                    "id" : 1,
-                    "info_heading" : "2.4%",
-                    "info_txt" : "Survey in 12 Months"
+                    "id": 1,
+                    "info_heading": "2.4%",
+                    "info_txt": "Survey in 12 Months"
                 },
                 {
-                    "id" : 2,
-                    "info_heading" : "04/23/22",
-                    "info_txt" : "Latest Survey Date"
+                    "id": 2,
+                    "info_heading": "04/23/22",
+                    "info_txt": "Latest Survey Date"
                 }
             ]
         },
         {
-            "id" : 1,
-            "map_card_name" : "Bakken",
-            "map_card_img" : "bakken",
-            "map_card_links" : [
+            "id": 1,
+            "map_card_name": "Bakken",
+            "map_card_img": "bakken",
+            "map_card_links": [
                 {
-                    "id" : 0,
-                    "link_svg" : "map-icon",
-                    "link_txt" : "Map"
+                    "id": 0,
+                    "link_svg": "map-icon",
+                    "link_txt": "Map"
                 },
                 {
-                    "id" : 1,
-                    "link_svg" : "report-icon",
-                    "link_txt" : "Report"
+                    "id": 1,
+                    "link_svg": "report-icon",
+                    "link_txt": "Report"
                 }
             ],
-            "map_card_info" : [
+            "map_card_info": [
                 {
-                    "id" : 0,
-                    "info_heading" : "5,400",
-                    "info_txt" : "Locations Surveyed"
+                    "id": 0,
+                    "info_heading": "5,400",
+                    "info_txt": "Locations Surveyed"
                 },
                 {
-                    "id" : 1,
-                    "info_heading" : "6.7%",
-                    "info_txt" : "Survey in 12 Months"
+                    "id": 1,
+                    "info_heading": "6.7%",
+                    "info_txt": "Survey in 12 Months"
                 },
                 {
-                    "id" : 2,
-                    "info_heading" : "04/23/22",
-                    "info_txt" : "Latest Survey Date"
+                    "id": 2,
+                    "info_heading": "04/23/22",
+                    "info_txt": "Latest Survey Date"
                 }
             ]
         },
         {
-            "id" : 2,
-            "map_card_name" : "Denver-Julesburg",
-            "map_card_img" : "denver-julesburg",
-            "map_card_links" : [
+            "id": 2,
+            "map_card_name": "Denver-Julesburg",
+            "map_card_img": "denver-julesburg",
+            "map_card_links": [
                 {
-                    "id" : 0,
-                    "link_svg" : "map-icon",
-                    "link_txt" : "Map"
+                    "id": 0,
+                    "link_svg": "map-icon",
+                    "link_txt": "Map"
                 },
                 {
-                    "id" : 1,
-                    "link_svg" : "report-icon",
-                    "link_txt" : "Report"
+                    "id": 1,
+                    "link_svg": "report-icon",
+                    "link_txt": "Report"
                 }
             ],
-            "map_card_info" : [
+            "map_card_info": [
                 {
-                    "id" : 0,
-                    "info_heading" : "5,400",
-                    "info_txt" : "Locations Surveyed"
+                    "id": 0,
+                    "info_heading": "5,400",
+                    "info_txt": "Locations Surveyed"
                 },
                 {
-                    "id" : 1,
-                    "info_heading" : "12.6%",
-                    "info_txt" : "Survey in 12 Months"
+                    "id": 1,
+                    "info_heading": "12.6%",
+                    "info_txt": "Survey in 12 Months"
                 },
                 {
-                    "id" : 2,
-                    "info_heading" : "04/23/22",
-                    "info_txt" : "Latest Survey Date"
+                    "id": 2,
+                    "info_heading": "04/23/22",
+                    "info_txt": "Latest Survey Date"
                 }
             ]
         },
         {
-            "id" : 3,
-            "map_card_name" : "Eagleford",
-            "map_card_img" : "appalachian",
-            "map_card_links" : [
+            "id": 3,
+            "map_card_name": "Eagleford",
+            "map_card_img": "appalachian",
+            "map_card_links": [
                 {
-                    "id" : 0,
-                    "link_svg" : "map-icon",
-                    "link_txt" : "Map"
+                    "id": 0,
+                    "link_svg": "map-icon",
+                    "link_txt": "Map"
                 },
                 {
-                    "id" : 1,
-                    "link_svg" : "report-icon",
-                    "link_txt" : "Report"
+                    "id": 1,
+                    "link_svg": "report-icon",
+                    "link_txt": "Report"
                 }
             ],
-            "map_card_info" : [
+            "map_card_info": [
                 {
-                    "id" : 0,
-                    "info_heading" : "5,400",
-                    "info_txt" : "Locations Surveyed"
+                    "id": 0,
+                    "info_heading": "5,400",
+                    "info_txt": "Locations Surveyed"
                 },
                 {
-                    "id" : 1,
-                    "info_heading" : "2.4%",
-                    "info_txt" : "Survey in 12 Months"
+                    "id": 1,
+                    "info_heading": "2.4%",
+                    "info_txt": "Survey in 12 Months"
                 },
                 {
-                    "id" : 2,
-                    "info_heading" : "04/23/22",
-                    "info_txt" : "Latest Survey Date"
+                    "id": 2,
+                    "info_heading": "04/23/22",
+                    "info_txt": "Latest Survey Date"
                 }
             ]
         },
         {
-            "id" : 4,
-            "map_card_name" : "Haynesville",
-            "map_card_img" : "bakken",
-            "map_card_links" : [
+            "id": 4,
+            "map_card_name": "Haynesville",
+            "map_card_img": "bakken",
+            "map_card_links": [
                 {
-                    "id" : 0,
-                    "link_svg" : "map-icon",
-                    "link_txt" : "Map"
+                    "id": 0,
+                    "link_svg": "map-icon",
+                    "link_txt": "Map"
                 },
                 {
-                    "id" : 1,
-                    "link_svg" : "report-icon",
-                    "link_txt" : "Report"
+                    "id": 1,
+                    "link_svg": "report-icon",
+                    "link_txt": "Report"
                 }
             ],
-            "map_card_info" : [
+            "map_card_info": [
                 {
-                    "id" : 0,
-                    "info_heading" : "5,400",
-                    "info_txt" : "Locations Surveyed"
+                    "id": 0,
+                    "info_heading": "5,400",
+                    "info_txt": "Locations Surveyed"
                 },
                 {
-                    "id" : 1,
-                    "info_heading" : "6.7%",
-                    "info_txt" : "Survey in 12 Months"
+                    "id": 1,
+                    "info_heading": "6.7%",
+                    "info_txt": "Survey in 12 Months"
                 },
                 {
-                    "id" : 2,
-                    "info_heading" : "04/23/22",
-                    "info_txt" : "Latest Survey Date"
+                    "id": 2,
+                    "info_heading": "04/23/22",
+                    "info_txt": "Latest Survey Date"
                 }
             ]
         },
         {
-            "id" : 5,
-            "map_card_name" : "Permian",
-            "map_card_img" : "denver-julesburg",
-            "map_card_links" : [
+            "id": 5,
+            "map_card_name": "Permian",
+            "map_card_img": "denver-julesburg",
+            "map_card_links": [
                 {
-                    "id" : 0,
-                    "link_svg" : "map-icon",
-                    "link_txt" : "Map"
+                    "id": 0,
+                    "link_svg": "map-icon",
+                    "link_txt": "Map"
                 },
                 {
-                    "id" : 1,
-                    "link_svg" : "report-icon",
-                    "link_txt" : "Report"
+                    "id": 1,
+                    "link_svg": "report-icon",
+                    "link_txt": "Report"
                 }
             ],
-            "map_card_info" : [
+            "map_card_info": [
                 {
-                    "id" : 0,
-                    "info_heading" : "5,400",
-                    "info_txt" : "Locations Surveyed"
+                    "id": 0,
+                    "info_heading": "5,400",
+                    "info_txt": "Locations Surveyed"
                 },
                 {
-                    "id" : 1,
-                    "info_heading" : "12.6%",
-                    "info_txt" : "Survey in 12 Months"
+                    "id": 1,
+                    "info_heading": "12.6%",
+                    "info_txt": "Survey in 12 Months"
                 },
                 {
-                    "id" : 2,
-                    "info_heading" : "04/23/22",
-                    "info_txt" : "Latest Survey Date"
+                    "id": 2,
+                    "info_heading": "04/23/22",
+                    "info_txt": "Latest Survey Date"
                 }
             ]
         }
-
     ]
 }

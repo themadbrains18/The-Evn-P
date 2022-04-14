@@ -5,10 +5,10 @@ const MapCard = () => {
     return (
         <Box mt={2.75}>
             {/* // Common Grid Cards */}
-            <Grid container spacing={3.75} columnSpacing={4.25}>
+            <Grid container spacing={3.75} columnSpacing={{ xl: 4.25, lg: 3, xs: 2 }}>
                 {mapCardApi.map_card.map((elem) => {
                     return (
-                        <Grid item xs={4} key={elem.id}>
+                        <Grid item xs={12} md={6} lg={4} key={elem.id}>
                             <Card sx={{
                                 background: "#FDFDFD",
                                 boxShadow: "0px 0px 10px #F3F4F6",
@@ -27,7 +27,7 @@ const MapCard = () => {
                                     <Typography color="text.primary{contrastText}" component="span" sx={{
                                         position: 'absolute', top: "50%", left: "50%",
                                         transform: 'translate(-50%,-50%)',
-                                        fontSize: 24,
+                                        fontSize: { xl: 24, lg: 20, xs: 18 },
                                         fontWeight: 600,
                                         color: "#fff",
                                         width: "100%",
@@ -42,12 +42,13 @@ const MapCard = () => {
                                             return (
                                                 <Button key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
                                                     <CardMedia
+                                                        sx={{ width: { lg: "100%", xs: "22px" } }}
                                                         component="img"
                                                         image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
                                                         alt={cardElem.link_txt}
                                                     />
                                                     <Typography sx={{
-                                                        fontSize: 14,
+                                                        fontSize: { lg: 14, xs: 12 },
                                                         fontWeight: 500,
                                                         color: "#1D8CD4",
                                                         display: "block",
@@ -73,7 +74,7 @@ const MapCard = () => {
                                                     }
                                                 }}>
                                                     <Typography component="h4" sx={{
-                                                        display: "inline-block", fontSize: 16,
+                                                        display: "inline-block", fontSize: { lg: 16, xs: 14 },
                                                         fontWeight: 500,
                                                         color: "#000",
                                                         lineHeight: 1.1,
@@ -95,8 +96,6 @@ const MapCard = () => {
                                             )
                                         })}
 
-
-
                                     </Box>
                                 </Box>
                             </Card >
@@ -105,7 +104,7 @@ const MapCard = () => {
                 })}
 
             </Grid>
-        </Box>
+        </Box >
     );
 }
 export default MapCard;

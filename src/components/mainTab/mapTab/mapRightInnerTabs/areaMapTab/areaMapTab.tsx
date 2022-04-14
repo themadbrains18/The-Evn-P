@@ -7,8 +7,8 @@ const AreaMapTab = () => {
             <Box>
                 <MapInnerTabHeading heading={"Area Map"} />
 
-                <Typography component="p" sx={{ fontSize: "14px", lineHeight: "22px", color: "#454560" }}>
-                    Leverage the tools below to create a <Typography component='span' sx={{ fontWeight: 600, fontSize: "14px", lineHeight: "22px", color: "#454560" }}>closed area</Typography>. By this definition we mean have your last point touch your first point. Any locations inside of this area will be highlighted while eveything else will disappear.
+                <Typography component="p" sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "22px", color: "#454560" }}>
+                    Leverage the tools below to create a <Typography component='span' sx={{ fontWeight: 600, fontSize: { lg: "14px", xs: "12px" }, lineHeight: "22px", color: "#454560" }}>closed area</Typography>. By this definition we mean have your last point touch your first point. Any locations inside of this area will be highlighted while eveything else will disappear.
                 </Typography>
 
                 <Box sx={{ mt: 2.5 }}>

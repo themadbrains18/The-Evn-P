@@ -8,7 +8,7 @@ import Setting from '../containers/setting';
 const Routing = () => {
     return (
         <>
-            <Box sx={{ bgcolor: '#F9FAFC',overflowY: "scroll",overflowX: "hidden"}}>
+            <Box sx={{ bgcolor: '#F9FAFC', overflowY: "scroll", overflowX: "hidden" }}>
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/maps" element={<Map />} />

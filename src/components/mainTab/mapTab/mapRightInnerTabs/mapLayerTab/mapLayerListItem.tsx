@@ -265,8 +265,8 @@ const MapLayerListItem = () => {
                             <FormControlLabel sx={{
                                 mr: 0, my: -1.875, "& svg": {
                                     color: "rgba(0, 0, 0, 0.2)",
-                                    height: "24px",
-                                    width: "24px",
+                                    height: { lg: "24px", xs: "20px" },
+                                    width: { lg: "24px", xs: "20px" },
                                 },
                                 "& path": {
                                     boxShadow: "0px 0px 25px rgba(0, 0, 0, 0.25)",
@@ -276,7 +276,7 @@ const MapLayerListItem = () => {
                                 },
                                 "& span": {
                                     fontWeight: "500",
-                                    fontSize: "14px",
+                                    fontSize: { lg: "14px", xs: "12px" },
                                     lineHeight: "16px",
                                     color: "#333333",
                                 }
@@ -287,7 +287,7 @@ const MapLayerListItem = () => {
                                         <Box key={guideItem.id} sx={{ display: "flex", alignItems: "center", mt: 2.75 }}>
                                             <Typography component="span" sx={{ height: "18px", width: "18px", borderRadius: "50%", backgroundColor: guideItem.guideLabelColorCode, display: "inline-block", marginRight: "12px" }}>
                                             </Typography>
-                                            <Typography component="span" sx={{ fontWeight: "500", fontSize: "14px", lineHeight: "16px", color: "#333333", display: "inline-block" }}>
+                                            <Typography component="span" sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#333333", display: "inline-block" }}>
                                                 {guideItem.guideLabelText}
                                             </Typography>
                                         </Box>

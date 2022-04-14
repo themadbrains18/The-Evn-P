@@ -56,7 +56,7 @@ const DonutChartComp = () => {
         const svg: any = d3.select("#chart")
             .append('svg')
             .attr("class", "tooltip-donut")
-            .attr("width", '520px')
+            .attr("width", '425px')
             .attr("height", '428px')
             .attr('viewBox', '0 0 ' + width + ' ' + height)
             .attr('preserveAspectRatio', 'xMinYMin')

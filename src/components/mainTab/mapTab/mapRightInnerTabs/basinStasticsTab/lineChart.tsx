@@ -4,7 +4,7 @@ const LineChart = () => {
     return (
         <>
             <Box sx={{ mt: 6.875, mb: 4.75 }}>
-                <Typography component="h5" sx={{ fontWeight: "600", fontSize: "18px", lineHeight: "20px", color: "#000000" }}>
+                <Typography component="h5" sx={{ fontWeight: "600", fontSize: { lg: "18px", xs: "16px" }, lineHeight: "20px", color: "#000000" }}>
                     Emissions over time
                 </Typography>
 

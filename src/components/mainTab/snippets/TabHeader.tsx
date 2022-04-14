@@ -72,7 +72,7 @@ const TabHeader = (props: headerData) => {
                     {props.headerOption === "MapView" &&
                         <Button variant="text" sx={{ alignItems: "center" }}>
                             <img src={require("../../../assets/svg/globe.svg").default} alt="Globe" />
-                            <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                            <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
                                 Map View
                             </Typography>
                         </Button>

@@ -2,8 +2,6 @@ import { createTheme, ThemeProvider, Box, } from '@mui/material';
 import SideNav from './components/leftSideNav/sideNav';
 import Route from './routes/index'
 
-
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -24,9 +22,8 @@ const App = () => {
         {/* Right Side Main Content */}
         <Route />
       </Box>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
-
 
 export default App;

@@ -17,7 +17,7 @@ const BarChart = () => {
         // Notice the change of dataset
         // Calculate Margins and canvas dimensions
         var margin = { top: 40, right: 40, bottom: 40, left: 60 },
-            width = 700 - margin.left - margin.right,
+            width = 450 - margin.left - margin.right,
             height = 400 - margin.top - margin.bottom;
         // Notice the change of Scale to Band and how the scale now starts at zero
         var x: any = d3.scaleBand()
