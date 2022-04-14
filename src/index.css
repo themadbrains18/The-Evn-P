@@ -53,3 +53,7 @@ button {
 	background: #0F75BC;
 	border-radius: 10px;
 }
+
+/* input[type="date"]::-webkit-calendar-picker-indicator {
+	background: url("./assets/svg/calander-cion.svg") center/80% no-repeat;
+} */

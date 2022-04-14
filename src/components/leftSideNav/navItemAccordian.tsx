@@ -179,7 +179,8 @@ const NavItemAccordian = (props: toogleCheck) => {
                                             lineHeight: "13px",
                                             "&:focus": {
                                                 outlineColor: "#1D8CD4"
-                                            }
+                                            },
+
                                         }} type="date" id="from" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
                                     </Box>
                                     <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
@@ -196,6 +197,7 @@ const NavItemAccordian = (props: toogleCheck) => {
                                             "&:focus": {
                                                 outlineColor: "#1D8CD4"
                                             }
+
                                         }} type="date" id="to" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
                                     </Box>
                                 </Box>

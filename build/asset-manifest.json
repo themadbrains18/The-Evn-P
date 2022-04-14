@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.b103d9d2.css",
-    "main.js": "./static/js/main.38d9d1ae.js",
+    "main.js": "./static/js/main.7cf3ea4e.js",
     "static/js/787.94c7c0a2.chunk.js": "./static/js/787.94c7c0a2.chunk.js",
     "static/media/piechart.jpg": "./static/media/piechart.45fb716726662b00a8c7.jpg",
     "static/media/denver-julesburg.jpg": "./static/media/denver-julesburg.3b38b715ec311899407d.jpg",
@@ -13,6 +13,7 @@
     "static/media/delete-icon.svg": "./static/media/delete-icon.fe7bfea621f9ff5af5f553945217ede6.svg",
     "static/media/file-icon.svg": "./static/media/file-icon.0f7dcba627d39f4aea774588308f6169.svg",
     "static/media/edit-icon.svg": "./static/media/edit-icon.5b669ebf032a6d3d2879f4f895d3967b.svg",
+    "static/media/calander-cion.svg": "./static/media/calander-cion.6d1e849aa15cf2c0ca65.svg",
     "static/media/report-icon.svg": "./static/media/report-icon.284f42edb44389f75852.svg",
     "static/media/search.svg": "./static/media/search.cc499c1018de9c278f2602ddf0e3c9bf.svg",
     "static/media/nav-toggle.svg": "./static/media/nav-toggle.2f1a195fb41072711631a3e549721162.svg",
@@ -20,11 +21,11 @@
     "static/media/dashboard-hover.svg": "./static/media/dashboard-hover.963fb2d7c65d2b2f5e94.svg",
     "static/media/download-icon.svg": "./static/media/download-icon.0a7406e3c2618dce8085d5121c21f100.svg",
     "main.b103d9d2.css.map": "./static/css/main.b103d9d2.css.map",
-    "main.38d9d1ae.js.map": "./static/js/main.38d9d1ae.js.map",
+    "main.7cf3ea4e.js.map": "./static/js/main.7cf3ea4e.js.map",
     "787.94c7c0a2.chunk.js.map": "./static/js/787.94c7c0a2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b103d9d2.css",
-    "static/js/main.38d9d1ae.js"
+    "static/js/main.7cf3ea4e.js"
   ]
 }

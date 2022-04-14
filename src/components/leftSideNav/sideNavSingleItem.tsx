@@ -58,7 +58,8 @@ const SideNavSingleItem = () => {
                                 minWidth: "auto!important",
                                 marginRight: { lg: "16px", xs: "12px" },
                                 "& svg": {
-                                    width: { lg: "initial", xs: "26px" }
+                                    width: { lg: "initial", xs: "30px" },
+                                    height: { lg: "initial", xs: "30px" }
                                 },
                                 "& svg,path": {
                                     fill: "#8794C3"
