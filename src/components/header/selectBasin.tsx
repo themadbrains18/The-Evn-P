@@ -1,20 +1,10 @@
 import { Box, Button, Typography, MenuItem, FormControl, InputLabel } from '@mui/material';
 import * as React from 'react';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-
-
-
-
-
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
-
-
-
-
 
 const SeclectBasin = () => {
     const [age, setAge] = React.useState('');
