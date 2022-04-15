@@ -4,6 +4,7 @@ import Dashboard from '../containers/dashboard';
 import Map from '../containers/map';
 import Reports from '../containers/reports';
 import Setting from '../containers/setting';
+import Downloads from '../containers/downloads';
 
 const Routing = () => {
     return (
@@ -13,6 +14,7 @@ const Routing = () => {
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/maps" element={<Map />} />
                     <Route path="/reports" element={<Reports />} />
+                    <Route path="/downloads" element={<Downloads />} />
                     <Route path="/Setting" element={<Setting />} />
                     <Route path="/*" element={<Dashboard />} />
                 </Routes>
