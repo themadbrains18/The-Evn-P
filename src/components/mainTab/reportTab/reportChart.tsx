@@ -1,12 +1,15 @@
 import { Box, Grid } from "@mui/material";
 import DonutChartComp from './donutChart';
 import BarChart from './barChart';
-
+import SeclectBasin from "../../../components/header/selectBasin"
 
 
 const ReportChart = () => {
     return (
         <>
+            {/* Select Basin Form Start */}
+            <SeclectBasin />
+            {/* Select Basin Form End */}
             <Box mt={3.75}>
                 <Grid container spacing={3.75}>
                     <Grid item lg={6} md={12} xs={12} >

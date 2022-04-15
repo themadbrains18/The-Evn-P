@@ -37,7 +37,7 @@ const MapCard = () => {
                                     </Typography>
                                 </Box>
                                 <Box sx={{ px: 1.3, pb: 2.75 }} component="div">
-                                    <CardActions sx={{ gap: 1, p: 0, mt: 2 }}>
+                                    <CardActions sx={{ justifyContent: "space-between", gap: 1, p: 0, mt: 2 }}>
                                         {elem.map_card_links.map((cardElem) => {
                                             return (
                                                 <Button key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
@@ -56,6 +56,7 @@ const MapCard = () => {
                                                     }} component="span" >
                                                         {cardElem.link_txt}
                                                     </Typography>
+
                                                 </Button>
                                             )
                                         })}

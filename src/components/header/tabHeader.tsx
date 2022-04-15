@@ -6,8 +6,11 @@ type headerData = {
     tabInfo: String,
     blockInfoheading: String,
     divider: Boolean
-    headerOption: "Search" | "MapView" | ""
+    headerOption: any;
 }
+
+// headerOption Must be = Download , Search,MapView
+
 const Header = (props: headerData) => {
 
     const [InputToggle, SetInputToggle] = useState(false)
@@ -34,102 +37,123 @@ const Header = (props: headerData) => {
                     </Typography>
                 </Box>
                 <Box>
-                    {/* Search Option */}
-                    {props.headerOption === "Search" &&
-                        (
-                            <>
-                                <Box sx={{
 
-                                    transition: "0.3s",
-                                    position: "relative",
-                                    height: "50px",
-                                    width: "250px",
-                                    overflow: "hidden",
-                                    textAlign: "end"
-                                }}>
-                                    <Button className={`search_btn ${InputToggle && ("active")}`} variant="text" sx={{
-                                        alignItems: "center", justifyContent: "end!important",
-                                        transition: "0.4s  linear !important",
-                                        "&.active": {
-                                            opacity: "0",
-                                            transitionDelay: "0 !important",
-                                            visibility: "hidden",
-                                            transform: "translateX(-150px)"
-                                        }
-                                    }} onClick={InputButton}>
-                                        <img src={require("../../assets/svg/search.svg").default} alt="Search" />
-                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1.38 }}>
-                                            Search
+                    {props.headerOption.map((elem: any, index: any) => {
+                        return (
+                            <>
+                                {/* Search Option */}
+                                {
+                                    elem === "Search" &&
+                                    (
+                                        <>
+                                            <Box sx={{
+
+                                                transition: "0.3s",
+                                                position: "relative",
+                                                height: "50px",
+                                                width: "250px",
+                                                overflow: "hidden",
+                                                textAlign: "end"
+                                            }}>
+                                                <Button className={`search_btn ${InputToggle && ("active")}`} variant="text" sx={{
+                                                    alignItems: "center", justifyContent: "end!important",
+                                                    transition: "0.4s  linear !important",
+                                                    "&.active": {
+                                                        opacity: "0",
+                                                        transitionDelay: "0 !important",
+                                                        visibility: "hidden",
+                                                        transform: "translateX(-150px)"
+                                                    }
+                                                }} onClick={InputButton}>
+                                                    <img src={require("../../assets/svg/search.svg").default} alt="Search" />
+                                                    <Typography component="span" sx={{ fontWeight: "400", fontSize: 16, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1.38 }}>
+                                                        Search
+                                                    </Typography>
+                                                </Button>
+                                                <Box className={` ${InputToggle && ("active")}`} sx={{
+
+                                                    position: "absolute",
+                                                    top: "50%",
+                                                    right: "calc(-100% + 67px)",
+                                                    height: "100%",
+                                                    transform: "translateY(-50%)",
+                                                    opacity: "0",
+                                                    visibility: "hidden",
+                                                    zIndex: "15",
+                                                    transition: "0.4s linear !important",
+                                                    width: "250px",
+                                                    overflow: "hidden",
+                                                    "&.active": {
+                                                        opacity: "1",
+                                                        visibility: "visible",
+                                                        right: "0",
+                                                    }
+                                                }}>
+                                                    <Input className="search_input" sx={{
+
+                                                        position: "relative",
+                                                        zIndex: "9",
+                                                        width: "250px",
+                                                        fontWeight: "400",
+                                                        fontSize: 16,
+                                                        lineHeight: "18px",
+                                                        color: "#1D8CD4",
+                                                        textTransform: 'capitalize',
+
+                                                        "& input::placeholder": {
+                                                            fontWeight: "400",
+                                                            fontSize: 16,
+                                                            lineHeight: "18px",
+                                                            color: "#1D8CD4",
+                                                            opacity: "1"
+                                                        }
+                                                    }} placeholder="Search" autoFocus />
+                                                </Box>
+                                            </Box>
+
+                                            <Typography className={` ${InputToggle && ("active")}`} sx={{
+
+                                                position: "fixed",
+                                                top: "0",
+                                                left: "0",
+                                                background: "transparent",
+                                                height: "100%",
+                                                width: "100%",
+                                                zIndex: "8",
+                                                display: "none",
+                                                "&.active": {
+                                                    display: "block",
+                                                },
+                                            }} component={"span"} onClick={InputButton}>
+                                            </Typography  >
+                                        </>
+                                    )
+                                }
+                                {/* Map View */}
+                                {
+                                    elem === "MapView" &&
+                                    <Button variant="text" sx={{ alignItems: "center" }}>
+                                        <img src={require("../../assets/svg/globe.svg").default} alt="Globe" />
+                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                                            Map View
                                         </Typography>
                                     </Button>
-                                    <Box className={` ${InputToggle && ("active")}`} sx={{
-
-                                        position: "absolute",
-                                        top: "50%",
-                                        right: "calc(-100% + 67px)",
-                                        height: "100%",
-                                        transform: "translateY(-50%)",
-                                        opacity: "0",
-                                        visibility: "hidden",
-                                        zIndex: "15",
-                                        transition: "0.4s linear !important",
-                                        width: "250px",
-                                        overflow: "hidden",
-                                        "&.active": {
-                                            opacity: "1",
-                                            visibility: "visible",
-                                            right: "0",
-                                        }
-                                    }}>
-                                        <Input className="search_input" sx={{
-
-                                            position: "relative",
-                                            zIndex: "9",
-                                            width: "250px",
-                                            fontWeight: "400",
-                                            fontSize: 16,
-                                            lineHeight: "18px",
-                                            color: "#1D8CD4",
-                                            textTransform: 'capitalize',
-
-                                            "& input::placeholder": {
-                                                fontWeight: "400",
-                                                fontSize: 16,
-                                                lineHeight: "18px",
-                                                color: "#1D8CD4",
-                                                opacity: "1"
-                                            }
-                                        }} placeholder="Search" autoFocus />
-                                    </Box>
-                                </Box>
-
-                                <Typography className={` ${InputToggle && ("active")}`} sx={{
-
-                                    position: "fixed",
-                                    top: "0",
-                                    left: "0",
-                                    background: "transparent",
-                                    height: "100%",
-                                    width: "100%",
-                                    zIndex: "8",
-                                    display: "none",
-                                    "&.active": {
-                                        display: "block",
-                                    },
-                                }} component={"span"} onClick={InputButton}>
-                                </Typography  >
+                                }
+                                {
+                                    elem === "Download" &&
+                                    <Button variant="text" sx={{ alignItems: "center" }}>
+                                        <img src={require("../../assets/svg/card-download-icon.svg").default} alt="Globe" />
+                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                                            Download
+                                        </Typography>
+                                    </Button>
+                                }
                             </>
                         )
-                    }
-                    {/* Map View */}
-                    {props.headerOption === "MapView" &&
-                        <Button variant="text" sx={{ alignItems: "center" }}>
-                            <img src={require("../../assets/svg/globe.svg").default} alt="Globe" />
-                            <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
-                                Map View
-                            </Typography>
-                        </Button>
-                    }
+                    })}
+
+
+
                 </Box>
             </Box>
             {
