@@ -1,3 +1,5 @@
+
+import {useEffect} from 'react';
 import { Box, Typography, Divider, Button } from '@mui/material';
 
 const AccordiansData = [
@@ -27,9 +29,20 @@ const AccordiansData = [
     }
 ]
 
+
+
+
 const Accordians = () => {
+    useEffect(() => {
+        const AccodiansQues =document.querySelector("#Accodians .accodian_ques");
+        const AccodiansAns =document.querySelector("#Accodians .accodian_ans");
+        
+        AccodiansQues?.classList.add("active");
+        AccodiansAns?.setAttribute("style", `height:${AccodiansAns?.scrollHeight}px`);
+    },[]);
     const toggleAccodian = (e: any) => {
         const ansElement: any = e.currentTarget.nextElementSibling;
+        // console.log(ansElement.getBoundingClientRect().height);
         if (ansElement.getAttribute("style")) {
             ansElement.removeAttribute("style");
             e.currentTarget.classList.remove("active");
@@ -41,10 +54,10 @@ const Accordians = () => {
 
     return (
         <>
-            <Box component="ul">
+            <Box component="ul" id="Accodians">
                 {AccordiansData.map((elem) => {
                     return (
-                        <Box key={elem.id} component="li" sx={{ padding: "30px 30px 33px", backgroundColor: "#fff", marginTop: "20px" }}>
+                        <Box key={elem.id} component="li" sx={{ padding: "30px 30px 33px", backgroundColor: "#fff", marginTop: "20px"}}>
                             {/* Question */}
                             <Box sx={{
                                 display: 'flex', justifyContent: 'space-between', alignItems: "center", cursor: "pointer",
@@ -55,7 +68,7 @@ const Accordians = () => {
                                 "&.active .rotatePath": {
                                     transform: "rotate(90deg)"
                                 }
-                            }} onClick={toggleAccodian}>
+                            }} onClick={toggleAccodian} className="accodian_ques">
                                 <Typography component="h4" sx={{ fontWeight: "500", fontSize: "20px", lineHeight: "22px" }}>
                                     {elem.ques}
                                 </Typography>
@@ -68,7 +81,7 @@ const Accordians = () => {
 
                             </Box>
                             {/* Answers */}
-                            <Box sx={{ height: "0px", overflow: "hidden", transition: "0.3s" }}>
+                            <Box sx={{ height: "0px", overflow: "hidden", transition: "0.3s"}} className="accodian_ans">
                                 <Divider sx={{ borderBottomWidth: '2px', borderColor: '#F5F5F5', margin: '6px 0 17px' }} />
                                 <Typography component="p" sx={{ fontSize: "14px", lineHeight: "23px", color: "#121212" }}>
                                     {elem.ans}
