@@ -40,7 +40,7 @@ const Header = (props: headerData) => {
 
                     {props.headerOption.map((elem: any, index: any) => {
                         return (
-                            <>
+                            <Box key={index}>
                                 {/* Search Option */}
                                 {
                                     elem === "Search" &&
@@ -148,7 +148,7 @@ const Header = (props: headerData) => {
                                         </Typography>
                                     </Button>
                                 }
-                            </>
+                            </Box>
                         )
                     })}
 

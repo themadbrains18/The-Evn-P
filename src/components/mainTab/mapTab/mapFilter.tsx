@@ -12,8 +12,9 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
       backgroundColor: "transparent",
       border: "1px solid rgba(213, 213, 213, 0.4)",
       fontSize: "12PX",
-      padding: '5px 26px 9px 12px',
-      transition: theme.transitions.create(['border-color', 'box-shadow']),
+      padding: '12px 26px 9px 12px',
+      transition: "0.3s",
+      lineHeight: "13px",
       // Use the system font instead of the default Roboto font.
       '&:focus': {
         borderColor: '#F2F6FE',
@@ -81,8 +82,13 @@ const MapFilter = () => {
                                                     value={age}
                                                     onChange={handleChange}
                                                     input={<BootstrapInput />}
+                                                    sx={{
+                                                        "& option ":{
+                                                            padding:"10px!important"
+                                                        }
+                                                    }}
                                                 >
-                                                    <option aria-label="None" value="">Persian</option>
+                                                    <option  aria-label="None" value="">Persian</option>
                                                     <option value={10}>Ten</option>
                                                     <option value={20}>Twenty</option>
                                                     <option value={30}>Thirty</option>
