@@ -21,6 +21,7 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "bingmaps-react": "^1.2.10",
+    "build": "^0.1.4",
     "d3": "^7.4.0",
     "date-fns": "^2.28.0",
     "dayjs": "^1.11.1",
