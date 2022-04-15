@@ -36,11 +36,11 @@ const Header = (props: headerData) => {
                         {props.tabheading}
                     </Typography>
                 </Box>
-                <Box>
+                <Box sx={{display:"flex",alignItems:"center",gap:"10px"}}>
 
                     {props.headerOption.map((elem: any, index: any) => {
                         return (
-                            <Box key={index}>
+                            <Box key={index} >
                                 {/* Search Option */}
                                 {
                                     elem === "Search" &&
