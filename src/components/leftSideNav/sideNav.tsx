@@ -37,7 +37,7 @@ const SideNav = () => {
                     </Box>
                     {/*  Navigation */}
                     <Box component="nav" sx={{ overflow: "hidden" }}>
-                        <SideNavItem toggleNav={toggleNav} />
+                        <SideNavItem />
                     </Box>
                 </Box>
                 {/* Developed Logo  */}
