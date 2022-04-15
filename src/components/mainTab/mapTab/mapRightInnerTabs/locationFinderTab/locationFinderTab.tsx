@@ -152,9 +152,10 @@ const LocationFinderTab = () => {
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 29px", xs: "13px 29px" }, color: "#0F75BC", marginLeft: "14px",
+                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 29px", xs: "13px 29px" }, color: "#fff", marginLeft: "14px",
                             fontWeight: "600",
                             fontSize: { lg: "14px", xs: "12px" },
+                            backgroundColor: '#0F75BC',
                             lineHeight: "1",
                             "&:hover": {
                                 backgroundColor: '#0F75BC',

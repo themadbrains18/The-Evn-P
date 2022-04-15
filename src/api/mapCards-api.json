@@ -14,6 +14,11 @@
                     "id": 1,
                     "link_svg": "report-icon",
                     "link_txt": "Report"
+                },
+                {
+                    "id": 2,
+                    "link_svg": "card-download-icon",
+                    "link_txt": "Download"
                 }
             ],
             "map_card_info": [
@@ -48,6 +53,11 @@
                     "id": 1,
                     "link_svg": "report-icon",
                     "link_txt": "Report"
+                },
+                {
+                    "id": 2,
+                    "link_svg": "card-download-icon",
+                    "link_txt": "Download"
                 }
             ],
             "map_card_info": [
@@ -82,6 +92,11 @@
                     "id": 1,
                     "link_svg": "report-icon",
                     "link_txt": "Report"
+                },
+                {
+                    "id": 2,
+                    "link_svg": "card-download-icon",
+                    "link_txt": "Download"
                 }
             ],
             "map_card_info": [
@@ -116,6 +131,11 @@
                     "id": 1,
                     "link_svg": "report-icon",
                     "link_txt": "Report"
+                },
+                {
+                    "id": 2,
+                    "link_svg": "card-download-icon",
+                    "link_txt": "Download"
                 }
             ],
             "map_card_info": [
@@ -150,6 +170,11 @@
                     "id": 1,
                     "link_svg": "report-icon",
                     "link_txt": "Report"
+                },
+                {
+                    "id": 2,
+                    "link_svg": "card-download-icon",
+                    "link_txt": "Download"
                 }
             ],
             "map_card_info": [
@@ -184,6 +209,11 @@
                     "id": 1,
                     "link_svg": "report-icon",
                     "link_txt": "Report"
+                },
+                {
+                    "id": 2,
+                    "link_svg": "card-download-icon",
+                    "link_txt": "Download"
                 }
             ],
             "map_card_info": [

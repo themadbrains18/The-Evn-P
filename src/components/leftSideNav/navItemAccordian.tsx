@@ -197,7 +197,6 @@ const NavItemAccordian = (props: toogleCheck) => {
                                             "&:focus": {
                                                 outlineColor: "#1D8CD4"
                                             }
-
                                         }} type="date" id="to" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
                                     </Box>
                                 </Box>
