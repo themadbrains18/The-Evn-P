@@ -7,6 +7,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const SeclectBasin = () => {
+    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
     const [age, setAge] = React.useState('');
     const [value, setValue] = React.useState<Date | null>(null);
     const handleChange = (event: SelectChangeEvent) => {
@@ -101,9 +102,9 @@ const SeclectBasin = () => {
                                     <DatePicker
                                         label="Beginning Date"
 
-                                        value={value}
+                                        value={secondvalue}
                                         onChange={(newValue) => {
-                                            setValue(newValue);
+                                            setsecondvalue(newValue);
                                         }}
                                         renderInput={(params) =>
                                             <TextField sx={{
