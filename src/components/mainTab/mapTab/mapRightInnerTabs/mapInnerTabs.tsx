@@ -81,7 +81,7 @@ const MapInnerTabs = () => {
 
   return (
     <>
-      <Box sx={{ pt: 3.375, px: { xl: 3, xs: 1.5 } }}>
+      <Box sx={{ pt: 4, px: { xl: 3, xs: 1.5 } }}>
         <TabsUnstyled defaultValue={0} >
           {/* ===  Tab List === */}
           <TabsList>

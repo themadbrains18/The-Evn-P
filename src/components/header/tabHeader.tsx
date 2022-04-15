@@ -6,10 +6,10 @@ type headerData = {
     tabInfo: String,
     blockInfoheading: String,
     divider: Boolean
-    headerOption: any;
+    headerOption: any; // headerOption Must be = Download , Search,MapView,Reports
+   
 }
 
-// headerOption Must be = Download , Search,MapView
 
 const Header = (props: headerData) => {
 
@@ -145,6 +145,15 @@ const Header = (props: headerData) => {
                                         <img src={require("../../assets/svg/card-download-icon.svg").default} alt="Globe" />
                                         <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
                                             Download
+                                        </Typography>
+                                    </Button>
+                                }
+                                {
+                                    elem === "Reports" &&
+                                    <Button variant="text" sx={{ alignItems: "center" }}>
+                                        <img src={require("../../assets/svg/report.svg").default} alt="report" />
+                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                                             Reports
                                         </Typography>
                                     </Button>
                                 }
