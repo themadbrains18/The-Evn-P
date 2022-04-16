@@ -7,6 +7,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const SeclectBasin = () => {
+    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
     const [age, setAge] = React.useState('');
     const [value, setValue] = React.useState<Date | null>(null);
     const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
