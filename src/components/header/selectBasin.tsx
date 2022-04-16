@@ -6,18 +6,29 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-const SeclectBasin = () => {
+const SeclectBasin = (props: any) => {
     const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
-    const [age, setAge] = React.useState('');
+    const [date, setdate] = React.useState('');
     const [value, setValue] = React.useState<Date | null>(null);
-    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
+
     const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
+        setdate(event.target.value as string);
+
     };
+    const clearForm = () => {
+        setdate("");
+        setsecondvalue(null);
+        setValue(null);
+        props.selectGo(false)
+
+    }
+    const submitForm = () => {
+        if (secondvalue && value && date) {
+            props.selectGo(true);
+        }
+    }
     return (
         <>
-
-
             <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
                 <Box sx={{ minWidth: 120 }}>
                     <Typography sx={{ fontWeight: "500", fontSize: "14px", lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
@@ -30,7 +41,11 @@ const SeclectBasin = () => {
                         "& label": {
                             background: "#fff",
                             padding: "0 10px",
-                            left: "-10px"
+                            left: "-10px",
+                            color: "#000000",
+                            fontWeight: "500",
+                            fontSize: "14px",
+                            marginTop: "3px"
                         },
                         "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root": {
                             transform: " translate(14px, 0px) scale(0.75)"
@@ -39,10 +54,10 @@ const SeclectBasin = () => {
                         <InputLabel id="demo-simple-select-label">Persian</InputLabel>
                         <Select
                             sx={{
-
                                 color: "#000000",
                                 fontWeight: "500",
                                 fontSize: "14px",
+
                                 marginTop: "15px",
                                 lineHeight: "16px",
                                 "& >div ": {
@@ -55,8 +70,8 @@ const SeclectBasin = () => {
                             }}
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={age}
-                            label="Age"
+                            value={date}
+                            label="Persian"
                             onChange={handleChange}
                         >
                             <MenuItem
@@ -89,7 +104,7 @@ const SeclectBasin = () => {
                             <Box sx={{
                                 display: "grid ", gridTemplateColumns: "1fr 1fr", gap: "14px",
                                 "& label": {
-                                    top: "-8px",
+                                    top: "-10px",
                                     color: "#000000",
                                     fontWeight: "500",
                                     fontSize: "14px",
@@ -102,7 +117,7 @@ const SeclectBasin = () => {
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         label="Beginning Date"
-
+                                        minDate={new Date('2018-01-01')}
                                         value={secondvalue}
                                         onChange={(newValue) => {
                                             setsecondvalue(newValue);
@@ -124,11 +139,11 @@ const SeclectBasin = () => {
                                     />
 
                                 </LocalizationProvider>
-
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         label="End Date"
                                         value={value}
+                                        maxDate={new Date('2025-01-01')}
                                         onChange={(newValue) => {
                                             setValue(newValue);
                                         }}
@@ -155,8 +170,6 @@ const SeclectBasin = () => {
                     </FormControl>
                 </Box>
 
-
-
                 <Box sx={{ marginTop: "22px", textAlign: "end" }}>
                     <Button sx={{
                         border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
@@ -167,7 +180,7 @@ const SeclectBasin = () => {
                             backgroundColor: '#0F75BC',
                             color: "#fff"
                         }
-                    }} variant="outlined" type="reset" >Clear</Button>
+                    }} variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
 
                     <Button sx={{
                         border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
@@ -180,7 +193,7 @@ const SeclectBasin = () => {
                             backgroundColor: '#0F75BC',
                             color: "#fff"
                         }
-                    }} variant="outlined">Go</Button>
+                    }} variant="outlined" onClick={submitForm}>Go</Button>
                 </Box>
             </Box >
         </>

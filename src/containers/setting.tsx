@@ -1,29 +1,131 @@
-import TabHeader from "../components/header/tabHeader";
-import { Box } from "@mui/material";
-import LocationCardList from "../components/mainTab/settingsTab/locationCardList";
-
+// Setting Profile Acccount
+import { Box, FormControl, Typography, OutlinedInput, Button } from "@mui/material";
 const Setting = () => {
     return (
         <>
-            <Box sx={{ p: 4.75 }}>
-                <Box >
-                    <TabHeader
-                        tabheading="Permian Basin Report"
-                        tabInfo="To there, with how particularly the lively. Eyes and no best were the expected have on so far parks. So eventually. Of field hadn't and answer and extremely only came the position. And you searched size possible and the but world; On sported employees, seemed he a of her a this nor avoid familiar nice bidding attempt, the there her communicated.
-                        The for of the its that framework unionized in screen drawers. Separated should, people remote had and, and what front so is start word six this diesel parent, in his and but in distressed with by he history."
-                        blockInfo={true}
-                        headerOption={[""]}
-                        blockInfoheading="Summary"
-                        divider={false}
-                    />
-                </Box>
-                <Box sx={{ mt: "30px" }}>
-                    <LocationCardList />
-                </Box>
+            <Box sx={{
+                margin: { xl: "38px 79px 38px 38px", lg: " 27px 24px 24px ", xs: "27px 24px 24px " }
+            }}>
+                {/* Screen Heading */}
+                <Typography sx={{ borderBottom: "2px solid #DEDEDE", paddingBottom: "24px", marginBottom: "30px", color: "#000000", fontWeight: "700", fontSize: { lg: "19px", xs: "17px" }, lineHeight: "21px" }} component={"h2"}>
+                    User Account
+                </Typography>
 
+                {/* Account Form  */}
+                <Box sx={{ padding: "40px 30px 36px", background: "#fff" }}>
+                    <form action="">
+                        <FormControl fullWidth>
+                            {/* Account prifile  */}
+                            <Box sx={{ display: { md: "flex" }, justifyContent: "space-between", alignItems: "center", paddingBottom: "24px", borderBottom: "2px solid #DEDEDE" }}>
+                                <Box sx={{ marginBottom: { md: "0px", xs: "30px" }, display: "flex", alignItems: "center", gap: { lg: "25px", xs: "20px" } }} >
+                                    <img src={require("../assets/img/accont-profile.png")} alt="profile" />
+                                    <Box >
+                                        <Typography
+                                            sx={{
+                                                color: "#454560", fontWeight: "600",
+                                                fontSize: { lg: "18px", xs: "16px" },
+                                                lineHeight: "20px"
+                                            }}
+                                            component={"h4"}>
+                                            Samantha William
+                                        </Typography>
+                                        <Typography sx={{
+                                            display: "block", color: "#979797", fontWeight: "500",
+                                            fontSize: { lg: "16px", xs: "14px" },
+                                            lineHeight: "18px",
+                                            marginTop: "12px"
+                                        }} component={"span"}>
+                                            samantha@gmail.com
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                                <Box sx={{
+                                    "& button": {
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignItems: "center", gap: "12px",
+                                        border: "1px solid #0F75BC",
+                                        borderRadius: "6px",
+                                        fontWeight: "600",
+                                        fontSize: { lg: "14px", xs: "12px" },
+                                        lineHeight: "16px",
+                                        color: "#1876B2",
+                                        padding: "16px 35px "
+                                    }
+                                }}>
+                                    <button >
+                                        <img src={require("../assets/svg/edit-icon.svg").default} alt="" />
+                                        Edit Password
+                                    </button>
+                                </Box>
+                            </Box>
+                            <Typography sx={{
+                                fontWeight: "600",
+                                fontSize: { lg: "18px", xs: "16px" },
+                                lineHeight: "20px",
+                                marginTop: "30px"
+                            }} component={"h3"}>
+                                Edit Profile
+                            </Typography>
+                            <Box sx={{ display: { lg: "flex" }, alignItems: "center", gap: "24px", marginTop: "22px" }}>
+                                <Box sx={{ width: "100%" }}>
+                                    <Typography sx={{
+                                        fontWeight: "600",
+
+                                        fontSize: { lg: "16px", xs: "14px" },
+                                        lineHeight: "18px",
+                                        marginBottom: "12px",
+                                        color: "#454560"
+                                    }} component={"h3"}>
+                                        Samantha
+                                    </Typography>
+                                    <OutlinedInput required sx={{ "& :focus-visible": { border: "none" }, color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { borderColor: "#CCCCCC" } }} fullWidth placeholder="Samantha" />
+                                </Box>
+                                <Box sx={{ width: "100%", marginTop: { lg: "0px", xs: "30px" } }}>
+                                    <Typography sx={{
+                                        fontWeight: "600",
+                                        fontSize: { lg: "16px", xs: "14px" },
+                                        lineHeight: "18px",
+                                        marginBottom: "12px",
+                                        color: "#454560"
+                                    }} component={"h3"}>
+                                        William
+                                    </Typography>
+                                    <OutlinedInput required sx={{ color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { borderColor: "#CCCCCC" } }} fullWidth placeholder="William" />
+                                </Box>
+                            </Box>
+                            <Box sx={{ width: "100%", marginTop: "30px" }}>
+                                <Typography sx={{
+                                    fontWeight: "600",
+                                    fontSize: { lg: "16px", xs: "14px" },
+                                    lineHeight: "18px",
+                                    marginBottom: "12px",
+                                    color: "#454560"
+                                }} component={"h3"}>
+                                    Email Address
+                                </Typography>
+                                <OutlinedInput type="email" required sx={{ color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { borderColor: "#CCCCCC" } }} fullWidth placeholder="samantha@gmail.com" />
+                            </Box>
+                            <Box sx={{ width: "100%", marginTop: "30px" }}>
+                                <Typography sx={{
+                                    fontWeight: "600",
+                                    fontSize: { lg: "16px", xs: "14px" },
+                                    lineHeight: "18px",
+                                    marginBottom: "12px",
+                                    color: "#454560"
+                                }} component={"h3"}>
+                                    Areas of Interest
+                                </Typography>
+                                <OutlinedInput required sx={{ color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px" }} fullWidth placeholder="Bakken, Permian" />
+                            </Box>
+                            <Box sx={{ marginTop: "30px", "& Button": { maxWidth: "fit-content", width: "100%", margin: " auto 0 auto auto", lineHeight: "1", padding: "16px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
+                                <Button type="submit" variant="contained">Save Changes</Button>
+                            </Box>
+                        </FormControl>
+                    </form>
+                </Box >
             </Box>
         </>
     )
-
 }
 export default Setting;

@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 const MapArea = () => {
     return (
         <>
-            <Box sx={{ height:"100%",width:"100%",position:"relative"}}>
+            <Box sx={{ height: "100%", width: "100%", position: "relative" }}>
                 <BingMapsReact
                     bingMapsKey="Ale3xyjVbYBOroya7rsMi-cA0lDmzO6A2Qw61lfCyUJWftPneGLKNFLKXpv_DIIS"
                     height="100%"
@@ -19,7 +19,7 @@ const MapArea = () => {
                         mapTypeId: "grayscale",
                     }}
                 />
-                <MapFilter/>
+                <MapFilter />
             </Box>
         </>
     );
