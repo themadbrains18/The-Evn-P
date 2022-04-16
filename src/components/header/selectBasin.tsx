@@ -9,6 +9,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 const SeclectBasin = () => {
     const [age, setAge] = React.useState('');
     const [value, setValue] = React.useState<Date | null>(null);
+    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
     const handleChange = (event: SelectChangeEvent) => {
         setAge(event.target.value as string);
     };
@@ -16,7 +17,7 @@ const SeclectBasin = () => {
         <>
 
 
-            <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff" }}>
+            <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
                 <Box sx={{ minWidth: 120 }}>
                     <Typography sx={{ fontWeight: "500", fontSize: "14px", lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
                         Select Basin
@@ -101,9 +102,9 @@ const SeclectBasin = () => {
                                     <DatePicker
                                         label="Beginning Date"
 
-                                        value={value}
+                                        value={secondvalue}
                                         onChange={(newValue) => {
-                                            setValue(newValue);
+                                            setsecondvalue(newValue);
                                         }}
                                         renderInput={(params) =>
                                             <TextField sx={{
