@@ -6,6 +6,7 @@ import Reports from '../containers/reports';
 import Setting from '../containers/setting';
 import Downloads from '../containers/downloads';
 import Bugreport from '../containers/bugReport';
+import Login from '../containers/login';
 
 const Routing = () => {
     return (
@@ -18,7 +19,7 @@ const Routing = () => {
                     <Route path="/downloads" element={<Downloads />} />
                     <Route path="/bug-report" element={<Bugreport />} />
                     <Route path="/Setting" element={<Setting />} />
-                    <Route path="/*" element={<Dashboard />} />
+                    <Route path="/Login" element={<Login />} />
                 </Routes>
             </Box>
         </>

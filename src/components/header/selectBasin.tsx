@@ -10,28 +10,46 @@ const SeclectBasin = (props: any) => {
     const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
     const [date, setdate] = React.useState('');
     const [value, setValue] = React.useState<Date | null>(null);
-
     const handleChange = (event: SelectChangeEvent) => {
         setdate(event.target.value as string);
-
     };
     const clearForm = () => {
         setdate("");
         setsecondvalue(null);
         setValue(null);
-        props.selectGo(false)
-
+        if (props.selectGo) {
+            props.selectGo(false)
+        }
     }
     const submitForm = () => {
         if (secondvalue && value && date) {
-            props.selectGo(true);
+            if (props.selectGo) {
+                props.selectGo(true);
+            }
+        }
+    }
+    const checkValid = (e: any) => {
+        let StartValue: any = secondvalue;
+        let EndValue: any = e;
+        if (StartValue) {
+            if (new Date(StartValue).getFullYear() < new Date(EndValue).getFullYear()) {
+                setValue(EndValue);
+            } else if (new Date(StartValue).getFullYear() === new Date(EndValue).getFullYear()) {
+                if (new Date(StartValue).getMonth() < new Date(EndValue).getMonth()) {
+                    setValue(EndValue);
+                } else if (new Date(StartValue).getMonth() === new Date(EndValue).getMonth()) {
+                    if (new Date(StartValue).getDate() < new Date(EndValue).getDate()) {
+                        setValue(EndValue);
+                    }
+                }
+            }
         }
     }
     return (
         <>
             <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
                 <Box sx={{ minWidth: 120 }}>
-                    <Typography sx={{ fontWeight: "500", fontSize: "14px", lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
+                    <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
                         Select Basin
                     </Typography>
                     <FormControl fullWidth sx={{
@@ -44,7 +62,7 @@ const SeclectBasin = (props: any) => {
                             left: "-10px",
                             color: "#000000",
                             fontWeight: "500",
-                            fontSize: "14px",
+                            fontSize: { lg: "14px", xs: "12px" },
                             marginTop: "3px"
                         },
                         "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root": {
@@ -56,8 +74,7 @@ const SeclectBasin = (props: any) => {
                             sx={{
                                 color: "#000000",
                                 fontWeight: "500",
-                                fontSize: "14px",
-
+                                fontSize: { lg: "14px", xs: "12px" },
                                 marginTop: "15px",
                                 lineHeight: "16px",
                                 "& >div ": {
@@ -78,14 +95,14 @@ const SeclectBasin = (props: any) => {
                                 sx={{
                                     color: "#000000",
                                     fontWeight: "500",
-                                    fontSize: "14px",
+                                    fontSize: { lg: "14px", xs: "12px" },
                                     lineHeight: "16px"
                                 }} value={10}>Persian</MenuItem>
                             <MenuItem
                                 sx={{
                                     color: "#000000",
                                     fontWeight: "500",
-                                    fontSize: "14px",
+                                    fontSize: { lg: "14px", xs: "12px" },
                                     lineHeight: "16px"
                                 }}
                                 value={20}>Persian</MenuItem>
@@ -93,7 +110,7 @@ const SeclectBasin = (props: any) => {
                                 sx={{
                                     color: "#000000",
                                     fontWeight: "500",
-                                    fontSize: "14px",
+                                    fontSize: { lg: "14px", xs: "12px" },
                                     lineHeight: "16px"
                                 }}
                                 value={30}>Persian</MenuItem>
@@ -102,12 +119,12 @@ const SeclectBasin = (props: any) => {
                         <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
                             <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
                             <Box sx={{
-                                display: "grid ", gridTemplateColumns: "1fr 1fr", gap: "14px",
+                                display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
                                 "& label": {
                                     top: "-10px",
                                     color: "#000000",
                                     fontWeight: "500",
-                                    fontSize: "14px",
+                                    fontSize: { lg: "14px", xs: "12px" },
                                 },
                                 "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root": {
                                     transform: " translate(14px, -5px) scale(0.75)"
@@ -119,7 +136,8 @@ const SeclectBasin = (props: any) => {
                                         label="Beginning Date"
                                         minDate={new Date('2018-01-01')}
                                         value={secondvalue}
-                                        onChange={(newValue) => {
+                                        onChange={(newValue: any) => {
+
                                             setsecondvalue(newValue);
                                         }}
                                         renderInput={(params) =>
@@ -128,9 +146,15 @@ const SeclectBasin = (props: any) => {
                                                     border: " 1px solid rgba(0, 0, 0, 0.12)",
                                                     borderRadius: "6px",
                                                 },
+                                                " & input": {
+                                                    color: "#000000",
+                                                    fontWeight: "500",
+                                                    fontSize: { lg: "14px", xs: "12px" },
+                                                    lineHeight: "16px",
+                                                },
                                                 color: "#000000",
                                                 fontWeight: "500",
-                                                fontSize: "14px",
+                                                fontSize: { lg: "14px", xs: "12px" },
                                                 lineHeight: "16px",
                                                 "& input": {
                                                     padding: "10px 15px"
@@ -144,9 +168,7 @@ const SeclectBasin = (props: any) => {
                                         label="End Date"
                                         value={value}
                                         maxDate={new Date('2025-01-01')}
-                                        onChange={(newValue) => {
-                                            setValue(newValue);
-                                        }}
+                                        onChange={(e: any) => { checkValid(e) }}
                                         renderInput={(params) =>
                                             <TextField sx={{
                                                 "& fieldset ": {
@@ -155,14 +177,17 @@ const SeclectBasin = (props: any) => {
                                                 },
                                                 color: "#000000",
                                                 fontWeight: "500",
-                                                fontSize: "14px",
+                                                fontSize: { lg: "14px", xs: "12px" },
                                                 lineHeight: "16px",
                                                 "& input": {
-                                                    padding: "10px 15px"
+                                                    padding: "10px 15px",
+                                                    color: "#000000",
+                                                    fontWeight: "500",
+                                                    fontSize: { lg: "14px", xs: "12px" },
+                                                    lineHeight: "16px",
                                                 }
                                             }} {...params} />}
                                     />
-
                                 </LocalizationProvider>
 
                             </Box>
@@ -186,7 +211,6 @@ const SeclectBasin = (props: any) => {
                         border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
                         fontWeight: "600",
                         background: "#0F75BC",
-
                         fontSize: { lg: "14px", xs: "12px" },
                         lineHeight: "1",
                         "&:hover": {

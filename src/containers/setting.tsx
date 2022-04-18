@@ -77,9 +77,9 @@ const Setting = () => {
                                         marginBottom: "12px",
                                         color: "#454560"
                                     }} component={"h3"}>
-                                        Samantha
+                                        First Name
                                     </Typography>
-                                    <OutlinedInput required sx={{ "& :focus-visible": { border: "none" }, color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { borderColor: "#CCCCCC" } }} fullWidth placeholder="Samantha" />
+                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", "& :focus-visible": { border: "none" }, color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Samantha" />
                                 </Box>
                                 <Box sx={{ width: "100%", marginTop: { lg: "0px", xs: "30px" } }}>
                                     <Typography sx={{
@@ -89,9 +89,9 @@ const Setting = () => {
                                         marginBottom: "12px",
                                         color: "#454560"
                                     }} component={"h3"}>
-                                        William
+                                        Last Name
                                     </Typography>
-                                    <OutlinedInput required sx={{ color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { borderColor: "#CCCCCC" } }} fullWidth placeholder="William" />
+                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="William" />
                                 </Box>
                             </Box>
                             <Box sx={{ width: "100%", marginTop: "30px" }}>
@@ -104,7 +104,7 @@ const Setting = () => {
                                 }} component={"h3"}>
                                     Email Address
                                 </Typography>
-                                <OutlinedInput type="email" required sx={{ color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { borderColor: "#CCCCCC" } }} fullWidth placeholder="samantha@gmail.com" />
+                                <OutlinedInput type="email" required sx={{ border: " 1px solid #CCCCCC", background: "#F7F7F7", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="samantha@gmail.com" />
                             </Box>
                             <Box sx={{ width: "100%", marginTop: "30px" }}>
                                 <Typography sx={{
@@ -116,7 +116,7 @@ const Setting = () => {
                                 }} component={"h3"}>
                                     Areas of Interest
                                 </Typography>
-                                <OutlinedInput required sx={{ color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px" }} fullWidth placeholder="Bakken, Permian" />
+                                <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Bakken, Permian" />
                             </Box>
                             <Box sx={{ marginTop: "30px", "& Button": { maxWidth: "fit-content", width: "100%", margin: " auto 0 auto auto", lineHeight: "1", padding: "16px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
                                 <Button type="submit" variant="contained">Save Changes</Button>

@@ -1,26 +1,5 @@
 import { useState } from 'react';
-import { Box, Typography, Button, Tooltip, TooltipProps, tooltipClasses, ClickAwayListener, styled } from '@mui/material';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
-import InputBase from '@mui/material/InputBase';
-
-
-const BootstrapInput = styled(InputBase)(({ theme }) => ({
-    '& .MuiInputBase-input': {
-        borderRadius: "4PX",
-        position: 'relative',
-        backgroundColor: "transparent",
-        border: "1px solid rgba(213, 213, 213, 0.4)",
-        fontSize: "12PX",
-        padding: '12px 26px 9px 12px',
-        transition: "0.3s",
-        lineHeight: "13px",
-        // Use the system font instead of the default Roboto font.
-        '&:focus': {
-            borderColor: '#F2F6FE',
-        },
-    },
-}));
+import { Box, Typography, Button, Tooltip, TooltipProps, tooltipClasses, ClickAwayListener, styled, ListItem, List } from '@mui/material';
 
 const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -43,10 +22,13 @@ const MapFilter = () => {
         setOpen(true);
     };
 
-    const [age, setAge] = useState('');
-    const handleChange = (event: { target: { value: string } }) => {
-        setAge(event.target.value);
-    };
+    // Filter Dropdown State
+    const [filterValue, SetfilterValue] = useState("Persian");
+
+    const [OpenDorpdown, SetOpenDorpdown] = useState(false);
+    const ToggleDropdown = () => {
+        SetOpenDorpdown(!OpenDorpdown);
+    }
     return (
         <>
             <Box sx={{
@@ -76,24 +58,46 @@ const MapFilter = () => {
                                         {/* Basic Select  */}
                                         <Box sx={{ marginBottom: "17px" }}>
                                             <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", marginBottom: "4px" }} >Basin</Box>
-                                            <FormControl sx={{ m: 0, width: "100%" }} variant="standard">
+                                            <Box>
+                                                <Box onClick={ToggleDropdown} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
+                                                    <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
+                                                        {filterValue}
+                                                    </Typography>
+                                                    <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
+                                                </Box>
+                                                {OpenDorpdown && (
+                                                    <>
+                                                        <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", background: "#fff", boxShadow: "0 0 10px #ccc", maxWidth: "155px", width: "100%" }} >
+                                                            <ListItem onClick={() => { SetfilterValue("One"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                One
+                                                            </ListItem>
+                                                            <ListItem onClick={() => { SetfilterValue("Two"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
+                                                                Two
+                                                            </ListItem>
+                                                            <ListItem onClick={() => { SetfilterValue("Three"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                Three
+                                                            </ListItem>
+                                                        </List>
+                                                        <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+                                                        </Typography>
+                                                    </>
+                                                )}
+
+                                            </Box>
+                                            {/* <Box sx={{ m: 0, width: "100%" }} variant="standard">
                                                 <NativeSelect
                                                     id="demo-customized-select-native"
                                                     value={age}
                                                     onChange={handleChange}
                                                     input={<BootstrapInput />}
-                                                    sx={{
-                                                        "& option ": {
-
-                                                        }
-                                                    }}
                                                 >
                                                     <option aria-label="None" value="">Persian</option>
                                                     <option value={10}>Ten</option>
                                                     <option value={20}>Twenty</option>
                                                     <option value={30}>Thirty</option>
                                                 </NativeSelect>
-                                            </FormControl>
+                                            </Box> */}
+
                                         </Box>
 
 
@@ -165,11 +169,12 @@ const MapFilter = () => {
                                 </svg>
                             </Button>
                         </CustomTooltip>
-                    </Box>
-                </ClickAwayListener>
+                    </Box >
+                </ClickAwayListener >
             </Box >
+            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+            </Typography>
         </>
     )
 }
-
 export default MapFilter;
