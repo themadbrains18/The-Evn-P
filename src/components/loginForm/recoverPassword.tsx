@@ -15,7 +15,7 @@ const Login = (props: any) => {
     return (
         <>
             <Box sx={{ "& form": { maxWidth: "529px", width: "100%", padding: "50px 30px", background: "#FFFFFF", boxShadow: " 0px 4px 10px #F3F4F6" }, display: "grid", placeItems: "center", height: "100%", minHeight: "calc(100vh - 84px) " }}>
-                <form onSubmit={props.onSubmit} action="">
+                <form onSubmit={props.recoveronSubmit} action="">
                     <Typography sx={{ color: "#454560", fontWeight: "600", fontSize: { lg: "36px", xs: "30px" }, lineHeight: "40px" }} component={"h2"}>
                         Recover Your Password
                     </Typography>
@@ -42,7 +42,6 @@ const Login = (props: any) => {
                                 )}
                             </Button>
                         </Box>
-
                     </Box>
                     <Box sx={{ width: "100%", marginTop: "30px" }}>
                         <Typography sx={{

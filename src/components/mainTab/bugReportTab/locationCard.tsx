@@ -77,7 +77,7 @@ const LocationCard = (props: any) => {
                                                 color: "#8794C3",
                                             },
                                             "& .Mui-checked svg path": {
-                                                color: "#5D5FEF",
+                                                color: "#0F75BC",
                                             },
                                         }}
                                             control={<Checkbox name={item.CheckboxLabelName} />} label={item.CheckboxLabel} />

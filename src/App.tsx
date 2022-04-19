@@ -27,9 +27,11 @@ const App = () => {
       if (location.pathname === "/login") {
         setViewTopHeader(true)
       }
+      else {
+        setViewTopHeader(false);
+      }
     }
     checkPath();
-
   })
 
   return (

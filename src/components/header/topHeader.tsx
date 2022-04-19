@@ -1,12 +1,12 @@
 import { Box } from "@mui/system";
-
+import { Link } from "react-router-dom";
 const Topheader = () => {
     return (
         <>
-            <Box sx={{ "& a img,a ": { height: "38px" }, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "21px 30px" }} component={"header"}>
-                <a href="/">
+            <Box sx={{ "& img ": { height: "38px" }, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "21px 30px" }} component={"header"}>
+                <Box sx={{ height: "38px" }} to="/" component={Link} >
                     <img src={require("../../assets/img/short-logo.png")} alt="" />
-                </a>
+                </Box>
                 <Box sx={{ height: "42px", "& img": { height: "42px" } }}>
                     <img src={require("../../assets/img/devby.png")} alt="" />
                 </Box>

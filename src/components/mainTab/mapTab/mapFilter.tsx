@@ -14,12 +14,11 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 const MapFilter = () => {
     const [open, setOpen] = useState(false);
-
     const handleTooltipClose = () => {
         setOpen(false);
     };
     const handleTooltipOpen = () => {
-        setOpen(true);
+        setOpen(!open);
     };
 
     // Filter Dropdown State
@@ -46,7 +45,7 @@ const MapFilter = () => {
                             disableFocusListener
                             disableHoverListener
                             disableTouchListener
-                            sx={{ justifyContent: "flex-start", minHeight: "auto", padding: "8px 10px", margin: "0" }}
+                            sx={{ "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", padding: "8px 10px", margin: "0" }}
                             title={<Box sx={{ background: "#fff", padding: "12px 10px 17px", borderRadius: " 4px" }}>
                                 <form>
                                     <Box >
@@ -63,7 +62,9 @@ const MapFilter = () => {
                                                     <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
                                                         {filterValue}
                                                     </Typography>
-                                                    <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
+                                                    <Typography sx={{ transform: ` ${OpenDorpdown && "rotate(180deg)"}` }}>
+                                                        <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
+                                                    </Typography>
                                                 </Box>
                                                 {OpenDorpdown && (
                                                     <>
@@ -84,19 +85,6 @@ const MapFilter = () => {
                                                 )}
 
                                             </Box>
-                                            {/* <Box sx={{ m: 0, width: "100%" }} variant="standard">
-                                                <NativeSelect
-                                                    id="demo-customized-select-native"
-                                                    value={age}
-                                                    onChange={handleChange}
-                                                    input={<BootstrapInput />}
-                                                >
-                                                    <option aria-label="None" value="">Persian</option>
-                                                    <option value={10}>Ten</option>
-                                                    <option value={20}>Twenty</option>
-                                                    <option value={30}>Thirty</option>
-                                                </NativeSelect>
-                                            </Box> */}
 
                                         </Box>
 
@@ -135,6 +123,7 @@ const MapFilter = () => {
                                         </Box>
                                     </Box>
                                     <Button variant="contained" sx={{
+                                        textTransform: "capitalize",
                                         width: "100%", marginTop: "10px", padding: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "#FFFFFF", background: "#0F75BC"
                                     }} >Apply Filter</Button>
                                 </form>
@@ -150,6 +139,9 @@ const MapFilter = () => {
                                     margin: "0",
 
                                 },
+                                "& .filtor_icon path": {
+                                    fill: "#8794C3"
+                                },
                                 "&:hover,&.active,&.Mui-expanded,&[aria-labelledby*='mui-']": {
                                     background: "#F2F6FE",
                                     "& p": {
@@ -164,8 +156,8 @@ const MapFilter = () => {
                                     },
                                 }
                             }}  >
-                                <svg width={34} height={34} className="filtor_icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.1795 19.457H22.8205L25.6395 14.543H8.36056L11.1795 19.457ZM29.2221 5.11328H4.77794C3.96446 5.11328 3.45646 5.9998 3.86485 6.70703L7.13868 12.418H26.8613L30.1385 6.70703C30.5436 5.9998 30.0356 5.11328 29.2221 5.11328V5.11328ZM11.5879 27.8242C11.5879 28.4119 12.0594 28.8867 12.6438 28.8867H21.3563C21.9406 28.8867 22.4121 28.4119 22.4121 27.8242V21.582H11.5879V27.8242Z" fill="#8794C4" />
+                                <svg width={22} height={20} className="filtor_icon" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.86131 18.2773C6.86131 18.7268 7.22185 19.0898 7.66873 19.0898H14.3312C14.7781 19.0898 15.1387 18.7268 15.1387 18.2773V13.3008H6.86131V18.2773ZM20.3463 0.910156H1.65369C1.03162 0.910156 0.643143 1.58809 0.955448 2.12891L6.57439 11.6758H15.4306L21.0496 2.12891C21.3568 1.58809 20.9683 0.910156 20.3463 0.910156Z" fill="#0F75BC" />
                                 </svg>
                             </Button>
                         </CustomTooltip>

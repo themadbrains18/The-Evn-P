@@ -1,4 +1,4 @@
-import { Box, Button, Typography, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { Box, Button, Typography, MenuItem, FormControl } from '@mui/material';
 import * as React from 'react';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
@@ -6,15 +6,17 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
+
 const SeclectBasin = (props: any) => {
-    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
-    const [date, setdate] = React.useState('');
-    const [value, setValue] = React.useState<Date | null>(null);
+    const [age, setAge] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
-        setdate(event.target.value as string);
-    };
+        setAge(event.target.value);
+    }
+
+    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
+    const [value, setValue] = React.useState<Date | null>(null);
     const clearForm = () => {
-        setdate("");
+        setAge("");
         setsecondvalue(null);
         setValue(null);
         if (props.selectGo) {
@@ -22,7 +24,7 @@ const SeclectBasin = (props: any) => {
         }
     }
     const submitForm = () => {
-        if (secondvalue && value && date) {
+        if (age && value) {
             if (props.selectGo) {
                 props.selectGo(true);
             }
@@ -52,92 +54,83 @@ const SeclectBasin = (props: any) => {
                     <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
                         Select Basin
                     </Typography>
-                    <FormControl fullWidth sx={{
-                        "& legend ": {
-                            display: "none",
-                        },
-                        "& label": {
-                            background: "#fff",
-                            padding: "0 10px",
-                            left: "-10px",
-                            color: "#000000",
-                            fontWeight: "500",
-                            fontSize: { lg: "14px", xs: "12px" },
-                            marginTop: "3px"
-                        },
-                        "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root": {
-                            transform: " translate(14px, 0px) scale(0.75)"
-                        }
-                    }}>
-                        <InputLabel id="demo-simple-select-label">Persian</InputLabel>
-                        <Select
-                            sx={{
-                                color: "#000000",
-                                fontWeight: "500",
-                                fontSize: { lg: "14px", xs: "12px" },
-                                marginTop: "15px",
-                                lineHeight: "16px",
-                                "& >div ": {
-                                    padding: "6px 15px",
+                    <FormControl fullWidth >
+                        <Box >
+                            <FormControl fullWidth sx={{
+                                "& svg": {
+                                    display: "none!important",
                                 },
-                                "& fieldset ": {
-                                    border: " 1px solid rgba(0, 0, 0, 0.12)",
-                                    borderRadius: "6px",
-                                }
-                            }}
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={date}
-                            label="Persian"
-                            onChange={handleChange}
-                        >
-                            <MenuItem
-                                sx={{
-                                    color: "#000000",
-                                    fontWeight: "500",
-                                    fontSize: { lg: "14px", xs: "12px" },
-                                    lineHeight: "16px"
-                                }} value={10}>Persian</MenuItem>
-                            <MenuItem
-                                sx={{
-                                    color: "#000000",
-                                    fontWeight: "500",
-                                    fontSize: { lg: "14px", xs: "12px" },
-                                    lineHeight: "16px"
-                                }}
-                                value={20}>Persian</MenuItem>
-                            <MenuItem
-                                sx={{
-                                    color: "#000000",
-                                    fontWeight: "500",
-                                    fontSize: { lg: "14px", xs: "12px" },
-                                    lineHeight: "16px"
-                                }}
-                                value={30}>Persian</MenuItem>
-                        </Select>
+                                marginTop: "10px!important", minWidth: 120,
+                                zIndex: "1"
+                            }}>
+                                <Select
+                                    sx={{
+                                        fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
+                                            padding: "12px 15px",
+                                            minHeight: "initial!important",
+                                            " & span": {
+                                                fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
+                                            },
+                                            position: "relative",
+                                            "&[aria-expanded=true]": {
+                                                "&::after": {
+                                                    transform: "translateY(-50%) rotate(180deg)",
+                                                }
+                                            },
+                                            "&::after": {
+                                                content: '""',
+                                                position: "absolute",
+                                                top: "50%",
+                                                transform: "translateY(-50%)",
+                                                backgroundImage: `url(${require("../../assets/svg/filter-arrow-icon.svg").default})`,
+                                                backgroundRepeat: "no-repeat",
+                                                height: "10px",
+                                                width: "19px",
+                                                right: "15px",
+                                                zIndex: "-1",
+                                            }
+                                        }
+                                    }}
+                                    value={age}
+                                    onChange={handleChange}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                >
+                                    <MenuItem value="">
+                                        <Typography component={"span"}>Persian</Typography>
+                                    </MenuItem>
+                                    <MenuItem value={10}>1</MenuItem>
+                                    <MenuItem value={20}>2</MenuItem>
+                                    <MenuItem value={30}>3</MenuItem>
+                                </Select>
+                            </FormControl>
+
+                        </Box>
 
                         <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
                             <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
                             <Box sx={{
                                 display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
                                 "& label": {
-                                    top: "-10px",
+                                    top: "-5px",
                                     color: "#000000",
                                     fontWeight: "500",
                                     fontSize: { lg: "14px", xs: "12px" },
                                 },
-                                "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root": {
-                                    transform: " translate(14px, -5px) scale(0.75)"
+                                "& input": {
+                                    paddingTop: "13px",
+                                    paddingBottom: "13px",
+                                },
+                                "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
+                                    transform: " translate(20px, -1px) scale(0.70)"
                                 }
                             }}>
-
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         label="Beginning Date"
                                         minDate={new Date('2018-01-01')}
                                         value={secondvalue}
                                         onChange={(newValue: any) => {
-
                                             setsecondvalue(newValue);
                                         }}
                                         renderInput={(params) =>
