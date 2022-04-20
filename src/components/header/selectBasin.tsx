@@ -1,5 +1,6 @@
 import { Box, Button, Typography, MenuItem, FormControl } from '@mui/material';
 import * as React from 'react';
+import { useEffect } from 'react';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -23,6 +24,7 @@ const SeclectBasin = (props: any) => {
             props.selectGo(false)
         }
     }
+    // Sumbit Form
     const submitForm = () => {
         if (age && value) {
             if (props.selectGo) {
@@ -30,6 +32,13 @@ const SeclectBasin = (props: any) => {
             }
         }
     }
+    useEffect(() => {
+        let input = document.querySelectorAll("input");
+        input.forEach((e) => {
+            e.setAttribute("required", "");
+        });
+
+    });
     const checkValid = (e: any) => {
         let StartValue: any = secondvalue;
         let EndValue: any = e;
@@ -43,176 +52,184 @@ const SeclectBasin = (props: any) => {
                     if (new Date(StartValue).getDate() < new Date(EndValue).getDate()) {
                         setValue(EndValue);
                     }
+                    else {
+                        alert("Please Enter The Correct Date")
+                    }
                 }
             }
         }
     }
     return (
         <>
-            <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
-                <Box sx={{ minWidth: 120 }}>
-                    <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
-                        Select Basin
-                    </Typography>
-                    <FormControl fullWidth >
-                        <Box >
-                            <FormControl fullWidth sx={{
-                                "& svg": {
-                                    display: "none!important",
-                                },
-                                marginTop: "10px!important", minWidth: 120,
-                                zIndex: "1"
-                            }}>
-                                <Select
-                                    sx={{
-                                        fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
-                                            padding: "12px 15px",
-                                            minHeight: "initial!important",
-                                            " & span": {
-                                                fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
-                                            },
-                                            position: "relative",
-                                            "&[aria-expanded=true]": {
+            <form action="">
+                <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
+                    <Box sx={{ minWidth: 120 }}>
+                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
+                            Select Basin
+                        </Typography>
+                        <FormControl fullWidth >
+                            <Box >
+                                <FormControl required fullWidth sx={{
+                                    "& svg": {
+                                        display: "none!important",
+                                    },
+                                    marginTop: "10px!important", minWidth: 120,
+                                    zIndex: "1"
+                                }}>
+                                    <Select
+                                        sx={{
+                                            fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
+                                                padding: "12px 15px",
+                                                minHeight: "initial!important",
+                                                " & span": {
+                                                    fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
+                                                },
+                                                position: "relative",
+                                                "&[aria-expanded=true]": {
+                                                    "&::after": {
+                                                        transform: "translateY(-50%) rotate(180deg)",
+                                                    }
+                                                },
                                                 "&::after": {
-                                                    transform: "translateY(-50%) rotate(180deg)",
+                                                    content: '""',
+                                                    position: "absolute",
+                                                    top: "50%",
+                                                    transform: "translateY(-50%)",
+                                                    backgroundImage: `url(${require("../../assets/svg/filter-arrow-icon.svg").default})`,
+                                                    backgroundRepeat: "no-repeat",
+                                                    height: "10px",
+                                                    width: "19px",
+                                                    right: "15px",
+                                                    zIndex: "-1",
                                                 }
-                                            },
-                                            "&::after": {
-                                                content: '""',
-                                                position: "absolute",
-                                                top: "50%",
-                                                transform: "translateY(-50%)",
-                                                backgroundImage: `url(${require("../../assets/svg/filter-arrow-icon.svg").default})`,
-                                                backgroundRepeat: "no-repeat",
-                                                height: "10px",
-                                                width: "19px",
-                                                right: "15px",
-                                                zIndex: "-1",
                                             }
-                                        }
-                                    }}
-                                    value={age}
-                                    onChange={handleChange}
-                                    displayEmpty
-                                    inputProps={{ 'aria-label': 'Without label' }}
-                                >
-                                    <MenuItem value="">
-                                        <Typography component={"span"}>Persian</Typography>
-                                    </MenuItem>
-                                    <MenuItem value={10}>1</MenuItem>
-                                    <MenuItem value={20}>2</MenuItem>
-                                    <MenuItem value={30}>3</MenuItem>
-                                </Select>
-                            </FormControl>
-
-                        </Box>
-
-                        <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
-                            <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
-                            <Box sx={{
-                                display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
-                                "& label": {
-                                    top: "-5px",
-                                    color: "#000000",
-                                    fontWeight: "500",
-                                    fontSize: { lg: "14px", xs: "12px" },
-                                },
-                                "& input": {
-                                    paddingTop: "13px",
-                                    paddingBottom: "13px",
-                                },
-                                "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
-                                    transform: " translate(20px, -1px) scale(0.70)"
-                                }
-                            }}>
-                                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <DatePicker
-                                        label="Beginning Date"
-                                        minDate={new Date('2018-01-01')}
-                                        value={secondvalue}
-                                        onChange={(newValue: any) => {
-                                            setsecondvalue(newValue);
                                         }}
-                                        renderInput={(params) =>
-                                            <TextField sx={{
-                                                "& fieldset ": {
-                                                    border: " 1px solid rgba(0, 0, 0, 0.12)",
-                                                    borderRadius: "6px",
-                                                },
-                                                " & input": {
-                                                    color: "#000000",
-                                                    fontWeight: "500",
-                                                    fontSize: { lg: "14px", xs: "12px" },
-                                                    lineHeight: "16px",
-                                                },
-                                                color: "#000000",
-                                                fontWeight: "500",
-                                                fontSize: { lg: "14px", xs: "12px" },
-                                                lineHeight: "16px",
-                                                "& input": {
-                                                    padding: "10px 15px"
-                                                }
-                                            }} {...params} />}
-                                    />
+                                        value={age}
+                                        onChange={handleChange}
+                                        displayEmpty
+                                        inputProps={{ 'aria-label': 'Without label' }}
 
-                                </LocalizationProvider>
-                                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <DatePicker
-                                        label="End Date"
-                                        value={value}
-                                        maxDate={new Date('2025-01-01')}
-                                        onChange={(e: any) => { checkValid(e) }}
-                                        renderInput={(params) =>
-                                            <TextField sx={{
-                                                "& fieldset ": {
-                                                    border: " 1px solid rgba(0, 0, 0, 0.12)",
-                                                    borderRadius: "6px",
-                                                },
-                                                color: "#000000",
-                                                fontWeight: "500",
-                                                fontSize: { lg: "14px", xs: "12px" },
-                                                lineHeight: "16px",
-                                                "& input": {
-                                                    padding: "10px 15px",
-                                                    color: "#000000",
-                                                    fontWeight: "500",
-                                                    fontSize: { lg: "14px", xs: "12px" },
-                                                    lineHeight: "16px",
-                                                }
-                                            }} {...params} />}
-                                    />
-                                </LocalizationProvider>
+                                    >
+                                        <MenuItem value="">
+                                            <Typography component={"span"}>Persian</Typography>
+                                        </MenuItem>
+                                        <MenuItem value={10}>1</MenuItem>
+                                        <MenuItem value={20}>2</MenuItem>
+                                        <MenuItem value={30}>3</MenuItem>
+                                    </Select>
+                                </FormControl>
 
                             </Box>
-                        </Box>
-                    </FormControl>
-                </Box>
 
-                <Box sx={{ marginTop: "22px", textAlign: "end" }}>
-                    <Button sx={{
-                        border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
-                        fontWeight: "600",
-                        fontSize: { lg: "14px", xs: "12px" },
-                        lineHeight: "1",
-                        "&:hover": {
-                            backgroundColor: '#0F75BC',
-                            color: "#fff"
-                        }
-                    }} variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
+                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
+                                <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
+                                <Box sx={{
+                                    display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
+                                    "& label": {
+                                        top: "-5px",
+                                        color: "#000000",
+                                        fontWeight: "500",
+                                        fontSize: { lg: "14px", xs: "12px" },
+                                    },
+                                    "& input": {
+                                        paddingTop: "13px",
+                                        paddingBottom: "13px",
+                                    },
+                                    "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
+                                        transform: " translate(20px, -1px) scale(0.70)"
+                                    }
+                                }}>
+                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                        <DatePicker
 
-                    <Button sx={{
-                        border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
-                        fontWeight: "600",
-                        background: "#0F75BC",
-                        fontSize: { lg: "14px", xs: "12px" },
-                        lineHeight: "1",
-                        "&:hover": {
-                            backgroundColor: '#0F75BC',
-                            color: "#fff"
-                        }
-                    }} variant="outlined" onClick={submitForm}>Go</Button>
-                </Box>
-            </Box >
+                                            label="Beginning Date"
+                                            minDate={new Date('2018-01-01')}
+                                            value={secondvalue}
+                                            onChange={(newValue: any) => {
+                                                setsecondvalue(newValue);
+                                            }}
+                                            renderInput={(params) =>
+                                                <TextField sx={{
+
+                                                    "& fieldset ": {
+                                                        border: " 1px solid rgba(0, 0, 0, 0.12)",
+                                                        borderRadius: "6px",
+                                                    },
+                                                    " & input": {
+                                                        color: "#000000",
+                                                        fontWeight: "500",
+                                                        fontSize: { lg: "14px", xs: "12px" },
+                                                        lineHeight: "16px",
+                                                    },
+                                                    color: "#000000",
+                                                    fontWeight: "500",
+                                                    fontSize: { lg: "14px", xs: "12px" },
+                                                    lineHeight: "16px",
+                                                    "& input": {
+                                                        padding: "10px 15px"
+                                                    }
+                                                }}   {...params} />}
+                                        />
+
+                                    </LocalizationProvider>
+                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                        <DatePicker
+                                            label="End Date"
+                                            value={value}
+                                            maxDate={new Date('2025-01-01')}
+                                            onChange={(e: any) => { checkValid(e) }}
+                                            renderInput={(params) =>
+                                                <TextField sx={{
+                                                    "& fieldset ": {
+                                                        border: " 1px solid rgba(0, 0, 0, 0.12)",
+                                                        borderRadius: "6px",
+                                                    },
+                                                    color: "#000000",
+                                                    fontWeight: "500",
+                                                    fontSize: { lg: "14px", xs: "12px" },
+                                                    lineHeight: "16px",
+                                                    "& input": {
+                                                        padding: "10px 15px",
+                                                        color: "#000000",
+                                                        fontWeight: "500",
+                                                        fontSize: { lg: "14px", xs: "12px" },
+                                                        lineHeight: "16px",
+                                                    }
+
+                                                }}   {...params} />}
+                                        />
+                                    </LocalizationProvider>
+
+                                </Box>
+                            </Box>
+                        </FormControl>
+                    </Box>
+                    <Box sx={{ marginTop: "22px", textAlign: "end" }}>
+                        <Button sx={{
+                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
+                            fontWeight: "600",
+                            fontSize: { lg: "14px", xs: "12px" },
+                            lineHeight: "1",
+                            "&:hover": {
+                                backgroundColor: '#0F75BC',
+                                color: "#fff"
+                            }
+                        }} variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
+
+                        <Button type="submit" sx={{
+                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
+                            fontWeight: "600",
+                            background: "#0F75BC",
+                            fontSize: { lg: "14px", xs: "12px" },
+                            lineHeight: "1",
+                            "&:hover": {
+                                backgroundColor: '#0F75BC',
+                                color: "#fff"
+                            }
+                        }} variant="outlined" onClick={submitForm}>Go</Button>
+                    </Box>
+                </Box >
+            </form>
         </>
     )
 }

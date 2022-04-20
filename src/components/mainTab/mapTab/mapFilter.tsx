@@ -23,11 +23,20 @@ const MapFilter = () => {
 
     // Filter Dropdown State
     const [filterValue, SetfilterValue] = useState("Persian");
-
     const [OpenDorpdown, SetOpenDorpdown] = useState(false);
     const ToggleDropdown = () => {
         SetOpenDorpdown(!OpenDorpdown);
     }
+
+    const [FilterDot, SetFilterDot] = useState(false);
+    const SubmitFilterForm = (e: any) => {
+        e.preventDefault();
+        setOpen(!open);
+        if (e._reactName) {
+            SetFilterDot(true)
+        }
+    }
+
     return (
         <>
             <Box sx={{
@@ -35,6 +44,7 @@ const MapFilter = () => {
                     zIndex: "2501"
                 }
             }}>
+
                 <ClickAwayListener onClickAway={handleTooltipClose}>
                     <Box >
                         <CustomTooltip
@@ -46,92 +56,91 @@ const MapFilter = () => {
                             disableHoverListener
                             disableTouchListener
                             sx={{ "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", padding: "8px 10px", margin: "0" }}
-                            title={<Box sx={{ background: "#fff", padding: "12px 10px 17px", borderRadius: " 4px" }}>
-                                <form>
-                                    <Box >
-                                        {/* Heading */}
-                                        <Typography component="h4" sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", marginBottom: "24px" }}>
-                                            Filter
-                                        </Typography>
-
-                                        {/* Basic Select  */}
-                                        <Box sx={{ marginBottom: "17px" }}>
-                                            <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", marginBottom: "4px" }} >Basin</Box>
-                                            <Box>
-                                                <Box onClick={ToggleDropdown} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
-                                                    <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
-                                                        {filterValue}
-                                                    </Typography>
-                                                    <Typography sx={{ transform: ` ${OpenDorpdown && "rotate(180deg)"}` }}>
-                                                        <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
-                                                    </Typography>
-                                                </Box>
-                                                {OpenDorpdown && (
-                                                    <>
-                                                        <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", background: "#fff", boxShadow: "0 0 10px #ccc", maxWidth: "155px", width: "100%" }} >
-                                                            <ListItem onClick={() => { SetfilterValue("One"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
-                                                                One
-                                                            </ListItem>
-                                                            <ListItem onClick={() => { SetfilterValue("Two"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
-                                                                Two
-                                                            </ListItem>
-                                                            <ListItem onClick={() => { SetfilterValue("Three"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
-                                                                Three
-                                                            </ListItem>
-                                                        </List>
-                                                        <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+                            title={
+                                <Box sx={{ display: `${!open && ("none")}`, background: "#fff", padding: "12px 10px 17px", borderRadius: " 4px" }}>
+                                    <form onSubmit={SubmitFilterForm}>
+                                        <Box >
+                                            {/* Heading */}
+                                            <Typography component="h4" sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", marginBottom: "24px" }}>
+                                                Filter
+                                            </Typography>
+                                            {/* Basic Select  */}
+                                            <Box sx={{ marginBottom: "17px" }}>
+                                                <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", marginBottom: "4px" }} >Basin</Box>
+                                                <Box>
+                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
+                                                        <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
+                                                            {filterValue}
                                                         </Typography>
-                                                    </>
-                                                )}
-
+                                                        <Typography sx={{ transform: ` ${OpenDorpdown && "rotate(180deg)"}` }}>
+                                                            <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
+                                                        </Typography>
+                                                    </Box>
+                                                    {OpenDorpdown && (
+                                                        <>
+                                                            <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", background: "#fff", boxShadow: "0 0 10px #ccc", maxWidth: "155px", width: "100%" }} >
+                                                                <ListItem onClick={() => { SetfilterValue("One"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    One
+                                                                </ListItem>
+                                                                <ListItem onClick={() => { SetfilterValue("Two"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
+                                                                    Two
+                                                                </ListItem>
+                                                                <ListItem onClick={() => { SetfilterValue("Three"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    Three
+                                                                </ListItem>
+                                                            </List>
+                                                            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+                                                            </Typography>
+                                                        </>
+                                                    )}
+                                                </Box>
                                             </Box>
-
+                                            {/* Date From  */}
+                                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}  >
+                                                <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipFrom" >From</Box>
+                                                <Box component="input" sx={{
+                                                    border: "1px solid rgba(213, 213, 213, 0.4)",
+                                                    borderRadius: "4px",
+                                                    padding: "8px 12px",
+                                                    color: "#979797",
+                                                    fontWeight: "400",
+                                                    fontSize: "12px",
+                                                    lineHeight: "13px",
+                                                    "&:focus": {
+                                                        outlineColor: "#1D8CD4"
+                                                    },
+                                                }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
+                                            </Box>
+                                            {/* Date To  */}
+                                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
+                                                <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipTo">To</Box>
+                                                <Box component="input" sx={{
+                                                    border: "1px solid rgba(213, 213, 213, 0.4)",
+                                                    borderRadius: "4px",
+                                                    padding: "8px 12px",
+                                                    color: "#979797",
+                                                    fontWeight: "400",
+                                                    fontSize: "12px",
+                                                    lineHeight: "13px",
+                                                    "&:focus": {
+                                                        outlineColor: "#1D8CD4"
+                                                    },
+                                                }} type="date" required id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
+                                            </Box>
                                         </Box>
-
-
-                                        {/* Date From  */}
-                                        <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}  >
-                                            <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipFrom" >From</Box>
-                                            <Box component="input" sx={{
-                                                border: "1px solid rgba(213, 213, 213, 0.4)",
-                                                borderRadius: "4px",
-                                                padding: "8px 12px",
-                                                color: "#979797",
-                                                fontWeight: "400",
-                                                fontSize: "12px",
-                                                lineHeight: "13px",
-                                                "&:focus": {
-                                                    outlineColor: "#1D8CD4"
-                                                },
-                                            }} type="date" id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
-                                        </Box>
-                                        {/* Date To  */}
-                                        <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
-                                            <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipTo">To</Box>
-                                            <Box component="input" sx={{
-                                                border: "1px solid rgba(213, 213, 213, 0.4)",
-                                                borderRadius: "4px",
-                                                padding: "8px 12px",
-                                                color: "#979797",
-                                                fontWeight: "400",
-                                                fontSize: "12px",
-                                                lineHeight: "13px",
-                                                "&:focus": {
-                                                    outlineColor: "#1D8CD4"
-                                                },
-                                            }} type="date" id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
-                                        </Box>
-                                    </Box>
-                                    <Button variant="contained" sx={{
-                                        textTransform: "capitalize",
-                                        width: "100%", marginTop: "10px", padding: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "#FFFFFF", background: "#0F75BC"
-                                    }} >Apply Filter</Button>
-                                </form>
-                            </Box>}>
+                                        <Button type='submit' variant="contained" sx={{
+                                            textTransform: "capitalize",
+                                            width: "100%", marginTop: "10px", padding: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "#FFFFFF", background: "#0F75BC"
+                                        }} >Apply Filter</Button>
+                                    </form>
+                                </Box>
+                            }
+                        >
                             <Button onClick={handleTooltipOpen} sx={{
-                                mr: 0, display: "grid", placeItems: "center", minWidth: "auto", padding: "10px",
+                                mr: 0, display: "grid", placeItems: "center", minWidth: "auto", padding: "17px 16px",
                                 color: "#8794C4",
                                 background: "#F2F6FE", borderRadius: "50%",
+                                position: "relative",
                                 "& p": {
                                     color: "#8794C3",
                                 },
@@ -154,6 +163,17 @@ const MapFilter = () => {
                                     "& .nav_list_item_arrow path": {
                                         stroke: "#0F75BC"
                                     },
+                                },
+                                "&::after": {
+                                    content: '""',
+                                    position: "absolute",
+                                    top: "14px",
+                                    right: "4px",
+                                    background: "#EB5757",
+                                    height: "9px",
+                                    width: "9px",
+                                    borderRadius: "50%",
+                                    display: `${FilterDot ? "block" : "none"}`
                                 }
                             }}  >
                                 <svg width={22} height={20} className="filtor_icon" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,6 +183,8 @@ const MapFilter = () => {
                         </CustomTooltip>
                     </Box >
                 </ClickAwayListener >
+
+
             </Box >
             <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
             </Typography>
