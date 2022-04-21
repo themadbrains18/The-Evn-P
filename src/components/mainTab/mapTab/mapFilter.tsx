@@ -134,35 +134,73 @@ const MapFilter = () => {
                                             {/* Date From  */}
                                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}  >
                                                 <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipFrom" >From</Box>
+                                                <Box sx={{
+                                                    position: "relative",
+                                                    "&::after": {
+                                                        content: '""',
+                                                        position: "absolute",
+                                                        top: "50%",
+                                                        transform: "translateY(-50%)",
+                                                        right: "12px",
+                                                        backgroundImage: `url(${require("../../../assets/svg/calander-cion.svg").default})`,
+                                                        height: "16px",
+                                                        width: "16px",
+                                                        zIndex: "1"
+                                                    }
+                                                }}>
+                                                    <Box className='frominput_date' component="input" sx={{
+                                                        border: "1px solid rgba(213, 213, 213, 0.4)",
+                                                        borderRadius: "4px",
+                                                        padding: "8px 12px",
+                                                        color: "#979797",
+                                                        fontWeight: "400",
+                                                        fontSize: "12px",
+                                                        lineHeight: "13px",
+                                                        position: "relative",
+                                                        background: "transparent",
+                                                        zIndex: "4",
+                                                        "&:focus": {
+                                                            outlineColor: "#1D8CD4"
+                                                        }
 
-                                                <Box className='frominput_date' component="input" sx={{
-                                                    border: "1px solid rgba(213, 213, 213, 0.4)",
-                                                    borderRadius: "4px",
-                                                    padding: "8px 12px",
-                                                    color: "#979797",
-                                                    fontWeight: "400",
-                                                    fontSize: "12px",
-                                                    lineHeight: "13px",
-                                                    "&:focus": {
-                                                        outlineColor: "#1D8CD4"
-                                                    },
-                                                }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
+                                                    }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
+                                                </Box>
+
+
                                             </Box>
                                             {/* Date To  */}
                                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
                                                 <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipTo">To</Box>
-                                                <Box component="input" sx={{
-                                                    border: "1px solid rgba(213, 213, 213, 0.4)",
-                                                    borderRadius: "4px",
-                                                    padding: "8px 12px",
-                                                    color: "#979797",
-                                                    fontWeight: "400",
-                                                    fontSize: "12px",
-                                                    lineHeight: "13px",
-                                                    "&:focus": {
-                                                        outlineColor: "#1D8CD4"
-                                                    },
-                                                }} type="date" required id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
+                                                <Box sx={{
+                                                    position: "relative",
+                                                    "&::after": {
+                                                        content: '""',
+                                                        position: "absolute",
+                                                        top: "50%",
+                                                        transform: "translateY(-50%)",
+                                                        right: "12px",
+                                                        backgroundImage: `url(${require("../../../assets/svg/calander-cion.svg").default})`,
+                                                        height: "16px",
+                                                        width: "16px",
+                                                        zIndex: "1"
+                                                    }
+                                                }}>
+                                                    <Box component="input" sx={{
+                                                        border: "1px solid rgba(213, 213, 213, 0.4)",
+                                                        borderRadius: "4px",
+                                                        padding: "8px 12px",
+                                                        color: "#979797",
+                                                        fontWeight: "400",
+                                                        fontSize: "12px",
+                                                        lineHeight: "13px",
+                                                        position: "relative",
+                                                        background: "transparent",
+                                                        zIndex: "4",
+                                                        "&:focus": {
+                                                            outlineColor: "#1D8CD4"
+                                                        },
+                                                    }} type="date" required id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
+                                                </Box>
                                             </Box>
                                         </Box>
                                         <Button type='submit' variant="contained" sx={{
