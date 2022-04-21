@@ -53,9 +53,15 @@ const SeclectBasin = (props: any) => {
                         setValue(EndValue);
                     }
                     else {
-                        alert("Please Enter The Correct Date")
+                        alert("Please Enter The Correct Day")
                     }
                 }
+                else {
+                    alert("Please Enter The Correct Month")
+                }
+            }
+            else {
+                alert("Please Enter The Correct Year")
             }
         }
     }
@@ -111,16 +117,17 @@ const SeclectBasin = (props: any) => {
 
                                     >
                                         <MenuItem value="">
-                                            <Typography component={"span"}>Persian</Typography>
+                                            <Typography component={"span"}>All Basins</Typography>
                                         </MenuItem>
-                                        <MenuItem value={10}>1</MenuItem>
-                                        <MenuItem value={20}>2</MenuItem>
-                                        <MenuItem value={30}>3</MenuItem>
+                                        <MenuItem value={10}>Appalachian</MenuItem>
+                                        <MenuItem value={20}>Bakken</MenuItem>
+                                        <MenuItem value={30}>Denver-Julesburg</MenuItem>
+                                        <MenuItem value={30}>Eagleford</MenuItem>
+                                        <MenuItem value={30}>Permian</MenuItem>
                                     </Select>
                                 </FormControl>
 
                             </Box>
-
                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
                                 <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
                                 <Box sx={{
@@ -204,6 +211,8 @@ const SeclectBasin = (props: any) => {
                             </Box>
                         </FormControl>
                     </Box>
+
+                    {/* Button */}
                     <Box sx={{ marginTop: "22px", textAlign: "end" }}>
                         <Button sx={{
                             border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",

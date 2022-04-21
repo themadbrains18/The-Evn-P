@@ -19,6 +19,7 @@ const MapCard = () => {
                                 <Box component="div" sx={{ position: "relative" }}>
                                     {/* Card Image */}
                                     <CardMedia
+
                                         component="img"
                                         image={require(`../../../assets/img/${elem.map_card_img}.jpg`)}
                                         alt="green iguana"
@@ -50,13 +51,13 @@ const MapCard = () => {
                                                     <Typography sx={{
                                                         fontSize: { lg: 14, xs: 12 },
                                                         fontWeight: 500,
+                                                        marginTop: "4px",
                                                         color: "#1D8CD4",
                                                         display: "block",
                                                         lineHeight: "16px",
                                                     }} component="span" >
                                                         {cardElem.link_txt}
                                                     </Typography>
-
                                                 </Button>
                                             )
                                         })}

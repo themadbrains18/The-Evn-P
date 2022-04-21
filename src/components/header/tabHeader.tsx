@@ -7,7 +7,7 @@ type headerData = {
     blockInfoheading: String,
     divider: Boolean
     headerOption: any; // headerOption Must be = Download , Search,MapView,Reports
-   
+
 }
 
 
@@ -36,7 +36,7 @@ const Header = (props: headerData) => {
                         {props.tabheading}
                     </Typography>
                 </Box>
-                <Box sx={{display:"flex",alignItems:"center",gap:"10px"}}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
 
                     {props.headerOption.map((elem: any, index: any) => {
                         return (
@@ -153,7 +153,7 @@ const Header = (props: headerData) => {
                                     <Button variant="text" sx={{ alignItems: "center" }}>
                                         <img src={require("../../assets/svg/report.svg").default} alt="report" />
                                         <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
-                                             Reports
+                                            Reports
                                         </Typography>
                                     </Button>
                                 }
@@ -168,7 +168,7 @@ const Header = (props: headerData) => {
             {
                 props.blockInfo ?
                     <Box sx={{ backgroundColor: "#FDFDFD", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
-                        <Typography component="h4" sx={{ fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", fontWeight: "400" }}>
+                        <Typography component="h4" sx={{ fontSize: { lg: 20, xs: 18 }, lineHeight: "22px", fontWeight: "500" }}>
                             {props.blockInfoheading}
                         </Typography>
                         <Divider sx={{ borderBottomWidth: "2px", my: "16px", borderColor: "#F5F5F5", ml: "-13px", width: "340px" }} />

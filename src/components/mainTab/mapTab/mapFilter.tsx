@@ -14,6 +14,10 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 const MapFilter = () => {
     const [open, setOpen] = useState(false);
+
+    //  Date State
+    const [dateFrom, setDateFrom] = useState(null) as any;
+
     const handleTooltipClose = () => {
         setOpen(false);
     };
@@ -21,8 +25,32 @@ const MapFilter = () => {
         setOpen(!open);
     };
 
+    const inputChange = (e: any) => {
+        if (e.target.matches(".frominput_date")) {
+            setDateFrom(e.target.value);
+        } else {
+            if (new Date(dateFrom).getFullYear() < new Date(e.target.value).getFullYear()) {
+            } else if (new Date(dateFrom).getFullYear() === new Date(e.target.value).getFullYear()) {
+                if (new Date(dateFrom).getMonth() < new Date(e.target.value).getMonth()) {
+                } else if (new Date(dateFrom).getMonth() === new Date(e.target.value).getMonth()) {
+                    if (new Date(dateFrom).getDate() < new Date(e.target.value).getDate()) {
+                    }
+                    else {
+                        alert("Please Enter The Correct Day")
+                    }
+                }
+                else {
+                    alert("Please Enter The Correct Month")
+                }
+            }
+            else {
+                alert("Please Enter The Correct Year")
+            }
+        }
+    };
+
     // Filter Dropdown State
-    const [filterValue, SetfilterValue] = useState("Persian");
+    const [filterValue, SetfilterValue] = useState("All Basins");
     const [OpenDorpdown, SetOpenDorpdown] = useState(false);
     const ToggleDropdown = () => {
         SetOpenDorpdown(!OpenDorpdown);
@@ -36,7 +64,6 @@ const MapFilter = () => {
             SetFilterDot(true)
         }
     }
-
     return (
         <>
             <Box sx={{
@@ -68,7 +95,7 @@ const MapFilter = () => {
                                             <Box sx={{ marginBottom: "17px" }}>
                                                 <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", marginBottom: "4px" }} >Basin</Box>
                                                 <Box>
-                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
+                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
                                                         <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
                                                             {filterValue}
                                                         </Typography>
@@ -79,14 +106,23 @@ const MapFilter = () => {
                                                     {OpenDorpdown && (
                                                         <>
                                                             <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", background: "#fff", boxShadow: "0 0 10px #ccc", maxWidth: "155px", width: "100%" }} >
-                                                                <ListItem onClick={() => { SetfilterValue("One"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
-                                                                    One
+                                                                <ListItem onClick={() => { SetfilterValue("All Basins"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    All Basins
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Two"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
-                                                                    Two
+                                                                <ListItem onClick={() => { SetfilterValue("Appalachian"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
+                                                                    Appalachian
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Three"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
-                                                                    Three
+                                                                <ListItem onClick={() => { SetfilterValue("Bakken"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    Bakken
+                                                                </ListItem>
+                                                                <ListItem onClick={() => { SetfilterValue("Denver-Julesburg"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    Denver-Julesburg
+                                                                </ListItem>
+                                                                <ListItem onClick={() => { SetfilterValue("Eagleford"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    Eagleford
+                                                                </ListItem>
+                                                                <ListItem onClick={() => { SetfilterValue("Permian"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                    Permian
                                                                 </ListItem>
                                                             </List>
                                                             <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
@@ -98,7 +134,8 @@ const MapFilter = () => {
                                             {/* Date From  */}
                                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}  >
                                                 <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipFrom" >From</Box>
-                                                <Box component="input" sx={{
+
+                                                <Box className='frominput_date' component="input" sx={{
                                                     border: "1px solid rgba(213, 213, 213, 0.4)",
                                                     borderRadius: "4px",
                                                     padding: "8px 12px",
@@ -109,7 +146,7 @@ const MapFilter = () => {
                                                     "&:focus": {
                                                         outlineColor: "#1D8CD4"
                                                     },
-                                                }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
+                                                }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
                                             </Box>
                                             {/* Date To  */}
                                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
@@ -125,7 +162,7 @@ const MapFilter = () => {
                                                     "&:focus": {
                                                         outlineColor: "#1D8CD4"
                                                     },
-                                                }} type="date" required id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" />
+                                                }} type="date" required id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
                                             </Box>
                                         </Box>
                                         <Button type='submit' variant="contained" sx={{

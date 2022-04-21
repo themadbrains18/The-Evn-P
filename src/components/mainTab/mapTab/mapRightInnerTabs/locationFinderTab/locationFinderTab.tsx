@@ -5,6 +5,8 @@ import SearchItems from "./searchItems";
 import { useState } from 'react';
 
 const LocationFinderTab = () => {
+
+
     const [fileUploadName, SetFileUploadName] = useState('');
     const [itemoutput, setitemvalue] = useState(["india"]);
     const [searchValue, SetsearchValue] = useState("");
@@ -40,7 +42,7 @@ const LocationFinderTab = () => {
         SetsearchValue("");
     }
 
-
+    // Clear Data From Search Dropdown
     const clearData = (id: any) => {
         if (id !== 'undefined') {
             var array = [...itemoutput];
@@ -166,31 +168,36 @@ const LocationFinderTab = () => {
 
                     {/* Search dropdown */}
                     {removeDropdown && (
-                        <Box sx={{
-                            position: "absolute",
-                            top: "150px",
-                            background: "#fff",
-                            width: "100%",
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            boxShadow: "0 0 10px #ccc",
-                            borderRadius: "4px",
-                            padding: "10px",
-                        }}>
-                            {/* Search Options */}
-                            <LocationSearch itemsNumber={itemoutput.length} clearData={clearData} />
-                            <List sx={{ maxHeight: "400px", overflowY: "scroll" }} component="ul">
-                                {itemoutput.map((itemvalue, index) => {
-                                    return (
-                                        <SearchItems
-                                            key={index}
-                                            recordid={index}
-                                            searcHeading={itemvalue}
-                                            clearData={clearData} />
-                                    )
-                                })}
-                            </List>
-                        </Box>
+                        <>
+                            <Box sx={{
+                                position: "absolute",
+                                top: "150px",
+                                background: "#fff",
+                                width: "100%",
+                                left: "50%",
+                                transform: "translateX(-50%)",
+                                boxShadow: "0 0 10px #ccc",
+                                borderRadius: "4px",
+                                padding: "10px",
+                                zIndex: "10"
+                            }}>
+                                {/* Search Options */}
+                                <LocationSearch itemsNumber={itemoutput.length} clearData={clearData} />
+                                <List sx={{ maxHeight: "400px", overflowY: "scroll" }} component="ul">
+                                    {itemoutput.map((itemvalue, index) => {
+                                        return (
+                                            <SearchItems
+                                                key={index}
+                                                recordid={index}
+                                                searcHeading={itemvalue}
+                                                clearData={clearData} />
+                                        )
+                                    })}
+                                </List>
+                            </Box>
+                            <Typography onClick={opendropdownBtn} sx={{ position: "fixed", top: "0", left: "0", height: "100%", width: "100%", zIndex: "9", display: "block" }} component={"span"}>
+                            </Typography>
+                        </>
                     )}
                 </Paper>
             </Box>

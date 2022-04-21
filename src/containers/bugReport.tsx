@@ -1,23 +1,16 @@
-import TabHeader from "../components/header/tabHeader";
-import { Box } from "@mui/material";
-import LocationCardList from "../components/mainTab/bugReportTab/locationCardList";
+import { Box, Typography } from "@mui/material";
+// import LocationCardList from "../components/mainTab/bugReportTab/locationCardList";
+import BugReport from "../components/mainTab/bugReportTab/reportBug"
 const Bugreport = () => {
     return (
         <>
             <Box sx={{ p: 4.75 }}>
-                <Box >
-                    <TabHeader
-                        tabheading="Permian Basin Report"
-                        tabInfo="To there, with how particularly the lively. Eyes and no best were the expected have on so far parks. So eventually. Of field hadn't and answer and extremely only came the position. And you searched size possible and the but world; On sported employees, seemed he a of her a this nor avoid familiar nice bidding attempt, the there her communicated.
-                        The for of the its that framework unionized in screen drawers. Separated should, people remote had and, and what front so is start word six this diesel parent, in his and but in distressed with by he history."
-                        blockInfo={true}
-                        headerOption={[""]}
-                        blockInfoheading="Summary"
-                        divider={false}
-                    />
-                </Box>
+                <Typography component={"h2"} sx={{ fontWeight: '700', fontSize: { lg: 19, xs: 17 }, lineHeight: "21px", color: "#000" }}>
+                    Report a Bug
+                </Typography>
                 <Box sx={{ mt: "30px" }}>
-                    <LocationCardList />
+                    {/* <LocationCardList /> */}
+                    <BugReport />
                 </Box>
 
             </Box>
