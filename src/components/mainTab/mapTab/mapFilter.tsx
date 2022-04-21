@@ -75,6 +75,7 @@ const MapFilter = () => {
                 <ClickAwayListener onClickAway={handleTooltipClose}>
                     <Box >
                         <CustomTooltip
+
                             arrow
                             placement="right-start"
                             onClose={handleTooltipClose}
@@ -82,7 +83,7 @@ const MapFilter = () => {
                             disableFocusListener
                             disableHoverListener
                             disableTouchListener
-                            sx={{ "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", padding: "8px 10px", margin: "0" }}
+                            sx={{ minWidth: "215px", "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", padding: "8px 10px", margin: "0" }}
                             title={
                                 <Box sx={{ display: `${!open && ("none")}`, background: "#fff", padding: "12px 10px 17px", borderRadius: " 4px" }}>
                                     <form onSubmit={SubmitFilterForm}>
@@ -158,6 +159,7 @@ const MapFilter = () => {
                                                         lineHeight: "13px",
                                                         position: "relative",
                                                         background: "transparent",
+                                                        width: "100%",
                                                         zIndex: "4",
                                                         "&:focus": {
                                                             outlineColor: "#1D8CD4"
@@ -195,6 +197,7 @@ const MapFilter = () => {
                                                         lineHeight: "13px",
                                                         position: "relative",
                                                         background: "transparent",
+                                                        width: "100%",
                                                         zIndex: "4",
                                                         "&:focus": {
                                                             outlineColor: "#1D8CD4"
