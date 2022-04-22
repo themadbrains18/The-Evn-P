@@ -1,5 +1,6 @@
 import { Box, Typography, MenuItem, FormControl, Button } from '@mui/material';
 import * as React from 'react';
+
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useState } from 'react';
@@ -25,6 +26,16 @@ const BugreportForm = () => {
         setAge(event.target.value);
     }
 
+
+    // Drag File Code
+    const handleDragOver: any = (e: any) => {
+        let InnerInput = document.querySelector(".drop-zone__input");
+        InnerInput?.setAttribute("style", "z-index:1")
+    };
+    const handleDrop: any = (e: any) => {
+        let InnerInput = document.querySelector(".drop-zone__input");
+        InnerInput?.setAttribute("style", "z-index:-1")
+    };
     return (
         <Box sx={{ padding: "30px", background: "#fff", fontWeight: "500", fontSize: "20px", lineheight: "22px", borderRadius: "5px" }}>
             <form >
@@ -49,7 +60,7 @@ const BugreportForm = () => {
                                 position: "relative",
                                 "&[aria-expanded=true]": {
                                     "&::after": {
-                                        transform: "translateY(-50%) rotate(180deg)",
+                                        transform: "translateY(-50%) rotate(-180deg)",
                                     }
                                 },
                                 "&::after": {
@@ -63,6 +74,7 @@ const BugreportForm = () => {
                                     width: "19px",
                                     right: "15px",
                                     zIndex: "-1",
+                                    transition: "0.3s",
                                 }
                             }
                         }}
@@ -100,7 +112,7 @@ const BugreportForm = () => {
                         <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", margin: "30px 0 10px" }} component={"span"}>
                             Drop File Here
                         </Typography>
-                        <Box sx={{ display: "grid", placeItems: "center", height: "200px", padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
+                        <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ position: "relative", display: "grid", placeItems: "center", height: "200px", padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797", borderRadius: "4px" }}>
                             {/* Text Area Input */}
 
                             <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
@@ -111,7 +123,8 @@ const BugreportForm = () => {
                                     lineHeight: "16px",
                                     textAlign: "center"
                                 }} component={"h5"}>Drop  file or browse</Typography>
-                                <Box sx={{ marginTop: "10px", textAlign: "center" }}>
+
+                                <Box sx={{ marginTop: "20px", textAlign: "center" }}>
                                     <Box component="label" sx={{
                                         background: "#8794C4",
                                         borderRadius: " 6px",
@@ -122,7 +135,16 @@ const BugreportForm = () => {
                                         cursor: "pointer",
                                         display: "inline-block"
                                     }} htmlFor="ChooseFile"> Browse</Box>
-                                    <Box component="input" sx={{ display: "none" }} type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
+                                    <Box className='drop-zone__input' sx={{
+                                        position: "absolute",
+                                        top: "50%",
+                                        left: "50%",
+                                        transform: "translate(-50% , -50%)",
+                                        opacity: "0",
+                                        height: "100%",
+                                        zIndex: "-1",
+                                        width: "100%",
+                                    }} component="input" type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
                                 </Box>
                             </Box>
 

@@ -24,7 +24,7 @@ const Login = () => {
                         <OutlinedInput type="text" required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter token" />
                     </Box>
                     <Typography sx={{ margin: "15px 0 50px", color: "#454560", fontWeight: "500", fontSize: "12px", lineHeight: "20px", "& a": { color: "#2b93d6" } }} component={"p"}>
-                        If you did not receive your token, please contact <a href="/">nicole.downey@earthsystemsciences.com</a>  for assistance.
+                        If you did not receive your token, please contact <a href="mailto:nicole.downey@earthsystemsciences.com">nicole.downey@earthsystemsciences.com</a>  for assistance.
                     </Typography>
                     <Box sx={{ marginTop: "23px", "& Button": { width: "100%", lineHeight: "1", padding: "17px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
                         <Button type="submit" variant="contained">Continue</Button>

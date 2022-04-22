@@ -63,6 +63,18 @@ const LocationFinderTab = () => {
     const opendropdownBtn = () => {
         SetremoveDropdown(!removeDropdown);
     }
+
+
+    // Drag File Code
+    const handleDragOver: any = (e: any) => {
+        let InnerInput = document.querySelector(".drop-zone__input");
+        InnerInput?.setAttribute("style", "z-index:1")
+    };
+    const handleDrop: any = (e: any) => {
+        let InnerInput = document.querySelector(".drop-zone__input");
+        InnerInput?.setAttribute("style", "z-index:-1")
+    };
+
     return (
         <>
             <Box sx={{ position: "relative" }}>
@@ -84,7 +96,7 @@ const LocationFinderTab = () => {
                         OR
                     </Divider>
                     {/* Upload File */}
-                    <Box sx={{ padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
+                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
                         <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
                             <Typography sx={{
                                 color: "#000",
@@ -104,7 +116,16 @@ const LocationFinderTab = () => {
                                     cursor: "pointer",
                                     display: "inline-block"
                                 }} htmlFor="ChooseFile"> Browse</Box>
-                                <Box component="input" sx={{ display: "none" }} type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
+                                <Box className='drop-zone__input' component="input" sx={{
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50% , -50%)",
+                                    opacity: "0",
+                                    height: "100%",
+                                    zIndex: "-1",
+                                    width: "100%",
+                                }} type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
                             </Box>
                         </Box>
 

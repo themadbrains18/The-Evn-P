@@ -33,7 +33,7 @@ const MapFilter = () => {
             } else if (new Date(dateFrom).getFullYear() === new Date(e.target.value).getFullYear()) {
                 if (new Date(dateFrom).getMonth() < new Date(e.target.value).getMonth()) {
                 } else if (new Date(dateFrom).getMonth() === new Date(e.target.value).getMonth()) {
-                    if (new Date(dateFrom).getDate() < new Date(e.target.value).getDate()) {
+                    if (new Date(dateFrom).getDate() === new Date(e.target.value).getDate()) {
                     }
                     else {
                         alert("Please Enter The Correct Day")
@@ -48,6 +48,7 @@ const MapFilter = () => {
             }
         }
     };
+
 
     // Filter Dropdown State
     const [filterValue, SetfilterValue] = useState("All Basins");
@@ -100,7 +101,7 @@ const MapFilter = () => {
                                                         <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
                                                             {filterValue}
                                                         </Typography>
-                                                        <Typography sx={{ transform: ` ${OpenDorpdown && "rotate(180deg)"}` }}>
+                                                        <Typography sx={{ transition: "0.3s", transform: ` ${OpenDorpdown && "rotate(-180deg)"}` }}>
                                                             <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
                                                         </Typography>
                                                     </Box>

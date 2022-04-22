@@ -101,7 +101,7 @@ const Login = (props: any) => {
 
                     </Box>
                     <Box sx={{ marginTop: "23px", "& Button": { width: "100%", lineHeight: "1", padding: "17px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
-                        <Button type="submit" variant="contained">Confirm Update Password</Button>
+                        <Button type="submit" variant="contained">Update Password</Button>
                     </Box>
                 </form>
             </Box>

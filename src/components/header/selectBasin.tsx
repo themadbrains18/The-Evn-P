@@ -49,7 +49,7 @@ const SeclectBasin = (props: any) => {
                 if (new Date(StartValue).getMonth() < new Date(EndValue).getMonth()) {
                     setValue(EndValue);
                 } else if (new Date(StartValue).getMonth() === new Date(EndValue).getMonth()) {
-                    if (new Date(StartValue).getDate() < new Date(EndValue).getDate()) {
+                    if (new Date(StartValue).getDate() === new Date(EndValue).getDate()) {
                         setValue(EndValue);
                     }
                     else {
@@ -93,7 +93,7 @@ const SeclectBasin = (props: any) => {
                                                 position: "relative",
                                                 "&[aria-expanded=true]": {
                                                     "&::after": {
-                                                        transform: "translateY(-50%) rotate(180deg)",
+                                                        transform: "translateY(-50%) rotate(-180deg)",
                                                     }
                                                 },
                                                 "&::after": {
@@ -107,6 +107,7 @@ const SeclectBasin = (props: any) => {
                                                     width: "19px",
                                                     right: "15px",
                                                     zIndex: "-1",
+                                                    transition: "0.3s"
                                                 }
                                             }
                                         }}
@@ -114,7 +115,6 @@ const SeclectBasin = (props: any) => {
                                         onChange={handleChange}
                                         displayEmpty
                                         inputProps={{ 'aria-label': 'Without label' }}
-
                                     >
                                         <MenuItem value="">
                                             <Typography component={"span"}>All Basins</Typography>
