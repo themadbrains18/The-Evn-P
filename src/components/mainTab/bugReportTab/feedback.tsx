@@ -26,7 +26,6 @@ const BugreportForm = () => {
         setAge(event.target.value);
     }
 
-
     // Drag File Code
     const handleDragOver: any = (e: any) => {
         let InnerInput = document.querySelector(".drop-zone__input");
@@ -177,7 +176,6 @@ const BugreportForm = () => {
                             color: "#fff"
                         }
                     }} variant="outlined" type="reset" >Clear</Button>
-
                     <Button type="submit" sx={{
                         border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
                         fontWeight: "600",

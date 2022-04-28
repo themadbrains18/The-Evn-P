@@ -1,6 +1,6 @@
 import { Card, CardActions, CardMedia, Button, Typography, Box, Grid } from '@mui/material';
 import mapCardApi from '../../../api/mapCards-api.json';
-
+import { Link } from "react-router-dom";
 const MapCard = () => {
     return (
         <Box mt={2.75}>
@@ -18,13 +18,15 @@ const MapCard = () => {
                             }}>
                                 <Box component="div" sx={{ position: "relative" }}>
                                     {/* Card Image */}
-                                    <CardMedia
-
-                                        component="img"
-                                        image={require(`../../../assets/img/${elem.map_card_img}.jpg`)}
-                                        alt="green iguana"
-                                    />
+                                    <Box to="/maps" component={Link}>
+                                        <CardMedia
+                                            component="img"
+                                            image={require(`../../../assets/img/${elem.map_card_img}.jpg`)}
+                                            alt="green iguana"
+                                        />
+                                    </Box>
                                     {/* Card Image Title */}
+                                    <Box to="/maps" component={Link}>
                                     <Typography color="text.primary{contrastText}" component="span" sx={{
                                         position: 'absolute', top: "50%", left: "50%",
                                         transform: 'translate(-50%,-50%)',
@@ -36,29 +38,31 @@ const MapCard = () => {
                                     }}>
                                         {elem.map_card_name}
                                     </Typography>
+                                    </Box>
                                 </Box>
                                 <Box sx={{ px: 1.3, pb: 2.75 }} component="div">
                                     <CardActions sx={{ justifyContent: "space-between", gap: 1, p: 0, mt: 2 }}>
                                         {elem.map_card_links.map((cardElem) => {
                                             return (
-                                                <Button key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
-                                                    <CardMedia
-                                                        sx={{ width: { lg: "100%", xs: "22px" } }}
-                                                        component="img"
-                                                        image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
-                                                        alt={cardElem.link_txt}
-                                                    />
-                                                    <Typography sx={{
-                                                        fontSize: { lg: 14, xs: 12 },
-                                                        fontWeight: 500,
-                                                        marginTop: "4px",
-                                                        color: "#1D8CD4",
-                                                        display: "block",
-                                                        lineHeight: "16px",
-                                                    }} component="span" >
-                                                        {cardElem.link_txt}
-                                                    </Typography>
-                                                </Button>
+                                                    <Button to={cardElem.link} component={Link}   key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
+                                                        <CardMedia 
+                                                            sx={{ width: { lg: "100%", xs: "22px" } }}
+                                                            component="img"
+                                                            image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
+                                                            alt={cardElem.link_txt}
+                                                        />
+                                                        <Typography sx={{
+                                                            fontSize: { lg: 14, xs: 12 },
+                                                            fontWeight: 500,
+                                                            marginTop: "4px",
+                                                            color: "#1D8CD4",
+                                                            display: "block",
+                                                            lineHeight: "16px",
+                                                        }} component="span" >
+                                                            {cardElem.link_txt}
+                                                        </Typography>
+                                                    </Button>
+                                              
                                             )
                                         })}
                                     </CardActions>

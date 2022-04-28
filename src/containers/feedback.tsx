@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 // import LocationCardList from "../components/mainTab/bugReportTab/locationCardList";
-import BugReport from "../components/mainTab/bugReportTab/reportBug"
+import BugReport from "../components/mainTab/bugReportTab/feedback"
 const Bugreport = () => {
     return (
         <>

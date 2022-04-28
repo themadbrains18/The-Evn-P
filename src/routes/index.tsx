@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import Dashboard from '../containers/dashboard';
 import Map from '../containers/map';
 import Reports from '../containers/reports';
-import Setting from '../containers/setting';
+import Settings from '../containers/settings';
 import Downloads from '../containers/downloads';
-import Bugreport from '../containers/bugReport';
+import Feedback from '../containers/feedback';
 import Login from '../containers/login';
 
 const Routing = () => {
@@ -17,8 +17,8 @@ const Routing = () => {
                     <Route path="/maps" element={<Map />} />
                     <Route path="/reports" element={<Reports />} />
                     <Route path="/downloads" element={<Downloads />} />
-                    <Route path="/bug-report" element={<Bugreport />} />
-                    <Route path="/Setting" element={<Setting />} />
+                    <Route path="/feedback" element={<Feedback/>} />
+                    <Route path="/Settings" element={<Settings />} />
                     <Route path="/Login" element={<Login />} />
                 </Routes>
             </Box>
