@@ -17,7 +17,7 @@ const theme = createTheme({
       light : "#8794C4",
     },
     secondary : {
-      main : "#1D8CD4"
+      main : "#1D8CD4",
     },
     action :{
       active : "#0F75BC",
