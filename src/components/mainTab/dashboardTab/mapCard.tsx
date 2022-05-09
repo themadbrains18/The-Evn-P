@@ -54,7 +54,7 @@ const MapCard = () => {
                                                         <Typography sx={{
                                                             fontSize: { lg: 14, xs: 12 },
                                                             fontWeight: 500,
-                                                            marginTop: "4px",
+                                                            mt: "4px",
                                                             color: "#1D8CD4",
                                                             display: "block",
                                                             lineHeight: "16px",

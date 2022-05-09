@@ -36,22 +36,22 @@ const BugreportForm = () => {
         InnerInput?.setAttribute("style", "z-index:-1")
     };
     return (
-        <Box sx={{ padding: "30px", background: "#fff", fontWeight: "500", fontSize: "20px", lineheight: "22px", borderRadius: "5px" }}>
+        <Box sx={{ p: "30px", background: "#fff", fontWeight: "500", fontSize: "20px", lineheight: "22px", borderRadius: "5px" }}>
             <form >
-                <Typography sx={{ fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
+                <Typography sx={{ fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", mb: "30px" }} component={"span"}>
                     Theme
                 </Typography>
                 <FormControl required fullWidth sx={{
                     "& svg": {
                         display: "none!important",
                     },
-                    marginTop: "10px!important", minWidth: 120,
+                    mt: "10px!important", minWidth: 120,
                     zIndex: "1"
                 }}>
                     <Select
                         sx={{
                             fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
-                                padding: "12px 15px",
+                                p: "12px 15px",
                                 minHeight: "initial!important",
                                 " & span": {
                                     fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
@@ -92,10 +92,10 @@ const BugreportForm = () => {
                     </Select>
                 </FormControl>
                 {/* Text Area Input */}
-                <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", margin: "30px 0 10px" }} component={"span"}>
+                <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", m: "30px 0 10px" }} component={"span"}>
                     Description
                 </Typography>
-                <Box sx={{ "& textarea ": { width: "100%", height: "200px!important", borderRadius: "4px", border: "1px solid rgba(0, 0, 0, 0.23)", padding: "12px 15px", fontSize: { lg: "14px", xs: "12px" }, color: "#000", fontWeight: "500", lineHeight: "16px", "&:focus": { outlineColor: "#0F75BC" } } }}>
+                <Box sx={{ "& textarea ": { width: "100%", height: "200px!important", borderRadius: "4px", border: "1px solid rgba(0, 0, 0, 0.23)", p: "12px 15px", fontSize: { lg: "14px", xs: "12px" }, color: "#000", fontWeight: "500", lineHeight: "16px", "&:focus": { outlineColor: "#0F75BC" } } }}>
                     <TextareaAutosize
                         aria-label="empty textarea"
                     />
@@ -108,10 +108,10 @@ const BugreportForm = () => {
                         {/* Location Search */}
 
                         {/* Upload File */}
-                        <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", margin: "30px 0 10px" }} component={"span"}>
+                        <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", m: "30px 0 10px" }} component={"span"}>
                             Drop File Here
                         </Typography>
-                        <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ position: "relative", display: "grid", placeItems: "center", height: "200px", padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797", borderRadius: "4px" }}>
+                        <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ position: "relative", display: "grid", placeItems: "center", height: "200px", p: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797", borderRadius: "4px" }}>
                             {/* Text Area Input */}
 
                             <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
@@ -123,12 +123,12 @@ const BugreportForm = () => {
                                     textAlign: "center"
                                 }} component={"h5"}>Drop  file or browse</Typography>
 
-                                <Box sx={{ marginTop: "20px", textAlign: "center" }}>
+                                <Box sx={{ mt: "20px", textAlign: "center" }}>
                                     <Box component="label" sx={{
                                         background: "#8794C4",
                                         borderRadius: " 6px",
                                         color: "#fff",
-                                        padding: "6px 8px",
+                                        p: "6px 8px",
                                         textAlign: "center",
                                         fontSize: { lg: "16px", xs: "14px" },
                                         cursor: "pointer",
@@ -165,9 +165,9 @@ const BugreportForm = () => {
                     </Box>
                 </Box>
                 {/* Button */}
-                <Box sx={{ marginTop: "22px", textAlign: "end" }}>
+                <Box sx={{ mt: "22px", textAlign: "end" }}>
                     <Button sx={{
-                        border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
+                        border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
                         fontWeight: "600",
                         fontSize: { lg: "14px", xs: "12px" },
                         lineHeight: "1",
@@ -177,7 +177,7 @@ const BugreportForm = () => {
                         }
                     }} variant="outlined" type="reset" >Clear</Button>
                     <Button type="submit" sx={{
-                        border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
+                        border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", ml: "14px",
                         fontWeight: "600",
                         background: "#0F75BC",
                         fontSize: { lg: "14px", xs: "12px" },

@@ -8,7 +8,7 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
         color: "#fff",
     },
     [`& .${tooltipClasses.tooltip}`]: {
-        padding: 0,
+        p: 0,
     },
 }));
 
@@ -84,20 +84,20 @@ const MapFilter = () => {
                             disableFocusListener
                             disableHoverListener
                             disableTouchListener
-                            sx={{ minWidth: "215px", "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", padding: "8px 10px", margin: "0" }}
+                            sx={{ minWidth: "215px", "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", p: "8px 10px", m: "0" }}
                             title={
-                                <Box sx={{ display: `${!open && ("none")}`, background: "#fff", padding: "12px 10px 17px", borderRadius: " 4px" }}>
+                                <Box sx={{ display: `${!open && ("none")}`, background: "#fff", p: "12px 10px 17px", borderRadius: " 4px" }}>
                                     <form onSubmit={SubmitFilterForm}>
                                         <Box >
                                             {/* Heading */}
-                                            <Typography component="h4" sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", marginBottom: "24px" }}>
+                                            <Typography component="h4" sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", mb: "24px" }}>
                                                 Filter
                                             </Typography>
                                             {/* Basic Select  */}
-                                            <Box sx={{ marginBottom: "17px" }}>
-                                                <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", marginBottom: "4px" }} >Basin</Box>
+                                            <Box sx={{ mb: "17px" }}>
+                                                <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", mb: "4px" }} >Basin</Box>
                                                 <Box>
-                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
+                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", p: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
                                                         <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
                                                             {filterValue}
                                                         </Typography>
@@ -153,7 +153,7 @@ const MapFilter = () => {
                                                     <Box className='frominput_date' component="input" sx={{
                                                         border: "1px solid rgba(213, 213, 213, 0.4)",
                                                         borderRadius: "4px",
-                                                        padding: "8px 12px",
+                                                        p: "8px 12px",
                                                         color: "#979797",
                                                         fontWeight: "400",
                                                         fontSize: "12px",
@@ -172,7 +172,7 @@ const MapFilter = () => {
 
                                             </Box>
                                             {/* Date To  */}
-                                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
+                                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
                                                 <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipTo">To</Box>
                                                 <Box sx={{
                                                     position: "relative",
@@ -191,7 +191,7 @@ const MapFilter = () => {
                                                     <Box component="input" sx={{
                                                         border: "1px solid rgba(213, 213, 213, 0.4)",
                                                         borderRadius: "4px",
-                                                        padding: "8px 12px",
+                                                        p: "8px 12px",
                                                         color: "#979797",
                                                         fontWeight: "400",
                                                         fontSize: "12px",
@@ -209,14 +209,14 @@ const MapFilter = () => {
                                         </Box>
                                         <Button type='submit' variant="contained" sx={{
                                             textTransform: "capitalize",
-                                            width: "100%", marginTop: "10px", padding: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "#FFFFFF", background: "#0F75BC"
+                                            width: "100%", mt: "10px", p: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "#FFFFFF", background: "#0F75BC"
                                         }} >Apply Filter</Button>
                                     </form>
                                 </Box>
                             }
                         >
                             <Button onClick={handleTooltipOpen} sx={{
-                                mr: 0, display: "grid", placeItems: "center", minWidth: "auto", padding: "17px 16px",
+                                mr: 0, display: "grid", placeItems: "center", minWidth: "auto", p: "17px 16px",
                                 color: "#8794C4",
                                 background: "#F2F6FE", borderRadius: "50%",
                                 position: "relative",
@@ -224,7 +224,7 @@ const MapFilter = () => {
                                     color: "#8794C3",
                                 },
                                 "& .MuiAccordionSummary-content": {
-                                    margin: "0",
+                                    m: "0",
 
                                 },
                                 "& .filtor_icon path": {

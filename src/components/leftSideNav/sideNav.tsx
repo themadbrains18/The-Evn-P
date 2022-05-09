@@ -25,10 +25,10 @@ const SideNav = () => {
     }, [toggleNav]);
     return (
         <>
-            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", padding: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, background: "#fff", whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between", }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
+            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, background: "#fff", whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between", }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
                 <Box sx={{ mb: 3 }}>
                     {/* Toggle   */}
-                    <Box component="button" sx={{ marginBottom: "34px", lineHeight: "0" }} onClick={() => { setToggleNav(!toggleNav) }}>
+                    <Box component="button" sx={{ mb: "34px", lineHeight: "0" }} onClick={() => { setToggleNav(!toggleNav) }}>
                         <Box component="img" sx={{ maxWidth: "unset" }} src={require(`../../assets/svg/nav-toggle.svg`).default} alt="nav Toggle" />
                     </Box>
                     {/* Logo  */}

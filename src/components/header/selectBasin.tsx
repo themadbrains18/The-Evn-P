@@ -68,9 +68,9 @@ const SeclectBasin = (props: any) => {
     return (
         <>
             <form action="">
-                <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
+                <Box sx={{ p: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
                     <Box sx={{ minWidth: 120 }}>
-                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
+                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", mb: "30px" }} component={"span"}>
                             Select Basin
                         </Typography>
                         <FormControl fullWidth >
@@ -79,13 +79,13 @@ const SeclectBasin = (props: any) => {
                                     "& svg": {
                                         display: "none!important",
                                     },
-                                    marginTop: "10px!important", minWidth: 120,
+                                    mt: "10px!important", minWidth: 120,
                                     zIndex: "1"
                                 }}>
                                     <Select
                                         sx={{
                                             fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
-                                                padding: "12px 15px",
+                                                p: "12px 15px",
                                                 minHeight: "initial!important",
                                                 " & span": {
                                                     fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
@@ -128,8 +128,8 @@ const SeclectBasin = (props: any) => {
                                 </FormControl>
 
                             </Box>
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
-                                <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
+                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
+                                <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", m: "32px 0 10px" }} >Select Date</Box>
                                 <Box sx={{
                                     display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
                                     "& label": {
@@ -139,8 +139,8 @@ const SeclectBasin = (props: any) => {
                                         fontSize: { lg: "14px", xs: "12px" },
                                     },
                                     "& input": {
-                                        paddingTop: "13px",
-                                        paddingBottom: "13px",
+                                        pt: "13px",
+                                        pb: "13px",
                                     },
                                     "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
                                         transform: " translate(20px, -1px) scale(0.70)"
@@ -173,7 +173,7 @@ const SeclectBasin = (props: any) => {
                                                     fontSize: { lg: "14px", xs: "12px" },
                                                     lineHeight: "16px",
                                                     "& input": {
-                                                        padding: "10px 15px"
+                                                        p: "10px 15px"
                                                     }
                                                 }}   {...params} />}
                                         />
@@ -226,7 +226,7 @@ const SeclectBasin = (props: any) => {
                         }} variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
 
                         <Button type="submit" sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
+                            border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", ml: "14px",
                             fontWeight: "600",
                             background: "#0F75BC",
                             fontSize: { lg: "14px", xs: "12px" },

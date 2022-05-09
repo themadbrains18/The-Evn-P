@@ -6,9 +6,7 @@ type headerData = {
     blockInfoheading: String,
     divider: Boolean
     headerOption: any; // headerOption Must be = Download , Search,MapView,Reports
-
 }
-
 
 const Header = (props: headerData) => {
     return (
@@ -58,13 +56,11 @@ const Header = (props: headerData) => {
                         )
                     })}
 
-
-
                 </Box>
             </Box>
             {
                 props.blockInfo ?
-                    <Box sx={{ backgroundColor: "#FDFDFD", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
+                    <Box sx={{ backgroundColor: "#FDFDFD", p: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
                         <Typography component="h4" sx={{ fontSize: { lg: 20, xs: 18 }, lineHeight: "22px", fontWeight: "500" }}>
                             {props.blockInfoheading}
                         </Typography>
