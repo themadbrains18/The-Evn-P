@@ -19,7 +19,7 @@ const SearchItems = (props: any) => {
                             fontWeight: "600",
                             fontSize: "14px",
                             lineHeight: "16px",
-                            color: "#454560",
+                            color: "primary.contrastText",
                         },
                         "& .Mui-checked svg path": {
                             color: "#5D5FEF",

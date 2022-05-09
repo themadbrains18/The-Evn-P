@@ -10,7 +10,6 @@ const Tab = styled(TabUnstyled)``;
 const TabPanel = styled(TabPanelUnstyled)``;
 const TabsList = styled(TabsListUnstyled)``;
 const MapInnerTabs = () => {
-  // const classes = useStyles();
 
   return (
     <>
@@ -29,7 +28,7 @@ const MapInnerTabs = () => {
             alignContent: "space-between",
             "& button": {
               position: "relative",
-              color: "white",
+              color: "common.white",
               cursor: "pointer",
               width: "100%",
               border: "none",
@@ -54,13 +53,13 @@ const MapInnerTabs = () => {
                 left: "0",
                 height: "calc(100% - 10px)",
                 width: "1px",
-                background: "#0000001a",
+                backgroundColor: "#0000001a",
               },
               "&:first-of-type::before ": {
                 display: "none"
               },
               "&[aria-selected=true]": {
-                backgroundColor: "#0F75Bc",
+                backgroundColor: "action.hover",
                 "& svg,& path": {
                   fill: "#fff!important",
                 },

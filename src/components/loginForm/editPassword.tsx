@@ -7,13 +7,11 @@ const Login = (props: any) => {
     const HidePassword = () => {
         Sethidepswd(!hidepswd)
     }
-
     // Hide New Password
     const [hideConfirmpswd, SethideConfirmpswd] = useState(false)
     const HideConfirmPassword = () => {
         SethideConfirmpswd(!hideConfirmpswd)
     }
-
     // Hide Confirm Password
     const [hideNewmpswd, SethideNewmpswd] = useState(false)
     const HideNewPassword = () => {
@@ -22,9 +20,9 @@ const Login = (props: any) => {
     }
     return (
         <>
-            <Box sx={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50% ,-50%)", zIndex: "9", "& form": { maxWidth: "529px", width: "100%", p: "50px 30px", background: "#FFFFFF", boxShadow: " 0px 0px 5px #F3F4F6" }, display: "grid", placeItems: "center", height: "100%", minHeight: "calc(100vh - 84px) " }}>
+            <Box sx={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50% ,-50%)", zIndex: "9", "& form": { maxWidth: "529px", width: "100%", p: "50px 30px", backgroundColor: "common.white", boxShadow: " 0px 0px 5px #F3F4F6" }, display: "grid", placeItems: "center", height: "100%", minHeight: "calc(100vh - 84px) " }}>
                 <form onSubmit={props.UpdatePassword} action="">
-                    <Typography sx={{ color: "#454560", fontWeight: "600", fontSize: { lg: "36px", xs: "30px" }, lineHeight: "40px" }} component={"h2"}>
+                    <Typography sx={{ color: "primary.contrastText", fontWeight: "600", fontSize: { lg: "36px", xs: "30px" }, lineHeight: "40px" }} component={"h2"}>
                         Edit Your Password
                     </Typography>
                     <Box sx={{ width: "100%", mt: "30px" }}>
@@ -33,12 +31,12 @@ const Login = (props: any) => {
                             fontSize: { lg: "16px", xs: "14px" },
                             lineHeight: "18px",
                             mb: "12px",
-                            color: "#454560"
+                            color: "primary.contrastText"
                         }} component={"h3"}>
                             Old Password
                         </Typography>
                         <Box sx={{ position: "relative" }}>
-                            <OutlinedInput type={`${!hideConfirmpswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter new password" />
+                            <OutlinedInput type={`${!hideConfirmpswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter new password" />
                             <Button onClick={HideConfirmPassword} sx={{ "& img": { height: "18px", width: "21.5px" }, position: "absolute", top: "50%", right: "20px", transform: ("translateY(-50%)"), p: "0", display: "flex", textAlign: "end", maxWidth: "fit-content", minWidth: "initial" }}>
                                 {!hideConfirmpswd && (
                                     <img src={require("../../assets/svg/hide-password-icon.svg").default} alt="" />
@@ -57,12 +55,12 @@ const Login = (props: any) => {
                             fontSize: { lg: "16px", xs: "14px" },
                             lineHeight: "18px",
                             mb: "12px",
-                            color: "#454560"
+                            color: "primary.contrastText"
                         }} component={"h3"}>
                             New Password
                         </Typography>
                         <Box sx={{ position: "relative" }}>
-                            <OutlinedInput type={`${!hideNewmpswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter confirm password" />
+                            <OutlinedInput type={`${!hideNewmpswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter confirm password" />
                             <Button onClick={HideNewPassword} sx={{ position: "absolute", top: "50%", right: "20px", transform: ("translateY(-50%)"), p: "0", display: "flex", textAlign: "end", maxWidth: "fit-content", minWidth: "initial" }}>
                                 {!hideNewmpswd && (
                                     <img src={require("../../assets/svg/hide-password-icon.svg").default} alt="" />
@@ -81,12 +79,12 @@ const Login = (props: any) => {
                             fontSize: { lg: "16px", xs: "14px" },
                             lineHeight: "18px",
                             mb: "12px",
-                            color: "#454560"
+                            color: "primary.contrastText"
                         }} component={"h3"}>
                             Confirm Password
                         </Typography>
                         <Box sx={{ position: "relative" }}>
-                            <OutlinedInput type={`${!hidepswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter confirm password" />
+                            <OutlinedInput type={`${!hidepswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter confirm password" />
                             <Button onClick={HidePassword} sx={{ position: "absolute", top: "50%", right: "20px", transform: ("translateY(-50%)"), p: "0", display: "flex", textAlign: "end", maxWidth: "fit-content", minWidth: "initial" }}>
                                 {!hidepswd && (
                                     <img src={require("../../assets/svg/hide-password-icon.svg").default} alt="" />
@@ -101,12 +99,12 @@ const Login = (props: any) => {
 
                     </Box>
                     <Box sx={{ mt: "23px", "& Button": { width: "100%", lineHeight: "1", p: "17px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
-                        <Button type="submit" variant="contained">Update Password</Button>
+                        <Button type="submit" variant="contained" sx={{color:"common.white"}}>Update Password</Button>
                     </Box>
                 </form>
             </Box>
             <Box onClick={props.ClickBtn} sx={{
-                position: "fixed", top: "50%", left: "50%", transform: "translate(-50% ,-50%)", width: "100%", height: "100%", zIndex: "8", background: "#000", opacity: "0.2",
+                position: "fixed", top: "50%", left: "50%", transform: "translate(-50% ,-50%)", width: "100%", height: "100%", zIndex: "8", backgroundColor: "common.black", opacity: "0.2",
             }}>
             </Box>
         </>

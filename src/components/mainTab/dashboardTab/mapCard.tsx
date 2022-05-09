@@ -10,7 +10,7 @@ const MapCard = () => {
                     return (
                         <Grid item xs={12} md={6} lg={4} key={elem.id}>
                             <Card sx={{
-                                background: "#FDFDFD",
+                                backgroundColor: "#FDFDFD",
                                 boxShadow: "0px 0px 10px #F3F4F6",
                                 "&:hover": {
                                     boxShadow: "0px 0px 15px #b6b8bd"
@@ -32,7 +32,7 @@ const MapCard = () => {
                                         transform: 'translate(-50%,-50%)',
                                         fontSize: { xl: 24, lg: 20, xs: 18 },
                                         fontWeight: 600,
-                                        color: "#fff",
+                                        color: "common.white",
                                         width: "100%",
                                         textAlign: "center"
                                     }}>
@@ -55,14 +55,13 @@ const MapCard = () => {
                                                             fontSize: { lg: 14, xs: 12 },
                                                             fontWeight: 500,
                                                             mt: "4px",
-                                                            color: "#1D8CD4",
+                                                            color: "secondary.main",
                                                             display: "block",
                                                             lineHeight: "16px",
                                                         }} component="span" >
                                                             {cardElem.link_txt}
                                                         </Typography>
                                                     </Button>
-                                              
                                             )
                                         })}
                                     </CardActions>
@@ -82,7 +81,7 @@ const MapCard = () => {
                                                     <Typography component="h4" sx={{
                                                         display: "inline-block", fontSize: { lg: 16, xs: 14 },
                                                         fontWeight: 500,
-                                                        color: "#000",
+                                                        color: "common.black",
                                                         lineHeight: 1.1,
                                                         width: "100%"
                                                     }}>
@@ -91,7 +90,7 @@ const MapCard = () => {
                                                     <Typography component="span" sx={{
                                                         display: "inline-block", fontSize: 9,
                                                         fontWeight: 400,
-                                                        color: "#000",
+                                                        color: "common.black",
                                                         mb: 0,
                                                         lineHeight: 1.2
 

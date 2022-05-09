@@ -10,9 +10,9 @@ const Login = (props: any) => {
 
     return (
         <>
-            <Box sx={{ "& form": { maxWidth: "529px", width: "100%", p: "50px 30px", background: "#FFFFFF", boxShadow: " 0px 4px 10px #F3F4F6" }, display: "grid", placeItems: "center", height: "100%", minHeight: "calc(100vh - 84px) " }}>
+            <Box sx={{ "& form": { maxWidth: "529px", width: "100%", p: "50px 30px", backgroundColor: "common.white", boxShadow: " 0px 4px 10px #F3F4F6" }, display: "grid", placeItems: "center", height: "100%", minHeight: "calc(100vh - 84px) " }}>
                 <form onSubmit={props.onSubmit} action="">
-                    <Typography sx={{ color: "#454560", fontWeight: "600", fontSize: { lg: "36px", xs: "30px" }, lineHeight: "40px" }} component={"h2"}>
+                    <Typography sx={{ color: "primary.contrastText", fontWeight: "600", fontSize: { lg: "36px", xs: "30px" }, lineHeight: "40px" }} component={"h2"}>
                         Login
                     </Typography>
                     <Box sx={{ width: "100%", mt: "38px" }}>
@@ -21,12 +21,12 @@ const Login = (props: any) => {
                             fontSize: { lg: "16px", xs: "14px" },
                             lineHeight: "18px",
                             mb: "12px",
-                            color: "#454560"
+                            color: "primary.contrastText"
                         }} component={"h3"}>
                             Username
                         </Typography>
 
-                        <OutlinedInput type="text" required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter you username" />
+                        <OutlinedInput type="text" required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter you username" />
                     </Box>
                     <Box sx={{ width: "100%", mt: "30px" }}>
                         <Typography sx={{
@@ -34,12 +34,12 @@ const Login = (props: any) => {
                             fontSize: { lg: "16px", xs: "14px" },
                             lineHeight: "18px",
                             mb: "12px",
-                            color: "#454560"
+                            color: "primary.contrastText"
                         }} component={"h3"}>
                             Password
                         </Typography>
                         <Box sx={{ position: "relative" }}>
-                            <OutlinedInput type={`${!hidepswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter you password" />
+                            <OutlinedInput type={`${!hidepswd && ("password")}`} required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter you password" />
                             <Button onClick={HidePassword} sx={{ "& img": { height: "18px", width: "21.5px" }, position: "absolute", top: "50%", right: "20px", transform: ("translateY(-50%)"), p: "0", display: "flex", textAlign: "end", maxWidth: "fit-content", minWidth: "initial" }}>
                                 {!hidepswd && (
                                     <img src={require("../../assets/svg/hide-password-icon.svg").default} alt="" />
@@ -54,9 +54,9 @@ const Login = (props: any) => {
 
                     </Box>
                     <Box sx={{ mt: "23px", "& Button": { width: "100%", lineHeight: "1", p: "17px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
-                        <Button type="submit" variant="contained">Continue</Button>
+                        <Button sx={{color:"common.white"}} type="submit" variant="contained">Continue</Button>
                     </Box>
-                    <Box sx={{ textAlign: "center", mt: "26px", "& button": { color: "#0F75BC", fontWeight: "600", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" } }}>
+                    <Box sx={{ textAlign: "center", mt: "26px", "& button": { color: "primary.main", fontWeight: "600", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" } }}>
                         <button type="button" onClick={props.onClickfogetBtn}> Forgot password?</button>
                     </Box>
                 </form>

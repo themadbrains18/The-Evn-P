@@ -8,16 +8,31 @@ import TopHeader from './components/header/topHeader'
 
 const theme = createTheme({
   palette: {
+    common:{
+      white:"#fff",
+      black:"#000",
+    },
     primary: {
       main: "#0F75BC",
       light : "#8794C4",
+      contrastText: "#454560",
     },
     secondary : {
       main : "#1D8CD4",
+      light : "#1D8CD4",
+      dark: "#979797",
+      contrastText: "#8794C3",
+    },
+    text:{
+      secondary:"#121212",
+    },
+    divider: "#F5F5F5",
+    background: {
+      paper: "#FDFDFD"
     },
     action :{
       active : "#0F75BC",
-      hover : "#0F75BC"
+      hover : "#0F75BC",
     }
   },
   typography: {

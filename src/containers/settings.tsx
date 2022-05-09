@@ -1,5 +1,5 @@
 // Setting Profile Acccount
-import { Box, FormControl, Typography, OutlinedInput, Button } from "@mui/material";
+import { Box, Typography, OutlinedInput, Button } from "@mui/material";
 import EditPassword from "../components/loginForm/editPassword"
 import { useState } from "react";
 
@@ -23,21 +23,21 @@ const Setting = () => {
                 m: { xl: "38px 79px 38px 38px", lg: " 27px 24px 24px ", xs: "27px 24px 24px " }
             }}>
                 {/* Screen Heading */}
-                <Typography sx={{ borderBottom: "2px solid #DEDEDE", pb: "24px", mb: "30px", color: "#000000", fontWeight: "700", fontSize: { lg: "19px", xs: "17px" }, lineHeight: "21px" }} component={"h2"}>
+                <Typography sx={{ borderBottom: "2px solid #DEDEDE", pb: "24px", mb: "30px", color: "common.black", fontWeight: "700", fontSize: { lg: "19px", xs: "17px" }, lineHeight: "21px" }} component={"h2"}>
                     User Account
                 </Typography>
 
                 {/* Account Form  */}
-                <Box sx={{ p: "40px 30px 36px", background: "#fff" }}>
+                <Box sx={{ p: "40px 30px 36px", backgroundColor: "common.white" }}>
                     <form action="">
-                        <FormControl fullWidth>
+                        <Box >
                             {/* Account prifile  */}
                             <Box sx={{ display: { md: "flex" }, justifyContent: "space-between", alignItems: "center", pb: "24px", borderBottom: "2px solid #DEDEDE" }}>
                                 <Box sx={{ mb: { md: "0px", xs: "30px" }, display: "flex", alignItems: "center", gap: { lg: "25px", xs: "20px" } }} >
                                     <Box >
                                         <Typography
                                             sx={{
-                                                color: "#454560", fontWeight: "600",
+                                                color: "primary.contrastText", fontWeight: "600",
                                                 fontSize: { lg: "18px", xs: "16px" },
                                                 lineHeight: "20px"
                                             }}
@@ -45,7 +45,7 @@ const Setting = () => {
                                             Samantha William
                                         </Typography>
                                         <Typography sx={{
-                                            display: "block", color: "#979797", fontWeight: "500",
+                                            display: "block", color: "secondary.dark", fontWeight: "500",
                                             fontSize: { lg: "16px", xs: "14px" },
                                             lineHeight: "18px",
                                             mt: "12px"
@@ -66,7 +66,7 @@ const Setting = () => {
                                         lineHeight: "16px",
                                         color: "#1876B2",
                                         p: "16px 35px ",
-                                        "&:hover": { background: "#0F75BC", color: "#fff", "& svg path": { fill: "#fff" } }
+                                        "&:hover": { backgroundColor: "action.action", color: "common.white", "& svg path": { fill: "#fff" } }
                                     }
                                 }}>
                                     <button type="button" onClick={EditPasswordBtn}>
@@ -89,15 +89,14 @@ const Setting = () => {
                                 <Box sx={{ width: "100%" }}>
                                     <Typography sx={{
                                         fontWeight: "600",
-
                                         fontSize: { lg: "16px", xs: "14px" },
                                         lineHeight: "18px",
                                         mb: "12px",
-                                        color: "#454560"
+                                        color: "primary.contrastText"
                                     }} component={"h3"}>
                                         First Name
                                     </Typography>
-                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", "& :focus-visible": { border: "none" }, color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Samantha" />
+                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", "& :focus-visible": { border: "none" }, color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Samantha" />
                                 </Box>
                                 <Box sx={{ width: "100%", mt: { lg: "0px", xs: "30px" } }}>
                                     <Typography sx={{
@@ -105,11 +104,11 @@ const Setting = () => {
                                         fontSize: { lg: "16px", xs: "14px" },
                                         lineHeight: "18px",
                                         mb: "12px",
-                                        color: "#454560"
+                                        color: "primary.contrastText"
                                     }} component={"h3"}>
                                         Last Name
                                     </Typography>
-                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="William" />
+                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="William" />
                                 </Box>
                             </Box>
                             <Box sx={{ width: "100%", mt: "30px" }}>
@@ -118,11 +117,11 @@ const Setting = () => {
                                     fontSize: { lg: "16px", xs: "14px" },
                                     lineHeight: "18px",
                                     mb: "12px",
-                                    color: "#454560"
+                                    color: "primary.contrastText"
                                 }} component={"h3"}>
                                     Email Address
                                 </Typography>
-                                <OutlinedInput type="email" required sx={{ border: " 1px solid #CCCCCC", background: "#F7F7F7", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="samantha@gmail.com" />
+                                <OutlinedInput type="email" required sx={{ border: " 1px solid #CCCCCC", backgroundColor: "#F7F7F7", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="samantha@gmail.com" />
                             </Box>
                             <Box sx={{ width: "100%", mt: "30px" }}>
                                 <Typography sx={{
@@ -130,16 +129,16 @@ const Setting = () => {
                                     fontSize: { lg: "16px", xs: "14px" },
                                     lineHeight: "18px",
                                     mb: "12px",
-                                    color: "#454560"
+                                    color: "primary.contrastText"
                                 }} component={"h3"}>
                                     Areas of Interest
                                 </Typography>
-                                <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Bakken, Permian" />
+                                <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "primary.contrastText", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "primary.contrastText", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Bakken, Permian" />
                             </Box>
                             <Box sx={{ mt: "30px", "& Button": { maxWidth: "fit-content", width: "100%", m: " auto 0 auto auto", lineHeight: "1", p: "16px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
-                                <Button type="submit" variant="contained">Save Changes</Button>
+                                <Button sx={{color:"common.white"}} type="submit" variant="contained" >Save Changes</Button>
                             </Box>
-                        </FormControl>
+                        </Box>
                     </form>
                 </Box >
             </Box>

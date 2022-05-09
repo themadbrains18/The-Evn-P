@@ -13,9 +13,9 @@ const cardDtat = [
 ]
 const LocationCardList = () => {
     return (
-        <Box sx={{ p: "30px", background: "#fff", fontWeight: "500", fontSize: "20px", lineheight: "22px" }}>
+        <Box sx={{ p: "30px", backgroundColor: "common.white", fontWeight: "500", fontSize: "20px", lineheight: "22px" }}>
             {/* Select Basins */}
-            <Typography component={"h3"} sx={{ color: "#000000", fontSize: { lg: "16px", xs: "14px" } }}>
+            <Typography component={"h3"} sx={{ color: "common.black", fontSize: { lg: "16px", xs: "14px" } }}>
                 Select Basins
             </Typography>
             <Paper component="form"

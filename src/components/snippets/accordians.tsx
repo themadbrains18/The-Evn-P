@@ -57,7 +57,7 @@ const Accordians = (props: any) => {
             <Box component="ul" id="Accodians">
                 {AccordiansData.map((elem) => {
                     return (
-                        <Box key={elem.id} component="li" sx={{ p: { xl: "30px 30px 33px", lg: "25px 25px 28px", xs: "20px 20px 23px" }, backgroundColor: "#fff", mt: "20px" }}>
+                        <Box key={elem.id} component="li" sx={{ p: { xl: "30px 30px 33px", lg: "25px 25px 28px", xs: "20px 20px 23px" }, backgroundColor: "common.white", mt: "20px" }}>
                             {/* Question */}
                             <Box sx={{
                                 display: 'flex', justifyContent: 'space-between', alignItems: "center", cursor: "pointer",
@@ -82,8 +82,8 @@ const Accordians = (props: any) => {
                             </Box>
                             {/* Answers */}
                             <Box sx={{ height: "0px", overflow: "hidden", transition: "0.3s" }} className="accodian_ans">
-                                <Divider sx={{ borderBottomWidth: '2px', borderColor: '#F5F5F5', m: '6px 0 17px' }} />
-                                <Typography component="p" sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "23px", color: "#121212" }}>
+                                <Divider sx={{ borderBottomWidth: '2px', borderColor: 'divider', m: '6px 0 17px' }} />
+                                <Typography component="p" sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "23px", color: "text.secondary" }}>
                                     {elem.ans}
                                 </Typography>
 

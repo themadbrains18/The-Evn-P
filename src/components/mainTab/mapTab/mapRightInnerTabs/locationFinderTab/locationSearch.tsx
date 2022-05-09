@@ -7,11 +7,11 @@ const LocationSearch = (props: any) => {
         <>
             <Box>
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #0000004d", pb: "12px" }}>
-                    <Typography sx={{ color: "#454560", fontWeight: "500", fontSize: "12px", lineHeight: "13px" }} component={"h5"}>
+                    <Typography sx={{ color: "primary.contrastText", fontWeight: "500", fontSize: "12px", lineHeight: "13px" }} component={"h5"}>
                         Search Results: {props.itemsNumber}
                     </Typography>
                     <Button sx={{
-                        background: "rgba(255, 87, 34, 0.14)", borderRadius: "2px", p: "8px 10px",
+                        backgroundColor: "rgba(255, 87, 34, 0.14)", borderRadius: "2px", p: "8px 10px",
                         display: "flex",
                         alignItems: "center",
                         gap: "6.4px",

@@ -51,11 +51,11 @@ const SideNavSingleItem = () => {
                             "&:hover,&.active": {
                                 backgroundColor: "#F2F6FE!important",
                                 "& svg,path": {
-                                    fill: "#0F75BC"
+                                    fill: "action.active"
                                 },
                                 "& span": {
                                     fontWeight: "600",
-                                    color: "#0F75BC",
+                                    color: "action.active",
                                 },
                             }
                         }}>
@@ -76,7 +76,7 @@ const SideNavSingleItem = () => {
                                 m: 0, "& span": {
                                     fontSize: { lg: "14px ", xs: "12px " },
                                     fontWeight: "500",
-                                    color: "#8794C4",
+                                    color: "primary.light",
                                     lineHeight: "1",
                                 }
                             }} />

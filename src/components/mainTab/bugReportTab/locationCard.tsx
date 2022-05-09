@@ -55,8 +55,8 @@ const LocationCard = (props: any) => {
     return (
         <>
             <Grid sx={{ mt: "24px" }} item xl={4} lg={6} xs={12} >
-                <Box sx={{ p: "30px", borderRadius: "5px", background: "#F9FAFC" }}>
-                    <Typography sx={{ color: "#000", fontWeight: 600, fontSize: { lg: "20px", xs: "18px" }, lineHeight: "22px", borderBottom: "1px solid rgba(135, 148, 195, 0.3)", pb: "20px", textAlign: "center" }} component={"h3"}>
+                <Box sx={{ p: "30px", borderRadius: "5px", backgroundColor: "#F9FAFC" }}>
+                    <Typography sx={{ color: "common.black", fontWeight: 600, fontSize: { lg: "20px", xs: "18px" }, lineHeight: "22px", borderBottom: "1px solid rgba(135, 148, 195, 0.3)", pb: "20px", textAlign: "center" }} component={"h3"}>
                         {props.cardHeading}
                     </Typography>
                     <FormGroup>
@@ -77,7 +77,7 @@ const LocationCard = (props: any) => {
                                                 color: "#8794C3",
                                             },
                                             "& .Mui-checked svg path": {
-                                                color: "#0F75BC",
+                                                color: "action.active",
                                             },
                                         }}
                                             control={<Checkbox name={item.CheckboxLabelName} />} label={item.CheckboxLabel} />

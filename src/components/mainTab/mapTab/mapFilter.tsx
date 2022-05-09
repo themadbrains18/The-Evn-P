@@ -5,10 +5,10 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
 ))(({ theme }) => ({
     [`& .${tooltipClasses.arrow}`]: {
-        color: "#fff",
+        color: theme.palette.common.white
     },
     [`& .${tooltipClasses.tooltip}`]: {
-        p: 0,
+        padding: "0",
     },
 }));
 
@@ -74,9 +74,9 @@ const MapFilter = () => {
             }}>
 
                 <ClickAwayListener onClickAway={handleTooltipClose}>
-                    <Box >
+                    <Box>
                         <CustomTooltip
-
+                        
                             arrow
                             placement="right-start"
                             onClose={handleTooltipClose}
@@ -86,19 +86,19 @@ const MapFilter = () => {
                             disableTouchListener
                             sx={{ minWidth: "215px", "& span": { top: "5px!important" }, justifyContent: "flex-start", minHeight: "auto", p: "8px 10px", m: "0" }}
                             title={
-                                <Box sx={{ display: `${!open && ("none")}`, background: "#fff", p: "12px 10px 17px", borderRadius: " 4px" }}>
+                                <Box   sx={{ display: `${!open && ("none")}`, backgroundColor: "common.white", p: "12px 10px 17px", borderRadius: " 4px" }}>
                                     <form onSubmit={SubmitFilterForm}>
                                         <Box >
                                             {/* Heading */}
-                                            <Typography component="h4" sx={{ color: "#0F75BC", fontWeight: "600", fontSize: "14px", lineHeight: "16px", mb: "24px" }}>
+                                            <Typography component="h4" sx={{ color: "primary.main", fontWeight: "600", fontSize: "14px", lineHeight: "16px", mb: "24px" }}>
                                                 Filter
                                             </Typography>
                                             {/* Basic Select  */}
                                             <Box sx={{ mb: "17px" }}>
-                                                <Box component="span" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", mb: "4px" }} >Basin</Box>
+                                                <Box component="span" sx={{ color: "secondary.contrastText", fontWeight: "400", fontSize: "12px", lineHeight: "13px", display: "block", mb: "4px" }} >Basin</Box>
                                                 <Box>
-                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", p: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
-                                                        <Typography sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
+                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", p: "12px 9px", backgroundColor: "common.white", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
+                                                        <Typography sx={{ color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} component={"span"}>
                                                             {filterValue}
                                                         </Typography>
                                                         <Typography sx={{ transition: "0.3s", transform: ` ${OpenDorpdown && "rotate(-180deg)"}` }}>
@@ -107,27 +107,27 @@ const MapFilter = () => {
                                                     </Box>
                                                     {OpenDorpdown && (
                                                         <>
-                                                            <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", background: "#fff", boxShadow: "0 0 10px #ccc", maxWidth: "155px", width: "100%" }} >
-                                                                <ListItem onClick={() => { SetfilterValue("All Basins"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                            <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", backgroundColor: "common.white", boxShadow: "0 0 10px #ccc", maxWidth: "155px", width: "100%" }} >
+                                                                <ListItem onClick={() => { SetfilterValue("All Basins"); ToggleDropdown() }} sx={{ "&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
                                                                     All Basins
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Appalachian"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
+                                                                <ListItem onClick={() => { SetfilterValue("Appalachian"); ToggleDropdown() }} sx={{ "&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }} >
                                                                     Appalachian
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Bakken"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                <ListItem onClick={() => { SetfilterValue("Bakken"); ToggleDropdown() }} sx={{ "&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
                                                                     Bakken
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Denver-Julesburg"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                <ListItem onClick={() => { SetfilterValue("Denver-Julesburg"); ToggleDropdown() }} sx={{ "&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
                                                                     Denver-Julesburg
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Eagleford"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                <ListItem onClick={() => { SetfilterValue("Eagleford"); ToggleDropdown() }} sx={{ "&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
                                                                     Eagleford
                                                                 </ListItem>
-                                                                <ListItem onClick={() => { SetfilterValue("Permian"); ToggleDropdown() }} sx={{ color: "#979797", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
+                                                                <ListItem onClick={() => { SetfilterValue("Permian"); ToggleDropdown() }} sx={{ "&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", fontWeight: "400", fontSize: "12px", lineHeight: "13px", cursor: "pointer" }}>
                                                                     Permian
                                                                 </ListItem>
                                                             </List>
-                                                            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+                                                            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", backgroundColor: "transparent" }} component={"span"}>
                                                             </Typography>
                                                         </>
                                                     )}
@@ -135,7 +135,7 @@ const MapFilter = () => {
                                             </Box>
                                             {/* Date From  */}
                                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}  >
-                                                <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipFrom" >From</Box>
+                                                <Box component="label" sx={{ color: "secondary.contrastText", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipFrom" >From</Box>
                                                 <Box sx={{
                                                     position: "relative",
                                                     "&::after": {
@@ -154,12 +154,12 @@ const MapFilter = () => {
                                                         border: "1px solid rgba(213, 213, 213, 0.4)",
                                                         borderRadius: "4px",
                                                         p: "8px 12px",
-                                                        color: "#979797",
+                                                        color: "secondary.dark",
                                                         fontWeight: "400",
                                                         fontSize: "12px",
                                                         lineHeight: "13px",
                                                         position: "relative",
-                                                        background: "transparent",
+                                                        backgroundColor: "transparent",
                                                         width: "100%",
                                                         zIndex: "4",
                                                         "&:focus": {
@@ -173,7 +173,7 @@ const MapFilter = () => {
                                             </Box>
                                             {/* Date To  */}
                                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
-                                                <Box component="label" sx={{ color: "#8794C3", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipTo">To</Box>
+                                                <Box component="label" sx={{ color: "secondary.contrastText", fontWeight: "400", fontSize: "12px", lineHeight: "13px" }} htmlFor="tooltipTo">To</Box>
                                                 <Box sx={{
                                                     position: "relative",
                                                     "&::after": {
@@ -192,12 +192,12 @@ const MapFilter = () => {
                                                         border: "1px solid rgba(213, 213, 213, 0.4)",
                                                         borderRadius: "4px",
                                                         p: "8px 12px",
-                                                        color: "#979797",
+                                                        color: "secondary.dark",
                                                         fontWeight: "400",
                                                         fontSize: "12px",
                                                         lineHeight: "13px",
                                                         position: "relative",
-                                                        background: "transparent",
+                                                        backgroundColor: "transparent",
                                                         width: "100%",
                                                         zIndex: "4",
                                                         "&:focus": {
@@ -209,7 +209,7 @@ const MapFilter = () => {
                                         </Box>
                                         <Button type='submit' variant="contained" sx={{
                                             textTransform: "capitalize",
-                                            width: "100%", mt: "10px", p: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "#FFFFFF", background: "#0F75BC"
+                                            width: "100%", mt: "10px", p: "12.5px 0", fontWeight: "400", fontSize: " 12px", lineHeight: "13px", color: "common.white", backgroundColor: "primary.main"
                                         }} >Apply Filter</Button>
                                     </form>
                                 </Box>
@@ -217,11 +217,11 @@ const MapFilter = () => {
                         >
                             <Button onClick={handleTooltipOpen} sx={{
                                 mr: 0, display: "grid", placeItems: "center", minWidth: "auto", p: "17px 16px",
-                                color: "#8794C4",
-                                background: "#F2F6FE", borderRadius: "50%",
+                                color: "primary.light",
+                                backgroundColor: "#F2F6FE", borderRadius: "50%",
                                 position: "relative",
                                 "& p": {
-                                    color: "#8794C3",
+                                    color: "secondary.contrastText",
                                 },
                                 "& .MuiAccordionSummary-content": {
                                     m: "0",
@@ -231,10 +231,10 @@ const MapFilter = () => {
                                     fill: "#8794C3"
                                 },
                                 "&:hover,&.active,&.Mui-expanded,&[aria-labelledby*='mui-']": {
-                                    background: "#F2F6FE",
+                                    backgroundColor: "#F2F6FE",
                                     "& p": {
                                         fontWeight: "600",
-                                        color: "#0F75BC",
+                                        color: "primary.main",
                                     },
                                     "& .filtor_icon path": {
                                         fill: "#0F75BC"
@@ -248,7 +248,7 @@ const MapFilter = () => {
                                     position: "absolute",
                                     top: "14px",
                                     right: "4px",
-                                    background: "#EB5757",
+                                    backgroundColor: "#EB5757",
                                     height: "9px",
                                     width: "9px",
                                     borderRadius: "50%",
@@ -265,7 +265,7 @@ const MapFilter = () => {
 
 
             </Box >
-            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", backgroundColor: "transparent" }} component={"span"}>
             </Typography>
         </>
     )

@@ -82,7 +82,7 @@ const LocationFinderTab = () => {
                 <MapInnerTabHeading heading={"Location Finder"} />
                 <Paper component="form" sx={{ boxShadow: "none", borderRadius: "0" }}>
                     {/* Location Search */}
-                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, mt: "22px", lineHeight: "16px", fontWeight: "500", color: "#000000", mb: "10px", }} >Location Search</Typography>
+                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, mt: "22px", lineHeight: "16px", fontWeight: "500", color: "common.black", mb: "10px", }} >Location Search</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
 
                         <InputBase onClick={opendropdownBtn} onChange={searchBtn} value={searchValue} sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }} placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
@@ -96,10 +96,10 @@ const LocationFinderTab = () => {
                         OR
                     </Divider>
                     {/* Upload File */}
-                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ p: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
+                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ p: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed",borderColor: "secondary.dark" }}>
                         <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
                             <Typography sx={{
-                                color: "#000",
+                                color: "common.black",
                                 fontWeight: "500",
                                 fontSize: { lg: "14px", xs: "12px" },
                                 lineHeight: "16px",
@@ -107,9 +107,9 @@ const LocationFinderTab = () => {
                             }} component={"h5"}>Drop CSV file or browse</Typography>
                             <Box sx={{ mt: "10px", textAlign: "center" }}>
                                 <Box component="label" sx={{
-                                    background: "#8794C4",
+                                    backgroundColor: "primary.light",
                                     borderRadius: " 6px",
-                                    color: "#fff",
+                                    color: "common.white",
                                     p: "6px 8px",
                                     textAlign: "center",
                                     fontSize: { lg: "16px", xs: "14px" },
@@ -129,17 +129,17 @@ const LocationFinderTab = () => {
                             </Box>
                         </Box>
 
-                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", background: "#FFFFFF", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
+                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", backgroundColor: "common.white", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
                             <img src={require("../../../../../assets/svg/file-icon.svg").default} alt="" />
                             <Typography sx={{
                                 ml: "8px",
                                 mr: "4px",
-                                color: "#000",
+                                color: "common.black",
                                 fontWeight: "500",
                                 fontSize: "12px",
 
                             }} component={"span"}>{fileUploadName}</Typography>
-                            <Box onClick={removeFile} sx={{ height: "14px", width: "14px", background: "#FF5722", boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
+                            <Box onClick={removeFile} sx={{ height: "14px", width: "14px", backgroundColor: "#FF5722", boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
                                 <img src={require("../../../../../assets/svg/delete-icon.svg").default} alt="" />
                             </Box>
                         </Box>
@@ -150,7 +150,7 @@ const LocationFinderTab = () => {
                     </Divider>
 
                     {/* Latitude & Longtitude */}
-                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", fontWeight: "500", color: "#000000", mb: "10px", }} >Latitude & Longtitude</Typography>
+                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", fontWeight: "500", color: "common.black", mb: "10px", }} >Latitude & Longtitude</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
                         <InputBase sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }}
                             placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
@@ -164,25 +164,25 @@ const LocationFinderTab = () => {
                     {/* Buttons  */}
                     <Box sx={{ mt: "27px", textAlign: "end" }}>
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 29px", xs: "13px 29px" }, color: "#0F75BC",
+                            border: "1px solid primary.main", borderRadius: "6px", p: { lg: "16px 29px", xs: "13px 29px" }, color: "primary.main",
                             fontWeight: "600",
                             fontSize: { lg: "14px", xs: "12px" },
                             lineHeight: "1",
                             "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
+                                backgroundColor: 'action.hover',
+                                color: "common.white"
                             }
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 29px", xs: "13px 29px" }, color: "#fff", ml: "14px",
+                            border: "1px solid primary.main", borderRadius: "6px", p: { lg: "16px 29px", xs: "13px 29px" }, color: "common.white", ml: "14px",
                             fontWeight: "600",
                             fontSize: { lg: "14px", xs: "12px" },
-                            backgroundColor: '#0F75BC',
+                            backgroundColor: 'primary.main',
                             lineHeight: "1",
                             "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
+                                backgroundColor: 'action.hover',
+                                color: "common.white"
                             }
                         }} variant="outlined">Go</Button>
                     </Box>
@@ -193,7 +193,7 @@ const LocationFinderTab = () => {
                             <Box sx={{
                                 position: "absolute",
                                 top: "150px",
-                                background: "#fff",
+                                backgroundColor: "common.white",
                                 width: "100%",
                                 left: "50%",
                                 transform: "translateX(-50%)",

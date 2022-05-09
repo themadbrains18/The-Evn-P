@@ -8,6 +8,25 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
+// Basin DropDown Items Data
+const SelectBasisOptions = [
+    {
+        AllBasins: "All Basins",
+    },
+    {
+        AllBasins: "Bakken",
+    },
+    {
+        AllBasins: "Denver-Julesburg",
+    },
+    {
+        AllBasins: "Eagleford",
+    },
+    {
+        AllBasins: "Permian",
+    }
+];
+
 const SeclectBasin = (props: any) => {
     const [age, setAge] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
@@ -68,27 +87,28 @@ const SeclectBasin = (props: any) => {
     return (
         <>
             <form action="">
-                <Box sx={{ p: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
+                <Box sx={{ p: "30px", borderRadius: "6px", backgroundColor: "common.white", marginTop: "20px" }}>
                     <Box sx={{ minWidth: 120 }}>
-                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", mb: "30px" }} component={"span"}>
+                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "common.black", mb: "30px" }} component={"span"}>
                             Select Basin
                         </Typography>
                         <FormControl fullWidth >
                             <Box >
-                                <FormControl required fullWidth sx={{
-                                    "& svg": {
-                                        display: "none!important",
+                                <Box   sx={{
+                                    "& .MuiInputBase-formControl": {
+                                        width : "100%", 
                                     },
+                                    width : "100%", 
                                     mt: "10px!important", minWidth: 120,
                                     zIndex: "1"
                                 }}>
                                     <Select
                                         sx={{
-                                            fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
+                                            fontSize: { lg: "14px", xs: "12px" }, color: "common.black", fontWeight: "500", lineHeight: "16px", "&>div": {
                                                 p: "12px 15px",
                                                 minHeight: "initial!important",
                                                 " & span": {
-                                                    fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
+                                                    fontSize: { lg: "14px", xs: "12px" }, color: "common.black", fontWeight: "500", lineHeight: "16px",
                                                 },
                                                 position: "relative",
                                                 "&[aria-expanded=true]": {
@@ -116,25 +136,30 @@ const SeclectBasin = (props: any) => {
                                         displayEmpty
                                         inputProps={{ 'aria-label': 'Without label' }}
                                     >
-                                        <MenuItem value="">
-                                            <Typography component={"span"}>All Basins</Typography>
-                                        </MenuItem>
-                                        <MenuItem value={10}>Appalachian</MenuItem>
-                                        <MenuItem value={20}>Bakken</MenuItem>
-                                        <MenuItem value={30}>Denver-Julesburg</MenuItem>
-                                        <MenuItem value={30}>Eagleford</MenuItem>
-                                        <MenuItem value={30}>Permian</MenuItem>
+                                         {SelectBasisOptions.map((val,index) => {
+                                            return(
+                                                <MenuItem key={index} sx={{
+                                                    "&:hover,&.Mui-selected,&.Mui-selected:hover": {
+                                                        backgroundColor: "action.hover",
+                                                        color: "common.white",
+                                                    }
+                                                }} value={index === 0 ?"" : index}>
+                                                    <Typography component={"span"}> {val.AllBasins}</Typography>
+                                                </MenuItem>
+                                            )
+                                        })}
+                                        
                                     </Select>
-                                </FormControl>
+                                </Box>
 
                             </Box>
                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
-                                <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", m: "32px 0 10px" }} >Select Date</Box>
+                                <Box component="span" sx={{ color: "common.black", fontWeight: "500", fontSize: "14px", lineHeight: "16px", m: "32px 0 10px" }} >Select Date</Box>
                                 <Box sx={{
                                     display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
                                     "& label": {
                                         top: "-5px",
-                                        color: "#000000",
+                                        color: "common.black",
                                         fontWeight: "500",
                                         fontSize: { lg: "14px", xs: "12px" },
                                     },
@@ -163,12 +188,12 @@ const SeclectBasin = (props: any) => {
                                                         borderRadius: "6px",
                                                     },
                                                     " & input": {
-                                                        color: "#000000",
+                                                        color: "common.black",
                                                         fontWeight: "500",
                                                         fontSize: { lg: "14px", xs: "12px" },
                                                         lineHeight: "16px",
                                                     },
-                                                    color: "#000000",
+                                                    color: "common.black",
                                                     fontWeight: "500",
                                                     fontSize: { lg: "14px", xs: "12px" },
                                                     lineHeight: "16px",
@@ -191,13 +216,13 @@ const SeclectBasin = (props: any) => {
                                                         border: " 1px solid rgba(0, 0, 0, 0.12)",
                                                         borderRadius: "6px",
                                                     },
-                                                    color: "#000000",
+                                                    color: "common.black",
                                                     fontWeight: "500",
                                                     fontSize: { lg: "14px", xs: "12px" },
                                                     lineHeight: "16px",
                                                     "& input": {
                                                         padding: "10px 15px",
-                                                        color: "#000000",
+                                                        color: "common.black",
                                                         fontWeight: "500",
                                                         fontSize: { lg: "14px", xs: "12px" },
                                                         lineHeight: "16px",
@@ -215,25 +240,25 @@ const SeclectBasin = (props: any) => {
                     {/* Button */}
                     <Box sx={{ marginTop: "22px", textAlign: "end" }}>
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
+                            border: "1px solid primary.main", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "primary.main",
                             fontWeight: "600",
                             fontSize: { lg: "14px", xs: "12px" },
                             lineHeight: "1",
                             "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
+                                backgroundColor: 'primary.main',
+                                color: "common.white"
                             }
                         }} variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
 
                         <Button type="submit" sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", ml: "14px",
+                            border: "1px solid primary.main", borderRadius: "6px", p: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "common.white", ml: "14px",
                             fontWeight: "600",
-                            background: "#0F75BC",
+                            backgroundColor: "primary.main",
                             fontSize: { lg: "14px", xs: "12px" },
                             lineHeight: "1",
                             "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
+                                backgroundColor: 'primary.main',
+                                color: "common.white"
                             }
                         }} variant="outlined" onClick={submitForm}>Go</Button>
                     </Box>

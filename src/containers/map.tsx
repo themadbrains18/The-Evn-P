@@ -11,7 +11,7 @@ const Map = () => {
                 <Box>
                     <MapArea />
                 </Box>
-                <Box sx={{ overflowY: "scroll", overflowX: "hidden", background: "#fff" }}>
+                <Box sx={{ overflowY: "scroll", overflowX: "hidden", backgroundColor: "common.white" }}>
                     <MapInnerTabs />
                 </Box>
             </Box>

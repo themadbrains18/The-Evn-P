@@ -25,7 +25,7 @@ const SideNav = () => {
     }, [toggleNav]);
     return (
         <>
-            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, background: "#fff", whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between", }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
+            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, backgroundColor: "common.white", whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between", }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
                 <Box sx={{ mb: 3 }}>
                     {/* Toggle   */}
                     <Box component="button" sx={{ mb: "34px", lineHeight: "0" }} onClick={() => { setToggleNav(!toggleNav) }}>
@@ -43,7 +43,7 @@ const SideNav = () => {
                 {/* Developed Logo  */}
                 <Box className="line-height-0">
                     {!toggleNav &&
-                        <Typography component="span" sx={{ mb: 1.5, display: "block", color: "#979797", fontSize: 12, lineHeight: "13px" }}>
+                        <Typography component="span" sx={{ mb: 1.5, display: "block", color: "secondary.dark", fontSize: 12, lineHeight: "13px" }}>
                             Developed by
                         </Typography>}
                     <Box>
