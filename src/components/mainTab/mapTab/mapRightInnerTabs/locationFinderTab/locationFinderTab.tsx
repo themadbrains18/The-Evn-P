@@ -82,7 +82,7 @@ const LocationFinderTab = () => {
                 <MapInnerTabHeading heading={"Location Finder"} />
                 <Paper component="form" sx={{ boxShadow: "none", borderRadius: "0" }}>
                     {/* Location Search */}
-                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, marginTop: "22px", lineHeight: "16px", fontWeight: "500", color: "#000000", marginBottom: "10px", }} >Location Search</Typography>
+                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, mt: "22px", lineHeight: "16px", fontWeight: "500", color: "#000000", mb: "10px", }} >Location Search</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
 
                         <InputBase onClick={opendropdownBtn} onChange={searchBtn} value={searchValue} sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }} placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
@@ -92,11 +92,11 @@ const LocationFinderTab = () => {
                             </svg>
                         </IconButton>
                     </Box>
-                    <Divider sx={{ padding: "9.5px 0", color: "#4F4F4F", margin: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
+                    <Divider sx={{ p: "9.5px 0", color: "#4F4F4F", m: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
                         OR
                     </Divider>
                     {/* Upload File */}
-                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
+                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ p: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
                         <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
                             <Typography sx={{
                                 color: "#000",
@@ -105,12 +105,12 @@ const LocationFinderTab = () => {
                                 lineHeight: "16px",
                                 textAlign: "center"
                             }} component={"h5"}>Drop CSV file or browse</Typography>
-                            <Box sx={{ marginTop: "10px", textAlign: "center" }}>
+                            <Box sx={{ mt: "10px", textAlign: "center" }}>
                                 <Box component="label" sx={{
                                     background: "#8794C4",
                                     borderRadius: " 6px",
                                     color: "#fff",
-                                    padding: "6px 8px",
+                                    p: "6px 8px",
                                     textAlign: "center",
                                     fontSize: { lg: "16px", xs: "14px" },
                                     cursor: "pointer",
@@ -145,12 +145,12 @@ const LocationFinderTab = () => {
                         </Box>
                     </Box>
 
-                    <Divider sx={{ padding: "9.5px 0", color: "#4F4F4F", margin: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
+                    <Divider sx={{ p: "9.5px 0", color: "#4F4F4F", m: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
                         OR
                     </Divider>
 
                     {/* Latitude & Longtitude */}
-                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", fontWeight: "500", color: "#000000", marginBottom: "10px", }} >Latitude & Longtitude</Typography>
+                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", fontWeight: "500", color: "#000000", mb: "10px", }} >Latitude & Longtitude</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
                         <InputBase sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }}
                             placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
@@ -162,9 +162,9 @@ const LocationFinderTab = () => {
                     </Box>
 
                     {/* Buttons  */}
-                    <Box sx={{ marginTop: "27px", textAlign: "end" }}>
+                    <Box sx={{ mt: "27px", textAlign: "end" }}>
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 29px", xs: "13px 29px" }, color: "#0F75BC",
+                            border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 29px", xs: "13px 29px" }, color: "#0F75BC",
                             fontWeight: "600",
                             fontSize: { lg: "14px", xs: "12px" },
                             lineHeight: "1",
@@ -175,7 +175,7 @@ const LocationFinderTab = () => {
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 29px", xs: "13px 29px" }, color: "#fff", marginLeft: "14px",
+                            border: "1px solid #0F75BC", borderRadius: "6px", p: { lg: "16px 29px", xs: "13px 29px" }, color: "#fff", ml: "14px",
                             fontWeight: "600",
                             fontSize: { lg: "14px", xs: "12px" },
                             backgroundColor: '#0F75BC',
@@ -199,7 +199,7 @@ const LocationFinderTab = () => {
                                 transform: "translateX(-50%)",
                                 boxShadow: "0 0 10px #ccc",
                                 borderRadius: "4px",
-                                padding: "10px",
+                                p: "10px",
                                 zIndex: "10"
                             }}>
                                 {/* Search Options */}

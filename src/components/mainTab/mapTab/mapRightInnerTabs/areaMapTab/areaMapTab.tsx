@@ -13,9 +13,9 @@ const AreaMapTab = () => {
 
                 <Box sx={{ mt: 2.5 }}>
                     <Button variant="outlined" sx={{
-                        p: "0", minWidth: "auto", height: "34px", width: "34px", marginRight: "10px!important",
+                        p: "0", minWidth: "auto", height: "34px", width: "34px", mr: "10px!important",
                         "&:last-child": {
-                            marginRight: "0px!important",
+                            mr: "0px!important",
                         },
                         "&:hover": {
                             backgroundColor: "#0F75BC!important",
@@ -30,9 +30,9 @@ const AreaMapTab = () => {
                     </Button>
 
                     <Button variant="outlined" sx={{
-                        p: "0", minWidth: "auto", height: "34px", width: "34px", marginRight: "10px!important",
+                        p: "0", minWidth: "auto", height: "34px", width: "34px", mr: "10px!important",
                         "&:last-child": {
-                            marginRight: "0px!important",
+                            mr: "0px!important",
                         },
                         "&:hover": {
                             backgroundColor: "#0F75BC!important",
@@ -47,9 +47,9 @@ const AreaMapTab = () => {
                         </svg>
                     </Button>
                     <Button variant="outlined" sx={{
-                        p: "0", minWidth: "auto", height: "34px", width: "34px", marginRight: "10px!important",
+                        p: "0", minWidth: "auto", height: "34px", width: "34px", mr: "10px!important",
                         "&:last-child": {
-                            marginRight: "0px!important",
+                            mr: "0px!important",
                         },
                         "&:hover": {
                             backgroundColor: "#0F75BC!important",

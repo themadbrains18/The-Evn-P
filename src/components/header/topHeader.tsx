@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Topheader = () => {
     return (
         <>
-            <Box sx={{ "& img ": { height: "38px" }, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "21px 30px" }} component={"header"}>
+            <Box sx={{ "& img ": { height: "38px" }, display: "flex", justifyContent: "space-between", alignItems: "center", p: "21px 30px" }} component={"header"}>
                 <Box sx={{ height: "38px" }} to="/" component={Link} >
                     <img src={require("../../assets/img/short-logo.png")} alt="" />
                 </Box>

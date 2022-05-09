@@ -8,10 +8,6 @@ import TopHeader from './components/header/topHeader'
 
 const theme = createTheme({
   palette: {
-    common :{
-      black : "#000",
-      white : "#fff"
-    },
     primary: {
       main: "#0F75BC",
       light : "#8794C4",
@@ -50,12 +46,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'grid', gridTemplateColumns: viewTopHeader ? " 1fr" : "auto 1fr", height: viewTopHeader ? "initial" : "100vh", overflow: "hidden" }}>
         {/* Top Header  */}
-        {viewTopHeader ? <TopHeader /> :
+        {viewTopHeader ? <TopHeader /> :          
           <SideNav />
         }
         {/* Right Side Main Content */}
         <Route />
-      </Box>
+      </Box>  
     </ThemeProvider >
   );
 }

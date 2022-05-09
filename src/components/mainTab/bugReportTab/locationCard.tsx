@@ -55,8 +55,8 @@ const LocationCard = (props: any) => {
     return (
         <>
             <Grid sx={{ mt: "24px" }} item xl={4} lg={6} xs={12} >
-                <Box sx={{ padding: "30px", borderRadius: "5px", background: "#F9FAFC" }}>
-                    <Typography sx={{ color: "#000", fontWeight: 600, fontSize: { lg: "20px", xs: "18px" }, lineHeight: "22px", borderBottom: "1px solid rgba(135, 148, 195, 0.3)", paddingBottom: "20px", textAlign: "center" }} component={"h3"}>
+                <Box sx={{ p: "30px", borderRadius: "5px", background: "#F9FAFC" }}>
+                    <Typography sx={{ color: "#000", fontWeight: 600, fontSize: { lg: "20px", xs: "18px" }, lineHeight: "22px", borderBottom: "1px solid rgba(135, 148, 195, 0.3)", pb: "20px", textAlign: "center" }} component={"h3"}>
                         {props.cardHeading}
                     </Typography>
                     <FormGroup>

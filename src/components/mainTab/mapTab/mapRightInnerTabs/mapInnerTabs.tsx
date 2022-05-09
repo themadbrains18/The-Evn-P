@@ -20,10 +20,10 @@ const MapInnerTabs = () => {
           <TabsList sx={{
             minHeight: "48px",
             width: "100%",
-            padding: "5px",
+            p: "5px",
             backgroundColor: "#F4F8FA",
             borderRadius: "6px",
-            marginBottom: "23px",
+            mb: "23px",
             display: "flex",
             justifyContent: "center",
             alignContent: "space-between",

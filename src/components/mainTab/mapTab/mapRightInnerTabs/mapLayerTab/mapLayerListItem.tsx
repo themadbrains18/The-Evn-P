@@ -257,7 +257,7 @@ const checkInput = (e: any) => {
 const MapLayerListItem = () => {
     return (
         <>
-            <List sx={{ padding: 0 }} className="list">
+            <List sx={{ p: 0 }} className="list">
                 {mpaLayerDate.map((item) => {
                     return (
                         <ListItem key={item.id} disablePadding sx={{ mb: 2.75, display: 'block' }} className="maplayer_item">
@@ -285,7 +285,7 @@ const MapLayerListItem = () => {
                                 {item.guide.map((guideItem) => {
                                     return (
                                         <Box key={guideItem.id} sx={{ display: "flex", alignItems: "center", mt: 2.75 }}>
-                                            <Typography component="span" sx={{ height: "18px", width: "18px", borderRadius: "50%", backgroundColor: guideItem.guideLabelColorCode, display: "inline-block", marginRight: "12px" }}>
+                                            <Typography component="span" sx={{ height: "18px", width: "18px", borderRadius: "50%", backgroundColor: guideItem.guideLabelColorCode, display: "inline-block", mr: "12px" }}>
                                             </Typography>
                                             <Typography component="span" sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#333333", display: "inline-block" }}>
                                                 {guideItem.guideLabelText}
