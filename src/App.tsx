@@ -8,8 +8,20 @@ import TopHeader from './components/header/topHeader'
 
 const theme = createTheme({
   palette: {
+    common :{
+      black : "#000",
+      white : "#fff"
+    },
     primary: {
-      main: "#0F75BC"
+      main: "#0F75BC",
+      light : "#8794C4",
+    },
+    secondary : {
+      main : "#1D8CD4"
+    },
+    action :{
+      active : "#0F75BC",
+      hover : "#0F75BC"
     }
   },
   typography: {

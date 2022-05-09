@@ -5,19 +5,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Spartan', sans-serif;
-	scrollbar-width: none;
+	scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #0F75BC #ffffff; /* Firefox */
 }
 
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #0F75BC #ffffff;
-  }
-body {
-	color: #000000;
-	
-}
 
 
 a {
@@ -59,11 +50,6 @@ button {
 	background: #0F75BC;
 	border-radius: 10px;
 }
-
-/* input[type="date"]::-webkit-calendar-picker-indicator {
-	background: url("./assets/svg/calander-cion.svg") center/80% no-repeat;
-} */
-
 
 input[type="date"]::-webkit-calendar-picker-indicator {
 	color: rgba(0, 0, 0, 0);

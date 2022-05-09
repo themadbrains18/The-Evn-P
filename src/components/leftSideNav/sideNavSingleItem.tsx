@@ -76,7 +76,7 @@ const SideNavSingleItem = () => {
                                 m: 0, "& span": {
                                     fontSize: { lg: "14px ", xs: "12px " },
                                     fontWeight: "500",
-                                    color: "#8794C4",
+                                    color: "primary.light",
                                     lineHeight: "1",
                                 }
                             }} />
