@@ -15,19 +15,14 @@ const Login = (props: any) => {
                     <Typography sx={{ color: "#454560", fontWeight: "600", fontSize: { lg: "36px", xs: "30px" }, lineHeight: "40px" }} component={"h2"}>
                         Login
                     </Typography>
-                    <Box sx={{ width: "100%", marginTop: "38px" }}>
-                        <Typography sx={{
-                            fontWeight: "600",
-                            fontSize: { lg: "16px", xs: "14px" },
-                            lineHeight: "18px",
-                            marginBottom: "12px",
-                            color: "#454560"
-                        }} component={"h3"}>
+                        <Typography  variant ="subtitle1" sx={{
+                            mb: "12px",
+                            mt: "38px"
+                        }} >
                             Username
                         </Typography>
-
-                        <OutlinedInput type="text" required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Enter you username" />
-                    </Box>
+                        <OutlinedInput type="text"  required  fullWidth placeholder="Enter you username" />
+                    
                     <Box sx={{ width: "100%", marginTop: "30px" }}>
                         <Typography sx={{
                             fontWeight: "600",
