@@ -89,7 +89,7 @@ const SeclectBasin = (props: any) => {
             <form action="">
                 <Box sx={{ p: "30px", borderRadius: "6px", backgroundColor: "common.white", marginTop: "20px" }}>
                     <Box sx={{ minWidth: 120 }}>
-                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "common.black", mb: "30px" }} component={"span"}>
+                        <Typography variant='h4' sx={{ fontWeight: "500",  lineHeight: "16px", color: "common.black", mb: "30px" }} component={"span"}>
                             Select Basin
                         </Typography>
                         <FormControl fullWidth >

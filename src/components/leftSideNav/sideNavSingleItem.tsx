@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-
+import { Typography } from '@mui/material';
 
 const SideNavItems = [
     {
@@ -45,47 +44,13 @@ const SideNavSingleItem = () => {
         <>
             {SideNavItems.map((elem, index) => {
                 return (
-                    <ListItem key={index} sx={{ p: 0, mb: { lg: 3, xs: 2 }, '&:last-child': { mb: 0 } }}>
-                        <ListItemButton component={NavLink} to={elem.NavItemLink} sx={{
-                            p: { lg: "6px 10px!important", xs: "5px 10px!important" },
-                            "&:hover,&.active": {
-                                backgroundColor: "#F2F6FE!important",
-                                "& svg,path": {
-                                    fill: "action.active"
-                                },
-                                "& span": {
-                                    fontWeight: "600",
-                                    color: "action.active",
-                                },
-                            }
-                        }}>
-                            <ListItemIcon sx={{
-                                minWidth: "auto!important",
-                                mr: { lg: "16px", xs: "12px" },
-                                "& svg": {
-                                    width: { lg: "initial", xs: "30px" },
-                                    height: { lg: "initial", xs: "30px" }
-                                },
-                                "& svg,path": {
-                                    fill: "#8794C3"
-                                }
-                            }}>
+                    <Typography key={index} variant="h4" component={NavLink} to={elem.NavItemLink} sx={{mb: { lg: 3, xs: 2 }, '&:last-child': { mb: 0 },p: { lg: "6px 10px!important", xs: "5px 10px!important" }, display :"flex",alignItems:"center",gap:"15px"}}>
                                 {elem.NavItemIcon}
-                            </ListItemIcon>
-                            <ListItemText primary={elem.NavItemTxt} sx={{
-                                m: 0, "& span": {
-                                    fontSize: { lg: "14px ", xs: "12px " },
-                                    fontWeight: "500",
-                                    color: "primary.light",
-                                    lineHeight: "1",
-                                }
-                            }} />
-                        </ListItemButton>
-                    </ListItem>
+                                {elem.NavItemTxt}
+                    </Typography>
                 )
             })}
         </>
     )
 }
-
 export default SideNavSingleItem;
