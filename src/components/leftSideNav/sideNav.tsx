@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography,Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SideNavItem from './sideNavItem';
 
@@ -25,23 +25,28 @@ const SideNav = () => {
     }, [toggleNav]);
     return (
         <>
-            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", padding: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, background: "#fff", whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between", }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
-                <Box sx={{ mb: 3 }}>
+            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between" }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
+                <Box sx={{ overflow: "hidden" }}>
                     {/* Toggle   */}
-                    <Box component="button" sx={{ marginBottom: "34px", lineHeight: "0" }} onClick={() => { setToggleNav(!toggleNav) }}>
+                    <Box component="button" sx={{ marginBottom: "34px" }} onClick={() => { setToggleNav(!toggleNav) }}>
                         <Box component="img" sx={{ maxWidth: "unset" }} src={require(`../../assets/svg/nav-toggle.svg`).default} alt="nav Toggle" />
                     </Box>
+                    
                     {/* Logo  */}
-                    <Box component={Link} to="/" sx={{ display: "block" }} className="line-height-0">
-                        <Box component="img" sx={{ maxWidth: 'unset' }} src={require(`../../assets/img/${toggleNav ? "short-logo" : 'logo'}.png`)} alt="logo" />
+                    <Box>
+                        <Link to="/"  >
+                            <Box component="img" sx={{ maxWidth: 'unset' }} src={require(`../../assets/img/${toggleNav ? "short-logo" : 'logo'}.png`)} alt="logo" />
+                        </Link>
                     </Box>
+
+                    {/* Divider */}
+                    <Divider sx={{ my: { lg: 3, xs: 2 }, border: "none!important", height: "2px", background: "#F2F6FE", width: "160px" }} />
+
                     {/*  Navigation */}
-                    <Box component="nav" sx={{ overflow: "hidden" }}>
-                        <SideNavItem />
-                    </Box>
+                    <SideNavItem />
                 </Box>
                 {/* Developed Logo  */}
-                <Box className="line-height-0">
+                <Box >
                     {!toggleNav &&
                         <Typography component="span" sx={{ mb: 1.5, display: "block", color: "#979797", fontSize: 12, lineHeight: "13px" }}>
                             Developed by
