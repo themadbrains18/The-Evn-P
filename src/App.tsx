@@ -17,6 +17,7 @@ const theme = createTheme({
       light : "#8794C4",
       contrastText: "#454560",
     },
+    
     secondary : {
       main : "#1D8CD4",
       light : "#1D8CD4",
@@ -28,28 +29,29 @@ const theme = createTheme({
     },
     divider: "#F5F5F5",
     background: {
-      paper: "#FDFDFD"
+      paper: "#FDFDFD",
+      default:"#fff"
     },
     action :{
       active : "#0F75BC",
       hover : "#0F75BC",
     },
-  
   },
+  
   shape: {
     borderRadius: "6px"
-  },
+  },  
   typography: {
     fontFamily: "'Spartan',sans-serif",
     fontSize: 14,
-
+    fontWeightRegular: "400",
+    fontWeightMedium: "500",
     body1:{
       fontSize: "14px",
       fontWeight: "400",
       lineHeight: "23px",
       color: "#121212",
     },
-    fontWeightRegular: "400",
     body2:{
       fontSize: "12px",
       lineHeight: "13px",
@@ -102,7 +104,6 @@ const theme = createTheme({
     h6: {
       fontSize: "14px",
       fontWeight: "500",
-      lineHeight: "16px",
       color: "#000",
     },
     button:{
@@ -110,7 +111,6 @@ const theme = createTheme({
       fontWeight: "600",
       lineHeight: "18px",
       color: "#454560",
-      
     },
     subtitle1: {
       fontSize: "16px",
@@ -122,10 +122,9 @@ const theme = createTheme({
       fontSize: "10px",
       fontWeight: "500",
     },
-    
 },
 components: {
-    MuiInputBase: {
+  MuiInputBase: {
         styleOverrides: {
             root: {
                 color: "#454560", 
@@ -133,6 +132,16 @@ components: {
             }
         } 
     },
+    MuiDivider: {
+      styleOverrides: {
+          root: {
+              color: "#4F4F4F", 
+              fontWeight: "500", 
+              fontSize:"14px",
+              lineHeight: "16px"
+          }
+      } 
+  },
     MuiMenuItem : {
       styleOverrides: {
           root: {
@@ -143,7 +152,6 @@ components: {
               "&:hover":{
                 color:"#fff"    
               },
-
           },
       },
   },
@@ -153,7 +161,6 @@ components: {
           props: { variant: 'contained' },
           style: {
             color: "#fff",
-            
           }
         },
         {
@@ -173,23 +180,26 @@ components: {
           padding:"16px 61px",
           "&:hover":{
             background:"#0F75BC",
-            color:"#fff"
+            color:"#fff",
+            "& svg path":{
+              fill:"#fff"
+            }
           }
         }
       } 
   }
 }
 });
-theme.typography = {
-  ...theme.typography,
-  h2 : {
+// theme.typography = {
+//   ...theme.typography,
+//   h2 : {
 
-      fontSize: '100px',
-      [theme.breakpoints.down('md')]: {
-        fontSize: '500px'
-      }
-  }
-};
+//       fontSize: '10px',
+//       [theme.breakpoints.down('md')]: {
+//         fontSize: '50px'
+//       }
+//   }
+// };
 
 const App = () => {
   const [viewTopHeader, setViewTopHeader] = useState(false);

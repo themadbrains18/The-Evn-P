@@ -1,20 +1,16 @@
 import { Box, Typography, MenuItem, FormControl, Button } from '@mui/material';
 import * as React from 'react';
-
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useState } from 'react';
 
 const BugreportForm = () => {
     const [fileUploadName, SetFileUploadName] = useState('');
-    // const [searchValue, SetsearchValue] = useState("");
-
     const fileUpload = (e: any) => {
         if (e.target.files[0].name) {
             SetFileUploadName(e.target.files[0].name);
         }
     }
-
     const removeFile = () => {
         SetFileUploadName('');
         let fileField: any = document.querySelector("#ChooseFile");
@@ -36,9 +32,9 @@ const BugreportForm = () => {
         InnerInput?.setAttribute("style", "z-index:-1")
     };
     return (
-        <Box sx={{ padding: "30px", background: "#fff", fontWeight: "500", fontSize: "20px", lineheight: "22px", borderRadius: "5px" }}>
+        <Box sx={{ padding: "30px", backgroundColor: "background.default" }}>
             <form >
-                <Typography sx={{ fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
+                <Typography variant='subtitle1' sx={{ marginBottom: "30px" }} component={"span"}>
                     Theme
                 </Typography>
                 <FormControl required fullWidth sx={{
@@ -50,12 +46,9 @@ const BugreportForm = () => {
                 }}>
                     <Select
                         sx={{
-                            fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
+                            "&>div": {
                                 padding: "12px 15px",
                                 minHeight: "initial!important",
-                                " & span": {
-                                    fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
-                                },
                                 position: "relative",
                                 "&[aria-expanded=true]": {
                                     "&::after": {
@@ -81,10 +74,9 @@ const BugreportForm = () => {
                         onChange={handleChange}
                         displayEmpty
                         inputProps={{ 'aria-label': 'Without label' }}
-
                     >
                         <MenuItem value="">
-                            <Typography component={"span"}>Web App Error</Typography>
+                            Web App Error
                         </MenuItem>
                         <MenuItem value={10}>1</MenuItem>
                         <MenuItem value={20}>2</MenuItem>
@@ -92,101 +84,70 @@ const BugreportForm = () => {
                     </Select>
                 </FormControl>
                 {/* Text Area Input */}
-                <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", margin: "30px 0 10px" }} component={"span"}>
+                <Typography variant='subtitle1' sx={{ display: "block", margin: "30px 0 10px" }} component={"span"}>
                     Description
                 </Typography>
-                <Box sx={{ "& textarea ": { width: "100%", height: "200px!important", borderRadius: "4px", border: "1px solid rgba(0, 0, 0, 0.23)", padding: "12px 15px", fontSize: { lg: "14px", xs: "12px" }, color: "#000", fontWeight: "500", lineHeight: "16px", "&:focus": { outlineColor: "#0F75BC" } } }}>
+                <Typography variant='h6' sx={{ "& textarea ": { width: "100%", height: "200px!important", border: "1px solid rgba(0, 0, 0, 0.23)", padding: "12px 15px", "&:focus": { outlineColor: "#0F75BC" } } }}>
                     <TextareaAutosize
                         aria-label="empty textarea"
                     />
-                </Box>
+                </Typography>
 
                 {/* Drop File Input  */}
                 <Box sx={{ position: "relative" }}>
                     {/* Tab Heading */}
-                    <Box sx={{ boxShadow: "none", borderRadius: "0" }}>
-                        {/* Location Search */}
+                    {/* Location Search */}
+                    {/* Upload File */}
+                    <Typography variant='subtitle1' sx={{ display: "block", margin: "30px 0 10px" }} component={"span"}>
+                        Drop File Here
+                    </Typography>
+                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ position: "relative", display: "grid", placeItems: "center", height: "200px", padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
+                        {/* Text Area Input */}
+                        <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
+                            <Typography variant='subtitle1' sx={{
+                                textAlign: "center"
+                            }} component={"h5"}>Drop  file or browse</Typography>
 
-                        {/* Upload File */}
-                        <Typography sx={{ display: "block", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "16px", color: "#000", margin: "30px 0 10px" }} component={"span"}>
-                            Drop File Here
-                        </Typography>
-                        <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ position: "relative", display: "grid", placeItems: "center", height: "200px", padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797", borderRadius: "4px" }}>
-                            {/* Text Area Input */}
-
-                            <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
-                                <Typography sx={{
-                                    color: "#000",
-                                    fontWeight: "500",
-                                    fontSize: { lg: "16px", xs: "14px" },
-                                    lineHeight: "16px",
-                                    textAlign: "center"
-                                }} component={"h5"}>Drop  file or browse</Typography>
-
-                                <Box sx={{ marginTop: "20px", textAlign: "center" }}>
-                                    <Box component="label" sx={{
-                                        background: "#8794C4",
-                                        borderRadius: " 6px",
-                                        color: "#fff",
-                                        padding: "6px 8px",
-                                        textAlign: "center",
-                                        fontSize: { lg: "16px", xs: "14px" },
-                                        cursor: "pointer",
-                                        display: "inline-block"
-                                    }} htmlFor="ChooseFile"> Browse</Box>
-                                    <Box className='drop-zone__input' sx={{
-                                        position: "absolute",
-                                        top: "50%",
-                                        left: "50%",
-                                        transform: "translate(-50% , -50%)",
-                                        opacity: "0",
-                                        height: "100%",
-                                        zIndex: "-1",
-                                        width: "100%",
-                                    }} component="input" type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
-                                </Box>
+                            <Box sx={{ marginTop: "20px", textAlign: "center" }}>
+                                <Typography variant='subtitle1' component="label" sx={{
+                                    backgroundColor: "primary.light",
+                                    borderRadius: " 6px",
+                                    color: "common.white",
+                                    padding: "6px 8px",
+                                    textAlign: "center",
+                                    cursor: "pointer",
+                                }} htmlFor="ChooseFile"> Browse</Typography>
+                                <Box className='drop-zone__input' sx={{
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50% , -50%)",
+                                    opacity: "0",
+                                    height: "100%",
+                                    zIndex: "-1",
+                                    width: "100%",
+                                }} component="input" type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
                             </Box>
+                        </Box>
 
-                            <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", background: "#FFFFFF", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
-                                <img src={require("../../../assets/svg/file-icon.svg").default} alt="" />
-                                <Typography sx={{
-                                    ml: "8px",
-                                    mr: "4px",
-                                    color: "#000",
-                                    fontWeight: "500",
-                                    fontSize: "12px",
-
-                                }} component={"span"}>{fileUploadName}</Typography>
-                                <Box onClick={removeFile} sx={{ height: "14px", width: "14px", background: "#FF5722", boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
-                                    <img src={require("../../../assets/svg/delete-icon.svg").default} alt="" />
-                                </Box>
+                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", backgroundColor: "background.default", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
+                            <img src={require("../../../assets/svg/file-icon.svg").default} alt="" />
+                            <Typography variant='body2' sx={{
+                                ml: "8px",
+                                mr: "4px",
+                            }} component={"span"}>{fileUploadName}</Typography>
+                            <Box onClick={removeFile} sx={{ height: "14px", width: "14px", background: "#FF5722", boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
+                                <img src={require("../../../assets/svg/delete-icon.svg").default} alt="" />
                             </Box>
                         </Box>
                     </Box>
                 </Box>
                 {/* Button */}
                 <Box sx={{ marginTop: "22px", textAlign: "end" }}>
-                    <Button sx={{
-                        border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
-                        fontWeight: "600",
-                        fontSize: { lg: "14px", xs: "12px" },
-                        lineHeight: "1",
-                        "&:hover": {
-                            backgroundColor: '#0F75BC',
-                            color: "#fff"
-                        }
-                    }} variant="outlined" type="reset" >Clear</Button>
+                    <Button variant="outlined" type="reset" >Clear</Button>
                     <Button type="submit" sx={{
-                        border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
-                        fontWeight: "600",
-                        background: "#0F75BC",
-                        fontSize: { lg: "14px", xs: "12px" },
-                        lineHeight: "1",
-                        "&:hover": {
-                            backgroundColor: '#0F75BC',
-                            color: "#fff"
-                        }
-                    }} variant="outlined" >Submit</Button>
+                        marginLeft: "14px",
+                    }} variant="contained" >Submit</Button>
                 </Box>
             </form>
         </Box >

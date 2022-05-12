@@ -1,7 +1,6 @@
 import { Box, Button, Typography, Divider } from "@mui/material";
 import DownloadIcon from '@mui/icons-material/Download';
 import AssessmentIcon from '@mui/icons-material/Assessment';
-import PestControlIcon from '@mui/icons-material/PestControl';
 import LanguageIcon from '@mui/icons-material/Language';
 type headerData = {
     tabheading: String,
@@ -59,7 +58,7 @@ const Header = (props: headerData) => {
             {/* Heading Content */}
             {
                 props.blockInfo ?
-                    <Box sx={{ backgroundColor: "#FDFDFD", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
+                    <Box sx={{ backgroundColor: "background.paper", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
                         <Typography variant="h4" component="h4" sx={{}}>
                             {props.blockInfoheading}
                         </Typography>
@@ -70,12 +69,11 @@ const Header = (props: headerData) => {
                         </Typography>
                     </Box>
                     :
-                    <Typography variant="h6" component="p" sx={{ textAlign: "justify" }}>
+                    <Typography variant="h6" component="p" sx={{ color: "text.secondary", lineHeight: "23px", fontWeight: "fontWeightRegular", textAlign: "justify" }}>
                         {/* Tab Info */}
                         {props.tabInfo}
                     </Typography>
             }
-
             {/* Divider */}
             {props.divider && <Divider sx={{ borderBottomWidth: "2px", mt: "18px", borderColor: "#DEDEDE" }} />}
         </>

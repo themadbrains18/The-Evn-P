@@ -74,48 +74,40 @@ const LocationFinderTab = () => {
         let InnerInput = document.querySelector(".drop-zone__input");
         InnerInput?.setAttribute("style", "z-index:-1")
     };
-
     return (
         <>
             <Box sx={{ position: "relative" }}>
                 {/* Tab Heading */}
                 <MapInnerTabHeading heading={"Location Finder"} />
-                <Paper component="form" sx={{ boxShadow: "none", borderRadius: "0" }}>
+                <Paper component="form" sx={{ boxShadow: "0", borderRadius: "0" }}>
                     {/* Location Search */}
-                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, marginTop: "22px", lineHeight: "16px", fontWeight: "500", color: "#000000", marginBottom: "10px", }} >Location Search</Typography>
-                    <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
-
-                        <InputBase onClick={opendropdownBtn} onChange={searchBtn} value={searchValue} sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }} placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
+                    <Typography variant='h6' component={"h4"} sx={{  marginTop: "22px", fontWeight: "fontWeightMedium", marginBottom: "10px", }} >Location Search</Typography>
+                    <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "0" }}>
+                        <InputBase onClick={opendropdownBtn} onChange={searchBtn} value={searchValue} 
+                            sx={{ ml: 1, flex: 1}} placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
                         <IconButton onClick={submitBtn} type="submit" sx={{ p: '11px' }} aria-label="search">
                             <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M19 19L13 13L19 19ZM15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z" stroke="#333333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </IconButton>
                     </Box>
-                    <Divider sx={{ padding: "9.5px 0", color: "#4F4F4F", margin: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
+                    <Divider sx={{ padding: "9.5px 0", margin: "9px 0 4px " }} flexItem>
                         OR
                     </Divider>
                     {/* Upload File */}
                     <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
                         <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
-                            <Typography sx={{
-                                color: "#000",
-                                fontWeight: "500",
-                                fontSize: { lg: "14px", xs: "12px" },
-                                lineHeight: "16px",
+                            <Typography variant='h6' sx={{
                                 textAlign: "center"
                             }} component={"h5"}>Drop CSV file or browse</Typography>
                             <Box sx={{ marginTop: "10px", textAlign: "center" }}>
-                                <Box component="label" sx={{
-                                    background: "#8794C4",
+                                <Typography variant='subtitle1' component="label" sx={{
+                                    backgroundColor: "primary.light",
                                     borderRadius: " 6px",
-                                    color: "#fff",
+                                    color: "common.white",
                                     padding: "6px 8px",
-                                    textAlign: "center",
-                                    fontSize: { lg: "16px", xs: "14px" },
                                     cursor: "pointer",
-                                    display: "inline-block"
-                                }} htmlFor="ChooseFile"> Browse</Box>
+                                }} htmlFor="ChooseFile"> Browse</Typography>
                                 <Box className='drop-zone__input' component="input" sx={{
                                     position: "absolute",
                                     top: "50%",
@@ -129,30 +121,25 @@ const LocationFinderTab = () => {
                             </Box>
                         </Box>
 
-                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", background: "#FFFFFF", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
+                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", backgroundColor: "default", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
                             <img src={require("../../../../../assets/svg/file-icon.svg").default} alt="" />
-                            <Typography sx={{
+                            <Typography variant='body2' sx={{
                                 ml: "8px",
                                 mr: "4px",
-                                color: "#000",
-                                fontWeight: "500",
-                                fontSize: "12px",
-
+                                fontWeight: "fontWeightMedium",
                             }} component={"span"}>{fileUploadName}</Typography>
                             <Box onClick={removeFile} sx={{ height: "14px", width: "14px", background: "#FF5722", boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
                                 <img src={require("../../../../../assets/svg/delete-icon.svg").default} alt="" />
                             </Box>
                         </Box>
                     </Box>
-
                     <Divider sx={{ padding: "9.5px 0", color: "#4F4F4F", margin: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
                         OR
                     </Divider>
-
                     {/* Latitude & Longtitude */}
-                    <Typography component={"h4"} sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", fontWeight: "500", color: "#000000", marginBottom: "10px", }} >Latitude & Longtitude</Typography>
-                    <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "none" }}>
-                        <InputBase sx={{ ml: 1, flex: 1, fontWeight: "500", fontSize: "14px", lineHeight: " 16px" }}
+                    <Typography variant='h6' component={"h4"} sx={{  marginBottom: "10px", }} >Latitude & Longtitude</Typography>
+                    <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "0" }}>
+                        <InputBase sx={{ ml: 1, flex: 1}}
                             placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
                         <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
                             <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,31 +147,16 @@ const LocationFinderTab = () => {
                             </svg>
                         </IconButton>
                     </Box>
-
                     {/* Buttons  */}
                     <Box sx={{ marginTop: "27px", textAlign: "end" }}>
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 29px", xs: "13px 29px" }, color: "#0F75BC",
-                            fontWeight: "600",
-                            fontSize: { lg: "14px", xs: "12px" },
-                            lineHeight: "1",
-                            "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
-                            }
+                            padding: "16px 29px",
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
                         <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 29px", xs: "13px 29px" }, color: "#fff", marginLeft: "14px",
-                            fontWeight: "600",
-                            fontSize: { lg: "14px", xs: "12px" },
-                            backgroundColor: '#0F75BC',
-                            lineHeight: "1",
-                            "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
-                            }
-                        }} variant="outlined">Go</Button>
+                              marginLeft: "14px",
+                              padding: "16px 29px"
+                        }} variant="contained">Go</Button>
                     </Box>
 
                     {/* Search dropdown */}
@@ -197,7 +169,7 @@ const LocationFinderTab = () => {
                                 width: "100%",
                                 left: "50%",
                                 transform: "translateX(-50%)",
-                                boxShadow: "0 0 10px #ccc",
+                                boxShadow: "2",
                                 borderRadius: "4px",
                                 padding: "10px",
                                 zIndex: "10"

@@ -10,7 +10,7 @@ const MapCard = () => {
                     return (
                         <Grid item xs={12} md={6} lg={4} key={elem.id}>
                             <Card sx={{
-                                background: "#FDFDFD",
+                                backgroundColor: "background.paper",
                                 boxShadow: "0px 0px 10px #F3F4F6",
                                 "&:hover": {
                                     boxShadow: "0px 0px 15px #b6b8bd"
@@ -26,47 +26,36 @@ const MapCard = () => {
                                         />
                                     </Box>
                                     {/* Card Image Title */}
-                                    <Box to="/maps" component={Link}>
-                                    <Typography color="text.primary{contrastText}" component="span" sx={{
+                                    <Typography variant='h2' color="text.primary{contrastText}" to="/maps" component={Link} sx={{
                                         position: 'absolute', top: "50%", left: "50%",
                                         transform: 'translate(-50%,-50%)',
-                                        fontSize: { xl: 24, lg: 20, xs: 18 },
-                                        fontWeight: 600,
-                                        color: "#fff",
-                                        width: "100%",
-                                        textAlign: "center"
                                     }}>
                                         {elem.map_card_name}
                                     </Typography>
-                                    </Box>
                                 </Box>
-                                <Box sx={{ px: 1.3, pb: 2.75 }} component="div">
+                                <Box sx={{ px: 1.3, pb: 2.75 }} >
                                     <CardActions sx={{ justifyContent: "space-between", gap: 1, p: 0, mt: 2 }}>
                                         {elem.map_card_links.map((cardElem) => {
                                             return (
-                                                    <Button to={cardElem.link} component={Link}   key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
-                                                        <CardMedia 
-                                                            sx={{ width: { lg: "100%", xs: "22px" } }}
-                                                            component="img"
-                                                            image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
-                                                            alt={cardElem.link_txt}
-                                                        />
-                                                        <Typography sx={{
-                                                            fontSize: { lg: 14, xs: 12 },
-                                                            fontWeight: 500,
+                                                <Button to={cardElem.link} component={Link} key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
+                                                    <CardMedia
+                                                        sx={{ width: { lg: "100%", xs: "22px" } }}
+                                                        component="img"
+                                                        image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
+                                                        alt={cardElem.link_txt}
+                                                    />
+                                                    <Typography variant='h6'
+                                                        sx={{
                                                             marginTop: "4px",
-                                                            color: "#1D8CD4",
-                                                            display: "block",
-                                                            lineHeight: "16px",
+                                                            color: "secondary.main",
                                                         }} component="span" >
-                                                            {cardElem.link_txt}
-                                                        </Typography>
-                                                    </Button>
-                                              
+                                                        {cardElem.link_txt}
+                                                    </Typography>
+                                                </Button>
                                             )
                                         })}
                                     </CardActions>
-                                    <Box component="div" sx={{ display: "flex", alignItems: "center", mt: 3, mx: -0.5 }}>
+                                    <Box  sx={{ display: "flex", alignItems: "center", mt: 3, mx: -0.5 }}>
                                         {elem.map_card_info.map((card) => {
                                             return (
                                                 <Box key={card.id} component="div" sx={{
@@ -79,36 +68,21 @@ const MapCard = () => {
                                                         border: "none"
                                                     }
                                                 }}>
-                                                    <Typography component="h4" sx={{
-                                                        display: "inline-block", fontSize: { lg: 16, xs: 14 },
-                                                        fontWeight: 500,
-                                                        color: "#000",
-                                                        lineHeight: 1.1,
-                                                        width: "100%"
-                                                    }}>
+                                                    <Typography variant='h6' component="h4" >
                                                         {card.info_heading}
                                                     </Typography>
-                                                    <Typography component="span" sx={{
-                                                        display: "inline-block", fontSize: 9,
-                                                        fontWeight: 400,
-                                                        color: "#000",
-                                                        mb: 0,
-                                                        lineHeight: 1.2
-
-                                                    }}>
+                                                    <Typography variant='subtitle2' component="span">
                                                         {card.info_txt}
                                                     </Typography>
                                                 </Box>
                                             )
                                         })}
-
                                     </Box>
                                 </Box>
                             </Card >
                         </Grid>
                     )
                 })}
-
             </Grid>
         </Box >
     );
