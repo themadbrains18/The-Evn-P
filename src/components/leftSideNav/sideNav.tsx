@@ -25,8 +25,8 @@ const SideNav = () => {
     }, [toggleNav]);
     return (
         <>
-            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between" }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
-                <Box sx={{ overflow: "hidden" }}>
+            <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between",backgroundColor: "background.paper" }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
+                <Box >
                     {/* Toggle   */}
                     <Box component="button" sx={{ marginBottom: "34px" }} onClick={() => { setToggleNav(!toggleNav) }}>
                         <Box component="img" sx={{ maxWidth: "unset" }} src={require(`../../assets/svg/nav-toggle.svg`).default} alt="nav Toggle" />
@@ -42,8 +42,10 @@ const SideNav = () => {
                     {/* Divider */}
                     <Divider sx={{ my: { lg: 3, xs: 2 }, border: "none!important", height: "2px", background: "#F2F6FE", width: "160px" }} />
 
-                    {/*  Navigation */}
-                    <SideNavItem />
+                    <Box sx={{ overflow: "hidden" }}>
+                        {/*  Navigation */}
+                        <SideNavItem />
+                    </Box>
                 </Box>
                 {/* Developed Logo  */}
                 <Box >

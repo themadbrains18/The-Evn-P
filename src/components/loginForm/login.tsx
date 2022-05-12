@@ -15,47 +15,42 @@ const Login = (props: any) => {
     return (
         <>
             <FullscreenCard>
-                <Typography variant="h1">
-                    Login
-                </Typography>
-                <Typography variant="subtitle1" sx={{
-                    mb: "12px",
-                    mt: "38px"
-                }} >
-                    Username
-                </Typography>
-                <OutlinedInput type="text" required fullWidth placeholder="Enter you username" />
+                <form onSubmit={props.onSubmit} action="">
+                    <Typography variant="h1">
+                        Login
+                    </Typography>
+                    <Typography variant="subtitle1" sx={{
+                        mb: "12px",
+                        mt: "38px", fontWeight: "600"
+                    }} color="primary.contrastText" >
+                        Username
+                    </Typography>
+                    <OutlinedInput type="text" required fullWidth placeholder="Enter you username" />
 
-                <Box sx={{ width: "100%", marginTop: "30px" }}>
-                    <Typography variant="subtitle1" sx={{ mb: "12px" }}>
+                    <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
                         Password
                     </Typography>
-                    <Box sx={{ position: "relative" }}>
-                        <OutlinedInput fullWidth type={`${!showPassword && ("password")}`} required
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="toggle password visibility"
-                                        onClick={toggleShowPassword}
-                                        onMouseDown={toggleShowPassword}
-                                        edge="end"
-                                    >
-                                        {showPassword ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
-                            }
-                        />
+
+                    <OutlinedInput placeholder="Enter your password" fullWidth type={`${!showPassword && ("password")}`} required
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={toggleShowPassword}
+                                    edge="end"
+                                >
+                                    {showPassword ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
+                                </IconButton>
+                            </InputAdornment>
+                        } />
+
+                    <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
+
+                    <Box sx={{ textAlign: "center", mt: "26px" }}>
+                        <Button type="button" variant="text" sx={{ color: "#0F75BC", "&:hover": { backgroundColor: "transparent", color: "#0F75BC" } }} onClick={props.onClickfogetBtn} > Forgot password?</Button>
                     </Box>
-
-                </Box>
-                <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large"  variant="contained">Continue</Button>
-
-
-                <Box sx={{ textAlign: "center", marginTop: "26px", "& button": { color: "#0F75BC", fontWeight: "600", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" } }}>
-                    <button type="button" onClick={props.onClickfogetBtn}> Forgot password?</button>
-                </Box>
+                </form>
             </FullscreenCard>
-
         </>
     )
 }
