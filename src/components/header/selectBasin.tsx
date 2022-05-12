@@ -7,17 +7,18 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-
+// Select Basins Form
 const SeclectBasin = (props: any) => {
-    const [age, setAge] = React.useState('');
+    // Start Date State
+    const [firstDate, SetfirstDate] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value);
+        SetfirstDate(event.target.value);
     }
-
+    // End Date State
     const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
     const [value, setValue] = React.useState<Date | null>(null);
     const clearForm = () => {
-        setAge("");
+        SetfirstDate("");
         setsecondvalue(null);
         setValue(null);
         if (props.selectGo) {
@@ -26,7 +27,7 @@ const SeclectBasin = (props: any) => {
     }
     // Sumbit Form
     const submitForm = () => {
-        if (age && value) {
+        if (firstDate && value) {
             if (props.selectGo) {
                 props.selectGo(true);
             }
@@ -37,7 +38,6 @@ const SeclectBasin = (props: any) => {
         input.forEach((e) => {
             e.setAttribute("required", "");
         });
-
     });
     const checkValid = (e: any) => {
         let StartValue: any = secondvalue;
@@ -68,9 +68,8 @@ const SeclectBasin = (props: any) => {
     return (
         <>
             <form action="">
-                <Box sx={{ padding: "30px", borderRadius: "6px", background: "#ffff", marginTop: "20px" }}>
-                    <Box sx={{ minWidth: 120 }}>
-                        <Typography sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#000", marginBottom: "30px" }} component={"span"}>
+                    <Box sx={{padding: "30px", background: "#ffff", marginTop: "20px" , minWidth: 120 }}>
+                        <Typography variant='h6' sx={{  marginBottom: "30px" }} component={"span"}>
                             Select Basin
                         </Typography>
                         <FormControl fullWidth >
@@ -84,12 +83,9 @@ const SeclectBasin = (props: any) => {
                                 }}>
                                     <Select
                                         sx={{
-                                            fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px", "&>div": {
+                                             "&>div": {
                                                 padding: "12px 15px",
                                                 minHeight: "initial!important",
-                                                " & span": {
-                                                    fontSize: { lg: "14px", xs: "12px" }, color: "#000000", fontWeight: "500", lineHeight: "16px",
-                                                },
                                                 position: "relative",
                                                 "&[aria-expanded=true]": {
                                                     "&::after": {
@@ -111,44 +107,30 @@ const SeclectBasin = (props: any) => {
                                                 }
                                             }
                                         }}
-                                        value={age}
+                                        value={firstDate}
                                         onChange={handleChange}
                                         displayEmpty
                                         inputProps={{ 'aria-label': 'Without label' }}
                                     >
-                                        <MenuItem value="">
-                                            <Typography component={"span"}>All Basins</Typography>
-                                        </MenuItem>
+                                        <MenuItem value="">All Basins</MenuItem>
                                         <MenuItem value={10}>Appalachian</MenuItem>
                                         <MenuItem value={20}>Bakken</MenuItem>
-                                        <MenuItem value={30}>Denver-Julesburg</MenuItem>
-                                        <MenuItem value={30}>Eagleford</MenuItem>
-                                        <MenuItem value={30}>Permian</MenuItem>
+                                        <MenuItem value={40}>Denver-Julesburg</MenuItem>
+                                        <MenuItem value={50}>Eagleford</MenuItem>
+                                        <MenuItem value={60}>Permian</MenuItem>
                                     </Select>
                                 </FormControl>
-
                             </Box>
                             <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
-                                <Box component="span" sx={{ color: "#000", fontWeight: "500", fontSize: "14px", lineHeight: "16px", margin: "32px 0 10px" }} >Select Date</Box>
+                                <Typography component="span"  variant='h6' sx={{  margin: "32px 0 10px" }} >Select Date</Typography>
                                 <Box sx={{
                                     display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
-                                    "& label": {
-                                        top: "-5px",
-                                        color: "#000000",
-                                        fontWeight: "500",
-                                        fontSize: { lg: "14px", xs: "12px" },
-                                    },
-                                    "& input": {
-                                        paddingTop: "13px",
-                                        paddingBottom: "13px",
-                                    },
                                     "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
                                         transform: " translate(20px, -1px) scale(0.70)"
                                     }
                                 }}>
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DatePicker
-
                                             label="Beginning Date"
                                             minDate={new Date('2018-01-01')}
                                             value={secondvalue}
@@ -156,28 +138,8 @@ const SeclectBasin = (props: any) => {
                                                 setsecondvalue(newValue);
                                             }}
                                             renderInput={(params) =>
-                                                <TextField sx={{
-
-                                                    "& fieldset ": {
-                                                        border: " 1px solid rgba(0, 0, 0, 0.12)",
-                                                        borderRadius: "6px",
-                                                    },
-                                                    " & input": {
-                                                        color: "#000000",
-                                                        fontWeight: "500",
-                                                        fontSize: { lg: "14px", xs: "12px" },
-                                                        lineHeight: "16px",
-                                                    },
-                                                    color: "#000000",
-                                                    fontWeight: "500",
-                                                    fontSize: { lg: "14px", xs: "12px" },
-                                                    lineHeight: "16px",
-                                                    "& input": {
-                                                        padding: "10px 15px"
-                                                    }
-                                                }}   {...params} />}
+                                                <TextField   {...params} />}
                                         />
-
                                     </LocalizationProvider>
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DatePicker
@@ -186,58 +148,18 @@ const SeclectBasin = (props: any) => {
                                             maxDate={new Date('2025-01-01')}
                                             onChange={(e: any) => { checkValid(e) }}
                                             renderInput={(params) =>
-                                                <TextField sx={{
-                                                    "& fieldset ": {
-                                                        border: " 1px solid rgba(0, 0, 0, 0.12)",
-                                                        borderRadius: "6px",
-                                                    },
-                                                    color: "#000000",
-                                                    fontWeight: "500",
-                                                    fontSize: { lg: "14px", xs: "12px" },
-                                                    lineHeight: "16px",
-                                                    "& input": {
-                                                        padding: "10px 15px",
-                                                        color: "#000000",
-                                                        fontWeight: "500",
-                                                        fontSize: { lg: "14px", xs: "12px" },
-                                                        lineHeight: "16px",
-                                                    }
-
-                                                }}   {...params} />}
+                                                <TextField  {...params} />}
                                         />
                                     </LocalizationProvider>
-
                                 </Box>
                             </Box>
                         </FormControl>
                     </Box>
-
                     {/* Button */}
                     <Box sx={{ marginTop: "22px", textAlign: "end" }}>
-                        <Button sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#0F75BC",
-                            fontWeight: "600",
-                            fontSize: { lg: "14px", xs: "12px" },
-                            lineHeight: "1",
-                            "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
-                            }
-                        }} variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
-
-                        <Button type="submit" sx={{
-                            border: "1px solid #0F75BC", borderRadius: "6px", padding: { lg: "16px 35px", xs: "13px 35px", width: "145px" }, color: "#fff", marginLeft: "14px",
-                            fontWeight: "600",
-                            background: "#0F75BC",
-                            fontSize: { lg: "14px", xs: "12px" },
-                            lineHeight: "1",
-                            "&:hover": {
-                                backgroundColor: '#0F75BC',
-                                color: "#fff"
-                            }
-                        }} variant="outlined" onClick={submitForm}>Go</Button>
+                        <Button   variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
+                        <Button sx={{marginLeft:"20px"}} type="submit"  variant="contained" onClick={submitForm}>Go</Button>
                     </Box>
-                </Box >
             </form>
         </>
     )

@@ -1,4 +1,8 @@
 import { Box, Button, Typography, Divider } from "@mui/material";
+import DownloadIcon from '@mui/icons-material/Download';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import PestControlIcon from '@mui/icons-material/PestControl';
+import LanguageIcon from '@mui/icons-material/Language';
 type headerData = {
     tabheading: String,
     blockInfo: Boolean,
@@ -6,32 +10,25 @@ type headerData = {
     blockInfoheading: String,
     divider: Boolean
     headerOption: any; // headerOption Must be = Download , Search,MapView,Reports
-
 }
-
-
 const Header = (props: headerData) => {
     return (
         <>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1 }}>
-                <Box >
-                    <Typography component={"h2"} sx={{ fontWeight: 'bold', fontSize: { lg: 19, xs: 17 }, lineHeight: "21px" }}>
-                        {/* Tab Heading */}
-                        {props.tabheading}
-                    </Typography>
-                </Box>
+                <Typography variant="h3" component={"h2"}>
+                    {/* Tab Heading */}
+                    {props.tabheading}
+                </Typography>
                 <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
 
                     {props.headerOption.map((elem: any, index: any) => {
                         return (
                             <Box key={index} >
-                               
                                 {/* Map View */}
-                                {
-                                    elem === "MapView" &&
+                                {elem === "MapView" &&
                                     <Button variant="text" sx={{ alignItems: "center" }}>
-                                        <img src={require("../../assets/svg/globe.svg").default} alt="Globe" />
-                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                                        <LanguageIcon sx={{color:"#0079b4"}}  />
+                                        <Typography variant="subtitle1" component="span" sx={{ color: "secondary.light", textTransform: 'capitalize', ml: 1 }}>
                                             Map View
                                         </Typography>
                                     </Button>
@@ -39,17 +36,17 @@ const Header = (props: headerData) => {
                                 {
                                     elem === "Download" &&
                                     <Button variant="text" sx={{ alignItems: "center" }}>
-                                        <img src={require("../../assets/svg/card-download-icon.svg").default} alt="Globe" />
-                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                                        <DownloadIcon sx={{color:"#0079b4"}} />
+                                        <Typography variant="subtitle1" component="span" sx={{ color: "secondary.light", textTransform: 'capitalize', ml: 1 }}>
                                             Download
                                         </Typography>
                                     </Button>
-                                }
+                                }    
                                 {
                                     elem === "Reports" &&
                                     <Button variant="text" sx={{ alignItems: "center" }}>
-                                        <img src={require("../../assets/svg/report.svg").default} alt="report" />
-                                        <Typography component="span" sx={{ fontWeight: "400", fontSize: { lg: 16, xs: 14 }, lineHeight: "18px", color: "#1D8CD4", textTransform: 'capitalize', ml: 1 }}>
+                                        <AssessmentIcon sx={{color:"#0079b4"}} />
+                                        <Typography variant="subtitle1" component="span" sx={{ color: "secondary.light", textTransform: 'capitalize', ml: 1 }}>
                                             Reports
                                         </Typography>
                                     </Button>
@@ -57,26 +54,23 @@ const Header = (props: headerData) => {
                             </Box>
                         )
                     })}
-
-
-
                 </Box>
             </Box>
+            {/* Heading Content */}
             {
                 props.blockInfo ?
                     <Box sx={{ backgroundColor: "#FDFDFD", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
-                        <Typography component="h4" sx={{ fontSize: { lg: 20, xs: 18 }, lineHeight: "22px", fontWeight: "500" }}>
+                        <Typography variant="h4" component="h4" sx={{}}>
                             {props.blockInfoheading}
                         </Typography>
                         <Divider sx={{ borderBottomWidth: "2px", my: "16px", borderColor: "#F5F5F5", ml: "-13px", width: "340px" }} />
-
-                        <Typography component="p" sx={{ fontSize: { lg: 14, xs: 12 }, textAlign: "justify", color: "#121212", lineHeight: "23px" }}>
+                        <Typography variant="h6" component="p" sx={{ color: "text.secondary", lineHeight: "23px", fontWeight: "fontWeightRegular", textAlign: "justify" }}>
                             {/* Tab Info */}
                             {props.tabInfo}
                         </Typography>
                     </Box>
                     :
-                    <Typography component="p" sx={{ fontSize: { lg: 14, xs: 12 }, textAlign: "justify", color: "#121212", lineHeight: "23px" }}>
+                    <Typography variant="h6" component="p" sx={{ textAlign: "justify" }}>
                         {/* Tab Info */}
                         {props.tabInfo}
                     </Typography>
