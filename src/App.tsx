@@ -33,7 +33,11 @@ const theme = createTheme({
     action :{
       active : "#0F75BC",
       hover : "#0F75BC",
-    }
+    },
+  
+  },
+  shape: {
+    borderRadius: "6px"
   },
   typography: {
     fontFamily: "'Spartan',sans-serif",
@@ -45,6 +49,7 @@ const theme = createTheme({
       lineHeight: "23px",
       color: "#121212",
     },
+    fontWeightRegular: "400",
     body2:{
       fontSize: "12px",
       lineHeight: "13px",
@@ -94,11 +99,18 @@ const theme = createTheme({
           fill:"#0f75bc",
         }
     },
+    h6: {
+      fontSize: "14px",
+      fontWeight: "500",
+      lineHeight: "16px",
+      color: "#000",
+    },
     button:{
       fontSize: "14px",
       fontWeight: "600",
       lineHeight: "18px",
       color: "#454560",
+      
     },
     subtitle1: {
       fontSize: "16px",
@@ -110,6 +122,7 @@ const theme = createTheme({
       fontSize: "10px",
       fontWeight: "500",
     },
+    
 },
 components: {
     MuiInputBase: {
@@ -119,7 +132,52 @@ components: {
                 fontWeight: "500",
             }
         } 
-    }
+    },
+    MuiMenuItem : {
+      styleOverrides: {
+          root: {
+              "&.Mui-selected,&.Mui-selected:hover":{
+                backgroundColor:"#0F75BC",
+                color:"#fff"
+              },
+              "&:hover":{
+                color:"#fff"    
+              },
+
+          },
+      },
+  },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'contained' },
+          style: {
+            color: "#fff",
+            
+          }
+        },
+        {
+          props: { variant: 'text' },
+          style: {
+            color: "#fff",
+            padding:"0px",
+            "&:hover":{
+              background:"#0F75BC",
+              backgroundColor:"rgba(15, 117, 188, 0.04)"
+            }
+          }
+        }
+      ],
+      styleOverrides: {
+        root:{
+          padding:"16px 61px",
+          "&:hover":{
+            background:"#0F75BC",
+            color:"#fff"
+          }
+        }
+      } 
+  }
 }
 });
 theme.typography = {
@@ -134,7 +192,6 @@ theme.typography = {
 };
 
 const App = () => {
-
   const [viewTopHeader, setViewTopHeader] = useState(false);
   const location = useLocation();
 
