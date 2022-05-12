@@ -11,7 +11,7 @@ import Login from '../containers/login';
 const Routing = () => {
     return (
         <>
-            <Box sx={{ bgcolor: '#F9FAFC', overflowY: "scroll", overflowX: "hidden" }}>
+            <Box sx={{  overflowY: "scroll", overflowX: "hidden" }}>
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/maps" element={<Map />} />
