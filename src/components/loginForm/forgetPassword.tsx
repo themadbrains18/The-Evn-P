@@ -25,7 +25,7 @@ const ForgetPassword = (props: any) => {
                     <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
 
                     <Box sx={{ textAlign: "center", mt: "26px" }}>
-                        <Button type="button" variant="text" sx={{ color: "#0F75BC", "&:hover": { backgroundColor: "transparent", color: "#0F75BC" } }} onClick={props.backLogin} startIcon={<ArrowBackIcon />}> Back to Login</Button>
+                        <Button type="button" variant="text" onClick={props.backLogin} startIcon={<ArrowBackIcon />}> Back to Login</Button>
                     </Box>
                 </form>
             </FullscreenCard>

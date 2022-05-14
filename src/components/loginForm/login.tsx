@@ -45,7 +45,7 @@ const Login = (props: any) => {
                     <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
 
                     <Box sx={{ textAlign: "center", mt: "26px" }}>
-                        <Button type="button" variant="text" sx={{ color: "primary.main", "&:hover": { backgroundColor: "transparent", color: "primary.main" } }} onClick={props.onClickfogetBtn} > Forgot password?</Button>
+                        <Button type="button" variant="contained" sx={{width:"1"}} onClick={props.onClickfogetBtn} > Forgot password?</Button>
                     </Box>
                 </form>
             </FullscreenCard>

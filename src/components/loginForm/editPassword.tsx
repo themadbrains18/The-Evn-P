@@ -24,9 +24,10 @@ const Login = (props: any) => {
         SethideNewmpswd(!hideNewmpswd)
 
     }
+    
     return (
         <>
-            <Box sx={{"&>div":{padding:"0"}, position: "fixed", top: "50%", left: "50%", transform: "translate(-50% , -50%)",backgroundColor:"background.default",zIndex:"99" }}>
+            <Box sx={{"&>div":{p:"0"}, position: "fixed", top: "50%", left: "50%", transform: "translate(-50% , -50%)",backgroundColor:"background.default",zIndex:"99" }}>
                 <FullscreenCard >
                     <Typography variant="h1">
                         Edit Your Password

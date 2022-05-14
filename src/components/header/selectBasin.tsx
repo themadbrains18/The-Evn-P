@@ -69,8 +69,8 @@ const SeclectBasin = (props: any) => {
     return (
         <>
             <form  action="">
-                    <Box sx={{padding: "30px", backgroundColor: "default", marginTop: "20px" , minWidth: 120 }}>
-                        <Typography variant='h6' sx={{  marginBottom: "30px" }} component={"span"}>
+                    <Box sx={{p: "30px", backgroundColor: "default", mt: "20px" , minWidth: 120 }}>
+                        <Typography variant='h6' sx={{  mb: "30px" }} component={"span"}>
                             Select Basin
                         </Typography>
                         <FormControl fullWidth >
@@ -79,13 +79,13 @@ const SeclectBasin = (props: any) => {
                                     "& svg": {
                                         display: "none!important",
                                     },
-                                    marginTop: "10px!important", minWidth: 120,
+                                    mt: "10px!important", minWidth: 120,
                                     zIndex: "1"
                                 }}>
                                     <Select
                                         sx={{
                                              "&>div": {
-                                                padding: "12px 15px",
+                                                p: "12px 15px",
                                                 minHeight: "initial!important",
                                                 position: "relative",
                                                 "&[aria-expanded=true]": {
@@ -122,8 +122,8 @@ const SeclectBasin = (props: any) => {
                                     </Select>
                                 </FormControl>
                             </Box>
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
-                                <Typography component="span"  variant='h6' sx={{  margin: "32px 0 10px" }} >Select Date</Typography>
+                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
+                                <Typography component="span"  variant='h6' sx={{  m: "32px 0 10px" }} >Select Date</Typography>
                                 <Box sx={{
                                     display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
                                     "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
@@ -157,9 +157,9 @@ const SeclectBasin = (props: any) => {
                         </FormControl>
                     </Box>
                     {/* Button */}
-                    <Box sx={{ marginTop: "22px", textAlign: "end" }}>
+                    <Box sx={{ mt: "22px", textAlign: "end" }}>
                         <Button   variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
-                        <Button sx={{marginLeft:"20px"}} type="submit"  variant="contained" onClick={submitForm}>Go</Button>
+                        <Button sx={{ml:"20px"}} type="submit"  variant="contained" onClick={submitForm}>Go</Button>
                     </Box>
             </form>
         </>

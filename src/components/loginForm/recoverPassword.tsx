@@ -26,7 +26,6 @@ const Login = (props: any) => {
                         Recover Your Password
                     </Typography>
 
-
                     <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
                         New Password
                     </Typography>

@@ -64,22 +64,7 @@ const LocationCard = (props: any) => {
                             {checckBoxList.map((item, index) => {
                                 return (
                                     <Grid key={index} item xs={6}>
-                                        <FormControlLabel sx={{
-                                            color: "#8794C3", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", "& svg": {
-                                                color: "rgba(0, 0, 0, 0.2)",
-                                                height: { lg: "24px", xs: "20px" },
-                                                width: { lg: "24px", xs: "20px" },
-                                            },
-                                            "& span": {
-                                                fontWeight: "400",
-                                                fontSize: { lg: "14px", xs: "12px" },
-                                                lineHeight: "16px",
-                                                color: "#8794C3",
-                                            },
-                                            "& .Mui-checked svg path": {
-                                                color: "#0F75BC",
-                                            },
-                                        }}
+                                        <FormControlLabel 
                                             control={<Checkbox name={item.CheckboxLabelName} />} label={item.CheckboxLabel} />
                                     </Grid>
                                 )

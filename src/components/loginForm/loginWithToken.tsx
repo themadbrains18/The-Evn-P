@@ -18,7 +18,7 @@ const LoginWithToken = () => {
                 </Typography>
                 <OutlinedInput type="text" required fullWidth placeholder="Enter token" />
 
-                <Typography variant="body2" sx={{ margin: "15px 0 50px", color: "#454560", "& a": { color: "#2b93d6" } }} >
+                <Typography variant="body2" sx={{ m: "15px 0 50px", color: "primary.contrastText", "& a": { color: "#2b93d6" } }} >
                     If you did not receive your token, please contact <a href="mailto:nicole.downey@earthsystemsciences.com">nicole.downey@earthsystemsciences.com</a>  for assistance.
                 </Typography>
                 <Button type="submit" fullWidth size="large" variant="contained">Continue</Button>

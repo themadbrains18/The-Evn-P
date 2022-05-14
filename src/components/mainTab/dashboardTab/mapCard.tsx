@@ -48,7 +48,7 @@ const MapCard = () => {
                                                     />
                                                     <Typography variant='h6'
                                                         sx={{
-                                                            marginTop: "4px",
+                                                            mt: "4px",
                                                             color: "secondary.main",
                                                         }} component="span" >
                                                         {cardElem.link_txt}

@@ -72,7 +72,7 @@ const Accordians = (props: any) => {
                             {/* Answers */}
                             <Box sx={{ height: "0px", overflow: "hidden", transition: "0.3s" }} className="accodian_ans">
                                 <Divider sx={{ borderBottomWidth: '2px', borderColor: '#F5F5F5', margin: '6px 0 17px' }} />
-                                <Typography  component="p" sx={{ fontSize: { lg: "14px", xs: "12px" }, lineHeight: "23px", color: "#121212" }}>
+                                <Typography variant='h6'  component="p" sx={{  color: "text.secondary" }}>
                                     {elem.ans}
                                 </Typography>
 

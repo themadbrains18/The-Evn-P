@@ -6,10 +6,10 @@ import { Box } from '@mui/material';
 const MapArea = () => {
     return (
         <>
-            <Box sx={{ height: "100%", width: "100%", position: "relative" }}>
+            <Box sx={{ height: "100%", width: "1", position: "relative" }}>
                 <BingMapsReact
                     bingMapsKey="Ale3xyjVbYBOroya7rsMi-cA0lDmzO6A2Qw61lfCyUJWftPneGLKNFLKXpv_DIIS"
-                    height="100%"
+                    height="1"
                     mapOptions={{
                         navigationBarMode: "square",
                     }}

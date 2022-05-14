@@ -12,6 +12,19 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
     },
 }));
 
+const DateData = [
+    {
+    dateHeading:"From",
+    htmlFor:"tooltipFrom",
+    Classfromdate:"frominput_date",
+    MarginBottom:"10px"
+    },
+    {
+    dateHeading:"To",
+    htmlFor:"tooltipTo"
+    },
+]
+
 const MapFilter = () => {
     const [open, setOpen] = useState(false);
 
@@ -48,8 +61,6 @@ const MapFilter = () => {
             }
         }
     };
-
-
     // Filter Dropdown State
     const [filterValue, SetfilterValue] = useState("All Basins");
     const [OpenDorpdown, SetOpenDorpdown] = useState(false);
@@ -67,24 +78,24 @@ const MapFilter = () => {
     }
 
     // DropDown Filter Dropdown Data
-    const filterDopdownItem=[
+    const filterDopdownItem = [
         {
-            item:"All Basins",
+            item: "All Basins",
         },
         {
-            item:"Appalachian",
+            item: "Appalachian",
         },
         {
-            item:"Bakken",
+            item: "Bakken",
         },
         {
-            item:"Denver-Julesburg",
+            item: "Denver-Julesburg",
         },
         {
-            item:"Eagleford",
+            item: "Eagleford",
         },
         {
-            item:"Permian",
+            item: "Permian",
         }
     ]
     return (
@@ -115,9 +126,9 @@ const MapFilter = () => {
                                             </Typography>
                                             {/* Basic Select  */}
                                             <Box sx={{ marginBottom: "17px" }}>
-                                                <Typography variant='body2'  sx={{ color: "secondary.contrastText",  display: "block", marginBottom: "4px" }} >Basin</Typography>
+                                                <Typography variant='body2' sx={{ color: "secondary.contrastText", display: "block", marginBottom: "4px" }} >Basin</Typography>
                                                 <Box>
-                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", background: "#FFFFFF", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
+                                                    <Box onClick={ToggleDropdown} sx={{ display: "flex", gap: "10px", justifyContent: "space-between", alignItems: "center", padding: "12px 9px", backgroundColor: "background.default", border: "1px solid rgba(213, 213, 213, 0.4)", borderRadius: "4px" }}>
                                                         <Typography variant='body2' sx={{ color: "secondary.dark" }} component={"span"}>
                                                             {filterValue}
                                                         </Typography>
@@ -127,89 +138,63 @@ const MapFilter = () => {
                                                     </Box>
                                                     {OpenDorpdown && (
                                                         <>
-                                                            <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", backgroundColor: "background.default", boxShadow: "1", maxWidth: "155px", width: "100%" }} >
-                                                                {filterDopdownItem.map((val)=>{
-                                                                    return(
-                                                                    <ListItem onClick={() => { SetfilterValue(val.item); ToggleDropdown() }} sx={{ color: "secondary.dark", cursor: "pointer" }}>
-                                                                        {val.item}
-                                                                    </ListItem>
+                                                            <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", backgroundColor: "background.default", boxShadow: "1", maxWidth: "155px", width: "1" }} >
+                                                                {filterDopdownItem.map((val) => {
+                                                                    return (
+                                                                        <ListItem onClick={() => { SetfilterValue(val.item); ToggleDropdown() }} sx={{ color: "secondary.dark", cursor: "pointer" }}>
+                                                                            {val.item}
+                                                                        </ListItem>
                                                                     )
                                                                 })}
                                                             </List>
-                                                            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+                                                            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "1", width: "1", background: "transparent" }} component={"span"}>
                                                             </Typography>
                                                         </>
                                                     )}
                                                 </Box>
                                             </Box>
                                             {/* Date From  */}
-                                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}  >
-                                                <Typography variant="body2" component="label" sx={{ color: "secondary.contrastText"}} htmlFor="tooltipFrom" >From</Typography>
-                                                <Box sx={{
-                                                    position: "relative",
-                                                    "&::after": {
-                                                        content: '""',
-                                                        position: "absolute",
-                                                        top: "50%",
-                                                        transform: "translateY(-50%)",
-                                                        right: "12px",
-                                                        backgroundImage: `url(${require("../../../assets/svg/calander-cion.svg").default})`,
-                                                        height: "16px",
-                                                        width: "16px",
-                                                        zIndex: "1"
-                                                    }
-                                                }}>
-                                                    <Typography variant='body2' className='frominput_date' component="input" sx={{
-                                                        border: "1px solid rgba(213, 213, 213, 0.4)",
-                                                        borderRadius: "4px",
-                                                        padding: "8px 12px",
-                                                        color: "secondary.contrastText",
-                                                        position: "relative",
-                                                        background: "transparent",
-                                                        width: "100%",
-                                                        zIndex: "4",
-                                                        "&:focus": {
-                                                            outlineColor: "#1D8CD4"
-                                                        }
-                                                    }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
-                                                </Box>
-                                            </Box>
-                                            {/* Date To  */}
-                                            <Box  sx={{ display: "flex", flexDirection: "column", gap: "4px", marginTop: "10px" }} >
-                                                <Typography variant='body2' component="label" sx={{ color: "secondary.contrastText" }} htmlFor="tooltipTo">To</Typography>
-                                                <Box sx={{
-                                                    position: "relative",
-                                                    "&::after": {
-                                                        content: '""',
-                                                        position: "absolute",
-                                                        top: "50%",
-                                                        transform: "translateY(-50%)",
-                                                        right: "12px",
-                                                        backgroundImage: `url(${require("../../../assets/svg/calander-cion.svg").default})`,
-                                                        height: "16px",
-                                                        width: "16px",
-                                                        zIndex: "1"
-                                                    }
-                                                }}>
-                                                    <Typography variant='body2' component="input" sx={{
-                                                        border: "1px solid rgba(213, 213, 213, 0.4)",
-                                                        borderRadius: "4px",
-                                                        padding: "8px 12px",
-                                                        color: "secondary.dark",
-                                                        position: "relative",
-                                                        background: "transparent",
-                                                        width: "100%",
-                                                        zIndex: "4",
-                                                        "&:focus": {
-                                                            outlineColor: "#1D8CD4"
-                                                        },
-                                                    }} type="date" required id="tooltipTo" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
-                                                </Box>
-                                            </Box>
+                                            {DateData.map((value) => {
+                                                return (
+                                                    <Box sx={{ display: "flex", flexDirection: "column", gap: "4px",mb:`${value.MarginBottom}` }}  >
+                                                        <Typography variant="body2" component="label" sx={{ color: "secondary.contrastText" }} htmlFor="tooltipFrom" >{value.dateHeading}</Typography>
+                                                        <Box sx={{
+                                                            position: "relative",
+                                                            "&::after": {
+                                                                content: '""',
+                                                                position: "absolute",
+                                                                top: "50%",
+                                                                transform: "translateY(-50%)",
+                                                                right: "12px",
+                                                                backgroundImage: `url(${require("../../../assets/svg/calander-cion.svg").default})`,
+                                                                height: "16px",
+                                                                width: "16px",
+                                                                zIndex: "1"
+                                                            }
+                                                        }}>
+                                                            <Typography variant='body2' className={value.Classfromdate} component="input" sx={{
+                                                                border: "1px solid rgba(213, 213, 213, 0.4)",
+                                                                borderRadius: "4px",
+                                                                padding: "8px 12px",
+                                                                color: "secondary.contrastText",
+                                                                position: "relative",
+                                                                background: "transparent",
+                                                                width: "1",
+                                                                zIndex: "4",
+                                                                "&:focus": {
+                                                                    outlineColor: "secondary.main"
+                                                                }
+                                                            }} type="date" required id="tooltipFrom" name="trip-start" defaultValue="dd/mm/yyy" min="01-01-1999" max="01-01-2030" onChange={inputChange} />
+                                                        </Box>
+                                                    </Box>
+                                                )
+                                            })
+                                            }
+                                            
                                         </Box>
                                         <Button type='submit' variant="contained" sx={{
                                             textTransform: "capitalize",
-                                            width: "100%", marginTop: "10px", padding: "12.5px 0", 
+                                            width: "1", marginTop: "10px", padding: "12.5px 0",
                                         }} >Apply Filter</Button>
                                     </form>
                                 </Box>
@@ -221,9 +206,9 @@ const MapFilter = () => {
                                 background: "#F2F6FE", borderRadius: "50%",
                                 position: "relative",
                                 "& p": {
-                                    color: "#8794C3",
+                                    color: "secondary.contrastText",
                                 },
-                                "& .MuiAccordionSummary-content": {     
+                                "& .MuiAccordionSummary-content": {
                                     margin: "0",
                                 },
                                 "& .filtor_icon path": {
@@ -258,7 +243,7 @@ const MapFilter = () => {
                     </Box >
                 </ClickAwayListener >
             </Box >
-            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "100%", width: "100%", background: "transparent" }} component={"span"}>
+            <Typography onClick={ToggleDropdown} sx={{ display: `  ${OpenDorpdown ? "block" : "none"}`, zIndex: "100", position: "fixed", top: "0", left: "0", height: "1", width: "1", background: "transparent" }} component={"span"}>
             </Typography>
         </>
     )

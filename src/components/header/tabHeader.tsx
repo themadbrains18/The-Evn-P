@@ -58,7 +58,7 @@ const Header = (props: headerData) => {
             {/* Heading Content */}
             {
                 props.blockInfo ?
-                    <Box sx={{ backgroundColor: "background.paper", padding: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
+                    <Box sx={{ backgroundColor: "background.paper", p: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
                         <Typography variant="h4" component="h4" sx={{}}>
                             {props.blockInfoheading}
                         </Typography>

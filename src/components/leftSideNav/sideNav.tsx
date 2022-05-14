@@ -28,7 +28,7 @@ const SideNav = () => {
             <Box sx={{ overflowY: "scroll", overflowX: "hidden", transition: "0.3s", p: { lg: "22px 30px 40px", xs: "22px 20px 40px 10px" }, whiteSpace: "nowrap", display: "flex", flexDirection: "column", justifyContent: "space-between",backgroundColor: "background.paper" }} id="navBar" style={{ maxWidth: toggleNav === true ? `${navBarWidth}px` : `${defaultNavBarWidth}px` }}>
                 <Box >
                     {/* Toggle   */}
-                    <Box component="button" sx={{ marginBottom: "34px" }} onClick={() => { setToggleNav(!toggleNav) }}>
+                    <Box component="button" sx={{ mb: "34px" }} onClick={() => { setToggleNav(!toggleNav) }}>
                         <Box component="img" sx={{ maxWidth: "unset" }} src={require(`../../assets/svg/nav-toggle.svg`).default} alt="nav Toggle" />
                     </Box>
                     
@@ -50,7 +50,7 @@ const SideNav = () => {
                 {/* Developed Logo  */}
                 <Box >
                     {!toggleNav &&
-                        <Typography component="span" sx={{ mb: 1.5, display: "block", color: "#979797", fontSize: 12, lineHeight: "13px" }}>
+                        <Typography component="span" sx={{ mb: 1.5, display: "block", color: "secondary.dark", fontSize: 12, lineHeight: "13px" }}>
                             Developed by
                         </Typography>}
                     <Box>

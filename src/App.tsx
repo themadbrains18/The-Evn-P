@@ -17,7 +17,6 @@ const theme = createTheme({
       light: "#8794C4",
       contrastText: "#454560",
     },
-
     secondary: {
       main: "#1D8CD4",
       light: "#1D8CD4",
@@ -161,7 +160,7 @@ const theme = createTheme({
             fontWeight: "600",
             fontSize: "14px",
             lineHeight: "16px",
-            color: "primary.contrastText",
+            color: "#454560",
         },
         },
       },
@@ -204,12 +203,59 @@ const theme = createTheme({
 theme.typography = {
   ...theme.typography,
   h2 : {
-      fontSize: '24px',
-      color: "#fff",
-      [theme.breakpoints.down('lg')]: {
+      ...theme.typography.h2,
+      [theme.breakpoints.down('md')]: {
         fontSize: '20px',
       }
-  }
+  },
+  body2: {
+    ...theme.typography.body2,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "10px",
+    }
+  },
+  h1: {
+    ...theme.typography.h1,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "28px",
+    }
+  },
+  h3: {
+    ...theme.typography.h3,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "17px",
+    }
+  },
+  h4: {
+    ...theme.typography.h4,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "18px",
+    }
+  },
+  h5: {
+    ...theme.typography.h5,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "12px",
+    }
+  },
+  h6: {
+    ...theme.typography.h6,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "12px",
+    }
+  },
+  button: {
+    ...theme.typography.button,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "12px",
+    }
+  },
+  subtitle1: {
+    ...theme.typography.subtitle1,
+    [theme.breakpoints.down('md')]: {
+      fontSize: "14px",
+    }
+  },
 };
 
 const App = () => {

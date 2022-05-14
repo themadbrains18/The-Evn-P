@@ -81,7 +81,7 @@ const LocationFinderTab = () => {
                 <MapInnerTabHeading heading={"Location Finder"} />
                 <Paper component="form" sx={{ boxShadow: "0", borderRadius: "0" }}>
                     {/* Location Search */}
-                    <Typography variant='h6' component={"h4"} sx={{  marginTop: "22px", fontWeight: "fontWeightMedium", marginBottom: "10px", }} >Location Search</Typography>
+                    <Typography variant='h6' component={"h4"} sx={{  mt: "22px", fontWeight: "fontWeightMedium", mb: "10px", }} >Location Search</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%", border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "0" }}>
                         <InputBase onClick={opendropdownBtn} onChange={searchBtn} value={searchValue} 
                             sx={{ ml: 1, flex: 1}} placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
@@ -91,21 +91,21 @@ const LocationFinderTab = () => {
                             </svg>
                         </IconButton>
                     </Box>
-                    <Divider sx={{ padding: "9.5px 0", margin: "9px 0 4px " }} flexItem>
+                    <Divider sx={{ p: "9.5px 0", m: "9px 0 4px " }} flexItem>
                         OR
                     </Divider>
                     {/* Upload File */}
-                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ padding: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
+                    <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ p: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
                         <Box sx={{ display: `${fileUploadName === "" ? "block" : "none"}` }}>
                             <Typography variant='h6' sx={{
                                 textAlign: "center"
                             }} component={"h5"}>Drop CSV file or browse</Typography>
-                            <Box sx={{ marginTop: "10px", textAlign: "center" }}>
+                            <Box sx={{ mt: "10px", textAlign: "center" }}>
                                 <Typography variant='subtitle1' component="label" sx={{
                                     backgroundColor: "primary.light",
                                     borderRadius: "6px",
                                     color: "common.white",
-                                    padding: "6px 8px",
+                                    p: "6px 8px",
                                     cursor: "pointer",
                                 }} htmlFor="ChooseFile"> Browse</Typography>
                                 <Box className='drop-zone__input' component="input" sx={{
@@ -114,9 +114,9 @@ const LocationFinderTab = () => {
                                     left: "50%",
                                     transform: "translate(-50% , -50%)",
                                     opacity: "0",
-                                    height: "100%",
+                                    height: "1",
                                     zIndex: "-1",
-                                    width: "100%",
+                                    width: "1",
                                 }} type="file" id="ChooseFile" name="Browse" onChange={(e: any) => { fileUpload(e) }} />
                             </Box>
                         </Box>
@@ -133,11 +133,11 @@ const LocationFinderTab = () => {
                             </Box>
                         </Box>
                     </Box>
-                    <Divider sx={{ padding: "9.5px 0", color: "#4F4F4F", margin: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
+                    <Divider sx={{ p: "9.5px 0", color: "#4F4F4F", m: "9px 0 4px ", fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px" }} flexItem>
                         OR
                     </Divider>
                     {/* Latitude & Longtitude */}
-                    <Typography variant='h6' component={"h4"} sx={{  marginBottom: "10px", }} >Latitude & Longtitude</Typography>
+                    <Typography variant='h6' component={"h4"} sx={{  mb: "10px", }} >Latitude & Longtitude</Typography>
                     <Box sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', border: "1px solid rgba(0, 0, 0, 0.12)", boxShadow: "0" }}>
                         <InputBase sx={{ ml: 1, flex: 1}}
                             placeholder="Search a location...." inputProps={{ 'aria-label': 'Search a location....' }} />
@@ -148,14 +148,14 @@ const LocationFinderTab = () => {
                         </IconButton>
                     </Box>
                     {/* Buttons  */}
-                    <Box sx={{ marginTop: "27px", textAlign: "end" }}>
+                    <Box sx={{ mt: "27px", textAlign: "end" }}>
                         <Button sx={{
-                            padding: "16px 29px",
+                            p: "16px 29px",
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
                         <Button sx={{
-                            marginLeft: "14px",
-                            padding: "16px 29px"
+                            ml: "14px",
+                            p: "16px 29px"
                         }} variant="contained">Go</Button>
                     </Box>
 
@@ -166,12 +166,12 @@ const LocationFinderTab = () => {
                                 position: "absolute",
                                 top: "150px",
                                 background: "#fff",
-                                width: "100%",
+                                width: "1",
                                 left: "50%",
                                 transform: "translateX(-50%)",
                                 boxShadow: "1",
                                 borderRadius: "4px",
-                                padding: "10px",
+                                p: "10px",
                                 zIndex: "10"
                             }}>
                                 {/* Search Options */}
@@ -188,7 +188,7 @@ const LocationFinderTab = () => {
                                     })}
                                 </List>
                             </Box>
-                            <Typography onClick={opendropdownBtn} sx={{ position: "fixed", top: "0", left: "0", height: "100%", width: "100%", zIndex: "9", display: "block" }} component={"span"}>
+                            <Typography onClick={opendropdownBtn} sx={{ position: "fixed", top: "0", left: "0", height: "1", width: "1", zIndex: "9", display: "block" }} component={"span"}>
                             </Typography>
                         </>
                     )}
