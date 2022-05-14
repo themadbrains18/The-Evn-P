@@ -26,71 +26,71 @@ const Login = (props: any) => {
     }
     return (
         <>
-            <FullscreenCard>
-                <Typography variant="h1">
-                    Edit Your Password
-                </Typography>
+            <Box sx={{"&>div":{padding:"0"}, position: "fixed", top: "50%", left: "50%", transform: "translate(-50% , -50%)",backgroundColor:"background.default",zIndex:"99" }}>
+                <FullscreenCard >
+                    <Typography variant="h1">
+                        Edit Your Password
+                    </Typography>
 
-                {/* Old Password */}
-                <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
-                    Old Password
-                </Typography>
+                    {/* Old Password */}
+                    <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
+                        Old Password
+                    </Typography>
 
-                <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hideConfirmpswd && ("password")}`} required
-                    endAdornment={
-                        <InputAdornment position="end">
-                            <IconButton
-                                aria-label="toggle password visibility"
-                                onClick={HideConfirmPassword}
-                                edge="end"
-                            >
-                                {hideConfirmpswd ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
-                            </IconButton>
-                        </InputAdornment>
-                    } />
+                    <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hideConfirmpswd && ("password")}`} required
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={HideConfirmPassword}
+                                    edge="end"
+                                >
+                                    {hideConfirmpswd ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
+                                </IconButton>
+                            </InputAdornment>
+                        } />
 
-
-
-                {/* New Password */}
-                <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
-                    New Password
-                </Typography>
-                <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hideNewmpswd && ("password")}`} required
-                    endAdornment={
-                        <InputAdornment position="end">
-                            <IconButton
-                                aria-label="toggle password visibility"
-                                onClick={HideNewPassword}
-                                edge="end"
-                            >
-                                {hideNewmpswd ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
-                            </IconButton>
-                        </InputAdornment>
-                    } />
+                    {/* New Password */}
+                    <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
+                        New Password
+                    </Typography>
+                    <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hideNewmpswd && ("password")}`} required
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={HideNewPassword}
+                                    edge="end"
+                                >
+                                    {hideNewmpswd ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
+                                </IconButton>
+                            </InputAdornment>
+                        } />
 
 
-                {/* Confirm Password */}
-                <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
-                    Confirm Password
-                </Typography>
-                <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hidepswd && ("password")}`} required
-                    endAdornment={
-                        <InputAdornment position="end">
-                            <IconButton
-                                aria-label="toggle password visibility"
-                                onClick={HidePassword}
-                                edge="end"
-                            >
-                                {hidepswd ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
-                            </IconButton>
-                        </InputAdornment>
-                    } />
+                    {/* Confirm Password */}
+                    <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
+                        Confirm Password
+                    </Typography>
+                    <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hidepswd && ("password")}`} required
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={HidePassword}
+                                    edge="end"
+                                >
+                                    {hidepswd ? <Visibility sx={{ color: "#ACACAC" }} /> : <VisibilityOff sx={{ color: "#ACACAC" }} />}
+                                </IconButton>
+                            </InputAdornment>
+                        } />
 
-                <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Update Password</Button>
-            </FullscreenCard>
+                    <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Update Password</Button>
+                </FullscreenCard>
+            </Box>
 
             <Box onClick={props.ClickBtn} sx={{
-                position: "fixed", top: "50%", left: "50%", transform: "translate(-50% ,-50%)", width: "100%", height: "100%", zIndex: "8", background: "#000", opacity: "0.2",
+                position: "fixed", top: "50%", left: "50%", transform: "translate(-50% ,-50%)", width: "1", height: "1", zIndex: "8", backgroundColor: "common.black", opacity: "0.2",
             }}>
             </Box>
         </>

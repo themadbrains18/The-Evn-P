@@ -46,7 +46,6 @@ const Login = (props: any) => {
                     <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
                         Confirm Password
                     </Typography>
-
                     <OutlinedInput placeholder="Enter your password" fullWidth type={`${!hidepswd && ("password")}`} required
                         endAdornment={
                             <InputAdornment position="end">

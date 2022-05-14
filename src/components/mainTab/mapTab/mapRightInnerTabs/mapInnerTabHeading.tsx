@@ -5,7 +5,7 @@ type heading = {
 }
 const MapInnerTabHeading = (props: heading) => {
     return (
-        <Typography component="h3" sx={{ fontWeight: 700, fontSize: { lg: "19px", xs: "17px" }, lineHeight: "21px", mb: 2.125 }}>
+        <Typography variant='h3' component="h3" sx={{ mb: 2.125 }}>
             {props.heading}
         </Typography>
     )

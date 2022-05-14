@@ -17,6 +17,7 @@ const SeclectBasin = (props: any) => {
     // End Date State
     const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
     const [value, setValue] = React.useState<Date | null>(null);
+        
     const clearForm = () => {
         SetfirstDate("");
         setsecondvalue(null);
@@ -27,7 +28,7 @@ const SeclectBasin = (props: any) => {
     }
     // Sumbit Form
     const submitForm = () => {
-        if (firstDate && value) {
+        if (firstDate && value  ) {
             if (props.selectGo) {
                 props.selectGo(true);
             }
@@ -67,8 +68,8 @@ const SeclectBasin = (props: any) => {
     }
     return (
         <>
-            <form action="">
-                    <Box sx={{padding: "30px", background: "#ffff", marginTop: "20px" , minWidth: 120 }}>
+            <form  action="">
+                    <Box sx={{padding: "30px", backgroundColor: "default", marginTop: "20px" , minWidth: 120 }}>
                         <Typography variant='h6' sx={{  marginBottom: "30px" }} component={"span"}>
                             Select Basin
                         </Typography>

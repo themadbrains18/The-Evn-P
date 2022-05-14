@@ -7,7 +7,7 @@ const LocationSearch = (props: any) => {
         <>
             <Box>
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #0000004d", paddingBottom: "12px" }}>
-                    <Typography sx={{ color: "#454560", fontWeight: "500", fontSize: "12px", lineHeight: "13px" }} component={"h5"}>
+                    <Typography variant='body2' sx={{ color: "primary.contrastText", fontWeight: "fontWeightMedium" }} component={"h5"}>
                         Search Results: {props.itemsNumber}
                     </Typography>
                     <Button sx={{

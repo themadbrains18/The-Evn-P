@@ -103,7 +103,7 @@ const LocationFinderTab = () => {
                             <Box sx={{ marginTop: "10px", textAlign: "center" }}>
                                 <Typography variant='subtitle1' component="label" sx={{
                                     backgroundColor: "primary.light",
-                                    borderRadius: " 6px",
+                                    borderRadius: "6px",
                                     color: "common.white",
                                     padding: "6px 8px",
                                     cursor: "pointer",
@@ -121,14 +121,14 @@ const LocationFinderTab = () => {
                             </Box>
                         </Box>
 
-                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", backgroundColor: "default", boxShadow: "0px 4px 24px rgba(0, 0, 0, 0.06)", borderRadius: "14px", p: "16px 20px" }}>
+                        <Box sx={{ display: `${fileUploadName === "" ? "none" : "flex"}`, alignItems: "center", justifyContent: "center", width: "max-content", mx: "auto", backgroundColor: "default", boxShadow: "1", borderRadius: "14px", p: "16px 20px" }}>
                             <img src={require("../../../../../assets/svg/file-icon.svg").default} alt="" />
                             <Typography variant='body2' sx={{
                                 ml: "8px",
                                 mr: "4px",
                                 fontWeight: "fontWeightMedium",
                             }} component={"span"}>{fileUploadName}</Typography>
-                            <Box onClick={removeFile} sx={{ height: "14px", width: "14px", background: "#FF5722", boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.12)", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
+                            <Box onClick={removeFile} sx={{ height: "14px", width: "14px", background: "#FF5722", boxShadow: "1", display: "grid", placeItems: "center", borderRadius: "50%", cursor: "pointer" }}>
                                 <img src={require("../../../../../assets/svg/delete-icon.svg").default} alt="" />
                             </Box>
                         </Box>
@@ -154,8 +154,8 @@ const LocationFinderTab = () => {
                         }} variant="outlined" type="reset" onClick={reserForm}>Clear</Button>
 
                         <Button sx={{
-                              marginLeft: "14px",
-                              padding: "16px 29px"
+                            marginLeft: "14px",
+                            padding: "16px 29px"
                         }} variant="contained">Go</Button>
                     </Box>
 
@@ -169,7 +169,7 @@ const LocationFinderTab = () => {
                                 width: "100%",
                                 left: "50%",
                                 transform: "translateX(-50%)",
-                                boxShadow: "2",
+                                boxShadow: "1",
                                 borderRadius: "4px",
                                 padding: "10px",
                                 zIndex: "10"

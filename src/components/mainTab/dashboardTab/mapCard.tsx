@@ -29,6 +29,8 @@ const MapCard = () => {
                                     <Typography variant='h2' color="text.primary{contrastText}" to="/maps" component={Link} sx={{
                                         position: 'absolute', top: "50%", left: "50%",
                                         transform: 'translate(-50%,-50%)',
+                                        width:"1",
+                                        textAlign:"center"
                                     }}>
                                         {elem.map_card_name}
                                     </Typography>
@@ -39,7 +41,7 @@ const MapCard = () => {
                                             return (
                                                 <Button to={cardElem.link} component={Link} key={cardElem.id} size="small" sx={{ display: 'flex', gap: 0.7, alignItems: 'center', mx: 0, p: 0 }}>
                                                     <CardMedia
-                                                        sx={{ width: { lg: "100%", xs: "22px" } }}
+                                                        sx={{ width: { lg: "1", xs: "22px" } }}
                                                         component="img"
                                                         image={require(`../../../assets/svg/${cardElem.link_svg}.svg`)}
                                                         alt={cardElem.link_txt}

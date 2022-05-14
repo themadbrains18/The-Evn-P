@@ -23,31 +23,26 @@ const Setting = () => {
                 margin: { xl: "38px 79px 38px 38px", lg: " 27px 24px 24px ", xs: "27px 24px 24px " }
             }}>
                 {/* Screen Heading */}
-                <Typography sx={{ borderBottom: "2px solid #DEDEDE", paddingBottom: "24px", marginBottom: "30px", color: "#000000", fontWeight: "700", fontSize: { lg: "19px", xs: "17px" }, lineHeight: "21px" }} component={"h2"}>
+                <Typography variant="h3" sx={{ borderBottom: "2px solid #DEDEDE", paddingBottom: "24px", marginBottom: "30px" }} component={"h2"}>
                     User Account
                 </Typography>
-
                 {/* Account Form  */}
-                <Box sx={{ padding: "40px 30px 36px", background: "#fff" }}>
+                <Box sx={{ padding: "40px 30px 36px", backgroundColor: "background.default" }}>
                     <form action="">
                         <FormControl fullWidth>
                             {/* Account prifile  */}
                             <Box sx={{ display: { md: "flex" }, justifyContent: "space-between", alignItems: "center", paddingBottom: "24px", borderBottom: "2px solid #DEDEDE" }}>
                                 <Box sx={{ marginBottom: { md: "0px", xs: "30px" }, display: "flex", alignItems: "center", gap: { lg: "25px", xs: "20px" } }} >
                                     <Box >
-                                        <Typography
+                                        <Typography variant="h3"
                                             sx={{
-                                                color: "#454560", fontWeight: "600",
-                                                fontSize: { lg: "18px", xs: "16px" },
-                                                lineHeight: "20px"
+                                                color: "primary.contrastText"
                                             }}
                                             component={"h4"}>
                                             Samantha William
                                         </Typography>
-                                        <Typography sx={{
-                                            display: "block", color: "#979797", fontWeight: "500",
-                                            fontSize: { lg: "16px", xs: "14px" },
-                                            lineHeight: "18px",
+                                        <Typography variant="subtitle1" sx={{
+                                            display: "block", color: "secondary.dark",
                                             marginTop: "12px"
                                         }} component={"span"}>
                                             samantha@gmail.com
@@ -77,74 +72,55 @@ const Setting = () => {
                                     </button>
                                 </Box>
                             </Box>
-                            <Typography sx={{
-                                fontWeight: "600",
-                                fontSize: { lg: "18px", xs: "16px" },
-                                lineHeight: "20px",
+                            <Typography variant="h3" sx={{
                                 marginTop: "30px"
                             }} component={"h3"}>
                                 Edit Profile
                             </Typography>
                             <Box sx={{ display: { lg: "flex" }, alignItems: "center", gap: "24px", marginTop: "22px" }}>
-                                <Box sx={{ width: "100%" }}>
-                                    <Typography sx={{
-                                        fontWeight: "600",
-
-                                        fontSize: { lg: "16px", xs: "14px" },
-                                        lineHeight: "18px",
+                                <Box sx={{ width: "1" }}>
+                                    <Typography variant="h6" sx={{
                                         marginBottom: "12px",
-                                        color: "#454560"
+                                        color: "primary.contrastText"
                                     }} component={"h3"}>
                                         First Name
                                     </Typography>
-                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", "& :focus-visible": { border: "none" }, color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Samantha" />
+                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", "& :focus-visible": { border: "none" }, "& fieldset": { display: "none" } }} fullWidth placeholder="Samantha" />
                                 </Box>
-                                <Box sx={{ width: "100%", marginTop: { lg: "0px", xs: "30px" } }}>
-                                    <Typography sx={{
-                                        fontWeight: "600",
-                                        fontSize: { lg: "16px", xs: "14px" },
-                                        lineHeight: "18px",
+                                <Box sx={{ width: "1", marginTop: { lg: "0px", xs: "30px" } }}>
+                                    <Typography variant="subtitle1" sx={{
                                         marginBottom: "12px",
-                                        color: "#454560"
+                                        color: "primary.contrastText"
                                     }} component={"h3"}>
                                         Last Name
                                     </Typography>
-                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="William" />
+                                    <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", "& fieldset": { display: "none" } }} fullWidth placeholder="William" />
                                 </Box>
                             </Box>
-                            <Box sx={{ width: "100%", marginTop: "30px" }}>
-                                <Typography sx={{
-                                    fontWeight: "600",
-                                    fontSize: { lg: "16px", xs: "14px" },
-                                    lineHeight: "18px",
+                            <Box sx={{ width: "1", marginTop: "30px" }}>
+                                <Typography variant="subtitle1" sx={{
                                     marginBottom: "12px",
-                                    color: "#454560"
                                 }} component={"h3"}>
                                     Email Address
                                 </Typography>
-                                <OutlinedInput type="email" required sx={{ border: " 1px solid #CCCCCC", background: "#F7F7F7", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="samantha@gmail.com" />
+                                <OutlinedInput type="email" required sx={{ border: " 1px solid #CCCCCC", "& fieldset": { display: "none" } }} fullWidth placeholder="samantha@gmail.com" />
                             </Box>
-                            <Box sx={{ width: "100%", marginTop: "30px" }}>
-                                <Typography sx={{
-                                    fontWeight: "600",
-                                    fontSize: { lg: "16px", xs: "14px" },
-                                    lineHeight: "18px",
+                            <Box sx={{ width: "1", marginTop: "30px" }}>
+                                <Typography variant="subtitle1" sx={{
                                     marginBottom: "12px",
-                                    color: "#454560"
+                                    color: "primary.contrastText"
                                 }} component={"h3"}>
                                     Areas of Interest
                                 </Typography>
-                                <OutlinedInput required sx={{ border: " 1px solid #CCCCCC", color: "#454560", fontWeight: "500", fontSize: { lg: "16px", xs: "14px" }, lineHeight: "18px", "& ::placeholder": { color: "#454560", fontWeight: "500", fontSize: "16px", lineHeight: "18px" }, borderRadius: "6px", "& fieldset": { display: "none" } }} fullWidth placeholder="Bakken, Permian" />
+                                <OutlinedInput required sx={{ border: " 1px solid #CCCCCC",  "& fieldset": { display: "none" } }} fullWidth placeholder="Bakken, Permian" />
                             </Box>
-                            <Box sx={{ marginTop: "30px", "& Button": { maxWidth: "fit-content", width: "100%", margin: " auto 0 auto auto", lineHeight: "1", padding: "16px 48px", display: "block", fontSize: { lg: "14px", xs: "12px" }, fontWeight: "600" } }}>
+                            <Box sx={{ marginTop: "30px", "& Button": { maxWidth: "fit-content", width: "1", margin: " auto 0 auto auto",  padding: "16px 48px", display: "block" } }}>
                                 <Button type="submit" variant="contained">Save Changes</Button>
                             </Box>
                         </FormControl>
                     </form>
                 </Box >
             </Box>
-
-
         </>
     )
 }

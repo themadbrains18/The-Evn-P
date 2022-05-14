@@ -16,7 +16,7 @@ const FullscreenCard = (props: any) => {
           backgroundColor: "white",
           maxWidth: "529px",
           margin: "80px auto 0px",
-          width: "100%",
+          width: "1",
           zIndex: "10"
         }}>
         {props.children}

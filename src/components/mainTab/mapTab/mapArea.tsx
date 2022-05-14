@@ -13,7 +13,7 @@ const MapArea = () => {
                     mapOptions={{
                         navigationBarMode: "square",
                     }}
-                    width="100%"
+                    
                     viewOptions={{
                         center: { latitude: 30.13770000, longitude: 74.20254300 },
                         mapTypeId: "grayscale",

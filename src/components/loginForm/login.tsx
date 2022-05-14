@@ -11,7 +11,6 @@ const Login = (props: any) => {
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
     }
-
     return (
         <>
             <FullscreenCard>
@@ -27,10 +26,9 @@ const Login = (props: any) => {
                     </Typography>
                     <OutlinedInput type="text" required fullWidth placeholder="Enter you username" />
 
-                    <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "600" }} color="primary.contrastText">
+                    <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "fontWeightMedium" }} color="primary.contrastText">
                         Password
                     </Typography>
-
                     <OutlinedInput placeholder="Enter your password" fullWidth type={`${!showPassword && ("password")}`} required
                         endAdornment={
                             <InputAdornment position="end">
@@ -47,7 +45,7 @@ const Login = (props: any) => {
                     <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
 
                     <Box sx={{ textAlign: "center", mt: "26px" }}>
-                        <Button type="button" variant="text" sx={{ color: "#0F75BC", "&:hover": { backgroundColor: "transparent", color: "#0F75BC" } }} onClick={props.onClickfogetBtn} > Forgot password?</Button>
+                        <Button type="button" variant="text" sx={{ color: "primary.main", "&:hover": { backgroundColor: "transparent", color: "primary.main" } }} onClick={props.onClickfogetBtn} > Forgot password?</Button>
                     </Box>
                 </form>
             </FullscreenCard>

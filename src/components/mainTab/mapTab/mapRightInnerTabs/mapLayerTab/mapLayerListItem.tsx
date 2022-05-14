@@ -243,8 +243,6 @@ const mpaLayerDate = [
     }
 ]
 
-
-
 const checkInput = (e: any) => {
     let layerGuideHeight = e.target.closest(".maplayer_item").querySelector(".layer_guide").scrollHeight;
     if (e.target.checked) {
@@ -268,18 +266,6 @@ const MapLayerListItem = () => {
                                     height: { lg: "24px", xs: "20px" },
                                     width: { lg: "24px", xs: "20px" },
                                 },
-                                "& path": {
-                                    boxShadow: "0px 0px 25px rgba(0, 0, 0, 0.25)",
-                                },
-                                "& .Mui-checked svg path": {
-                                    color: "#5D5FEF",
-                                },
-                                "& span": {
-                                    fontWeight: "500",
-                                    fontSize: { lg: "14px", xs: "12px" },
-                                    lineHeight: "16px",
-                                    color: "#333333",
-                                }
                             }} control={<Checkbox name={item.checkboxName} onClick={checkInput} />} label={item.labelText} />
                             <Box sx={{ pl: 4, height: 0, overflow: "hidden", transition: "0.3s linear" }} className="layer_guide">
                                 {item.guide.map((guideItem) => {
@@ -287,7 +273,7 @@ const MapLayerListItem = () => {
                                         <Box key={guideItem.id} sx={{ display: "flex", alignItems: "center", mt: 2.75 }}>
                                             <Typography component="span" sx={{ height: "18px", width: "18px", borderRadius: "50%", backgroundColor: guideItem.guideLabelColorCode, display: "inline-block", marginRight: "12px" }}>
                                             </Typography>
-                                            <Typography component="span" sx={{ fontWeight: "500", fontSize: { lg: "14px", xs: "12px" }, lineHeight: "16px", color: "#333333", display: "inline-block" }}>
+                                            <Typography variant='h6' component="span" sx={{  color: "#333333", display: "inline-block" }}>
                                                 {guideItem.guideLabelText}
                                             </Typography>
                                         </Box>
@@ -297,8 +283,6 @@ const MapLayerListItem = () => {
                         </ListItem>
                     )
                 })}
-
-
             </List>
         </>
     )

@@ -37,10 +37,9 @@ const theme = createTheme({
       hover: "#0F75BC",
     },
   },
-
-  shape: {
-    borderRadius: "6px"
-  },
+  // shape: {
+  //   borderRadius: "6px"
+  // },
   typography: {
     fontFamily: "'Spartan',sans-serif",
     fontSize: 14,
@@ -131,7 +130,7 @@ const theme = createTheme({
           color: "#454560",
           fontWeight: "500",
         }
-      }
+      },
     },
     MuiMenuItem: {
       styleOverrides: {
@@ -143,7 +142,27 @@ const theme = createTheme({
           "&:hover": {
             color: "#fff"
           },
-
+          },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          "&.Mui-checked svg path": {
+          color: "#5D5FEF",
+        },
+        },
+      },
+    },
+    MuiFormControlLabel:{
+      styleOverrides: {
+        root: {
+          "& span": {
+            fontWeight: "600",
+            fontSize: "14px",
+            lineHeight: "16px",
+            color: "primary.contrastText",
+        },
         },
       },
     },
@@ -179,19 +198,19 @@ const theme = createTheme({
           }
         }
       }
-    }
+    },
   }
 });
-// theme.typography = {
-//   ...theme.typography,
-//   h2 : {
-
-//       fontSize: '10px',
-//       [theme.breakpoints.down('md')]: {
-//         fontSize: '50px'
-//       }
-//   }
-// };
+theme.typography = {
+  ...theme.typography,
+  h2 : {
+      fontSize: '24px',
+      color: "#fff",
+      [theme.breakpoints.down('lg')]: {
+        fontSize: '20px',
+      }
+  }
+};
 
 const App = () => {
   const [viewTopHeader, setViewTopHeader] = useState(false);
