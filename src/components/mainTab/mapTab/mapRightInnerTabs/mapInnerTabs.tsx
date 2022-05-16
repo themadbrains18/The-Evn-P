@@ -121,9 +121,9 @@ const MapInnerTabs = () => {
 
             {/* Map Tab Data */}
             {
-              ToolTipData.map((val) => {
+              ToolTipData.map((val,index) => {
                 return (
-                  < Tooltip title={val.title} arrow placement="top">
+                  < Tooltip key={index} title={val.title} arrow placement="top">
                     <Tab>
                       {val.svgIcon}
                     </Tab>
@@ -137,7 +137,7 @@ const MapInnerTabs = () => {
           {/* Map  Tab */}
           {MapInnerTabData.map((value,index) => {
             return (
-              <TabPanel sx={{ width: "1" }} value={index}>
+              <TabPanel sx={{ width: "1" }} key={index} value={index}>
                 {value.mapinnerData}
               </TabPanel>
             )

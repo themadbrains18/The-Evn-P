@@ -23,9 +23,9 @@ const MapDataList = () => {
     return (
         <>
             <List sx={{ mt: 4.75, p: 0 }}>
-                {SourcecontributionsData.map((element)=>{
+                {SourcecontributionsData.map((element,index)=>{
                     return(
-                        <ListItem disablePadding sx={{ mt: { lg: 3.625, xs: 2.5 } }}>
+                        <ListItem key={index} disablePadding sx={{ mt: { lg: 3.625, xs: 2.5 } }}>
                         <ListItemText >
                             <Typography variant="body2" component="span" sx={{ fontWeight: "600",  color: "secondary.dark", display: "block" }}>
                                  {element.sourceText}

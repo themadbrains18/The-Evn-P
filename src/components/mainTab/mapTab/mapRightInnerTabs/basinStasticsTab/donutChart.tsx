@@ -26,9 +26,9 @@ const DonutChart = () => {
                     <img src={require("../../../../../assets/svg/inner-dout.svg").default} alt="" />
                 </Box>
                 <Box sx={{ textAlign: "center", mt: 2.5, display: "grid", gridTemplateColumns: { lg: "repeat(3,33.333%)", xs: "repeat(2,50%)" }, rowGap: "10px!important", gap: "5px" }}>
-                    {SourceDatat.map((value) => {
+                    {SourceDatat.map((value,index) => {
                         return(
-                        <Box sx={{ display: "grid", alignItems: "center", gridTemplateColumns: "auto 1fr", gap: { lg: "12px", xs: "5px" } }}>
+                        <Box key={index} sx={{ display: "grid", alignItems: "center", gridTemplateColumns: "auto 1fr", gap: { lg: "12px", xs: "5px" } }}>
                             <Box sx={{ height: "24px", backgroundColor: `${value.backgroun}`, borderRadius: "5px", width: "27px" }}></Box>
                             <Typography variant="subtitle2" component="h5" sx={{ color: "common.black", textAlign: "left", opacity: "0.4" }}>
                                 {value.ChangeLater}

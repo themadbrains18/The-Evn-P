@@ -266,6 +266,9 @@ const MapLayerListItem = () => {
                                     height: { lg: "24px", xs: "20px" },
                                     width: { lg: "24px", xs: "20px" },
                                 },
+                                "& span":{
+                                    fontSize: {lg:"14px",xs:"12px"},
+                                },
                             }} control={<Checkbox name={item.checkboxName} onClick={checkInput} />} label={item.labelText} />
                             <Box sx={{ pl: 4, height: 0, overflow: "hidden", transition: "0.3s linear" }} className="layer_guide">
                                 {item.guide.map((guideItem) => {

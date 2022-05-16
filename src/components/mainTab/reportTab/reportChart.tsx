@@ -21,7 +21,7 @@ const ReportChart = () => {
             {/* Select Basin Form End */}
             <Box mt={3.75}>
                 <Grid container spacing={3.75}>
-                    {ChartGridData.map((value:any,index:any) => {
+                    {ChartGridData.map((value,index) => {
                         return (
                             <Grid key={index}  item lg={6} md={12} xs={12} >
                                 <Box sx={{ boxShadow: "0px 4px 10px #F3F4F6", backgroundColor: "background.default", textAlign: "center", height: "1" }}>

@@ -154,9 +154,9 @@ const MapFilter = () => {
                                                 </Box>
                                             </Box>
                                             {/* Date From  */}
-                                            {DateData.map((value) => {
+                                            {DateData.map((value,index) => {
                                                 return (
-                                                    <Box sx={{ display: "flex", flexDirection: "column", gap: "4px",mb:`${value.MarginBottom}` }}  >
+                                                    <Box key={index} sx={{ display: "flex", flexDirection: "column", gap: "4px",mb:`${value.MarginBottom}` }}  >
                                                         <Typography variant="body2" component="label" sx={{ color: "secondary.contrastText" }} htmlFor="tooltipFrom" >{value.dateHeading}</Typography>
                                                         <Box sx={{
                                                             position: "relative",

@@ -19,13 +19,10 @@ const ForgetPassword = (props: any) => {
                     }} color="primary.contrastText" >
                         Email Address
                     </Typography>
-
                     <OutlinedInput type="email" required fullWidth placeholder="Enter email address" />
-
                     <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
-
                     <Box sx={{ textAlign: "center", mt: "26px" }}>
-                        <Button type="button" variant="text" onClick={props.backLogin} startIcon={<ArrowBackIcon />}> Back to Login</Button>
+                        <Button sx={{color:"primary.main" ,"&:hover svg path":{fill:"#0F75BC"},"&:hover":{background:"transparent",color:"primary.main"}}} type="button" variant="text" onClick={props.backLogin} startIcon={<ArrowBackIcon />}> Back to Login</Button>
                     </Box>
                 </form>
             </FullscreenCard>

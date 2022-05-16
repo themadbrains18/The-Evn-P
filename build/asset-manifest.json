@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.b02e50e3.css",
-    "main.js": "./static/js/main.3057369c.js",
+    "main.css": "./static/css/main.15ab39d0.css",
+    "main.js": "./static/js/main.cf088b49.js",
     "static/js/787.94c7c0a2.chunk.js": "./static/js/787.94c7c0a2.chunk.js",
     "static/media/piechart.jpg": "./static/media/piechart.45fb716726662b00a8c7.jpg",
     "static/media/denver-julesburg.jpg": "./static/media/denver-julesburg.3b38b715ec311899407d.jpg",
@@ -9,29 +9,29 @@
     "static/media/bakken.jpg": "./static/media/bakken.ca5d11addc9c04243108.jpg",
     "static/media/accont-profile.png": "./static/media/accont-profile.9504ae0906005b415eb8.png",
     "static/media/map-icon.svg": "./static/media/map-icon.69e2d2b90cfb20fc46f7.svg",
-    "static/media/globe.svg": "./static/media/globe.d02ad3bf12a2a542e7ea171e97c6f1db.svg",
+    "static/media/globe.svg": "./static/media/globe.d02ad3bf12a2a542e7ea.svg",
     "static/media/inner-dout.svg": "./static/media/inner-dout.68219551628330dbed6c8063874b22ec.svg",
     "static/media/delete-icon.svg": "./static/media/delete-icon.fe7bfea621f9ff5af5f553945217ede6.svg",
     "static/media/file-icon.svg": "./static/media/file-icon.0f7dcba627d39f4aea774588308f6169.svg",
     "static/media/edit-icon.svg": "./static/media/edit-icon.5b669ebf032a6d3d2879.svg",
     "static/media/calander-cion.svg": "./static/media/calander-cion.97eb9c23594b9c7007d1d766250d7978.svg",
-    "static/media/card-download-icon.svg": "./static/media/card-download-icon.6c3db7f0710d9ad80fcec5223b4fd6e0.svg",
-    "static/media/hide-password-icon.svg": "./static/media/hide-password-icon.357227a802f550bd0b286ef9030950af.svg",
-    "static/media/report.svg": "./static/media/report.0b80fa2aa7b582c1e51d28145ac02399.svg",
+    "static/media/card-download-icon.svg": "./static/media/card-download-icon.6c3db7f0710d9ad80fce.svg",
+    "static/media/hide-password-icon.svg": "./static/media/hide-password-icon.357227a802f550bd0b28.svg",
+    "static/media/report.svg": "./static/media/report.0b80fa2aa7b582c1e51d.svg",
     "static/media/report-icon.svg": "./static/media/report-icon.284f42edb44389f75852.svg",
     "static/media/search.svg": "./static/media/search.cc499c1018de9c278f26.svg",
     "static/media/nav-toggle.svg": "./static/media/nav-toggle.2f1a195fb41072711631a3e549721162.svg",
     "index.html": "./index.html",
     "static/media/dashboard-hover.svg": "./static/media/dashboard-hover.963fb2d7c65d2b2f5e94.svg",
     "static/media/download-icon.svg": "./static/media/download-icon.0a7406e3c2618dce8085.svg",
-    "static/media/back-arrow-icon.svg": "./static/media/back-arrow-icon.4edbc6562e611d43d9838b676db02437.svg",
+    "static/media/back-arrow-icon.svg": "./static/media/back-arrow-icon.4edbc6562e611d43d983.svg",
     "static/media/filter-arrow-icon.svg": "./static/media/filter-arrow-icon.3cd8114e05b6c318bd20bc62d62ec363.svg",
-    "main.b02e50e3.css.map": "./static/css/main.b02e50e3.css.map",
-    "main.3057369c.js.map": "./static/js/main.3057369c.js.map",
+    "main.15ab39d0.css.map": "./static/css/main.15ab39d0.css.map",
+    "main.cf088b49.js.map": "./static/js/main.cf088b49.js.map",
     "787.94c7c0a2.chunk.js.map": "./static/js/787.94c7c0a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b02e50e3.css",
-    "static/js/main.3057369c.js"
+    "static/css/main.15ab39d0.css",
+    "static/js/main.cf088b49.js"
   ]
 }

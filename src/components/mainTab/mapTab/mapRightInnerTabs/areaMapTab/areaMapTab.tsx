@@ -34,9 +34,9 @@ const AreaMapTab = () => {
                     . By this definition we mean have your last point touch your first point. Any locations inside of this area will be highlighted while eveything else will disappear.
                 </Typography>
                 <Box sx={{ mt: 2.5 }}>
-                    {AreaMap.map((value) => {
+                    {AreaMap.map((value,index) => {
                         return (
-                            <Button variant="outlined" sx={{
+                            <Button key={index} variant="outlined" sx={{
                                 p: "0", minWidth: "auto", height: "34px", width: "34px", marginRight: "10px!important"
                             }}>
                                 {value.AreaButton}
