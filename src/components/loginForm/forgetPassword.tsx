@@ -1,17 +1,16 @@
 import FullscreenCard from "./FullScreenCard";
 import { Box, Typography, OutlinedInput, Button } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 // Forget Password Account
 const ForgetPassword = (props: any) => {
     return (
         <>
-
             <FullscreenCard>
                 <form onSubmit={props.OnSubmitUpdatePwsd} action="">
                     <Typography variant="h1">
                         Forget Password
                     </Typography>
-
                     <Typography variant="subtitle1" sx={{
                         mb: "12px",
                         mt: "38px",

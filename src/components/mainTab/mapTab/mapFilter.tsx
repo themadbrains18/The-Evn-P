@@ -46,7 +46,7 @@ const MapFilter = () => {
             } else if (new Date(dateFrom).getFullYear() === new Date(e.target.value).getFullYear()) {
                 if (new Date(dateFrom).getMonth() < new Date(e.target.value).getMonth()) {
                 } else if (new Date(dateFrom).getMonth() === new Date(e.target.value).getMonth()) {
-                    if (new Date(dateFrom).getDate() === new Date(e.target.value).getDate()) {
+                    if (new Date(dateFrom).getDate() <= new Date(e.target.value).getDate()) {
                     }
                     else {
                         alert("Please Enter The Correct Day")
@@ -141,9 +141,9 @@ const MapFilter = () => {
                                                     {OpenDorpdown && (
                                                         <>
                                                             <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", backgroundColor: "background.default", boxShadow: "1", maxWidth: "155px", width: "1" }} >
-                                                                {filterDopdownItem.map((val) => {
+                                                                {filterDopdownItem.map((val,index) => {
                                                                     return (
-                                                                        <ListItem onClick={() => { SetfilterValue(val.item); ToggleDropdown() }} sx={{"&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", cursor: "pointer" }}>
+                                                                        <ListItem key={index} onClick={() => { SetfilterValue(val.item); ToggleDropdown() }} sx={{"&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", cursor: "pointer" }}>
                                                                             {val.item}
                                                                         </ListItem>
                                                                     )
@@ -155,15 +155,6 @@ const MapFilter = () => {
                                                     )}
                                                 </Box>
                                             </Box>
-
-
-
-
-
-
-
-
-
 
 
                                             

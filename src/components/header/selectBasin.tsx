@@ -129,11 +129,8 @@ const SeclectBasin = (props: any) => {
                             })}
                         </Select>
                     </FormControl>
-                    <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
-                        <Typography component="span" variant='h6' sx={{ m: "32px 0 10px" }} >Select Date</Typography>
-                        <Box sx={{
-                            display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" }
-                        }}>
+                    <Typography variant='h6' sx={{ m: "32px 0 10px" }} >Select Date</Typography>
+                    <Box sx={{display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "20px" }}}>
                         <ThemeProvider theme={datePickertheme}>
                             <LocalizationProvider  dateAdapter={AdapterDateFns}>
                                 <DatePicker
@@ -153,8 +150,7 @@ const SeclectBasin = (props: any) => {
                                     renderInput={(params) => <TextField   {...params} />}
                                 />
                             </LocalizationProvider>
-                            </ThemeProvider>
-                        </Box>
+                        </ThemeProvider>
                     </Box>
                     <Box sx={{ mt: "22px", textAlign: "end" }}>
                         <Button variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
