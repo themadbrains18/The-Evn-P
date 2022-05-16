@@ -1,4 +1,4 @@
-import { Box, Button, Typography, MenuItem, FormControl } from '@mui/material';
+import { Box, Button, Typography, MenuItem, FormControl,ThemeProvider } from '@mui/material';
 import * as React from 'react';
 import { useEffect } from 'react';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -6,29 +6,47 @@ import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { createTheme } from '@mui/material';
+import { theme } from '../../theme';
 
-// Select Basins Form
+const datePickertheme = createTheme({
+    palette: {
+            ...theme.palette,
+            primary: {
+                ...theme.palette.primary,
+                contrastText: "#fff"
+            }
+        }
+});
+
 const SeclectBasin = (props: any) => {
-    // Start Date State
-    const [firstDate, SetfirstDate] = React.useState('');
+    
+    // Select Basins Form
+    const [BasinValue, SetBasinValue] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
-        SetfirstDate(event.target.value);
+        SetBasinValue(event.target.value);
     }
+
+    // Beginning Date State
+    const [beginningDate, setBeginningDate] = React.useState<Date | null>(null);
     // End Date State
-    const [secondvalue, setsecondvalue] = React.useState<Date | null>(null);
-    const [value, setValue] = React.useState<Date | null>(null);
-        
+    const [endDate, setEndDate] = React.useState<Date | null>(null);
+
+
+
     const clearForm = () => {
-        SetfirstDate("");
-        setsecondvalue(null);
-        setValue(null);
+        SetBasinValue("");
+        setBeginningDate(null);
+        setEndDate(null);
         if (props.selectGo) {
             props.selectGo(false)
         }
     }
+
     // Sumbit Form
-    const submitForm = () => {
-        if (firstDate && value  ) {
+    const submitForm = (e: any) => {
+        e.preventDefault();
+        if (BasinValue && endDate) {
             if (props.selectGo) {
                 props.selectGo(true);
             }
@@ -40,18 +58,23 @@ const SeclectBasin = (props: any) => {
             e.setAttribute("required", "");
         });
     });
+
     const checkValid = (e: any) => {
-        let StartValue: any = secondvalue;
+        let StartValue: any = beginningDate;
         let EndValue: any = e;
+
         if (StartValue) {
             if (new Date(StartValue).getFullYear() < new Date(EndValue).getFullYear()) {
-                setValue(EndValue);
-            } else if (new Date(StartValue).getFullYear() === new Date(EndValue).getFullYear()) {
+                setEndDate(EndValue);
+            }
+            else if (new Date(StartValue).getFullYear() === new Date(EndValue).getFullYear()) {
                 if (new Date(StartValue).getMonth() < new Date(EndValue).getMonth()) {
-                    setValue(EndValue);
-                } else if (new Date(StartValue).getMonth() === new Date(EndValue).getMonth()) {
-                    if (new Date(StartValue).getDate() === new Date(EndValue).getDate()) {
-                        setValue(EndValue);
+                    setEndDate(EndValue);
+                }
+                else if (new Date(StartValue).getMonth() === new Date(EndValue).getMonth()) {
+
+                    if (new Date(StartValue).getDate() <= new Date(EndValue).getDate()) {
+                        setEndDate(EndValue);
                     }
                     else {
                         alert("Please Enter The Correct Day")
@@ -66,101 +89,80 @@ const SeclectBasin = (props: any) => {
             }
         }
     }
+
+    const SelectBasin = [
+        {
+            item: "All Basins",
+        },
+        {
+            item: "Appalachian",
+        },
+        {
+            item: "Bakken",
+        },
+        {
+            item: "Denver-Julesburg",
+        },
+        {
+            item: "Eagleford",
+        },
+        {
+            item: "Permian",
+        }
+    ]
     return (
         <>
-            <form  action="">
-                    <Box sx={{p: "30px", backgroundColor: "default", mt: "20px" , minWidth: 120 }}>
-                        <Typography variant='h6' sx={{  mb: "30px" }} component={"span"}>
-                            Select Basin
-                        </Typography>
-                        <FormControl fullWidth >
-                            <Box >
-                                <FormControl required fullWidth sx={{
-                                    "& svg": {
-                                        display: "none!important",
-                                    },
-                                    mt: "10px!important", minWidth: 120,
-                                    zIndex: "1"
-                                }}>
-                                    <Select
-                                        sx={{
-                                             "&>div": {
-                                                p: "12px 15px",
-                                                minHeight: "initial!important",
-                                                position: "relative",
-                                                "&[aria-expanded=true]": {
-                                                    "&::after": {
-                                                        transform: "translateY(-50%) rotate(-180deg)",
-                                                    }
-                                                },
-                                                "&::after": {
-                                                    content: '""',
-                                                    position: "absolute",
-                                                    top: "50%",
-                                                    transform: "translateY(-50%)",
-                                                    backgroundImage: `url(${require("../../assets/svg/filter-arrow-icon.svg").default})`,
-                                                    backgroundRepeat: "no-repeat",
-                                                    height: "10px",
-                                                    width: "19px",
-                                                    right: "15px",
-                                                    zIndex: "-1",
-                                                    transition: "0.3s"
-                                                }
-                                            }
-                                        }}
-                                        value={firstDate}
-                                        onChange={handleChange}
-                                        displayEmpty
-                                        inputProps={{ 'aria-label': 'Without label' }}
-                                    >
-                                        <MenuItem value="">All Basins</MenuItem>
-                                        <MenuItem value={10}>Appalachian</MenuItem>
-                                        <MenuItem value={20}>Bakken</MenuItem>
-                                        <MenuItem value={40}>Denver-Julesburg</MenuItem>
-                                        <MenuItem value={50}>Eagleford</MenuItem>
-                                        <MenuItem value={60}>Permian</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </Box>
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
-                                <Typography component="span"  variant='h6' sx={{  m: "32px 0 10px" }} >Select Date</Typography>
-                                <Box sx={{
-                                    display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" },
-                                    "& .css-1mdoxe7-MuiFormLabel-root-MuiInputLabel-root,.css-1ymjr29": {
-                                        transform: " translate(20px, -1px) scale(0.70)"
-                                    }
-                                }}>
-                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                        <DatePicker
-                                            label="Beginning Date"
-                                            minDate={new Date('2018-01-01')}
-                                            value={secondvalue}
-                                            onChange={(newValue: any) => {
-                                                setsecondvalue(newValue);
-                                            }}
-                                            renderInput={(params) =>
-                                                <TextField   {...params} />}
-                                        />
-                                    </LocalizationProvider>
-                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                        <DatePicker
-                                            label="End Date"
-                                            value={value}
-                                            maxDate={new Date('2025-01-01')}
-                                            onChange={(e: any) => { checkValid(e) }}
-                                            renderInput={(params) =>
-                                                <TextField  {...params} />}
-                                        />
-                                    </LocalizationProvider>
-                                </Box>
-                            </Box>
-                        </FormControl>
+            <form action="">
+                <Box sx={{ p: "30px", backgroundColor: "background.default", mt: "20px", minWidth: 120 }}>
+                    <Typography variant='h6' sx={{ mb: "10px" }} >
+                        Select Basin
+                    </Typography>
+                    <FormControl required fullWidth >
+                        <Select
+                            value={BasinValue}
+                            onChange={handleChange}
+                            displayEmpty>
+                            {SelectBasin.map((value, index) => {
+                                return (
+                                    <MenuItem key={index} value={index === 0 ? "" : index}>{value.item}</MenuItem>
+                                )
+                            })}
+                        </Select>
+                    </FormControl>
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mt: "10px" }} >
+                        <Typography component="span" variant='h6' sx={{ m: "32px 0 10px" }} >Select Date</Typography>
+                        <Box sx={{
+                            display: "grid ", gridTemplateColumns: { md: " 1fr 1fr", xs: "1fr" }, gap: { md: "14px", xs: "30px" }
+                        }}>
+                        <ThemeProvider theme={datePickertheme}>
+                            <LocalizationProvider  dateAdapter={AdapterDateFns}>
+                                <DatePicker
+                                    label="Beginning Date"
+                                    value={beginningDate}
+                                    minDate={new Date()}
+                                    onChange={(e: any) => { setBeginningDate(e) }}
+                                    renderInput={(params) => <TextField   {...params} />}
+                                />
+                            </LocalizationProvider>
+                            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                <DatePicker
+                                    label="End Date"
+                                    value={endDate}
+                                    minDate={new Date()}
+                                    onChange={(e: any) => { checkValid(e) }}
+                                    renderInput={(params) => <TextField   {...params} />}
+                                />
+                            </LocalizationProvider>
+                            </ThemeProvider>
+                        </Box>
                     </Box>
-                    {/* Button */}
                     <Box sx={{ mt: "22px", textAlign: "end" }}>
-                        <Button   variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
-                        <Button sx={{ml:"20px"}} type="submit"  variant="contained" onClick={submitForm}>Go</Button>
+                        <Button variant="outlined" type="reset" onClick={clearForm}>Clear</Button>
+                        <Button sx={{ ml: "20px" }} type="submit" variant="contained" onClick={(e: any) => { submitForm(e) }}>Go</Button>
                     </Box>
+                </Box>
+                {/* Button */}
+
             </form>
         </>
     )

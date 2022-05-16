@@ -83,11 +83,10 @@ const Setting = () => {
                                         border: "1px solid #0F75BC",
                                         borderRadius: "6px",
                                         fontWeight: "600",
-                                        fontSize: { lg: "14px", xs: "12px" },
                                         lineHeight: "16px",
                                         color: "#1876B2",
                                         p: "16px 35px ",
-                                        "&:hover": { background: "primary.main", color: "common.white", "& svg path": { fill: "#fff" } }
+                                        "&:hover": { backgroundColor: "primary.main", color: "common.white", "& svg path": { fill: "#fff" } }
                                     }
                                 }}>
                                     <Button type="button" onClick={EditPasswordBtn}>

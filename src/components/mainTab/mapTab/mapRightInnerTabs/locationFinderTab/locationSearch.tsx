@@ -15,6 +15,13 @@ const LocationSearch = (props: any) => {
                         display: "flex",
                         alignItems: "center",
                         gap: "6.4px",
+                        "&:hover":{
+                            backgroundColor:"rgba(255, 87, 34, 0.14)",
+                            
+                        },
+                        "&:hover svg path":{
+                            fill:"#ff5722"
+                        },
                         "& span": {
                             color: "#FF5722",
                             fontWeight: "600",

@@ -8,9 +8,9 @@ const Map = () => {
         <>
             <Box sx={{ display: "grid", gridTemplateColumns: { xl: "1fr 369px", lg: "1fr 300px", xs: "1fr 250px" }, height: "1" }}>
                 {/* margin user for hide scroll bar */}
-                <Box>
-                    <MapArea />
-                </Box>
+                
+                <MapArea />
+                
                 <Box sx={{ overflowY: "scroll", overflowX: "hidden", backgroundColor: "background.default" }}>
                     <MapInnerTabs />
                 </Box>

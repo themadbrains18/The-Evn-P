@@ -112,16 +112,13 @@ const MapInnerTabs = () => {
                 },
                 "& + button::before  ": {
                   display: "none"
-                },
-
+                }
               }
             }
           }
           } >
-
-            {/* Map Tab Data */}
-            {
-              ToolTipData.map((val,index) => {
+            {/* Map Tab */}
+            {ToolTipData.map((val,index) => {
                 return (
                   < Tooltip key={index} title={val.title} arrow placement="top">
                     <Tab>
@@ -129,12 +126,10 @@ const MapInnerTabs = () => {
                     </Tab>
                   </Tooltip>
                 )
-              })
-            }
-            {/* Area Map Tab */}
+              })}
           </TabsList>
 
-          {/* Map  Tab */}
+          {/* Map  Tab  Panel */}
           {MapInnerTabData.map((value,index) => {
             return (
               <TabPanel sx={{ width: "1" }} key={index} value={index}>

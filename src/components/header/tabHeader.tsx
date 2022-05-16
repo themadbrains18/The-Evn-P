@@ -10,46 +10,51 @@ type headerData = {
     divider: Boolean
     headerOption: any; // headerOption Must be = Download , Search,MapView,Reports
 }
+
+const MapHEad=[
+    {
+        HeadBtnName:"Map View",
+        ElemName:"MapView",
+        btnIcon:<LanguageIcon sx={{color:"secondary.light"}} />
+    },
+    {
+        HeadBtnName:"Download",
+        ElemName:"Download",
+        btnIcon:<DownloadIcon sx={{color:"secondary.light"}} />
+    },
+    {
+        HeadBtnName:"Reports",
+        ElemName:"Reports",
+        btnIcon:<AssessmentIcon sx={{color:"secondary.light"}} />
+    },
+]
 const Header = (props: headerData) => {
     return (
         <>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1 }}>
-                <Typography variant="h3" component={"h2"}>
+                <Typography variant="h3">
                     {/* Tab Heading */}
                     {props.tabheading}
                 </Typography>
-                <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-
+                <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
                     {props.headerOption.map((elem: any, index: any) => {
                         return (
                             <Box key={index} >
-                                {/* Map View */}
-                                {elem === "MapView" &&
-                                    <Button variant="text" sx={{ alignItems: "center" }}>
-                                        <LanguageIcon sx={{color:"#0079b4"}}  />
-                                        <Typography variant="subtitle1" component="span" sx={{ color: "secondary.light", textTransform: 'capitalize', ml: 1 }}>
-                                            Map View
-                                        </Typography>
-                                    </Button>
-                                }
-                                {
-                                    elem === "Download" &&
-                                    <Button variant="text" sx={{ alignItems: "center" }}>
-                                        <DownloadIcon sx={{color:"#0079b4"}} />
-                                        <Typography variant="subtitle1" component="span" sx={{ color: "secondary.light", textTransform: 'capitalize', ml: 1 }}>
-                                            Download
-                                        </Typography>
-                                    </Button>
-                                }    
-                                {
-                                    elem === "Reports" &&
-                                    <Button variant="text" sx={{ alignItems: "center" }}>
-                                        <AssessmentIcon sx={{color:"#0079b4"}} />
-                                        <Typography variant="subtitle1" component="span" sx={{ color: "secondary.light", textTransform: 'capitalize', ml: 1 }}>
-                                            Reports
-                                        </Typography>
-                                    </Button>
-                                }
+                                {MapHEad.map((value,index)=>{
+                                    return(
+                                        <Box key={index}>
+                                            {elem === `${value.ElemName}` &&
+                                                <>
+                                                    <Button variant="text" startIcon={value.btnIcon} sx={{"&:hover svg path":{ fill: "inherit"}, alignItems: "center" }}>
+                                                        <Typography variant="subtitle1"  sx={{ color: "secondary.light", textTransform: 'capitalize' }}>
+                                                            {value.HeadBtnName}
+                                                        </Typography>
+                                                    </Button>
+                                                </>
+                                            }
+                                        </Box>
+                                    )
+                                })}
                             </Box>
                         )
                     })}
@@ -59,10 +64,10 @@ const Header = (props: headerData) => {
             {
                 props.blockInfo ?
                     <Box sx={{ backgroundColor: "background.paper", p: "14px 33px 30px 13px", boxShadow: "0px 0px 10px #F3F4F6", mt: 3.75 }}>
-                        <Typography variant="h4" component="h4" sx={{}}>
+                        <Typography variant="h4" component="h4" >
                             {props.blockInfoheading}
                         </Typography>
-                        <Divider sx={{ borderBottomWidth: "2px", my: "16px", borderColor: "#F5F5F5", ml: "-13px", width: "340px" }} />
+                        <Divider sx={{ borderBottomWidth: "2px", my: "16px",}} />
                         <Typography variant="h6" component="p" sx={{ color: "text.secondary", lineHeight: "23px", fontWeight: "fontWeightRegular", textAlign: "justify" }}>
                             {/* Tab Info */}
                             {props.tabInfo}
@@ -75,7 +80,7 @@ const Header = (props: headerData) => {
                     </Typography>
             }
             {/* Divider */}
-            {props.divider && <Divider sx={{ borderBottomWidth: "2px", mt: "18px", borderColor: "#DEDEDE" }} />}
+            {props.divider && <Divider sx={{ borderBottomWidth: "2px", mt: "18px" }} />}
         </>
     );
 }

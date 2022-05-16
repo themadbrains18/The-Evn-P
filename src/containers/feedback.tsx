@@ -5,7 +5,7 @@ const Bugreport = () => {
     return (
         <>
             <Box sx={{ p: 4.75 }}>
-                <Typography variant="h3" component={"h2"}>
+                <Typography variant="h3" >
                     Report a Bug
                 </Typography>
                 <Box sx={{ mt: "30px" }}>

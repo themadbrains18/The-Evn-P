@@ -34,47 +34,14 @@ const BugreportForm = () => {
     return (
         <Box sx={{ p: "30px", backgroundColor: "background.default" }}>
             <form >
-                <Typography variant='subtitle1' sx={{ mb: "30px" }} component={"span"}>
+                <Typography variant='subtitle1' sx={{ mb: "10px" }} >
                     Theme
                 </Typography>
-                <FormControl required fullWidth sx={{
-                    "& svg": {
-                        display: "none!important",
-                    },
-                    mt: "10px!important", minWidth: 120,
-                    zIndex: "1"
-                }}>
+                <FormControl required fullWidth>
                     <Select
-                        sx={{
-                            "&>div": {
-                                p: "12px 15px",
-                                minHeight: "initial!important",
-                                position: "relative",
-                                "&[aria-expanded=true]": {
-                                    "&::after": {
-                                        transform: "translateY(-50%) rotate(-180deg)",
-                                    }
-                                },
-                                "&::after": {
-                                    content: '""',
-                                    position: "absolute",
-                                    top: "50%",
-                                    transform: "translateY(-50%)",
-                                    backgroundImage: `url(${require("../../../assets/svg/filter-arrow-icon.svg").default})`,
-                                    backgroundRepeat: "no-repeat",
-                                    height: "10px",
-                                    width: "19px",
-                                    right: "15px",
-                                    zIndex: "-1",
-                                    transition: "0.3s",
-                                }
-                            }
-                        }}
                         value={age}
                         onChange={handleChange}
-                        displayEmpty
-                        inputProps={{ 'aria-label': 'Without label' }}
-                    >
+                        displayEmpty>
                         <MenuItem value="">
                             Web App Error
                         </MenuItem>
@@ -84,21 +51,20 @@ const BugreportForm = () => {
                     </Select>
                 </FormControl>
                 {/* Text Area Input */}
-                <Typography variant='subtitle1' sx={{ display: "block", m: "30px 0 10px" }} component={"span"}>
+                <Typography variant='subtitle1' sx={{ m: "30px 0 10px" }} >
                     Description
                 </Typography>
-                <Typography variant='h6' sx={{ "& textarea ": { width: "1", height: "200px!important", border: "1px solid rgba(0, 0, 0, 0.23)", p: "12px 15px", "&:focus": { outlineColor: "#0F75BC" } } }}>
-                    <TextareaAutosize
-                        aria-label="empty textarea"
+                <Box  sx={{ "& textarea ": { width: "1", height: "200px!important", border: "1px solid rgba(0, 0, 0, 0.23)", p: "12px 15px", "&:focus": { outlineColor: "#0F75BC" } } }}>
+                    <TextareaAutosize 
+                        aria-label="description"
                     />
-                </Typography>
+                </Box>
 
                 {/* Drop File Input  */}
                 <Box sx={{ position: "relative" }}>
-                    {/* Tab Heading */}
-                    {/* Location Search */}
+                    
                     {/* Upload File */}
-                    <Typography variant='subtitle1' sx={{ display: "block", m: "30px 0 10px" }} component={"span"}>
+                    <Typography variant='subtitle1' sx={{ display: "block", m: "30px 0 10px" }}>
                         Drop File Here
                     </Typography>
                     <Box onDrop={e => handleDrop(e)} onDragOver={(e: any) => handleDragOver(e)} sx={{ position: "relative", display: "grid", placeItems: "center", height: "200px", p: `${fileUploadName === "" ? "32px 24px" : "24px"}`, border: "1px dashed #979797" }}>
@@ -107,16 +73,15 @@ const BugreportForm = () => {
                             <Typography variant='subtitle1' sx={{
                                 textAlign: "center"
                             }} component={"h5"}>Drop  file or browse</Typography>
-
                             <Box sx={{ mt: "20px", textAlign: "center" }}>
                                 <Typography variant='subtitle1' component="label" sx={{
                                     backgroundColor: "primary.light",
                                     borderRadius: " 6px",
                                     color: "common.white",
                                     p: "6px 8px",
-                                    textAlign: "center",
                                     cursor: "pointer",
                                 }} htmlFor="ChooseFile"> Browse</Typography>
+
                                 <Box className='drop-zone__input' sx={{
                                     position: "absolute",
                                     top: "50%",

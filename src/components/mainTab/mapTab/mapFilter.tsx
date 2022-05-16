@@ -136,12 +136,14 @@ const MapFilter = () => {
                                                             <img src={require("../../../assets/svg/filter-arrow-icon.svg").default} alt="" />
                                                         </Typography>
                                                     </Box>
+
+                                                    
                                                     {OpenDorpdown && (
                                                         <>
                                                             <List sx={{ position: 'absolute', zIndex: "101", borderRadius: "4px", backgroundColor: "background.default", boxShadow: "1", maxWidth: "155px", width: "1" }} >
                                                                 {filterDopdownItem.map((val) => {
                                                                     return (
-                                                                        <ListItem onClick={() => { SetfilterValue(val.item); ToggleDropdown() }} sx={{ color: "secondary.dark", cursor: "pointer" }}>
+                                                                        <ListItem onClick={() => { SetfilterValue(val.item); ToggleDropdown() }} sx={{"&:hover":{backgroundColor:"primary.main",color:"common.white"}, color: "secondary.dark", cursor: "pointer" }}>
                                                                             {val.item}
                                                                         </ListItem>
                                                                     )
@@ -153,6 +155,18 @@ const MapFilter = () => {
                                                     )}
                                                 </Box>
                                             </Box>
+
+
+
+
+
+
+
+
+
+
+
+                                            
                                             {/* Date From  */}
                                             {DateData.map((value,index) => {
                                                 return (
