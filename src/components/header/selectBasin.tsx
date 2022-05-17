@@ -32,8 +32,6 @@ const SeclectBasin = (props: any) => {
     // End Date State
     const [endDate, setEndDate] = React.useState<Date | null>(null);
 
-
-
     const clearForm = () => {
         SetBasinValue("");
         setBeginningDate(null);

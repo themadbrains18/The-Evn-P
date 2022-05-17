@@ -1,6 +1,7 @@
 import FullscreenCard from "./FullScreenCard";
-import { Box, Typography, OutlinedInput, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import InputComp from './inputComp';
 
 // Forget Password Account
 const ForgetPassword = (props: any) => {
@@ -11,14 +12,7 @@ const ForgetPassword = (props: any) => {
                     <Typography variant="h1">
                         Forget Password
                     </Typography>
-                    <Typography variant="subtitle1" sx={{
-                        mb: "12px",
-                        mt: "38px",
-                        fontWeight: "600"
-                    }} color="primary.contrastText" >
-                        Email Address
-                    </Typography>
-                    <OutlinedInput type="email" required fullWidth placeholder="Enter email address" />
+                    <InputComp label=" Email Address" inputPlaceHolder="Enter email address" inputType="email"/>
                     <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
                     <Box sx={{ textAlign: "center", mt: "26px" }}>
                         <Button sx={{color:"primary.main" ,"&:hover svg path":{fill:"#0F75BC"},"&:hover":{background:"transparent",color:"primary.main"}}} type="button" variant="text" onClick={props.backLogin} startIcon={<ArrowBackIcon />}> Back to Login</Button>

@@ -36,11 +36,11 @@ const InputComp = (props:InputCompProps) => {
             }
              
             { props.inputType === "text"  && 
-                <OutlinedInput type="text" required fullWidth placeholder="Enter you username" />
+                <OutlinedInput type="text" required fullWidth placeholder={`${props.inputPlaceHolder}`} />
             }
 
             { props.inputType === "email"  && 
-                <OutlinedInput type="email" required fullWidth placeholder="Enter you username" />
+                <OutlinedInput type="email" required fullWidth placeholder={`${props.inputPlaceHolder}`} />
             }
         </>
     )

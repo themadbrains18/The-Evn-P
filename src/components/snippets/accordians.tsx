@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Box, Typography, Divider, Button } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 const AccordiansData = [
@@ -27,10 +27,6 @@ const AccordiansData = [
 
 const Accordians = (props: any) => {
 
-    const [fsdf,setgdfgdfg]=useState(false)
-    const  dsfsdfdsfdf=()=>{
-        setgdfgdfg(!fsdf)
-    }
     useEffect(() => {
         const AccodiansQues = document.querySelector("#Accodians .accodian_ques");
         const AccodiansAns = document.querySelector("#Accodians .accodian_ans");
@@ -68,7 +64,7 @@ const Accordians = (props: any) => {
                                 <Typography variant='h4' component="h4" >
                                     {elem.ques}
                                 </Typography>
-                                <Box onClick={dsfsdfdsfdf} sx={{ "& svg": { height: "20px" , width: "20px"}}}>
+                                <Box  sx={{ "& svg": { height: "20px" , width: "20px"}}}>
                                     <svg width={39} height={39} viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path className="rotatePath" d="M18.3574 5.78906H20.6426C20.8457 5.78906 20.9473 5.89062 20.9473 6.09375V32.9062C20.9473 33.1094 20.8457 33.2109 20.6426 33.2109H18.3574C18.1543 33.2109 18.0527 33.1094 18.0527 32.9062V6.09375C18.0527 5.89062 18.1543 5.78906 18.3574 5.78906Z" fill="#0F75BC" />
                                         <path d="M6.70312 18.0547H32.2969C32.5 18.0547 32.6016 18.1562 32.6016 18.3594V20.6445C32.6016 20.8477 32.5 20.9492 32.2969 20.9492H6.70312C6.5 20.9492 6.39844 20.8477 6.39844 20.6445V18.3594C6.39844 18.1562 6.5 18.0547 6.70312 18.0547Z" fill="#0F75BC" />
