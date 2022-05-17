@@ -46,7 +46,7 @@ const SeclectBasin = (props: any) => {
     // Sumbit Form
     const submitForm = (e: any) => {
         e.preventDefault();
-        if (BasinValue && endDate) {
+        if (  endDate) {
             if (props.selectGo) {
                 props.selectGo(true);
             }
@@ -117,7 +117,7 @@ const SeclectBasin = (props: any) => {
                     <Typography variant='h6' sx={{ mb: "10px" }} >
                         Select Basin
                     </Typography>
-                    <FormControl required fullWidth >
+                    <FormControl  fullWidth >
                         <Select
                             value={BasinValue}
                             onChange={handleChange}
