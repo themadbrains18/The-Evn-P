@@ -11,7 +11,6 @@ const Downloads = () => {
     const selectGo = (value: any) => {
         setIsGoSelected(value);
     }
-    // const [accordian, Setaccordian] = useState(false)
     return (
         <>
             <Box sx={{ p: 4.75 }}>

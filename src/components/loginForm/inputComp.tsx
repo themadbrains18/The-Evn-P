@@ -3,13 +3,13 @@ import { Typography, OutlinedInput, InputAdornment, IconButton } from "@mui/mate
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Visibility from '@mui/icons-material/Visibility';
 
-type inputPassword = {
+type InputCompProps = {
     label: String,
     inputPlaceHolder: String,
-    inputType: "password" | "input"; 
+    inputType: "password" | "text" | "email"; 
 }
 
-const InputPasswordComp = (props:inputPassword) => {
+const InputComp = (props:InputCompProps) => {
     const [showPassword, setShowPassword] = useState(false)
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
@@ -17,12 +17,11 @@ const InputPasswordComp = (props:inputPassword) => {
 
     return (
         <>
-        
             <Typography variant="subtitle1" sx={{ mb: "12px", mt: "30px", fontWeight: "fontWeightMedium" }} color="primary.contrastText">
                 { props.label }
             </Typography>
 
-            { props.inputType === "password" ? 
+            { props.inputType === "password" && 
                 <OutlinedInput placeholder={`${props.inputPlaceHolder}`} fullWidth type={`${!showPassword && ("password")}`} required
                     endAdornment={
                         <InputAdornment position="end">
@@ -34,10 +33,16 @@ const InputPasswordComp = (props:inputPassword) => {
                             </IconButton>
                         </InputAdornment>
                     } />
-                :
-                    <OutlinedInput type="text" required fullWidth placeholder="Enter you username" />
-                }
+            }
+             
+            { props.inputType === "text"  && 
+                <OutlinedInput type="text" required fullWidth placeholder="Enter you username" />
+            }
+
+            { props.inputType === "email"  && 
+                <OutlinedInput type="email" required fullWidth placeholder="Enter you username" />
+            }
         </>
     )
 }
-export default InputPasswordComp;
+export default InputComp;

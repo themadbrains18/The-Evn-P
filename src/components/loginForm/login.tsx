@@ -1,7 +1,7 @@
 // Login Account
 import { Box, Typography,  Button} from "@mui/material";
 import FullscreenCard from "./FullScreenCard";
-import InputPasswordComp from './inputPasswordComp';
+import InputComp from './inputComp';
 
 const Login = (props: any) => {
    
@@ -12,11 +12,10 @@ const Login = (props: any) => {
                     <Typography variant="h1">
                         Login
                     </Typography>
-
                     
-                    <InputPasswordComp label="Username" inputPlaceHolder="Enter you username" inputType="input"/>
+                    <InputComp label="Username" inputPlaceHolder="Enter you username" inputType="text"/>
 
-                    <InputPasswordComp label="Password" inputPlaceHolder="Enter Your Password" inputType="password"/>
+                    <InputComp label="Password" inputPlaceHolder="Enter Your Password" inputType="password"/>
 
                     <Button sx={{ mt: "23px" }} type="submit" fullWidth size="large" variant="contained">Continue</Button>
 

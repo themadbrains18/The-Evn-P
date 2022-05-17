@@ -195,67 +195,64 @@ export const theme = createTheme({
         }
       },
     }
-  });
+});
 
 
-  theme.typography = {
-    ...theme.typography,
-    h2 : {
-        ...theme.typography.h2,
-        [theme.breakpoints.down('lg')]: {
-          fontSize: '20px',
-        }
-    },
-    body2: {
-      ...theme.typography.body2,
+theme.typography = {
+  ...theme.typography,
+  h2 : {
+      ...theme.typography.h2,
       [theme.breakpoints.down('lg')]: {
-        fontSize: "10px",
+        fontSize: '20px',
       }
-    },
-    h1: {
-      ...theme.typography.h1,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "28px",
-      }
-    },
-    h3: {
-      ...theme.typography.h3,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "17px",
-      }
-    },
-    h4: {
-      ...theme.typography.h4,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "18px",
-      }
-    },
-    h5: {
-      ...theme.typography.h5,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "12px",
-      }
-    },
-    h6: {
-      ...theme.typography.h6,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "12px",
-      }
-    },
-    button: {
-      ...theme.typography.button,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "12px",
-        padding:"10px 20px"
-      }
-    },
-    subtitle1: {
-      ...theme.typography.subtitle1,
-      [theme.breakpoints.down('lg')]: {
-        fontSize: "14px",
-      }
-    },
-  }  
-
- 
-  
+  },
+  body2: {
+    ...theme.typography.body2,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "10px",
+    }
+  },
+  h1: {
+    ...theme.typography.h1,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "28px",
+    }
+  },
+  h3: {
+    ...theme.typography.h3,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "17px",
+    }
+  },
+  h4: {
+    ...theme.typography.h4,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "18px",
+    }
+  },
+  h5: {
+    ...theme.typography.h5,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "12px",
+    }
+  },
+  h6: {
+    ...theme.typography.h6,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "12px",
+    }
+  },
+  button: {
+    ...theme.typography.button,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "12px",
+      padding:"10px 20px"
+    }
+  },
+  subtitle1: {
+    ...theme.typography.subtitle1,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: "14px",
+    }
+  },
+}  

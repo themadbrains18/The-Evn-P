@@ -40,7 +40,6 @@ const LoginForm = () => {
 
     return (
         <>
-
             {/* Login Account */}
             {!forgetPswrd && !submitForm && (
                 <Login onSubmit={submitFormFunc} onClickfogetBtn={fogetBtn} />
